@@ -1,0 +1,22 @@
+.pageWrapper{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    // background: #0b0b0b;
+    // background: rgb(245, 245, 245);
+    background: linear-gradient(135.00deg, rgb(36, 22, 27) 0%,rgba(26, 23, 23, 0) 100%),rgb(0, 0, 0);
+    background-image: url('../../assets/images/pageBg.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 65% 100%;
+    overflow: hidden;
+    color: #fff;
+    z-index: 2;
+
+}

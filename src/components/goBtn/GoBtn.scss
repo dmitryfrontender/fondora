@@ -1,0 +1,23 @@
+.goBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    height: fit-content;
+    padding: 10px 12px;
+    border-radius: 30px;  
+    color: var(--white);  
+    font-family: var(--font-family-urbanist);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    background: linear-gradient(135.00deg, rgb(132, 9, 56) -0.122%,rgb(242, 34, 113) 99.878%),linear-gradient(135.00deg, rgb(24, 25, 32) 0%,rgb(15, 15, 19) 100%);
+    span{
+        line-height: 12px;
+        font-weight: 700;
+        font-size: 10px;
+
+
+
+    }
+}
