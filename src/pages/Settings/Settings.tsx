@@ -80,26 +80,27 @@ const Settings = () => {
                         <div className="description">
                             <span className="numberBoost">145</span>
                             <span>Бустов</span>
-                            
+
                         </div>
                     </div>
                     <div className="unwatchingMode">
-                        <img src={HideSvg} alt="img" />
+                        {/* <img src={HideSvg} alt="img" /> */}
+                        <Icon id="search-icon" className="boost-icon" />
 
                         <span>Перейти в невидимый режим</span>
                     </div>
-                    
+
 
                 </div>
-                
+
 
             </div>
-            
-                
 
-                
 
-            
+
+
+
+
         </div>
     )
 }

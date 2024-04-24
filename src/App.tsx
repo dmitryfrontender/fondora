@@ -3,6 +3,7 @@ import './style/App.scss';
 import PageWrapper from './layout/PageWrapper/PageWrapper.tsx';
 
 // import { Icon } from './assets/icons/icons';
+import Icons from "./assets/icons/sprite.jsx";
 
 // import MainWrapper from './layout/MainWrapper/MainWrapper';
 
@@ -30,7 +31,7 @@ function App() {
 
         </Routes>
 
-
+        <Icons />
 
     </div>
   );
