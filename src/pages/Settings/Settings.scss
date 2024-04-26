@@ -5,8 +5,9 @@
     justify-content: start;
     align-items: center;
     position: relative;
-    left: 10vw;
+    padding-left: 20vw;
     flex-direction: column;
+
     .SettingsWrapper {
         width: clamp(300px, 50vw, 60vw);
 
@@ -95,24 +96,337 @@
                 padding-right: 5px;
             }
           
-            .likes{
+            .likes, .boost{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                flex-direction: column;
+                height: 100px;
                 border-radius: 10px;
+                border: 1px solid transparent;
+                transition: all ease 0.3s;
                 background: linear-gradient(180.00deg, rgb(80, 55, 78),rgb(63, 29, 60) 100%);
-    
+                .wrapper{
+                    position: relative;
+                    transform: translateY(15px);
+                    .description{
+                        padding-bottom: 5px;
+                    }
+                    .plusBtn {
+                        svg{
+                            cursor: pointer;
+                            border: 1px solid transparent;
+                            transition: all ease 0.3s;
+                            border-radius: 50%;
+                        }
+                        svg:hover{
+                            border: 1px solid var(--stroke-color);
+                            transition: all ease 0.3s;
+                        }
+                      
+                    }
+                }
             }
-            .boost{
-                border-radius: 10px;
-                background: linear-gradient(180.00deg, rgb(51, 58, 83),rgb(24, 33, 64) 100%);
+            .likes:hover, .boost:hover{
+                border: 1px solid var(--main-red);
+                transition: all ease 0.3s;
             }
-            .unwatchingMode {
+           
+            .unwatchMode {
                 display: grid;
                 grid-column: 1/ 3;
-                align-items: center;
-      
+                height: 75px;
+                box-sizing: border-box;
+                border: 1px solid rgb(84, 72, 77);
+                border-radius: 20px;
+                margin-top: 10px;
+                cursor: pointer;
+                transition: all ease 0.3s;
+                background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
+                // align-items: center;
+                // justify-content: center;
+                .wrapper{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 20px;
+                }
+            }
+            .unwatchMode:hover{
+                border: 1px solid var(--main-red);
+                transition: all ease 0.3s;
             }
             
+        }
+        .accountSettings {
+          text-align: start;
+          .title{
+            font-family: var(--font-family-urbanist);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            letter-spacing: 0;
+          }
+          .subtitle {
+            font-family: var(--font-family-urbanist);
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: 0%;
+          }
+          .optionList {
+            ul{
+                list-style-type: none;
+                padding: 0;
+                li{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-sizing: border-box;
+                    border: 1px solid rgb(84, 72, 77);
+                    transition: all ease 0.3s;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
+                    padding: 20px;
+                    margin: 10px 0;
+                    .value {
+                      display: flex;
+                      align-items: center;
+                      .arrow{
+                        padding-left: 15px;
+                      }
+                    }
+                }
+                li:hover{
+                    border: 1px solid var(--main-red);
+                    transition: all ease 0.3s;
+                }
+            }
+          }
+        }
+        .title{
+            padding-top: 20px;
+            text-align: start;
+        }
+        .gold{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .description{
+            text-align: start;
+
+        }
+        .listWrapper {
+            ul{
+                list-style-type: none;
+                padding: 0;
+                li{
+                    
+                    box-sizing: border-box;
+                    position: relative;
+                    border: 1px solid rgb(84, 72, 77);
+                    transition: all ease 0.3s;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
+                    padding: 20px;
+                    margin: 10px 0;
+                    .itemWrapper{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: relative;
+                        .description{
+                            color: rgb(162, 162, 162);
+                            font-family: var(--font-family-urbanist);
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 150%;
+                            letter-spacing: 0%;
+                            text-align: left;
+                            .smallText{
+                                border-radius: 10px;
+                                box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25);
+                                background: linear-gradient(180.00deg, rgb(55, 63, 255),rgb(34, 202, 255) 100%);
+                                color: rgb(255, 255, 255);
+                                font-family: var(--font-public-sans);
+                                font-size: 12px;
+                                font-weight: 400;
+                                line-height: 150%;
+                                letter-spacing: 2%;
+                                text-align: center;
+                                padding: 5px;
+                                position: relative;
+                                top: 7px;
+                            }
+                        }
+                        .value{
+                            display: flex;
+                            align-items: center;
+                            justify-content: end;
+                            position: relative;
+                            .item{
+                                padding-right: 10px;
+                                p{
+                                    color: rgb(162, 162, 162);
+                                    font-family: var(--font-family-urbanist);
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 150%;
+                                    letter-spacing: 0%;
+                                    text-align: left;
+                                    margin: 0;
+                                }
+                                h4{
+                                    color: rgb(255, 255, 255);
+                                    font-family: var(--font-family-urbanist);
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 150%;
+                                    letter-spacing: 0%;
+                                    text-align: left;
+                                    margin: 0;
+                                }
+                            }
+                            .text{
+                                color: rgb(162, 162, 162);
+                                font-family: var(--font-family-urbanist);
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 150%;
+                                letter-spacing: 0%;
+                                padding-right: 10px;
+                            }
+                            .underline{
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                height: 1px;
+                                width: 0;
+                                background-color: var(--main-red);
+                                bottom: -5px;
+                                transition: all ease 0.3s;
+                            }
+                        }
+                        .value:hover{
+                            .underline{
+                                width: 100%;
+                                transition: all ease 0.3s;
+    
+                            }
+                            
+                        }
+
+                    }
+                    
+                    .optionDescription{
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        color: rgb(162, 162, 162);
+                        font-family: var(--font-family-urbanist);
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 150%;
+                        letter-spacing: 0%;
+                        text-align: left;
+
+
+                    }
+
+                }
+                .listValue{
+                    height: 142px;
+                }
+            }
+        
+        }
+        .socialWrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            svg{
+                padding: 15px;
+                border-radius: 30px;
+                background: rgb(33, 32, 32);
+                cursor: pointer;
+            }
+
+        }
+        .repairPurchase{
+            border-radius: 30px;    
+            background: rgb(33, 32, 32);
+            padding: 20px;
+            display: flex;
+            align-items: start;
+            margin-top: 20px;
+            p{
+                margin: 0;
+                color: rgb(162, 162, 162);
+                font-family: var(--font-family-urbanist);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: left;
+
+            }
+
+        }
+        .fondora{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .exit, .deleteAccount {
+            padding: 20px;
+            border-radius: 30px;
+            background: rgb(33, 32, 32);
+            display: flex;
+            justify-content: start;
+            cursor: pointer;
+            svg{
+                height: inherit;
+            }
+            span{
+                color: rgb(162, 162, 162);
+                font-family: var(--font-family-urbanist);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: left;
+                padding-left: 10px;
+                margin: 0;
+            }
         }
         
     }
  
+}
+.plusSign{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 28px;
+    border-radius: 10px;
+    background: linear-gradient(180.00deg, rgb(154, 24, 255),rgb(255, 10, 157) 100%);
+    color: rgb(0, 0, 0);
+    font-family: var(--font-family-urbanist);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 2%;
+    text-align: center;
+    span{
+        background-color: rgb(255, 187, 11);
+        padding: 3px;
+        border-radius: 5px;
+    }
 }

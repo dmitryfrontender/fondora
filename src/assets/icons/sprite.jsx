@@ -252,13 +252,13 @@ function Icons() {
     {/* User Avatars */}
 
     {/* Settings images */}
-    <symbol id="ololo" width="31" height="32" viewBox="0 0 31 32">
+    <symbol id="like-icon" width="31" height="32" viewBox="0 0 31 32">
         <g filter="url(#filter0_d_2_260634)">
             <path d="M22.8976 18.402C22.5739 18.7157 22.4251 19.1695 22.4989 19.6145L23.6101 25.7645C23.7039 26.2857 23.4839 26.8132 23.0476 27.1145C22.6201 27.427 22.0514 27.4645 21.5851 27.2145L16.0489 24.327C15.8564 24.2245 15.6426 24.1695 15.4239 24.1632H15.0851C14.9676 24.1807 14.8526 24.2182 14.7476 24.2757L9.21012 27.177C8.93637 27.3145 8.62637 27.3632 8.32262 27.3145C7.58262 27.1745 7.08887 26.4695 7.21012 25.7257L8.32262 19.5757C8.39637 19.127 8.24762 18.6707 7.92387 18.352L3.41012 13.977C3.03262 13.6107 2.90137 13.0607 3.07387 12.5645C3.24137 12.0695 3.66887 11.7082 4.18512 11.627L10.3976 10.7257C10.8701 10.677 11.2851 10.3895 11.4976 9.96445L14.2351 4.35195C14.3001 4.22695 14.3839 4.11195 14.4851 4.01445L14.5976 3.92695C14.6564 3.86195 14.7239 3.8082 14.7989 3.76445L14.9351 3.71445L15.1476 3.62695H15.6739C16.1439 3.6757 16.5576 3.95695 16.7739 4.37695L19.5476 9.96445C19.7476 10.3732 20.1364 10.657 20.5851 10.7257L26.7976 11.627C27.3226 11.702 27.7614 12.0645 27.9351 12.5645C28.0989 13.0657 27.9576 13.6157 27.5726 13.977L22.8976 18.402Z" fill="url(#paint0_linear_2_260634)"/>
         </g>
         <defs>
-            <filter id="filter0_d_2_260634" x="2.99902" y="3.62695" width="25.0029" height="27.752" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <filter id="filter0_d_2_260634" x="2.99902" y="3.62695" width="25.0029" height="27.752" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                 <feOffset dy="4"/>
                 <feComposite in2="hardAlpha" operator="out"/>
@@ -273,12 +273,12 @@ function Icons() {
         </defs>
     </symbol>
 
-    <symbol id="boost-icon" viewBox="0 0 15 29"
+    <symbol id="boost-icon" viewBox="0 0 15 29" width="31" height="32"
 
         >
         <defs>
-            <filter id="filter0_d_2_260644" x="0.1875" y="0.0625" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <filter id="filter0_d_2_260644" x="0.1875" y="0.0625" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                 <feOffset dy="4"/>
                 <feComposite in2="hardAlpha" operator="out"/>
@@ -295,7 +295,44 @@ function Icons() {
             <path d="M7.37997 0.0625C7.26701 0.0625138 7.15676 0.0971053 7.06403 0.161626C6.97131 0.226146 6.90056 0.317504 6.86128 0.42342L0.358235 12.7531C0.247177 12.9291 0.188001 13.1328 0.1875 13.3409C0.1875 13.6344 0.304081 13.9158 0.511597 14.1233C0.719112 14.3309 1.00056 14.4474 1.29403 14.4474H6.8267V23.853C6.8267 23.9997 6.88499 24.1404 6.98875 24.2442C7.09251 24.348 7.23324 24.4062 7.37997 24.4062C7.4818 24.4064 7.58168 24.3784 7.66862 24.3254C7.75556 24.2724 7.82619 24.1964 7.87272 24.1058L14.4233 11.6833L14.4212 11.6811C14.5193 11.5132 14.5715 11.3224 14.5724 11.1278C14.5724 10.8344 14.4559 10.5529 14.2483 10.3454C14.0408 10.1379 13.7594 10.0213 13.4659 10.0213H7.93324V0.615767C7.93324 0.469032 7.87495 0.328306 7.77119 0.224548C7.66743 0.12079 7.52671 0.0625 7.37997 0.0625Z" fill="url(#paint0_linear_2_260644)"/>
         </g>
     </symbol>
-</svg>
+
+    <symbol
+        id="plus-icon" 
+        width="30" height="30" viewBox="0 0 30 30" fill="none">
+       
+        <defs>
+            <filter id="filter_2_260637_dd" x="0.000000" y="0.000000" width="30.000000" height="30.000000" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                <feGaussianBlur in="BackgroundImage" stdDeviation="1.66667"/>
+                <feComposite in2="SourceAlpha" operator="in" result="effect_backgroundBlur_1"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect_backgroundBlur_1" result="shape"/>
+            </filter>
+            <linearGradient id="paint_linear_2_260637_0" x1="0.000000" y1="0.000006" x2="29.999994" y2="30.000010" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#E9F5DF"/>
+                <stop offset="1.000000" stop-color="#E5F6EC"/>
+            </linearGradient>
+            <linearGradient id="paint_linear_2_260637_1" x1="15.000000" y1="0.000000" x2="15.000000" y2="30.000000" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#121212"/>
+                <stop offset="1.000000" stop-color="#0B0B0B"/>
+            </linearGradient>
+        </defs>
+        <g opacity="0.900000" filter="url(#filter_2_260637_dd)">
+            <circle id="Ellipse 978" cx="15.000000" cy="15.000000" r="15.000000" fill="url(#paint_linear_2_260637_0)" fill-opacity="0"/>
+            <circle id="Ellipse 978" cx="15.000000" cy="15.000000" r="15.000000" fill="url(#paint_linear_2_260637_1)" fill-opacity="1.000000"/>
+        </g>
+        <rect id="Iconly/Bold/Heart" rx="-0.500000" width="14.000000" height="14.000000" transform="translate(16.000000 4.500000) rotate(45.000000)" fill="#FFFFFF" fill-opacity="0"/>
+        <path id="Stroke 2" d="M10.59 15L20.5 15" stroke="#FFFFFF" strokeOpacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="Stroke 2" d="M10.59 15L20.5 15" stroke="#FFFFFF" strokeOpacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="Stroke 3" d="M15.49 19.9L15.5 10" stroke="#FFFFFF" strokeOpacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="Stroke 3" d="M15.49 19.9L15.5 10" stroke="#FFFFFF" strokeOpacity="1.000000" stroke-width="1.500000" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+
+
+
+
+
+
+    </svg>
   );
 }
 

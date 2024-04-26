@@ -5,7 +5,9 @@ import userAvatar from '../../assets/avatar/user-avatar.png'
 
 import { Link, useLocation } from 'react-router-dom';
 
-import { Icon } from '../../assets/icons/icons';
+// import  Icon  from '../../assets/icons/icons.jsx';
+import SVGIcon from '../../assets/icons/svgComponent.jsx';
+
 
 
 
@@ -14,19 +16,21 @@ const Dashboard = () => {
   const location = useLocation();
   const path = location.pathname;
 
+
   return (
     <>
       <aside className='Sidebar'>
 
-        <Icon id="main-logo" className="main-logo" />
-
+        <SVGIcon name="mainLogo" className="main-logo" size={170} height={41}/>
 
         <ul>
 
           <Link to="/">
 
             <li > 
-                <Icon id="main-menu" className={`menu-icon ${path === '/' ? 'active-menu' : ''}`} />
+
+                <SVGIcon name="menuIcon" className={`menu-icon ${path === '/' ? 'active-menu' : ''}`}  size={30}/>
+
                 <span>Главная</span>
               
             </li>
@@ -35,7 +39,8 @@ const Dashboard = () => {
           <Link to="/likes">
 
             <li>
-                <Icon id="likes-menu" className={`menu-icon ${path === '/likes' ? 'active-menu' : ''}`} />
+                <SVGIcon name="heartIcon" className={`menu-icon ${path === '/likes' ? 'active-menu' : ''}`}  size={30}/>
+
                 <span>Лайки</span>
               
             </li>
@@ -44,7 +49,7 @@ const Dashboard = () => {
 
           <Link to="/top-profiles">
             <li>
-              <Icon id="star-menu" className={`menu-icon ${path === '/top-profiles' ? 'active-menu' : ''}`} />
+              <SVGIcon name="topProfile" className={`menu-icon ${path === '/top-profiles' ? 'active-menu' : ''}`} />
               <span>Топ-профили</span>
 
 
@@ -54,7 +59,7 @@ const Dashboard = () => {
 
           <Link to="/messages">
             <li>
-              <Icon id="chat-menu" className={`menu-icon ${path === '/messages' ? 'active-menu' : ''}`} />
+              <SVGIcon name="messageIcon" className={`menu-icon ${path === '/messages' ? 'active-menu' : ''}`} />
               <span>Сообщения</span>
 
 
@@ -65,7 +70,7 @@ const Dashboard = () => {
           <Link to="/notifications">
 
             <li>
-              <Icon id="notification-menu" className={`menu-icon ${path === '/notifications' ? 'active-menu' : ''}`} />
+              <SVGIcon name="notification" className={`menu-icon ${path === '/notifications' ? 'active-menu' : ''}`} />
               <span>Уведомления</span>
 
 
@@ -76,7 +81,7 @@ const Dashboard = () => {
           <Link to="/settings">
 
             <li>
-              <Icon id="setting-menu" className={`menu-icon ${path === '/settings' ? 'active-menu' : ''}`} />
+              <SVGIcon name="settings" className={`menu-icon ${path === '/settings' ? 'active-menu' : ''}`} />
               <span>Настройки</span>
 
 

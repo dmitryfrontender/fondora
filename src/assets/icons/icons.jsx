@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Icon = ({ id, className }) => {
+const Icon = ({ id, className }) => {
 
     return (
         <svg className={className}>
@@ -11,3 +11,7 @@ export const Icon = ({ id, className }) => {
     );
 
 };
+
+
+
+export default Icon
