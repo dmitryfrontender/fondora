@@ -118,54 +118,64 @@ const Settings = () => {
                                 Подтвержденный номер телефона и адрес электронной почты помогают защитить Ваш аккаунт.
                             </p>
                         </div>
-                        <div className="optionList">
+                        <div className="listWrapper">
+                        {/* <div className="optionList"> */}
+
                             <ul>
                                 <li>
-                                    <div className="description">
-                                        <span>
-                                            Номер телефона
-
-                                        </span>
-                                    </div>
-                                    <div className="value">
-                                        <div className="item">
+                                    <div className="itemWrapper">
+                                        <div className="description">
                                             <span>
-                                                +1 063 374 99 99
+                                                Номер телефона
+
                                             </span>
                                         </div>
-                                        <div className="arrow">
-                                            <SVGIcon name="arrowRight" size={20}  />
+                                        <div className="value">
+                                            <div className="item">
+                                                <span>
+                                                    +1 063 374 99 99
+                                                </span>
+                                            </div>
+                                            <div className="arrow">
+                                                <SVGIcon name="arrowRight" size={20}  />
+                                                <div className="underline"></div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="description">
-                                        <span>
-                                            Подключенные аккаунты
-
-                                        </span>
-                                    </div>
-                                    <div className="value">
-                                        <div className="arrow">
-                                            <SVGIcon name="arrowRight" size={20}  />
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="description">
-                                        <span>
-                                            Email
-
-                                        </span>
-                                    </div>
-                                    <div className="value">
-                                        <div className="item">
+                                    <div className="itemWrapper">
+                                        <div className="description">
                                             <span>
-                                                silvervenny@gmail.com
+                                                Подключенные аккаунты
                                             </span>
                                         </div>
-                                        <div className="arrow">
-                                            <SVGIcon name="arrowRight" size={20}  />    
+                                        <div className="value">
+                                            <div className="arrow">
+                                                <SVGIcon name="arrowRight" size={20}  />
+                                                <div className="underline"></div>
+                                            </div>
+                                        </div>
+                                    </div>      
+                                </li>
+                                <li>
+                                    <div className="itemWrapper">
+                                        <div className="description">
+                                            <span>
+                                                Email
+                                            </span>
+                                        </div>
+                                        <div className="value">
+                                            <div className="item">
+                                                <span>
+                                                    silvervenny@gmail.com
+                                                </span>
+                                            </div>
+                                            <div className="arrow">
+                                                <SVGIcon name="arrowRight" size={20}  />    
+                                                <div className="underline"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
