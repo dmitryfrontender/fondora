@@ -7,23 +7,7 @@
             .tittle-item{
                 
             }
-            .goldMarker{
-                width: 55px;
-                height: 28px;
-                background: rgb(255, 190, 24);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 10px;
-                span{
-                    background: var(--black);
-                    font-family: var(--font-family-urbanist);
-                    color: rgb(255, 190, 24);
-                    border-radius: 7px;
-                    font-size: 12px;
-                    padding: 1px 7px;
-                }
-            }
+            
         }
         .description{
             text-align: start;

@@ -242,6 +242,7 @@ const PremiumSearch = () => {
                                     </div>
                                 </div>
                             </li>
+                            
                             <li>
                                 <div className="itemWrapper">
                                     <div className="description">
@@ -388,6 +389,7 @@ const PremiumSearch = () => {
                                         <div className="underline"></div>
                                     </div>
                                 </div>
+                                
                             </li>
                         </ul>
                     </div>

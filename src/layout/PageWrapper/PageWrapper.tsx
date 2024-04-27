@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Matching from "../../pages/Matching/Matching.tsx";
 import Likes from "../../pages/Likes/Likes.tsx";
@@ -7,12 +7,18 @@ import Messages from "../../pages/Messages/Messages.tsx";
 import Settings from "../../pages/Settings/Settings.tsx";
 import Notifications from "../../pages/Notifications/Notifications.tsx";
 import MyProfile from "../../pages/My-profile/MyProfile.tsx";
+import EditMyProfile from "../../pages/EditMyProfile/EditMyProfile.tsx";
 import { Route, Routes } from 'react-router-dom';
 
 import './PageWrapper.scss'
 
 
 const PageWrapper = () => {
+
+
+    useEffect(() => {
+        window.history.scrollRestoration = 'manual';
+    }, []);
 
     return (
     <>
@@ -30,6 +36,8 @@ const PageWrapper = () => {
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/notifications" element={<Notifications />} />
                 <Route path="/my-profile" element={<MyProfile />} />
+                <Route path="/my-profile/edit-profile" element={<EditMyProfile />} />
+
 
 
 

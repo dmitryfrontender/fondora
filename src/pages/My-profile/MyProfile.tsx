@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import SettingsBtn from "../../components/SettingsBtn/SettingsBtn.tsx";
 import "./MyProfile.scss"
 import SVGIcon from "../../assets/icons/svgComponent";
@@ -7,6 +7,16 @@ import { Link } from "react-router-dom";
 
 
 const MyProfile = () => {
+    // const pathname = useLocation();
+
+    useEffect(() => {
+        window.history.scrollRestoration = 'manual';
+    }, []);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    //     console.log('ololo');
+        
+    // }, [pathname]);
 
     return (
     

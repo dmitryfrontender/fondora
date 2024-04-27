@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Settings.scss'
 import GoBtn from "../../components/goBtn/GoBtn.tsx";
 import SVGIcon from "../../assets/icons/svgComponent.jsx";
@@ -8,6 +8,12 @@ import Checkbox from "../../components/Checkbox/Checkbox.tsx";
 
 
 const Settings = () => {
+
+
+
+    useEffect(() => {
+        window.history.scrollRestoration = 'manual';
+    }, []);
 
     return (
         <div className="page Settings">
