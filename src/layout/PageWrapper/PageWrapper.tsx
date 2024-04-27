@@ -7,7 +7,7 @@ import Messages from "../../pages/Messages/Messages.tsx";
 import Settings from "../../pages/Settings/Settings.tsx";
 import Notifications from "../../pages/Notifications/Notifications.tsx";
 import MyProfile from "../../pages/My-profile/MyProfile.tsx";
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import './PageWrapper.scss'
 

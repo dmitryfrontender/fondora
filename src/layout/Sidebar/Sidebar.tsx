@@ -90,18 +90,20 @@ const Dashboard = () => {
           </Link>
 
         </ul>
+        <Link to="/my-profile">
+          <div className="userBlock">
+            <div className="avatar">
+              <img src={userAvatar} alt="avatar" />
+              
+            </div>
+            <div className="userInfo">
+                <p>Alex</p>
+                <p>@pixelwizardalex</p>
+            </div>
 
-        <div className="userBlock">
-          <div className="avatar">
-            <img src={userAvatar} alt="avatar" />
-            
           </div>
-          <div className="userInfo">
-              <p>Alex</p>
-              <p>@pixelwizardalex</p>
-          </div>
-
-        </div>
+        </Link>
+        
           
         
 

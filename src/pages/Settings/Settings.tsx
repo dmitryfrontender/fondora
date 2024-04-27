@@ -10,13 +10,13 @@ import Checkbox from "../../components/Checkbox/Checkbox.tsx";
 const Settings = () => {
 
     return (
-        <div className="Settings">
+        <div className="page Settings">
             <div className="tittle">
                 <span>
                     Настройки
                 </span>
             </div>
-            <div className="SettingsWrapper">
+            <div className="pageItems">
                 <div className="planSettings">
                     <div className="planOption plan-vip">
                         <div className="logo">
@@ -218,6 +218,7 @@ const Settings = () => {
                                     </div>
                                     <div className="arrow">
                                         <SVGIcon name="arrowRight" size={20}  />
+                                        <div className="underline"></div>
                                     </div>
 
                                 </div>

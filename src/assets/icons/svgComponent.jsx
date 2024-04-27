@@ -91,8 +91,8 @@ const icons = {
     heartIcon: (
         <svg
         xmlns="http://www.w3.org/2000/svg"
-        // width="35737"
-        // height="21112"
+     width="30"
+        height="30"
         fill="none"
         viewBox="0 0 30 30"
       >
@@ -370,6 +370,69 @@ const icons = {
                 clipRule="evenodd"
             ></path>
         </svg>
+    ),
+    subscribeIcon : (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="30"
+      height="32"
+      fill="none"
+      viewBox="0 0 30 32"
+    >
+      <defs>
+        <filter
+          id="filter_2_253886_dd"
+          width="26.801"
+          height="30.799"
+          x="0.834"
+          y="1"
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feColorMatrix
+            in="SourceAlpha"
+            result="hardAlpha"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          ></feColorMatrix>
+          <feOffset dy="4"></feOffset>
+          <feGaussianBlur></feGaussianBlur>
+          <feComposite
+            in2="hardAlpha"
+            k2="-1"
+            k3="1"
+            operator="out"
+          ></feComposite>
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+          <feBlend
+            in2="BackgroundImageFix"
+            result="effect_dropShadow_1"
+          ></feBlend>
+          <feBlend
+            in="SourceGraphic"
+            in2="effect_dropShadow_1"
+            result="shape"
+          ></feBlend>
+        </filter>
+      </defs>
+      <g fillOpacity="1" fillRule="evenodd" filter="url(#filter_2_253886_dd)">
+        <path
+          fill="#840938"
+          d="M.834 9.934v17.865H18.7a8.933 8.933 0 100-17.865H.834z"
+          clipRule="evenodd"
+        ></path>
+        <path
+          fill="#121212"
+          d="M2.58 27.79V9.93h17.87c0 9.87-8 17.86-17.87 17.86z"
+        ></path>
+        <path
+          fill="#F22271"
+          d="M.834 9.934v17.865c9.867 0 17.866-7.998 17.866-17.865A8.932 8.932 0 009.767 1 8.932 8.932 0 00.834 9.934z"
+          clipRule="evenodd"
+        ></path>
+      </g>
+    </svg>
+      
     ),
     starIcon: (
         <svg
@@ -1459,14 +1522,14 @@ const icons = {
             fill="none"
             viewBox="0 0 20 20"
             >
-            <path
+            {/* <path
                 fill="#FFF"
                 fillOpacity="0"
                 d="M0 0H20V20H0z"
                 transform="translate(0 -.5)"
-            ></path>
+            ></path> */}
             <path
-                stroke="#969696"
+                // stroke="#969696"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeOpacity="1"
@@ -1474,7 +1537,7 @@ const icons = {
                 d="M11.99 7.49L8 11.48"
             ></path>
             <path
-                stroke="#969696"
+                // stroke="#969696"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeOpacity="1"
@@ -1482,13 +1545,136 @@ const icons = {
                 d="M11.99 11.49L8 7.49"
             ></path>
             <path
-                stroke="#969696"
+                id="border"
+                // stroke="#969696"
                 strokeLinejoin="round"
                 strokeOpacity="1"
                 strokeWidth="1.5"
                 d="M6.38 1.79c-2.51 0-4.09 1.78-4.09 4.3v6.81c0 2.52 1.57 4.3 4.09 4.3h7.23c2.52 0 4.09-1.78 4.09-4.3V6.09c0-2.52-1.57-4.3-4.09-4.3H6.38z"
             ></path>
         </svg>
+    ),
+    freeGold: (
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="none"
+          viewBox="0 0 20 20"
+          >
+          {/* <path
+              fill="#FFF"
+              fillOpacity="0"
+              d="M0 0H20V20H0z"
+              transform="translate(0 -.5)"
+          ></path> */}
+          <path
+              stroke="rgb(32, 14, 50)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M11.99 7.49L8 11.48"
+          ></path>
+          <path
+              stroke="rgb(32, 14, 50)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M11.99 11.49L8 7.49"
+          ></path>
+          <path
+              stroke="rgb(32, 14, 50)"
+              opacity={0.5}
+              // stroke="#969696"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M6.38 1.79c-2.51 0-4.09 1.78-4.09 4.3v6.81c0 2.52 1.57 4.3 4.09 4.3h7.23c2.52 0 4.09-1.78 4.09-4.3V6.09c0-2.52-1.57-4.3-4.09-4.3H6.38z"
+          ></path>
+      </svg>
+    ),
+    freeVip: (
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="none"
+          viewBox="0 0 20 20"
+          >
+          {/* <path
+              fill="#FFF"
+              fillOpacity="0"
+              d="M0 0H20V20H0z"
+              transform="translate(0 -.5)"
+          ></path> */}
+          <path
+              // stroke="#969696"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M11.99 7.49L8 11.48"
+          ></path>
+          <path
+              // stroke="#969696"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M11.99 11.49L8 7.49"
+          ></path>
+          <path
+              id="border"
+              // stroke="#969696"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M6.38 1.79c-2.51 0-4.09 1.78-4.09 4.3v6.81c0 2.52 1.57 4.3 4.09 4.3h7.23c2.52 0 4.09-1.78 4.09-4.3V6.09c0-2.52-1.57-4.3-4.09-4.3H6.38z"
+          ></path>
+      </svg>
+    ),
+    freePlus: (
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="none"
+          viewBox="0 0 20 20"
+          >
+          {/* <path
+              fill="#FFF"
+              fillOpacity="0"
+              d="M0 0H20V20H0z"
+              transform="translate(0 -.5)"
+          ></path> */}
+          <path
+              stroke="rgb(32, 14, 50)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M11.99 7.49L8 11.48"
+          ></path>
+          <path
+              stroke="rgb(32, 14, 50)"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M11.99 11.49L8 7.49"
+          ></path>
+          <path
+              id="border"
+              stroke="rgb(255, 255, 255)"
+              opacity={0.5}
+              strokeLinejoin="round"
+              strokeOpacity="1"
+              strokeWidth="1.5"
+              d="M6.38 1.79c-2.51 0-4.09 1.78-4.09 4.3v6.81c0 2.52 1.57 4.3 4.09 4.3h7.23c2.52 0 4.09-1.78 4.09-4.3V6.09c0-2.52-1.57-4.3-4.09-4.3H6.38z"
+          ></path>
+      </svg>
     ),
 
 
@@ -1535,13 +1721,93 @@ const icons = {
                 d="M3.57 6.89c-.27 0-.54-.1-.74-.31L-.02 3.74c-.41-.41-.41-1.08 0-1.49.41-.41 1.07-.41 1.48 0l2.11 2.11L8.52-.59c.41-.42 1.08-.42 1.49 0 .41.41.41 1.07 0 1.48l-5.7 5.69c-.2.21-.47.31-.74.31z"
             ></path>
         </svg>
-    )
+    ),
+    protectIcon: (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 30 30"
+    >
+      <path fill="#FFF" fillOpacity="0" d="M0 0H24V24H0z"></path>
+      <path
+        stroke="#FFF"
+        strokeLinejoin="round"
+        strokeOpacity="1"
+        strokeWidth="1.5"
+        d="M19.59 6.15v6.77c0 1.89-.69 3.7-1.9 5.1-.61.71-1.39 1.25-2.21 1.7l-3.56 1.92-3.56-1.92c-.82-.45-1.6-.99-2.21-1.7a7.81 7.81 0 01-1.9-5.1V6.15c0-.47.29-.88.72-1.03l6.59-2.31c.23-.08.48-.08.72 0l6.58 2.31c.44.15.73.56.73 1.03z"
+      ></path>
+      <path
+        stroke="#FFF"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeOpacity="1"
+        strokeWidth="1.5"
+        d="M9.32 11.91l1.89 1.9 3.9-3.9"
+      ></path>
+    </svg>
+    ),
+    editProfile: (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 30 30"
+    >
+      <path
+        stroke="#FFF"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeOpacity="1"
+        strokeWidth="1.5"
+        d="M7.91 13.58h5.32"
+      ></path>
+      <path
+        stroke="#FFF"
+        strokeLinejoin="round"
+        strokeOpacity="1"
+        strokeWidth="1.5"
+        d="M9.6 1l1.16.91c.78.61 1.06 1.56.44 2.34l-6.91 8.82c-.23.29-.58.47-.95.47l-2.67.04-.6-2.6c-.09-.36 0-.75.23-1.04l6.91-8.82C7.82.34 8.81.38 9.6 1z"
+      ></path>
+      <path
+        stroke="#FFF"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeOpacity="1"
+        strokeWidth="1.5"
+        d="M5.91 2.77l4 3.14"
+      ></path>
+    </svg>
+    ),
+    verificationProfile: (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="none"
+      viewBox="0 0 16 16"
+    >
+      <rect
+        width="15"
+        height="15"
+        fill="#FFF"
+        fillOpacity="0"
+        rx="-0.5"
+        transform="translate(.5 .5)"
+      ></rect>
+      <g
+        fill="#A2A2A2"
+        fillOpacity="1"
+        fillRule="nonzero"
+        clipPath="url(#clip2_253862)"
+      >
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 4.41 3.58 8 8 8 4.41 0 8-3.59 8-8 0-4.42-3.59-8-8-8zm0 14.76c-3.74 0-6.77-3.03-6.77-6.76 0-3.74 3.03-6.77 6.77-6.77 3.73 0 6.76 3.03 6.76 6.77 0 3.73-3.03 6.76-6.76 6.76z"></path>
+        <path d="M10.84 5.51L6.76 9.59 5.15 7.97l-.87.87 2.48 2.49 4.95-4.95-.87-.87z"></path>
+      </g>
+    </svg>
+
+      
+    ),
     
 }
-
-
-
-
 
 
 const SVGIcon = ({ name, size = 24, ...rest }) => {

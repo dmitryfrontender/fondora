@@ -84,6 +84,21 @@ a:-webkit-any-link {
     }
 }
 
+.page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    padding-left: 20vw;
+    flex-direction: column;
+}
+.pageItems {
+    width: clamp(300px, 50vw, 60vw);
+
+}
+
 // SETTING LIST
 .listWrapper {
     ul{
@@ -137,28 +152,28 @@ a:-webkit-any-link {
                     align-items: center;
                     cursor: pointer;
                     .item{
-                                                padding-right: 10px;
-                                                p{
-                                                    color: rgb(162, 162, 162);
-                                                    font-family: var(--font-family-urbanist);
-                                                    font-size: 14px;
-                                                    font-weight: 500;
-                                                    line-height: 150%;
-                                                    letter-spacing: 0%;
-                                                    text-align: left;
-                                                    margin: 0;
-                                                }
-                                                h4{
-                                                    color: rgb(255, 255, 255);
-                                                    font-family: var(--font-family-urbanist);
-                                                    font-size: 14px;
-                                                    font-weight: 500;
-                                                    line-height: 150%;
-                                                    letter-spacing: 0%;
-                                                    text-align: left;
-                                                    margin: 0;
-                                                }
-                                            }
+                        padding-right: 10px;
+                        p{
+                            color: rgb(162, 162, 162);
+                            font-family: var(--font-family-urbanist);
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 150%;
+                            letter-spacing: 0%;
+                            text-align: left;
+                            margin: 0;
+                        }
+                        h4{
+                            color: rgb(255, 255, 255);
+                            font-family: var(--font-family-urbanist);
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 150%;
+                            letter-spacing: 0%;
+                            text-align: left;
+                            margin: 0;
+                        }
+                    }
                     .text{
                         color: rgb(162, 162, 162);
                         font-family: var(--font-family-urbanist);
@@ -211,4 +226,18 @@ a:-webkit-any-link {
         }
 
     }
+}
+
+.plusBtn {
+    svg{
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all ease 0.3s;
+        border-radius: 50%;
+    }
+    svg:hover{
+        border: 1px solid var(--stroke-color);
+        transition: all ease 0.3s;
+    }
+    
 }
