@@ -10,6 +10,8 @@ import MyProfile from "../../pages/My-profile/MyProfile.tsx";
 import EditMyProfile from "../../pages/EditMyProfile/EditMyProfile.tsx";
 import { Route, Routes } from 'react-router-dom';
 
+import MyProfileLayout from "../MyProfileLayout/MyProfileLayout.tsx";
+
 import './PageWrapper.scss'
 
 
@@ -35,8 +37,16 @@ const PageWrapper = () => {
                 <Route path="/messages" element={<Messages />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/notifications" element={<Notifications />} />
-                <Route path="/my-profile" element={<MyProfile />} />
-                <Route path="/my-profile/edit-profile" element={<EditMyProfile />} />
+                <Route element={<MyProfileLayout />}>
+                    <Route path="/my-profile" element={<MyProfile />} />
+                    <Route path="/my-profile/edit-profile" element={<EditMyProfile />} />
+                </Route>
+
+
+
+                {/* <Route path="/my-profile" element={<MyProfile />} />
+                <Route path="/my-profile/edit-profile" element={<EditMyProfile />} /> */}
+                
 
 
 

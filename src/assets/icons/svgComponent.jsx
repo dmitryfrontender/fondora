@@ -565,7 +565,7 @@ const icons = {
         height="28.719"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.641"
+        rx="0"
         transform="translate(.14 .14)"
       ></rect>
       <g filter="url(#filter_2_260644_dd)">
@@ -656,7 +656,7 @@ const icons = {
                 height="14"
                 fill="#FFF"
                 fillOpacity="0"
-                rx="-0.5"
+                rx="0"
                 transform="rotate(45 2.568 21.564)"
             ></rect>
             <path
@@ -770,7 +770,7 @@ const icons = {
         height="21"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5 .5)"
       ></rect>
       <rect
@@ -778,7 +778,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(2 3)"
       ></rect>
       <g clipPath="url(#clip2_260763)" filter="url(#filter_2_260765_dd)">
@@ -806,7 +806,7 @@ const icons = {
             height="17"
             fill="#fff"
             fillOpacity="0"
-            rx="-0.5"
+            rx="0"
             transform="translate(1.5 1.5)"
           ></rect>
         </clipPath> */}
@@ -816,7 +816,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -824,7 +824,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g
@@ -853,7 +853,7 @@ const icons = {
             height="17"
             fill="#fff"
             fillOpacity="0"
-            rx="-0.5"
+            rx="0"
             transform="translate(1.5 1.5)"
           ></rect>
         </clipPath> */}
@@ -863,7 +863,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -871,7 +871,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g
@@ -900,7 +900,7 @@ const icons = {
             height="17"
             fill="#fff"
             fillOpacity="0"
-            rx="-0.5"
+            rx="0"
             transform="translate(1.5 1.5)"
           ></rect>
         </clipPath> */}
@@ -910,7 +910,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -918,7 +918,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260808)">
@@ -946,7 +946,7 @@ const icons = {
             height="17"
             fill="#fff"
             fillOpacity="0"
-            rx="-0.5"
+            rx="0"
             transform="translate(1.5 1.5)"
           ></rect>
         </clipPath> */}
@@ -956,7 +956,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -964,7 +964,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260821)">
@@ -993,7 +993,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1001,7 +1001,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260834)">
@@ -1030,7 +1030,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1038,7 +1038,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260847)">
@@ -1065,7 +1065,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1073,7 +1073,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260860)">
@@ -1100,7 +1100,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1108,7 +1108,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260873)">
@@ -1134,7 +1134,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1142,7 +1142,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g
@@ -1170,7 +1170,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1178,7 +1178,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260907)">
@@ -1205,7 +1205,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1213,7 +1213,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260920)">
@@ -1239,7 +1239,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1247,7 +1247,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260933)">
@@ -1274,7 +1274,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5)"
       ></rect>
       <rect
@@ -1282,7 +1282,7 @@ const icons = {
         height="17"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(1.5 1.5)"
       ></rect>
       <g clipPath="url(#clip2_260946)">
@@ -1325,7 +1325,7 @@ const icons = {
             height="19"
             fill="#FFF"
             fillOpacity="0"
-            rx="-0.5"
+            rx="0"
             transform="translate(.5)"
           ></rect>
           <g clipPath="url(#clip2_261906)">
@@ -1351,7 +1351,7 @@ const icons = {
             height="19"
             fill="#FFF"
             fillOpacity="0"
-            rx="-0.5"
+            rx="0"
             transform="translate(.5)"
           ></rect>
           <g clipPath="url(#clip2_261921)">
@@ -1389,7 +1389,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(10.5 10.5)"
       ></rect>
       <g clipPath="url(#clip2_261265)">
@@ -1433,7 +1433,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(10.167 10.5)"
       ></rect>
       <g clipPath="url(#clip2_261269)">
@@ -1476,7 +1476,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(9.833 10.5)"
       ></rect>
       <g clipPath="url(#clip2_261273)">
@@ -1520,7 +1520,7 @@ const icons = {
         height="19"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(10.5 10.5)"
       ></rect>
       <g clipPath="url(#clip2_261277)">
@@ -1891,7 +1891,7 @@ const icons = {
         height="15"
         fill="#FFF"
         fillOpacity="0"
-        rx="-0.5"
+        rx="0"
         transform="translate(.5 .5)"
       ></rect>
       <g

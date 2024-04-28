@@ -3,12 +3,12 @@ import './style/App.scss';
 import PageWrapper from './layout/PageWrapper/PageWrapper.tsx';
 
 // import { Icon } from './assets/icons/icons';
-import Icons from "./assets/icons/sprite.jsx";
+// import Icons from "./assets/icons/sprite.jsx";
 
 // import MainWrapper from './layout/MainWrapper/MainWrapper';
 
 import Sidebar from './layout/Sidebar/Sidebar.tsx';
-import { Route, Routes, Navigate } from 'react-router-dom';
+// import { Route, Routes, Navigate } from 'react-router-dom';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Sidebar />
         <PageWrapper />
 
-        <Routes>
+        {/* <Routes>
 
           <Route path="/" element={<Navigate to="/" />} />
           <Route path="/likes" element={<Navigate to="/likes" />} />
@@ -29,9 +29,9 @@ function App() {
 
 
 
-        </Routes>
+        </Routes> */}
 
-        <Icons />
+        {/* <Icons /> */}
 
     </div>
   );
