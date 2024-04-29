@@ -1,7 +1,7 @@
 import React from "react";
 import './PremiumSearch.scss'
 import SVGIcon from "../../assets/icons/svgComponent";
-import ToggleBtn from "../ToggleBtn/ToggleBtn.tsx";
+import ToggleBtn from "../ToggleBtn/ToggleBtn";
 
 
 

@@ -1,5 +1,9 @@
 import React from "react";
+import './Messages.scss'
 
+import { useSelector } from "react-redux";
+import NoMessages from "../../layout/NoMessageLayout/NoMessages";
+// import { MessageState } from "../../store/rootSlice";
 
 
 
@@ -7,10 +11,30 @@ import React from "react";
 
 const Messages = () => {
 
+    const messageState = useSelector((state: any) => state.mainState.isMessage)
+
+
+
+    
+
     return (
-        <div>
-            Messages
-        </div>
+        <>
+            {
+                !messageState ? 
+                    <NoMessages/> 
+                : 
+                <div className="message">
+                    <h1>messages exist</h1>
+                </div>
+            }
+        
+        
+        
+        
+        
+        
+        
+        </>
     ) 
     
 }

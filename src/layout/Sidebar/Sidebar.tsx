@@ -4,6 +4,7 @@ import './Sidebar.scss'
 import userAvatar from '../../assets/avatar/user-avatar.png'
 
 import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // import  Icon  from '../../assets/icons/icons.jsx';
 import SVGIcon from '../../assets/icons/svgComponent.jsx';
@@ -15,6 +16,11 @@ const Dashboard = () => {
 
   const location = useLocation();
   const path = location.pathname;
+
+  const likeState = useSelector((state: any) => state.mainState.newLike);
+  const messageState = useSelector((state: any) => state.mainState.newMessage);
+  const notificationState = useSelector((state: any) => state.mainState.newNotification);
+  const settingState = useSelector((state: any) => state.mainState.newSetting);
 
 
   return (
@@ -28,19 +34,21 @@ const Dashboard = () => {
           <Link to="/">
 
             <li > 
-
-                <SVGIcon name="menuIcon" className={`menu-icon ${path === '/' ? 'active-menu' : ''}`}  size={30}/>
-
+                <div className="iconWrapper">
+                  <SVGIcon name="menuIcon" className={`menu-icon ${path === '/' ? 'active-menu' : ''}`}  size={30}/>
+                </div>
                 <span>Главная</span>
-              
             </li>
           </Link>
 
           <Link to="/likes">
 
             <li>
-                <SVGIcon name="heartIcon" className={`menu-icon ${path === '/likes' ? 'active-menu' : ''}`}  size={30}/>
-
+                <div className="iconWrapper">
+                  <SVGIcon name="heartIcon" className={`menu-icon ${path === '/likes' ? 'active-menu' : ''}`}  size={30}/>
+                  {likeState ? <div className="pinnedItem"></div> : null}
+                  {/* <div className="pinnedItem"></div> */}
+                </div>
                 <span>Лайки</span>
               
             </li>
@@ -49,20 +57,21 @@ const Dashboard = () => {
 
           <Link to="/top-profiles">
             <li>
-              <SVGIcon name="topProfile" className={`menu-icon ${path === '/top-profiles' ? 'active-menu' : ''}`} />
-              <span>Топ-профили</span>
-
-
+              <div className="iconWrapper">
+                <SVGIcon name="topProfile" className={`menu-icon ${path === '/top-profiles' ? 'active-menu' : ''}`} />
+              </div>
+              <span>Топ-профили</span>   
             </li>
           
           </Link>
 
           <Link to="/messages">
             <li>
-              <SVGIcon name="messageIcon" className={`menu-icon ${path === '/messages' ? 'active-menu' : ''}`} />
+              <div className="iconWrapper">
+                <SVGIcon name="messageIcon" className={`menu-icon ${path === '/messages' ? 'active-menu' : ''}`} />
+                {messageState ? <div className="pinnedItem"></div> : null}
+              </div>
               <span>Сообщения</span>
-
-
             </li>
           
           </Link>
@@ -70,10 +79,11 @@ const Dashboard = () => {
           <Link to="/notifications">
 
             <li>
-              <SVGIcon name="notification" className={`menu-icon ${path === '/notifications' ? 'active-menu' : ''}`} />
+              <div className="iconWrapper">
+                <SVGIcon name="notification" className={`menu-icon ${path === '/notifications' ? 'active-menu' : ''}`} />
+                {notificationState ? <div className="pinnedItem"></div> : null}
+              </div>
               <span>Уведомления</span>
-
-
             </li>
           
           </Link>
@@ -81,10 +91,11 @@ const Dashboard = () => {
           <Link to="/settings">
 
             <li>
-              <SVGIcon name="settings" className={`menu-icon ${path === '/settings' ? 'active-menu' : ''}`} />
+              <div className="iconWrapper">
+                <SVGIcon name="settings" className={`menu-icon ${path === '/settings' ? 'active-menu' : ''}`} />
+                {settingState ? <div className="pinnedItem"></div> : null}
+              </div>
               <span>Настройки</span>
-
-
             </li>
           
           </Link>

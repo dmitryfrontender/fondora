@@ -1,16 +1,23 @@
 import React, { useEffect } from "react";
 
-import Matching from "../../pages/Matching/Matching.tsx";
-import Likes from "../../pages/Likes/Likes.tsx";
-import TopProfile from "../../pages/Top-profiles/TopProfile.tsx";
-import Messages from "../../pages/Messages/Messages.tsx";
-import Settings from "../../pages/Settings/Settings.tsx";
-import Notifications from "../../pages/Notifications/Notifications.tsx";
-import MyProfile from "../../pages/My-profile/MyProfile.tsx";
-import EditMyProfile from "../../pages/EditMyProfile/EditMyProfile.tsx";
+import Matching from "../../pages/Matching/Matching";
+import Likes from "../../pages/Likes/Likes";
+import TopProfile from "../../pages/Top-profiles/TopProfile";
+import Messages from "../../pages/Messages/Messages";
+import Settings from "../../pages/Settings/Settings";
+import Notifications from "../../pages/Notifications/Notifications";
+import MyProfile from "../../pages/My-profile/MyProfile";
+import EditMyProfile from "../../pages/EditMyProfile/EditMyProfile";
 import { Route, Routes } from 'react-router-dom';
 
-import MyProfileLayout from "../MyProfileLayout/MyProfileLayout.tsx";
+// SUBSCRIPTIONS
+import Gold from "../../pages/Subscriptions/Gold/Gold";
+import Plus from "../../pages/Subscriptions/Plus/Plus";
+import Vip from "../../pages/Subscriptions/Vip/Vip";
+
+import SuperLike from "../../pages/SuperLikePage/SuperLike";
+
+import MyProfileLayout from "../MyProfileLayout/MyProfileLayout";
 
 import './PageWrapper.scss'
 
@@ -40,6 +47,15 @@ const PageWrapper = () => {
                 <Route element={<MyProfileLayout />}>
                     <Route path="/my-profile" element={<MyProfile />} />
                     <Route path="/my-profile/edit-profile" element={<EditMyProfile />} />
+                    <Route path="/my-profile/gold-subscription" element={<Gold />} />
+                    <Route path="/my-profile/plus-subscription" element={<Plus />} />
+                    <Route path="/my-profile/vip-subscription" element={<Vip />} />
+                    <Route path="/my-profile/super-likes" element={<SuperLike />} />
+                    <Route path="/settings/super-likes" element={<SuperLike />} />
+
+
+                    
+
                 </Route>
 
 

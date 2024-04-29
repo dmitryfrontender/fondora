@@ -23,22 +23,36 @@
             padding: 15px 0;
             color: var(--stroke-color);
             text-decoration: none;
-
-
-
-
-
-            .menu-icon{
-                width: 30px;
-                height: 31px;
-                cursor: pointer;
-                stroke: var(--stroke-color);
-                transition: all ease 0.3s;
-                padding-right: 10px;
+            .iconWrapper {
+                position: relative;
+                .menu-icon{
+                    width: 30px;
+                    height: 31px;
+                    cursor: pointer;
+                    stroke: var(--stroke-color);
+                    transition: all ease 0.3s;
+                    padding-right: 10px;
+                }
+                .active-menu{
+                    stroke: var(--main-red);
+                }
+                .pinnedItem{
+                    width: 8px;
+                    height: 8px;
+                    border: 2px solid rgb(19, 17, 17);
+                    position: absolute;
+                    top: 0;
+                    right: 8px;
+                    border-radius: 50%;
+                    background: var(--main-red);
+                }
             }
-            .active-menu{
-                stroke: var(--main-red);
-            }
+
+
+
+
+
+            
            
 
             

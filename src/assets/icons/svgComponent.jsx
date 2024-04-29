@@ -1762,6 +1762,32 @@ const icons = {
         </svg>
     ),
 
+    // MESSAGES PAGE IMAGES
+    cursorRight: (
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 16 17"
+        >
+          <path
+            stroke="#FFF"
+            strokeLinejoin="round"
+            strokeOpacity="1"
+            strokeWidth="1.5"
+            d="M15.25 6.72h-15"
+          ></path>
+          <path
+            stroke="#FFF"
+            strokeLinejoin="round"
+            strokeOpacity="1"
+            strokeWidth="1.5"
+            d="M9.2.7l6.05 6.02-6.05 6.03"
+          ></path>
+        </svg>
+    ),
+
+
+
 
 
 
@@ -1907,6 +1933,45 @@ const icons = {
 
       
     ),
+    cancelBtn: (
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          fill="none"
+          viewBox="0 0 18 18"
+        >
+          <path
+            fill="#87878C"
+            fillOpacity="1"
+            fillRule="evenodd"
+            d="M14.61 4.11c.37-.37.37-.97 0-1.34a.939.939 0 00-1.34.01L8.96 7.13 4.61 2.8a.948.948 0 00-1.34 1.34l4.35 4.34-4.35 4.4c-.37.37-.37.97.01 1.34.37.37.97.37 1.34-.01l4.35-4.39 4.41 4.4a.948.948 0 001.34-1.34L10.3 8.47l4.31-4.36z"
+          ></path>
+      </svg>
+    ),
+    lockBtn: (
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="20"
+          fill="none"
+          viewBox="0 0 18 20"
+        >
+          <path
+            fill="#707070"
+            fillRule="evenodd"
+            d="M4.769 6.713h8.462c2.358 0 4.269 1.87 4.269 4.174v4.937C17.5 18.13 15.589 20 13.231 20H4.77C2.41 20 .5 18.13.5 15.824v-4.937c0-2.305 1.911-4.174 4.269-4.174zm4.226 8.616a.88.88 0 00.894-.875v-2.206a.878.878 0 00-.894-.865.875.875 0 00-.884.865v2.206c0 .487.396.874.884.874z"
+            clipRule="evenodd"
+          ></path>
+          <path
+            fill="#707070"
+            d="M14.523 5.396v1.47c-.356-.099-.732-.148-1.118-.148h-.66V5.396c0-2.017-1.677-3.657-3.74-3.657s-3.74 1.63-3.75 3.637v1.342h-.65c-.396 0-.772.05-1.128.159V5.396C3.487 2.415 5.957 0 8.985 0c3.069 0 5.538 2.415 5.538 5.396z"
+            opacity="0.4"
+          ></path>
+        </svg>
+    ),
+
+    
     
 }
 

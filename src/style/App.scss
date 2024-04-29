@@ -119,6 +119,26 @@ a:-webkit-any-link {
 
 }
 
+.topItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title{
+        h3{
+            color: var(--white);
+            font-family: var(--white);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            letter-spacing: 0%;
+            text-align: center;
+        }
+    }
+    .cancelBtn{
+        cursor: pointer;
+    }
+}
+
 
 // SETTING LIST
 .listWrapper {
@@ -328,3 +348,30 @@ a:-webkit-any-link {
         padding: 1px 7px;
     }
 }
+
+.rightPageWrapper {
+    width: clamp(200px, 35vw, 600px);
+    .image{
+        img{
+            max-width: -webkit-fill-available;
+        }
+
+    }
+    .title{
+        
+    }
+    .description {
+        p{
+            color: rgb(162, 162, 162);
+            font-family: var(--font-family-urbanist);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: 2%;
+            text-align: center;
+        }
+        
+    }
+}
+
+

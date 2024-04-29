@@ -5,7 +5,7 @@ import {  useNavigate } from "react-router-dom";
 import { useState } from "react";
 import userPhoto1 from '../../assets/avatar/userPhoto1.png'
 import userPhoto2 from '../../assets/avatar/userPhoto2.png'
-import ToggleBtn from "../../components/ToggleBtn/ToggleBtn.tsx";
+import ToggleBtn from "../../components/ToggleBtn/ToggleBtn";
 
 
 

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import './Settings.scss'
-import GoBtn from "../../components/goBtn/GoBtn.tsx";
+import GoBtn from "../../components/goBtn/GoBtn";
 import SVGIcon from "../../assets/icons/svgComponent.jsx";
-import PremiumSearch from "../../components/PremiumSearch/PremiumSearch.tsx";
-import ToggleBtn from "../../components/ToggleBtn/ToggleBtn.tsx";
-import Checkbox from "../../components/Checkbox/Checkbox.tsx";
+import PremiumSearch from "../../components/PremiumSearch/PremiumSearch";
+import ToggleBtn from "../../components/ToggleBtn/ToggleBtn";
+import Checkbox from "../../components/Checkbox/Checkbox";
+import { Link } from "react-router-dom";
 
 
 const Settings = () => {
@@ -35,7 +36,9 @@ const Settings = () => {
                             <p>
                                 Приоритет лайков, просмотр лайков и другое!
                             </p>
-                            <GoBtn/>
+                            <Link to={'/my-profile/vip-subscription'}>
+                                <GoBtn/>
+                            </Link>
                         </div>
                     </div>
                     <div className="planOption plan-gold">
@@ -49,7 +52,9 @@ const Settings = () => {
                             <p>
                                 Узнай, кто тебя лайкнул, и многое другое!
                             </p>
-                            <GoBtn/>
+                            <Link to={'/my-profile/gold-subscription'}>
+                                <GoBtn/>
+                            </Link>
                         </div>
                     </div>
                     <div className="planOption plan-plus">
@@ -63,7 +68,9 @@ const Settings = () => {
                             <p>
                                 Безлимит лайков и многое другое!
                             </p>
-                            <GoBtn/>
+                            <Link to={'/my-profile/plus-subscription'}>
+                                <GoBtn/>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -77,9 +84,12 @@ const Settings = () => {
                                 <span className="numberLike">40</span>
                                 <span>Суперлайков</span>
                             </div>
-                            <div className="plusBtn">
-                                <SVGIcon name="plusBtn" size={30}  />
-                            </div>
+                            <Link to={'/settings/super-likes'}>
+                                <div className="plusBtn">
+                                    <SVGIcon name="plusBtn" size={30}  />
+                                </div>
+                            </Link>
+                            
                         </div>
                         
                     </div>

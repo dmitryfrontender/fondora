@@ -1,5 +1,5 @@
 import React from "react";
-import SettingsBtn from "../../components/SettingsBtn/SettingsBtn.tsx";
+import SettingsBtn from "../../components/SettingsBtn/SettingsBtn";
 import "./Matching.scss"
 import { Link } from "react-router-dom";
 

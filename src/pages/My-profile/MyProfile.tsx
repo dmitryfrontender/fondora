@@ -73,9 +73,12 @@ const MyProfile = () => {
                                     <span className="numberLike">0</span>
                                     <span>Суперлайков</span>
                                 </div>
-                                <div className="plusBtn">
-                                    <SVGIcon name="plusBtn" size={30}  />
-                                </div>
+                                <Link to={'/my-profile/super-likes'}>
+                                    <div className="plusBtn">
+                                        <SVGIcon name="plusBtn" size={30}  />
+                                    </div>
+                                </Link>
+                                
                             </div>
 
                         </div>
@@ -199,13 +202,16 @@ const MyProfile = () => {
                                         </div>
                                     </div>
                                     <div className="watchMore">
-                                        <div className="innerBlock">
-                                            <span>
-                                                Смотреть все функции
-                                            </span>
-                                            <div className="underline">
+                                        <Link to={'/my-profile/gold-subscription'}>
+                                            <div className="innerBlock">
+                                                <span>
+                                                    Смотреть все функции
+                                                </span>
+                                                <div className="underline">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -298,16 +304,17 @@ const MyProfile = () => {
                                         </div>
                                     </div>
                                     <div className="watchMore">
-                                        <div className="innerBlock">
-                                            <span>
-                                                Смотреть все функции
-                                            </span>
-                                            <div className="underline">
+                                        <Link to={'/my-profile/vip-subscription'}>
+                                            <div className="innerBlock">
+                                                <span>
+                                                    Смотреть все функции
+                                                </span>
+                                                <div className="underline">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </div>
-                                
                             </div>
                             <div className="subscription plus">
                                 <div className="wrapper">
@@ -398,13 +405,15 @@ const MyProfile = () => {
                                         </div>
                                     </div>
                                     <div className="watchMore">
-                                        <div className="innerBlock">
-                                            <span>
-                                                Смотреть все функции
-                                            </span>
-                                            <div className="underline">
+                                        <Link to={'/my-profile/plus-subscription'}>
+                                            <div className="innerBlock">
+                                                <span>
+                                                    Смотреть все функции
+                                                </span>
+                                                <div className="underline">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </div>
                                 
