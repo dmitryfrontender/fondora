@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 
 const MyProfileLayout = () => {
@@ -7,6 +7,8 @@ const MyProfileLayout = () => {
 
     return(
         <>
+            <Link to={'/my-profile'}/>
+            <Link to={'/my-profile/edit-my-profile'}/>
             <Outlet />
         </>
     )
