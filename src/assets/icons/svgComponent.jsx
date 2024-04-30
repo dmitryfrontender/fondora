@@ -238,6 +238,36 @@ const icons = {
 
     // SETTINGS ICON
 
+    goldLogoHeart: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="26"
+        fill="none"
+        viewBox="0 0 26 26"
+      >
+        <path
+          fill="#FFD467"
+          fillOpacity="1"
+          fillRule="evenodd"
+          d="M0 8.666V26h17.334A8.666 8.666 0 0026 17.334a8.666 8.666 0 00-8.666-8.668H0z"
+          clipRule="evenodd"
+        ></path>
+        <path
+          fill="#CBA031"
+          fillOpacity="1"
+          fillRule="evenodd"
+          d="M1.69 26V8.66h17.34C19.03 18.24 11.27 26 1.69 26z"
+        ></path>
+        <path
+          fill="#AC7D02"
+          fillOpacity="1"
+          fillRule="evenodd"
+          d="M0 8.666V26c9.572 0 17.334-7.76 17.334-17.334A8.668 8.668 0 000 8.666z"
+          clipRule="evenodd"
+        ></path>
+      </svg>
+    ),
     logoVip: (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1793,6 +1823,46 @@ const icons = {
 
 
     //OTHERS
+    filtersBtn: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="17"
+        height="16"
+        fill="none"
+        viewBox="0 0 17 16"
+      >
+        <path
+          stroke="#FFF"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeOpacity="1"
+          strokeWidth="1.5"
+          d="M6.43 11.98H.4"
+        ></path>
+        <path
+          stroke="#FFF"
+          strokeLinejoin="round"
+          strokeOpacity="1"
+          strokeWidth="1.5"
+          d="M13.19 14.38a2.4 2.4 0 01-2.4-2.4c0-1.32 1.08-2.4 2.4-2.4a2.4 2.4 0 010 4.8z"
+        ></path>
+        <path
+          stroke="#FFF"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeOpacity="1"
+          strokeWidth="1.5"
+          d="M9.56 2.21h6.03"
+        ></path>
+        <path
+          stroke="#FFF"
+          strokeLinejoin="round"
+          strokeOpacity="1"
+          strokeWidth="1.5"
+          d="M2.8 4.61a2.4 2.4 0 002.4-2.4c0-1.32-1.08-2.4-2.4-2.4a2.4 2.4 0 000 4.8z"
+        ></path>
+      </svg>
+    ),
 
     arrowRight: (
         <svg

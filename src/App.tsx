@@ -8,10 +8,19 @@ import PageWrapper from './layout/PageWrapper/PageWrapper';
 // import MainWrapper from './layout/MainWrapper/MainWrapper';
 
 import Sidebar from './layout/Sidebar/Sidebar';
+import FilterModal from './components/Modals/LikesFilterModal/FilterModal';
+import { useSelector } from 'react-redux';
+
 // import { Route, Routes, Navigate } from 'react-router-dom';
 
 
 function App() {
+
+
+  const likeModal = useSelector((state: any) => state.LikesState.likesModal);
+
+
+
   return (
     <div className="App">
         <Sidebar />
@@ -27,11 +36,17 @@ function App() {
           <Route path="/notifications" element={<Navigate to="/notifications" />} />
           <Route path="/my-profile" element={<Navigate to="/my-profile" />} />
 
-
+      
 
         </Routes> */}
 
         {/* <Icons /> */}
+
+        {
+            likeModal && <FilterModal/>
+        }
+
+        
 
     </div>
   );

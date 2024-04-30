@@ -1,0 +1,137 @@
+.Likes{
+    .LikesWrapper {
+        width: 600px;
+        .topButtons{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 20px;
+            .filter{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: fit-content;
+                box-sizing: border-box;
+                border: 1px solid rgb(84, 72, 77);
+                border-radius: 50%;
+                padding: 10px ;
+                margin-right: 5px;
+                cursor: pointer;
+                background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
+            }
+
+            .buttonItem{
+                max-width: fit-content;
+                display: flex;
+                justify-content: flex-start;
+                margin: 0 5px;
+                padding: 10px 15px;
+                box-sizing: border-box;
+                border: 1px solid rgb(84, 72, 77);
+                border-radius: 20px;
+                cursor: pointer;
+                background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
+                span{
+                    color: rgb(162, 162, 162);
+                    font-family: var(--font-family-urbanist);
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 150%;
+                    letter-spacing: 0%;
+                }
+            }
+        }
+        .bannerGold {
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 20px 0;
+            background: linear-gradient(180.00deg, rgb(255, 190, 24),rgb(255, 186, 10) 100%);
+            .bannerDescription {
+              display: flex;
+              justify-content: flex-start;
+              p{
+                color: var(--black);
+                font-family: var(--font-family-urbanist);
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: left;
+              }
+            }   
+            .bannerWrapper{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .item{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .marker{
+                        border-radius: 5px;
+                        padding: 0 5px;
+                        margin: 0 10px;
+                        background: rgb(0, 0, 0);
+                        span{
+                            color: rgb(225, 162, 0);
+                            font-family: var(--font-family-urbanist);
+                            font-size: 12px;
+                            font-weight: 600;
+                            line-height: 14px;
+                            letter-spacing: 2%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        .myLikesGallery {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: 50px;
+            gap: 10px;
+            .item {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                border-radius: 10px;
+                .userPhoto{
+                    img{
+                        background: linear-gradient(135.00deg, rgb(36, 22, 27) 0%,rgba(26, 23, 23, 0) 100%),rgb(11, 11, 11);
+                    }
+                }
+                .recentlyActive {
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    bottom: 16px;
+                    left: 10px;
+                    .markActivity {
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      margin-right: 10px;
+                      background: rgb(18, 255, 42);;
+                    }
+                    .description {
+                      span{
+                        color: var(--white);
+                        font-family: var(--font-family-urbanist);
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 150%;
+                        letter-spacing: 0%;
+                        text-align: left;
+                      }
+                    }           
+                }
+            }
+
+        }
+        
+      
+    }
+}

@@ -8,10 +8,11 @@ export const rootSlice = createSlice({
         isNotification: false,
         isLikes: false,
         isSettings: false,
-        newMessage: true,
+        newMessage: false,
         newNotification: true,
         newLike: true,
         newSetting: true,
+        topProfile: true,
 
     },
     reducers: {
@@ -94,7 +95,18 @@ export const rootSlice = createSlice({
                     state.newSetting = false;
                 break;
             }
-        }
+        },
+        topProfileState: (state, action) => {
+            switch (action.payload) {
+                case 'topProfile-enable':
+                    state.topProfile = true;
+                break;
+                case 'topProfile-disable':
+                    state.topProfile = false;
+                break;
+            }
+        },
+
     }
 })
 
@@ -105,7 +117,8 @@ export const {
     NewMessageState, 
     NewNotificationState, 
     NewLikeState, 
-    NewSettingState  
+    NewSettingState,
+    topProfileState
 } = rootSlice.actions
 
 export default rootSlice.reducer
