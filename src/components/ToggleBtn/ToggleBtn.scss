@@ -1,0 +1,31 @@
+.ToggleButton{
+    width: 50px;
+    height: 26px;
+    border-radius: 100px;
+    background: rgb(73, 73, 73);
+    cursor: pointer;
+    transition: all ease 0.5s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .ball{
+        width: 20px;
+        height: 20px;
+        background: rgb(136, 136, 136);
+        border-radius: 50%;
+        position: absolute;
+        transition: all ease 0.5s;
+        left: 0;
+        margin: 3px;
+    }
+}
+.bg-active{
+    background: rgb(115, 84, 248);
+    transition: all ease 0.5s;
+    .ball-active{
+        left: 24px;
+        background: rgb(218, 209, 255);
+        transition: all ease 0.5s;
+
+    }
+}

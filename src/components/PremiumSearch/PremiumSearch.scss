@@ -1,0 +1,104 @@
+.PremiumSearch{
+    .wrapper{
+        .tittle{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .tittle-item{
+                
+            }
+            
+        }
+        .description{
+            text-align: start;
+            // padding-bottom: 5px;
+            p{
+                margin-bottom: 0;
+            }
+        }
+        // .searchList {
+        //     ul{
+        //         list-style-type: none;
+        //         padding: 0;
+        //         .quantityPhotos{
+        //             align-items: start;
+        //             height: 145px;
+        //             .text{
+        //                 color: rgb(162, 162, 162);
+        //                 font-family: var(--font-family-urbanist);
+        //                 font-size: 14px;
+        //                 font-weight: 500;
+        //                 line-height: 150%;
+        //                 letter-spacing: 0%;
+        //                 text-align: left;
+        //             }
+        //         }
+        //         li{
+        //             display: flex;
+        //             align-items: center;
+        //             justify-content: space-between;
+        //             box-sizing: border-box;
+        //             border: 1px solid rgb(84, 72, 77);
+        //             border-radius: 20px;
+        //             padding: 20px;
+        //             margin: 10px 0;
+        //             transition: all ease 0.3s;
+        //             background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
+        //             .description{
+        //                 display: flex;
+        //                 align-items: center;
+        //                 color: rgb(162, 162, 162);
+        //                 font-family: var(--font-family-urbanist);
+        //                 font-size: 14px;
+        //                 font-weight: 500;
+        //                 padding: 0;
+        //                 // line-height: 150%;
+        //                 // letter-spacing: 0%;
+        //                 text-align: left;
+        //                 .text{
+        //                     padding-left: 10px;
+        //                 }
+                       
+        //             }
+        //             .value{
+        //                 display: flex;
+        //                 position: relative;
+        //                 align-items: center;
+        //                 cursor: pointer;
+        //                 .text{
+        //                     color: rgb(162, 162, 162);
+        //                     font-family: var(--font-family-urbanist);
+        //                     font-size: 14px;
+        //                     font-weight: 500;
+        //                     line-height: 150%;
+        //                     letter-spacing: 0%;
+        //                     padding-right: 10px;
+        //                 }
+        //                 .underline{
+        //                     position: absolute;
+        //                     bottom: 0;
+        //                     height: 1px;
+        //                     width: 0;
+        //                     background-color: var(--main-red);
+        //                     bottom: -5px;
+        //                     transition: all ease 0.3s;
+        //                 }
+        //             }
+        //             .value:hover{
+        //                 .underline{
+        //                     width: 100%;
+        //                     transition: all ease 0.3s;
+
+        //                 }
+                        
+        //             }
+        //         }
+        //         li:hover{
+        //             border: 1px solid var(--main-red);
+        //             transition: all ease 0.3s;
+        //         }
+
+        //     }
+        // }
+    }
+}
