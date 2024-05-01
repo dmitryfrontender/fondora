@@ -8,10 +8,10 @@ import woman6 from '../assets/avatar/woman6.png'
 import woman7 from '../assets/avatar/woman7.png'
 import woman8 from '../assets/avatar/woman8.png'
 import woman9 from '../assets/avatar/woman9.png'
-import { IMyLikes } from '../model/myLikes'
+import { ILikes  } from '../model/LikesModel'
 
 
-export const myLikes: IMyLikes[] = [
+export const myLikes: ILikes[] = [
 
         {
             id: 1,

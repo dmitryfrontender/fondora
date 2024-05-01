@@ -12,7 +12,7 @@ export const rootSlice = createSlice({
         newNotification: true,
         newLike: true,
         newSetting: true,
-        topProfile: true,
+        topProfile: false,
 
     },
     reducers: {

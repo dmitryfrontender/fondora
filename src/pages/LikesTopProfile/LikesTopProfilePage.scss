@@ -1,5 +1,5 @@
-.Likes{
-    .LikesWrapper {
+.LikesTopProfile{
+    .PagesWrapper {
         width: 600px;
         .topButtons{
             display: flex;
@@ -85,7 +85,7 @@
                 }
             }
         }
-        .myLikesGallery {
+        .pageGallery {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -127,6 +127,53 @@
                         text-align: left;
                       }
                     }           
+                }
+                .topProfileInfo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    position: absolute;
+                    bottom: 16px;
+                    width: -webkit-fill-available;
+                    padding: 0 10px;
+                    .userInfo{
+                        // display: inherit;
+                        // justify-content: flex-start;
+                        .userName{
+                            span{
+                                color: var(--white);
+                                font-family: var(--font-family-urbanist);
+                                font-size: 14px;
+                                font-weight: 700;
+                                line-height: 150%;
+                                letter-spacing: 0%;
+                                text-align: left;
+                            }
+                        }
+                        .timeStamp{
+                            text-align: start;
+                            span{
+                                color: rgb(231, 231, 231);
+                                font-family: var(--font-family-urbanist);
+                                font-size: 12px;
+                                font-weight: 800;
+                                line-height: 150%;
+                                letter-spacing: 2%;
+                                text-align: center;
+                            }
+                            .hoursMark{
+                                color: rgb(238, 175, 11);
+                            }
+                        }
+                    }
+                    .topProfileMark{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 20px;
+                        padding: 5px;
+                        background: linear-gradient(135.00deg, rgb(172, 125, 2) 0%,rgb(255, 187, 12) 100%);
+                    }
                 }
             }
 

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 import Matching from "../../pages/Matching/Matching";
-import Likes from "../../pages/Likes/Likes";
-import TopProfile from "../../pages/Top-profiles/TopProfile";
+import Likes from "../../pages/LikesTopProfile/Likes/Likes";
+import TopProfile from "../../pages/LikesTopProfile/Top-profiles/TopProfile";
 import Messages from "../../pages/Messages/Messages";
 import Settings from "../../pages/Settings/Settings";
 import Notifications from "../../pages/Notifications/Notifications";

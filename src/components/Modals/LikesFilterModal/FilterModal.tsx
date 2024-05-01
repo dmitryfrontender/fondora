@@ -14,6 +14,7 @@ import ToggleBtn from "../../ToggleBtn/ToggleBtn";
 const FilterModal = () => {
     
     const dispatch = useDispatch();
+    // const [checkedBtn, setCheckedBtn] = useState();
 
 
 
@@ -65,22 +66,9 @@ const FilterModal = () => {
                         </div>
                         <form>
                             <fieldset>
-                                {/* <div>
-                                <input type="radio" id="contactChoice1" name="contact" value="email" />
-                                <label> Email</label>
-
-                                <input type="radio" id="contactChoice2" name="contact" value="phone" />
-                                <label>Phone</label>
-
-                                <input type="radio" id="contactChoice3" name="contact" value="mail" />
-                                <label>Mail</label>
-                                {/* <label for="contactChoice3">Mail</label> */}
-                                {/* </div> */}
-                                {/* <div> */}
-                                {/* <button type="submit">Submit</button> */}
-                                {/* </div> */} 
+                                
                                 <label>
-                                    <input type="radio" name="radio-example"/>
+                                    <input type="radio" defaultChecked name="radio-example"/>
                                     <span className="radioItem">
                                         1
                                     </span>

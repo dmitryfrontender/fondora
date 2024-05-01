@@ -1,19 +1,18 @@
 import React from "react";
-import SVGIcon from "../../assets/icons/svgComponent";
-import './Likes.scss'
-import { myLikes }  from "../../Data/MyLikes";
-import { IMyLikes } from "../../model/myLikes";
-import { useSelector, useDispatch } from "react-redux";
-import { likesModalState } from "../../store/LikesStateSlice";
+import SVGIcon from "../../../assets/icons/svgComponent";
+import '../LikesTopProfilePage.scss'
+import { topProfiles }  from "../../../Data/TopProfiles";
+import { ITopProfile } from "../../../model/TopProfileModel";
+import {  useDispatch } from "react-redux";
+import { likesModalState } from "../../../store/LikesStateSlice";
 
 
 
 
 
-const Likes = () => {
+const TopProfile = () => {
 
 
-    const topProfileState = useSelector((state: any) => state.mainState.topProfile);
     const dispatch = useDispatch()
 
   
@@ -22,8 +21,8 @@ const Likes = () => {
     
     return (
         <>
-            <div className="page Likes">
-                <div className="LikesWrapper">
+            <div className="page LikesTopProfile">
+                <div className="PagesWrapper">
                     <div className="topButtons">
                         <div className="filter" onClick={() => {dispatch(likesModalState('open-likesModal'))}}>
 
@@ -75,22 +74,37 @@ const Likes = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="myLikesGallery">
+                    <div className="pageGallery">
                         {
-                            myLikes.map((item: IMyLikes) => {
+                            topProfiles.map((item: ITopProfile) => {
                                 
                                 return(
                                     <div className="item" key={item.id}>
                                         <div className="userPhoto">
-                                            <img src={item.image} alt="user" style={topProfileState ? {'filter': 'blur(0px)'} : {'filter': 'blur(34px)'}}/>
+                                            <img src={item.image} alt="user" />
                                         </div>
-                                        <div className="recentlyActive">
-                                            <div className="markActivity"></div>
-                                            <div className="description">
-                                                    <span>
-                                                        Недавно активные
+                                        <div className="topProfileInfo">
+                                            <div className="userInfo">
+                                                <div className="userName">
+                                                    <span className="name">
+                                                        {item.userName},&nbsp;
+                                                    </span>
+                                                    <span className="age"> 
+                                                        {item.useAge}
                                                     </span>
                                                 </div>
+                                                <div className="timeStamp">
+                                                    <span>
+                                                        Осталось {item.timeStamp}
+                                                    </span>
+                                                    <span className="hoursMark">
+                                                        ч.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div className="topProfileMark">
+                                                    <SVGIcon name="topProfileMark" size={20}/>
+                                            </div>
                                         </div> 
                                     </div>
                                 )
@@ -108,4 +122,4 @@ const Likes = () => {
 
 
 
-export default Likes
+export default TopProfile
