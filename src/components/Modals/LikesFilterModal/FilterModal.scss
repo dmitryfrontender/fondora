@@ -36,6 +36,13 @@
             border-radius: 20px;
             background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
             padding: 20px;
+            .range{
+                padding-top: 0;
+                padding-bottom: 10px;
+            }
+            .multi-range-slider{
+                padding: 50px 10px;
+            }
             .description{
                 span{
                     color: rgb(162, 162, 162);

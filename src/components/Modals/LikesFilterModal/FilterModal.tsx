@@ -1,10 +1,13 @@
-import React from "react";
+import React  from "react";
 import './FilterModal.scss'
 import { useDispatch } from "react-redux";
 import { likesModalState } from "../../../store/LikesStateSlice";
 import SVGIcon from "../../../assets/icons/svgComponent";
 import DefaultBtn from "../../DefaultBtn/DefaultBtn";
 import ToggleBtn from "../../ToggleBtn/ToggleBtn";
+import SingleRangeSlider from "../../SingleRangeSlider/SingleRangeSlider";
+import DoubleRangeSlider from "../../DoubleRangeSlider/DoubleRange";
+
 // import likesModalState from "../../../store/rootSlice"
 
 
@@ -14,7 +17,8 @@ import ToggleBtn from "../../ToggleBtn/ToggleBtn";
 const FilterModal = () => {
     
     const dispatch = useDispatch();
-    // const [checkedBtn, setCheckedBtn] = useState();
+
+   
 
 
 
@@ -33,6 +37,11 @@ const FilterModal = () => {
                         </div>
                     </div>
                     <div className="filterOption">
+                        <SingleRangeSlider min={10} max={80} defaultValue={20} topValue={true} textSlider={'Максимальное расстояние'}/>
+
+
+                    </div>
+                    {/* <div className="filterOption">
                         <div className="description">
                             <span>
                                 Максимальное расстояние
@@ -44,19 +53,12 @@ const FilterModal = () => {
                                 80 км
                             </span>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="filterOption">
-                        <div className="description">
-                            <span>
-                                Возрастной диапазон
-                            </span>
+                        
+                        
+                        <DoubleRangeSlider topItem={true}/>
 
-                        </div>
-                        <div className="value">
-                            <span>
-                                18-42
-                            </span>
-                        </div>
                     </div>
                     <div className="maxPhotos">
                         <div className="optionTitle">

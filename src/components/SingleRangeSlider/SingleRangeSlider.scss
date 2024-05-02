@@ -1,0 +1,122 @@
+.range {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: -webkit-fill-available;
+    padding: 20px 0 0;
+    gap: 10px;
+
+    .topValue {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        .valueTop {
+          padding-top: 0;
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        gap: 5px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background: #980e43;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background: #B241FF;
+        border-radius: 50%;
+    }
+}
+
+    &__background {
+        width: 100%;
+        height: 6px;
+        background: #614b51;
+        border-radius: 15px;
+    }
+
+    &__progress {
+        width: 0;
+        height: 6px;
+        background: linear-gradient(to right, #980e43 0, #e7206c 100%);
+        border-radius: 15px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+
+    .value {
+        width: 50px;
+        text-align: center;
+        color: var(--white);
+        font-family: var(--font-family-urbanist);
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 0%;
+        padding-top: 20px;
+    }
+
+    input[type='range'] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        border-radius: 15px;
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 6px;
+        background: transparent;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 20px;
+            width: 20px;
+            background-color: #e7206c;
+            border-radius: 50%;
+            border: none;
+            position: relative;
+            bottom: 2px;
+            z-index: 1;
+            transition: 0.2s ease-in-out;
+        }
+        &::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            background-color: #e7206c;
+            border-radius: 50%;
+            border: none;
+            transition: 0.2s ease-in-out;
+        }
+    }
+}

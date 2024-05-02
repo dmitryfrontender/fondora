@@ -2,6 +2,7 @@ import React from "react";
 import './PremiumSearch.scss'
 import SVGIcon from "../../assets/icons/svgComponent";
 import ToggleBtn from "../ToggleBtn/ToggleBtn";
+import SingleRangeSlider from "../SingleRangeSlider/SingleRangeSlider";
 
 
 
@@ -37,6 +38,7 @@ const PremiumSearch = () => {
                                         Минимальное количество фото
                                     </p>
                                 </div>
+                                <SingleRangeSlider min={2} max={8} defaultValue={3}/>
 
                             </li>
                             <li>

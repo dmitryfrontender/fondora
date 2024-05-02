@@ -1,6 +1,6 @@
 import React from "react";
 import noMessages from '../../assets/images/NoMessages.png'
-import SVGIcon from "../../assets/icons/svgComponent";
+
 import DefaultBtn from "../../components/DefaultBtn/DefaultBtn";
 import './NoMessages.scss'
 
