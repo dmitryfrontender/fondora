@@ -1,5 +1,5 @@
 import React from "react";
-// import  Icon  from "../../assets/icons/icons";
+import SVGIcon from "../../assets/icons/svgComponent";
 import './SettingsBtn.scss'
 
 
@@ -11,7 +11,7 @@ const SettingsBtn = () => {
 
     return (
         <div className="SettingsBtn">
-            {/* <Icon id="setting-menu" className="setting-btn" /> */}
+            <SVGIcon name="settings" size={20} />
         </div>
     )
 }

@@ -1,10 +1,121 @@
 .Matching{
     width: inherit;
     height: inherit;
-    .settings{
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    .settingsWrapper{
+        width: 20vw;
+        height: 100%;
+        max-width: fit-content;
+        padding-right: 20px;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        right: 0;
+        top: 0;
+        .settings{
+            // display: block;
+            // text-align: -webkit-right;
+            // padding: 10px 0;
+            // z-index: 10;
+            // top: 20px;
+            // right: 20px;
+
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            padding: 10px 0;
+            width: calc(35px + clamp(240px, 21vw, 365px));
+            z-index: 10;
+            top: 0;
+            right: 0;
+            background: transparent;
+            backdrop-filter: blur(4px);
+
+            .SettingsBtn{
+                margin: 0 10px;
+            }
+    
+        }
+        .rightSideSettings {
+            width: clamp(240px, 21vw, 365px);
+            transition: all ease 0.7s;
+            overflow: auto;
+            height: 100%;
+            // max-height: 88vh;
+            max-height: 94vh;
+            transition: all ease 0.7s;
+            padding-right: 20px;
+            position: absolute;
+            top: 5vh;
+            right: -50vw;
+            .title{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 40px;
+
+                h3{
+                    margin: 0;
+                    color: var(--white);
+                    font-family: var(--font-family-urbanist);
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 19px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                }
+                .completeBtn{
+                    cursor: pointer;
+                    span{
+                        color: rgb(53, 77, 255);
+                        font-family: var(--font-family-urbanist);
+                        font-size: 13px;
+                        font-weight: 500;
+                        line-height: 150%;
+                        letter-spacing: 2%;
+                        text-align: center;
+                    }
+                }
+            }
+            .listValue {
+              display: flex;
+              flex-direction: column;
+
+            }
+        }
+        .rightSideSettingsActive {
+            transition: all ease 0.7s;
+            right: 0;
+            padding-right: 20px;
+        }
+        .PremiumSearch{
+            // padding-bottom: 100px;
+            .wrapper{
+                .tittle{
+                    .titleItem{
+                        h3{
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .description {
+                  p{
+                    color: rgb(162, 162, 162);
+                    font-size: 12px;
+                  }
+                }
+            }
+        }
+        .bottomBlur {
+          background: transparent;
+          backdrop-filter: blur(4px);
+          display: flex;
+          width: calc(35px + clamp(240px, 21vw, 365px));
+          height: 25px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
 
     }
 }

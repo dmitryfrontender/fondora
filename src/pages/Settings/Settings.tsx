@@ -6,11 +6,11 @@ import PremiumSearch from "../../components/PremiumSearch/PremiumSearch";
 import ToggleBtn from "../../components/ToggleBtn/ToggleBtn";
 import Checkbox from "../../components/Checkbox/Checkbox";
 import { Link } from "react-router-dom";
+import DoubleRange from "../../components/DoubleRangeSlider/DoubleRange";
+import SingleRangeSlider from "../../components/SingleRangeSlider/SingleRangeSlider";
 
 
 const Settings = () => {
-
-
 
     useEffect(() => {
         window.history.scrollRestoration = 'manual';
@@ -248,6 +248,7 @@ const Settings = () => {
                                     Расстояние
                                 </span>
                             </div>
+                            <SingleRangeSlider min={0} max={100} defaultValue={50}/>
                         </li>
                         <li>
                             <div className="itemWrapper">
@@ -267,6 +268,7 @@ const Settings = () => {
                                     Возраст
                                 </span>
                             </div>
+                            <DoubleRange/>
 
                         </li>
                         <li>

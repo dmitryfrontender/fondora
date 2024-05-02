@@ -1,0 +1,77 @@
+.DoubleRange{
+    width: 100%;
+    .wrapper{
+        .container{
+            position: relative;
+            width: 100%;
+            height: 100px;
+            .multi-range-slider {
+                border: none;
+                box-shadow: none;
+                &::before, &::after{
+                    width: 20px;
+                    height: 20px;  
+                    background: rgb(178, 65, 255);  
+                    border-radius: 50%;   
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    // left: 0;
+                    transform: translateY(-50%);
+                }
+                &::before{
+                    left: -2px;
+                }
+                &::after{
+                    right: 2px;
+                }
+                .caption{
+                    display: none
+                }
+                .bar-inner {
+                    box-shadow: none;
+                    // border-width: 2px ;
+                    // background-color: ;
+                    background-image: linear-gradient(135deg, rgb(132, 9, 56) 0%, rgb(242, 34, 113) 100%)!important;
+                    border: none;
+                    height: 4px;
+
+                }
+                .bar-right, .bar-left{
+                    box-shadow: none;
+                    padding: 2px 0;
+                }
+                .thumb::before {
+                    box-shadow: none;
+                    border: none;
+                }
+            }
+
+
+
+
+            .values {
+              width: 32%;
+              position: relative;
+              margin: auto;
+              padding: 10px;
+              border-radius: 5px;
+              text-align: center;
+              font-weight: 500;
+              color: white;
+              span{
+                color: var(--white);
+                font-family: var(--font-family-urbanist);
+                font-size: 17px;
+                font-weight: 700;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: center;
+              }
+            }
+        }
+
+
+
+    }
+}
