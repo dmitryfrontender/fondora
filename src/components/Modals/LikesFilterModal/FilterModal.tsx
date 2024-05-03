@@ -41,20 +41,8 @@ const FilterModal = () => {
 
 
                     </div>
-                    {/* <div className="filterOption">
-                        <div className="description">
-                            <span>
-                                Максимальное расстояние
-                            </span>
-
-                        </div>
-                        <div className="value">
-                            <span>
-                                80 км
-                            </span>
-                        </div>
-                    </div> */}
                     <div className="filterOption">
+                        
                         
                         
                         <DoubleRangeSlider topItem={true}/>

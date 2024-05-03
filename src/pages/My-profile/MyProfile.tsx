@@ -3,11 +3,17 @@ import React, { useEffect } from "react";
 import "./MyProfile.scss"
 import SVGIcon from "../../assets/icons/svgComponent";
 import { Link } from "react-router-dom";
+import {  useDispatch } from "react-redux";
+import { boostModalState } from "../../store/BoostSlice";
+
 
 
 
 const MyProfile = () => {
     // const pathname = useLocation();
+
+    const dispatch = useDispatch();
+
 
     useEffect(() => {
         window.history.scrollRestoration = 'manual';
@@ -91,7 +97,7 @@ const MyProfile = () => {
                                     <span className="numberLike">0</span>
                                     <span>Бустов</span>
                                 </div>
-                                <div className="plusBtn">
+                                <div className="plusBtn" onClick={() => dispatch(boostModalState('open-boostModal'))}>
                                     <SVGIcon name="plusBtn" size={30}  />
                                 </div>
                             </div>

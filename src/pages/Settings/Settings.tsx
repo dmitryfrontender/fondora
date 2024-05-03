@@ -8,9 +8,15 @@ import Checkbox from "../../components/Checkbox/Checkbox";
 import { Link } from "react-router-dom";
 import DoubleRange from "../../components/DoubleRangeSlider/DoubleRange";
 import SingleRangeSlider from "../../components/SingleRangeSlider/SingleRangeSlider";
+import { useDispatch } from "react-redux";
+import { boostModalState } from "../../store/BoostSlice";
+
 
 
 const Settings = () => {
+
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         window.history.scrollRestoration = 'manual';
@@ -104,11 +110,12 @@ const Settings = () => {
                                 <span className="numberBoost">145</span>
                                 <span>Бустов</span>
                             </div>
-                            <div className="plusBtn">
-                                <SVGIcon name="plusBtn" size={30}  />
-
-
-                            </div>
+                            {/* <Link to={'/settings/boosts'}> */}
+                                <div className="plusBtn" onClick={() => {dispatch(boostModalState('open-boostModal'))}}>
+                                    <SVGIcon name="plusBtn" size={30}  />
+                                </div>
+                            {/* </Link> */}
+                            
                         </div>
                        
                     </div>

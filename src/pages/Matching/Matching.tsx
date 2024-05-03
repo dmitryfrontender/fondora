@@ -106,9 +106,9 @@ const Matching = () => {
                         
 
                     </div>
-                    <div className="bottomBlur">
+                    {/* <div className="bottomBlur">
                             
-                        </div>
+                    </div> */}
 
                 </div>
                 
