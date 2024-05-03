@@ -188,11 +188,17 @@ a:-webkit-any-link {
                    
                 }
                 .optionWrapper{
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                    // display: grid;
+                    // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                    // gap: 10px;
+                    // padding-right: 25px;
+                    // width: -webkit-fill-available;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     gap: 10px;
-                    padding-right: 25px;
-                    width: -webkit-fill-available;
+                    width: 100%;
                     .option{ 
                         padding: 10px 15px;
                         box-sizing: border-box;

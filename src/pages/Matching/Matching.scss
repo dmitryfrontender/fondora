@@ -13,23 +13,23 @@
         right: 0;
         top: 0;
         .settings{
-            // display: block;
-            // text-align: -webkit-right;
-            // padding: 10px 0;
-            // z-index: 10;
-            // top: 20px;
-            // right: 20px;
-
-            display: flex;
-            justify-content: flex-end;
-            position: absolute;
+            display: block;
+            text-align: -webkit-right;
             padding: 10px 0;
-            width: calc(35px + clamp(240px, 21vw, 365px));
             z-index: 10;
-            top: 0;
-            right: 0;
-            background: transparent;
-            backdrop-filter: blur(4px);
+            top: 20px;
+            right: 20px;
+
+            // display: flex;
+            // justify-content: flex-end;
+            // position: absolute;
+            // padding: 10px 0;
+            // width: calc(35px + clamp(240px, 21vw, 365px));
+            // z-index: 10;
+            // top: 0;
+            // right: 0;
+            // background: transparent;
+            // backdrop-filter: blur(4px);
 
             .SettingsBtn{
                 margin: 0 10px;
@@ -41,18 +41,19 @@
             transition: all ease 0.7s;
             overflow: auto;
             height: 100%;
-            // max-height: 88vh;
-            max-height: 94vh;
+            max-height: 88vh;
+            // max-height: 94vh;
             transition: all ease 0.7s;
+            padding: 10px 0;
             padding-right: 20px;
-            position: absolute;
-            top: 5vh;
+            position: relative;
+            // top: 5vh;
             right: -50vw;
             .title{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                margin-top: 40px;
+                margin-top: 30px;
 
                 h3{
                     margin: 0;
@@ -85,7 +86,7 @@
         }
         .rightSideSettingsActive {
             transition: all ease 0.7s;
-            right: 0;
+            right: 1vw;
             padding-right: 20px;
         }
         .PremiumSearch{
@@ -106,16 +107,16 @@
                 }
             }
         }
-        .bottomBlur {
-          background: transparent;
-          backdrop-filter: blur(4px);
-          display: flex;
-          width: calc(35px + clamp(240px, 21vw, 365px));
-          height: 25px;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
+        // .bottomBlur {
+        //   background: transparent;
+        //   backdrop-filter: blur(4px);
+        //   display: flex;
+        //   width: calc(35px + clamp(240px, 21vw, 365px));
+        //   height: 25px;
+        //   position: absolute;
+        //   bottom: 0;
+        //   right: 0;
+        // }
 
     }
 }

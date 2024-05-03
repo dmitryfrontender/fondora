@@ -9,13 +9,14 @@ import Notifications from "../../pages/Notifications/Notifications";
 import MyProfile from "../../pages/My-profile/MyProfile";
 import EditMyProfile from "../../pages/EditMyProfile/EditMyProfile";
 import { Route, Routes } from 'react-router-dom';
+import AddBoost from "../../pages/BoostSuperlike/AddBoost/AddBoost";
 
 // SUBSCRIPTIONS
 import Gold from "../../pages/Subscriptions/Gold/Gold";
 import Plus from "../../pages/Subscriptions/Plus/Plus";
 import Vip from "../../pages/Subscriptions/Vip/Vip";
 
-import SuperLike from "../../pages/SuperLikePage/SuperLike";
+import SuperLike from "../../pages/BoostSuperlike/SuperLikePage/SuperLike";
 
 import MyProfileLayout from "../MyProfileLayout/MyProfileLayout";
 
@@ -52,6 +53,9 @@ const PageWrapper = () => {
                     <Route path="/my-profile/vip-subscription" element={<Vip />} />
                     <Route path="/my-profile/super-likes" element={<SuperLike />} />
                     <Route path="/settings/super-likes" element={<SuperLike />} />
+                    <Route path="/settings/boosts" element={<AddBoost />} />
+
+
 
 
                     

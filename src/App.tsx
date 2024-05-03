@@ -9,6 +9,7 @@ import PageWrapper from './layout/PageWrapper/PageWrapper';
 
 import Sidebar from './layout/Sidebar/Sidebar';
 import FilterModal from './components/Modals/LikesFilterModal/FilterModal';
+import BoostModal from './components/Modals/Boosts/BoostModal';
 import { useSelector } from 'react-redux';
 
 // import { Route, Routes, Navigate } from 'react-router-dom';
@@ -18,6 +19,7 @@ function App() {
 
 
   const likeModal = useSelector((state: any) => state.LikesState.likesModal);
+  const boostModal = useSelector((state: any) => state.BoostState.boostModal);
 
 
 
@@ -44,6 +46,9 @@ function App() {
 
         {
             likeModal && <FilterModal/>
+        }
+        {
+            boostModal && <BoostModal/>
         }
 
         

@@ -1,5 +1,6 @@
 .Sidebar{
-    max-width: 356px;
+    // max-width: 356px;
+    width: clamp(200px, 25vw, 356px);
     height: 100vh;
     position: relative;
     z-index: 5;
