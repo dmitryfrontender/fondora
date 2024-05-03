@@ -1,8 +1,7 @@
 import React from "react";
-import SVGIcon from "../../../assets/icons/svgComponent";
-import DefaultBtn from "../../../components/DefaultBtn/DefaultBtn";
-import { useNavigate } from "react-router-dom";
-import '../Subscriptions.scss'
+import SVGIcon from "../../../../assets/icons/svgComponent";
+import DefaultBtn from "../../../../components/DefaultBtn/DefaultBtn";
+import '../../Subscriptions.scss'
 import "./Gold.scss"
 
 
@@ -11,13 +10,12 @@ import "./Gold.scss"
 
 const Gold = () => {
 
-    const navigate = useNavigate();
 
     return(
         <>
-            <div className="page Subscription gold">
-                <div className="subscriptionWrapper">
-                    <div className="topItem">
+            {/* <div className="page Subscription gold"> */}
+                <div className="subscriptionWrapper gold">
+                    {/* <div className="topItem">
                         <div className="title">
                             <h3>
                                 Моя Подписка
@@ -42,7 +40,7 @@ const Gold = () => {
                                 Купить Подписку
                             </span>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="optionWrapper">
                         <div className="optionTitle">
                             <h5>
@@ -243,7 +241,7 @@ const Gold = () => {
                     <DefaultBtn background="blue" arrow={true} text={'от 4,99 $'}/>
 
                 </div>
-            </div>
+            {/* </div> */}
         </>
     )
 }
