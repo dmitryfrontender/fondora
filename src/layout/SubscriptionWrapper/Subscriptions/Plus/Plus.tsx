@@ -1,8 +1,7 @@
 import React from "react";
-import SVGIcon from "../../../assets/icons/svgComponent";
-import DefaultBtn from "../../../components/DefaultBtn/DefaultBtn";
-import { useNavigate } from "react-router-dom";
-import '../Subscriptions.scss'
+import SVGIcon from "../../../../assets/icons/svgComponent";
+import DefaultBtn from "../../../../components/DefaultBtn/DefaultBtn";
+import '../../Subscriptions.scss'
 import "./Plus.scss"
 
 
@@ -11,7 +10,6 @@ import "./Plus.scss"
 const Plus = () => {
 
 
-    const navigate = useNavigate();
 
     
     
@@ -19,9 +17,9 @@ const Plus = () => {
     
     return(
         <>
-            <div className="page Subscription plus">
-                    <div className="subscriptionWrapper">
-                        <div className="topItem">
+            {/* <div className="page Subscription plus"> */}
+                    <div className="subscriptionWrapper plus">
+                        {/* <div className="topItem">
                             <div className="title">
                                 <h3>
                                     Моя Подписка
@@ -46,7 +44,7 @@ const Plus = () => {
                                     Купить Подписку
                                 </span>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="optionWrapper">
                             <div className="optionTitle">
                                 <h5>
@@ -246,7 +244,7 @@ const Plus = () => {
                         <DefaultBtn background="blue" arrow={true} text={'от 4,99 $'}/>
 
                     </div>
-            </div>
+            {/* </div> */}
         </>
     )
 }

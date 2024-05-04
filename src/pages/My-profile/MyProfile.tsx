@@ -111,11 +111,12 @@ const MyProfile = () => {
                                 <div className="description">
                                     <span>Подписки</span>
                                 </div>
-                                <div className="plusBtn">
-                                    <SVGIcon name="plusBtn" size={30}  />
-                                </div>
+                                <Link to={'/my-profile/subscriptions'}>
+                                    <div className="plusBtn">
+                                        <SVGIcon name="plusBtn" size={30}  />
+                                    </div>
+                                </Link>
                             </div>
-                            
                         </div>
                     </div>
                     <div className="subscriptionsBlock">

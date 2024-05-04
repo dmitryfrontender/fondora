@@ -12,9 +12,10 @@ import { Route, Routes } from 'react-router-dom';
 import AddBoost from "../../pages/BoostSuperlike/AddBoost/AddBoost";
 
 // SUBSCRIPTIONS
-import Gold from "../../pages/Subscriptions/Gold/Gold";
-import Plus from "../../pages/Subscriptions/Plus/Plus";
-import Vip from "../../pages/Subscriptions/Vip/Vip";
+import SubscriptionWrapper from "../SubscriptionWrapper/SubscriptionWrapper";
+// import Gold from "../SubscriptionWrapper/Subscriptions/Gold/Gold";
+// import Plus from "../SubscriptionWrapper/Subscriptions/Plus/Plus";
+// import Vip from "../SubscriptionWrapper/Subscriptions/Vip/Vip";
 
 import SuperLike from "../../pages/BoostSuperlike/SuperLikePage/SuperLike";
 
@@ -47,10 +48,14 @@ const PageWrapper = () => {
                 <Route path="/notifications" element={<Notifications />} />
                 <Route element={<MyProfileLayout />}>
                     <Route path="/my-profile" element={<MyProfile />} />
+                    <Route path="/my-profile/subscriptions" element={<SubscriptionWrapper page={0}/>} />
                     <Route path="/my-profile/edit-profile" element={<EditMyProfile />} />
-                    <Route path="/my-profile/gold-subscription" element={<Gold />} />
+                    <Route path="/my-profile/gold-subscription" element={<SubscriptionWrapper page={1}/>} />
+                    <Route path="/my-profile/plus-subscription" element={<SubscriptionWrapper page={0}/>} />
+                    <Route path="/my-profile/vip-subscription" element={<SubscriptionWrapper page={2}/>} />
+                    {/* <Route path="/my-profile/gold-subscription" element={<Gold />} />
                     <Route path="/my-profile/plus-subscription" element={<Plus />} />
-                    <Route path="/my-profile/vip-subscription" element={<Vip />} />
+                    <Route path="/my-profile/vip-subscription" element={<Vip />} /> */}
                     <Route path="/my-profile/super-likes" element={<SuperLike />} />
                     <Route path="/settings/super-likes" element={<SuperLike />} />
                     <Route path="/settings/boosts" element={<AddBoost />} />

@@ -1,19 +1,17 @@
 import React from "react";
-import SVGIcon from "../../../assets/icons/svgComponent";
-import DefaultBtn from "../../../components/DefaultBtn/DefaultBtn";
-import { useNavigate } from "react-router-dom";
-import '../Subscriptions.scss'
+import SVGIcon from "../../../../assets/icons/svgComponent";
+import DefaultBtn from "../../../../components/DefaultBtn/DefaultBtn";
+import '../../Subscriptions.scss'
 import './Vip.scss'
 
 const Vip = () => {
 
-    const navigate = useNavigate();
 
     return(
         <>
-            <div className="page Subscription vip">
-                    <div className="subscriptionWrapper">
-                        <div className="topItem">
+            {/* <div className="page Subscription vip"> */}
+                    <div className="subscriptionWrapper vip">
+                        {/* <div className="topItem">
                             <div className="title">
                                 <h3>
                                     Моя Подписка
@@ -38,7 +36,7 @@ const Vip = () => {
                                     Купить Подписку
                                 </span>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="optionWrapper">
                             <div className="optionTitle">
                                 <h5>
@@ -238,7 +236,7 @@ const Vip = () => {
                         <DefaultBtn background="blue" arrow={true} text={'от 4,99 $'}/>
 
                     </div>
-            </div>
+            {/* </div> */}
         </>
     )
 }
