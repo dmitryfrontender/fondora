@@ -3,7 +3,6 @@ import './Messages.scss'
 
 import { useSelector } from "react-redux";
 import NoMessages from "../../layout/NoMessageLayout/NoMessages";
-// import { MessageState } from "../../store/rootSlice";
 
 
 
@@ -21,7 +20,12 @@ const Messages = () => {
         <>
             {
                 !messageState ? 
-                    <NoMessages/> 
+                    <>
+                        <NoMessages/> 
+
+                    </>
+                    
+
                 : 
                 <div className="message">
                     <h1>messages exist</h1>

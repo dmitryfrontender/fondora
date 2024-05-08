@@ -10,6 +10,9 @@ import MyProfile from "../../pages/My-profile/MyProfile";
 import EditMyProfile from "../../pages/EditMyProfile/EditMyProfile";
 import { Route, Routes } from 'react-router-dom';
 import AddBoost from "../../pages/BoostSuperlike/AddBoost/AddBoost";
+import { UseChatId } from "../../utils/ChatId";
+import Chat from "../Chat/Chat";
+import { useLocation } from "react-router-dom";
 
 // SUBSCRIPTIONS
 import SubscriptionWrapper from "../SubscriptionWrapper/SubscriptionWrapper";
@@ -25,6 +28,9 @@ import './PageWrapper.scss'
 
 
 const PageWrapper = () => {
+
+    const location = useLocation();
+    const path = location.pathname;
 
 
     useEffect(() => {
@@ -53,12 +59,11 @@ const PageWrapper = () => {
                     <Route path="/my-profile/gold-subscription" element={<SubscriptionWrapper page={1}/>} />
                     <Route path="/my-profile/plus-subscription" element={<SubscriptionWrapper page={0}/>} />
                     <Route path="/my-profile/vip-subscription" element={<SubscriptionWrapper page={2}/>} />
-                    {/* <Route path="/my-profile/gold-subscription" element={<Gold />} />
-                    <Route path="/my-profile/plus-subscription" element={<Plus />} />
-                    <Route path="/my-profile/vip-subscription" element={<Vip />} /> */}
                     <Route path="/my-profile/super-likes" element={<SuperLike />} />
                     <Route path="/settings/super-likes" element={<SuperLike />} />
                     <Route path="/settings/boosts" element={<AddBoost />} />
+                    <Route path={`/messages/chat/:${UseChatId(path)}`} element={<Chat userId={path}/>} />
+
 
 
 

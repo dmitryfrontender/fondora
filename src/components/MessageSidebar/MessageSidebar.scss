@@ -1,0 +1,127 @@
+.messageSidebar{
+    // margin: 40px 1vw;
+    margin: 40px 0 40px 1vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .sidebarTop {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .backBtn {
+            cursor: pointer;
+        }
+        .textBtn {
+            margin: 0 1vw;
+            color: var(--white);
+            cursor: pointer;
+            font-family: var(--font-family-urbanist);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            letter-spacing: 0%;
+            text-align: left;
+            padding-bottom: 5px;
+            border-bottom: 1px solid transparent;
+            transition: all ease 0.3s;
+            white-space: nowrap;
+        }
+        .activeBtn{
+            transition: all ease 0.3s;
+            color: var(--main-red);
+            border-bottom: 1px solid var(--main-red);
+        }
+    }
+    .messagesWrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 1vw 0 0 1vh;
+        width: -webkit-fill-available;
+        height: 68vh;
+        overflow: auto;
+        position: relative;
+        ul{
+            padding: 0;
+            // height: 100%;
+            // overflow: auto;
+            width: -webkit-fill-available;
+            position: absolute;
+            margin: 0;
+            top: 0;
+            left: 0;
+
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                // padding: 10px 0;
+                padding: 10px 1.2vw 10px 0;
+                cursor: pointer;
+                position: relative;
+                .userAvatar {
+                    // margin-right: 20px;
+                    position: relative;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+                    .onLinePin {
+                      width: 8px;
+                      height: 8px;
+                      border-radius: 50%;
+                      position: absolute;
+                      right: 0px;
+                      top: 2px;
+                      border: 2px solid rgb(28 16 20);
+                      background-color: rgb(34, 255, 122);
+                    }
+
+
+                }
+                .userMessage {
+                    padding: 5px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    width: -webkit-fill-available;
+                    height: auto;
+                    .userName{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 10px;
+                        .name{
+                            span{
+
+                            }
+                        }
+                        .likeLabel {
+                            border-radius: 5px;
+                            padding: 2px 5px 2px 5px;
+                            background: rgb(225, 162, 0);
+                          span{
+                            color: var(--black);
+                            font-family: var(--font-family-urbanist);
+                            font-size: 12px;
+                            font-weight: 500;
+                            line-height: 14px;
+                            letter-spacing: 0%;
+                            text-align: center;
+                          }
+                        }   
+                    }
+
+                }
+                .unReadPin {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: var(--main-red);
+                }
+            }
+        }
+    }
+
+}
