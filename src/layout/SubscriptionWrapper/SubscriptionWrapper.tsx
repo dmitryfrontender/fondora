@@ -36,7 +36,7 @@ const SubscriptionWrapper = ({page}: IShow) => {
     },
     [
         (slider) => {
-            slider.size=575
+            slider.size = 575;
         }
       ]
 )

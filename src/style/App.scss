@@ -59,7 +59,11 @@ body {
     min-width: 320px;
     position: relative;
 }
-
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
 .App {
     text-align: center;

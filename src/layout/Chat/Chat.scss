@@ -1,0 +1,287 @@
+.Chat{
+    background: rgb(18, 18, 18);
+    overflow: hidden;
+    position: relative;
+    padding-left: clamp(200px, 30vw, 356px);
+    .chatWrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        width: 100%;
+        height: 100px;
+        // left: 0;
+        .chatArea {
+            position: relative;
+            width: -webkit-fill-available;
+            .chatBg {
+                position: absolute;
+                top: 0;
+                left: 1vw;
+            }
+            .chatItems {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                position: relative;
+                width: 100%;
+                height: 100%;
+              
+
+
+                .topBlock {
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    position: relative;
+                    margin: 43px 20px 0;
+                    gap: 20px;
+                    width: -webkit-fill-available;
+                    .companionAvatar {
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                      img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                      }
+                      .onLinePin {
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: 0px;
+                        top: 0px;
+                        border: 2px solid rgb(28 16 20);
+                        background-color: rgb(34, 255, 122);
+                      }
+
+                    }
+                    .companionDescription {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        border-radius: 20px;
+                        padding: 12px 15px;
+                        gap: 10px;
+                        width: -webkit-fill-available;
+                        background: rgb(21, 21, 21);
+                        .avatars{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            img{
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                            }
+                            .rightAvatar{
+                                position: relative;
+                                right: 5px;
+                            }
+                        }
+                        .info, .date{
+                            span{
+                                color: rgb(162, 162, 162);
+                                font-family: var(--font-family-urbanist);
+                                font-size: 12px;
+                                font-weight: 500;
+                                line-height: 150%;
+                                letter-spacing: 0%;
+                                text-align: center;
+                            }
+                        }
+                        .date{
+                            svg{
+                                margin-right: 10px;
+                            }
+                        }
+                        
+                       
+                    }   
+                    .buttonsBlock {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                      }
+                    
+                  
+                }
+                .chat{
+
+                }
+                .inputBlock {
+                    backdrop-filter: blur(5px);
+                    background: rgba(4, 4, 4, 0.9);
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    padding-bottom: 15px;
+                    bottom: 0;
+                    .inputWrapper {
+                        padding: 10px 10px;
+                        .input {
+                            position: relative;
+                            textarea{
+                                border: none;
+                                border-radius: 30px;
+                                background: rgb(33, 32, 32);
+                                width: -webkit-fill-available;
+                                resize: none;
+                                color: var(--white);
+                                font-family: var(--font-proxima-nova);
+                                font-size: 14px;
+                                line-height: 7px;
+                                font-weight: 400;
+                                letter-spacing: 0%;
+                                align-content: center;
+                                padding: 15px 20px;
+    
+                            }
+                            textarea:focus{
+                                outline: none;
+                            }
+                            .sendBtn {
+                                position: absolute;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 5px;
+                                top: 50%;
+                                right: 2%;
+                                border-radius: 50%;
+                                background: linear-gradient(135.00deg, rgb(27, 26, 27) -0.075%,rgb(185, 185, 185) 99.925%);
+                                transform: translateY(-55%);
+                                button{
+                                    padding: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+                            .activeSendBtn{
+                                background: linear-gradient(135.00deg, rgb(132, 9, 56) -0.075%,rgb(242, 34, 113) 99.925%);
+                            }
+                          
+                        }
+
+                        
+
+                      
+                    }
+                    .buttonWrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 10px;
+
+                        button{
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 15px;
+                            background: rgb(33, 32, 32);
+                        }
+                        .leftPanel {
+                          display: flex;
+                        gap: 10px;
+
+                        }
+                    }
+                }
+            }
+          
+        }
+        .userBlock {
+            width: -webkit-fill-available ;
+            height: 100vh;
+            background: rgb(18, 18, 18);
+            position: relative;
+            z-index: 5;
+            .userAvatar {
+                position: relative;
+                // background-size: cover;
+                // background-position-x: center;
+                height: 65vh;
+                width: 100%;
+                .navigation-wrapper {
+                    height: inherit;
+                    width: 100%;
+                    .keen-slider {
+                      .keen-slider__slide {
+                        position: relative;
+                        background-size: cover;
+                        background-position-x: center;
+                        height: 65vh;
+                        width: 100%;
+                        
+                      }
+                    }
+                  
+                }
+            //   img{
+            //     position: absolute;
+            //     width: 25vw;
+            //     left: 0;
+            //     height: 70vh;
+            //   }
+            }
+            .userInfo {
+                padding: 30px 20px;
+                .mainInfo {
+                    text-align: left;
+                    span{
+                        color: var(--white);
+                        font-family: var(--font-family-urbanist);
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 100%;
+                    }
+                    svg{
+                        padding-left: 5px;
+                    }
+
+                }
+
+                .additionalInfo {
+                  ul{
+                    list-style-type: none;
+                    margin: 10px 0 0;
+                    padding: 0;
+                    li{
+                        display: flex;
+                        align-items: center;
+                        text-align: start;
+                        padding: 7px 0;
+
+                        span{
+                            color: var(--white);
+                            font-family: var(--font-family-urbanist);
+                            font-size: 14px;
+                            font-weight: 400;
+                            letter-spacing: 0%;
+                            padding-left: 6px;
+                        }
+                    }
+                  }
+                }  
+                .description {
+                    position: absolute;
+                    padding: 0 10px 0 0;
+                    text-align: left;
+                    bottom: 0;
+                    max-height: 10vh;
+                    overflow: auto;
+                  p{
+                    color: var(--white);
+                    font-family: var(--font-family-urbanist);   
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 150%;
+                  }
+                }    
+            
+            }
+        }
+    }
+}
