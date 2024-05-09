@@ -10,10 +10,7 @@ import "keen-slider/keen-slider.min.css"
 import './Chat.scss'
 import { messagesData } from "../../Data/MessagesData";
 import userAvatar from '../../assets/avatar/user-avatar.png'
-// import avatar1 from '../../assets/avatar/avatar1.png'
-// import avatar2 from '../../assets/avatar/avatar2.png'
-// import avatar3 from '../../assets/avatar/avatar3.png'
-// import avatar4 from '../../assets/avatar/avatar4.png'
+
 
 
 interface IProps {
