@@ -14,6 +14,8 @@ import { useParams } from "react-router-dom";
 import userAvatar from '../../assets/avatar/user-avatar.png'
 import EnterMessage from "../../components/EnterMessage/EnterMessage";
 import { mobileScreenEnable } from "../../store/selectors";
+import ProfileComponent from "../../components/ProfileComponent/ProfileComponent";
+
 
 
 
@@ -49,8 +51,8 @@ const Chat = () => {
     // })
 
 
-    
-    
+
+
 
     // const resizeArea = (e: any) => {
 
@@ -65,30 +67,30 @@ const Chat = () => {
     //             if (e.target.value !== ' ') {
     //                 setSendBtn(true);
     //             }
-                
+
     //     } else if (e.target.value.length > 1) {
     //         setAreaValue(e.target.value);
     //         setSendBtn(true);
-            
-    //     } 
+
+    //     }
     // }
 
 
     const checkMobileScreen = useMemo(() => {
 
         return    mobileDimension
-    
+
     }, [mobileDimension]);
 
     useEffect(() => {
         dispatch(setChatId(id))
         messagesData.forEach((item:IMessages) => {
-     
+
             if (item.id.toString() === id) {
                 setChatData(item);
-              
+
             }
-            
+
         })
 
         checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false)
@@ -97,13 +99,13 @@ const Chat = () => {
 
 
     },[id, dispatch, checkMobileScreen])
-    
+
 
     return(
         <>
             {!mobileScreen ?
             <div className="page Chat">
-                
+
                 <div className="chatWrapper">
                     <div className="chatArea">
                         <div className="chatBg">
@@ -128,7 +130,7 @@ const Chat = () => {
                                     </div>
                                     <div className="info">
                                         <span>
-                                            Вы и {chatData.userName} образовали пару 
+                                            Вы и {chatData.userName} образовали пару
 
                                         </span>
                                     </div>
@@ -150,9 +152,9 @@ const Chat = () => {
                                             <SVGIcon name="roundCloseBtn" size={20} />
                                         </button>
                                     </Link>
-                                    
+
                                 </div>
-                                
+
 
                             </div>
                             <div className="chat">
@@ -174,7 +176,7 @@ const Chat = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                                 <div className="buttonWrapper">
                                     <div className="leftPanel">
@@ -191,176 +193,22 @@ const Chat = () => {
                                     <div className="rightPanel">
                                         <button>
                                             <SVGIcon size={20} name="voiceMessageBtn" />
-                                        </button>   
+                                        </button>
                                     </div>
 
                                 </div>
-                                
+
 
                             </div> */}
                             <EnterMessage />
-                            
+
                         </div>
-                        
+
 
                     </div>
-                    <div className="userBlock">
-                        {/* <div className="userAvatar" style={{backgroundImage: `url(${avatar1})`}}> */}
-                        <div className="userAvatar">
 
+                    <ProfileComponent />
 
-                            {/* <div className="navigation-wrapper">
-                                <div ref={sliderRef} className="keen-slider">
-
-
-                                    <>
-                                        {/* { 
-
-                                            chatData.photos?.map((item, index) => {
-                                                // console.log(item);
-                                                
-                                                return(
-                                                    <div className={`keen-slider__slide number-slide${index === 0 ? 1 : index + 1}`} style={{backgroundImage: `url(${item})`}}></div>
-                                                    // slider.update()
-                                                    
-                                                    // <div className={`keen-slider__slide number-slide${currentSlide}`} style={{backgroundImage: `url(${chatData.photos?[currentSlide]: null})`}}></div>
-
-                                                    
-                                                    
-                                                    
-
-                                                )
-        
-                                            })
-                                            
-                                        
-
-
-
-                                        } */}
-                                        {/* {[...Array(chatData.photos?.length).keys()].map((idx) => {
-
-                                            
-
-                                            
-                                            // console.log(chatData.photos?.forEach((item: string, index) => {console.log(index === idx ? item: null)}));
-
-                                            
-                                            return (
-                                            <div key={idx} className={`keen-slider__slide number-slide${idx === 0 ? 1 : idx + 1}`} style={{backgroundImage: `url(${chatData.photos?.[idx]})`}}>
-
-                                                {/* <div>
-                                                {
-                                                    ? `${slidesDetails[idx].abs + 1}. ${
-                                                        names[slidesDetails[idx].abs]
-                                                    }`
-                                                    : ""}
-                                                </div> */}
-                                            {/* </div>
-                                            )
-                                        })}
-                                    
-                                    
-                                    </>  */}
-
-
-{/* 
-                                    <div className="keen-slider__slide number-slide1">1</div>
-                                    <div className="keen-slider__slide number-slide2">2</div>
-                                    <div className="keen-slider__slide number-slide3">3</div>
-                                    <div className="keen-slider__slide number-slide4">4</div>
-                                    <div className="keen-slider__slide number-slide5">5</div>
-                                    <div className="keen-slider__slide number-slide6">6</div> 
-                                </div>
-                                {/* {loaded && instanceRef.current && (
-                                <>
-                                    <Arrow
-                                    left
-                                    onClick={(e: any) =>
-                                        e.stopPropagation() || instanceRef.current?.prev()
-                                    }
-                                    disabled={currentSlide === 0}
-                                    />
-
-                                    <Arrow
-                                    onClick={(e: any) =>
-                                        e.stopPropagation() || instanceRef.current?.next()
-                                    }
-                                    disabled={
-                                        currentSlide ===
-                                        instanceRef.current.track.details.slides.length - 1
-                                    }
-                                    />
-                                </>
-                                )} */}
-                            
-                            
-                                {/* </div>
-                            </div>
-                            {loaded && instanceRef.current && (
-                                <div className="dots">
-                                {[
-                                    ...Array(instanceRef.current.track.details.slides.length).keys(),
-                                ].map((idx) => {
-                                    return (
-                                    <button
-                                        key={idx}
-                                        onClick={() => {
-
-                                        instanceRef.current?.moveToIdx(idx)
-                                        }}
-                                        className={"dot" + (currentSlide === idx ? " active" : "")}
-                                    ></button>
-                                    )
-                                })}
-                                </div>
-                            )}  */}
-
-
-                        </div>
-                        <div className="userInfo">
-                            <div className="mainInfo">
-                                <span className="name">
-                                    Валюха,&nbsp;
-                                </span>
-                                <span className="age">
-                                    28
-                                </span>
-                                <SVGIcon name="fillVerification" size={16} />
-                            </div>
-                            <div className="additionalInfo">
-                                <ul>
-                                    <li>
-                                        <SVGIcon name="homeIcon" size={14} />
-                                        <span>Живет в New York, NY</span>
-                                    </li>
-                                    <li>
-                                        <SVGIcon name="distanceIcon" size={14} />
-                                        <span>9 km from you</span>
-                                    </li>
-                                    <li>
-                                        <SVGIcon name="tall" size={14} />
-
-
-                                        <span>178 см</span>
-                                    </li>
-                                    <li>
-                                        <SVGIcon name="femaleGender" size={14} />
-                                        <span>Гетеро Женщина</span>
-                                    </li>
-                                  
-                                </ul>
-                            </div>
-                            <div className="description">
-                                <p>
-                                    Не люблю длинные переписки( лучше увидимся на нашем первом свидании.
-                                    Пригласить можешь в заведение. Гулять п...
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                    
                 </div>
 
             </div>
@@ -369,8 +217,8 @@ const Chat = () => {
 
             }
 
-            
-        
+
+
         </>
     )
 }
@@ -378,4 +226,3 @@ const Chat = () => {
 
 
 export default Chat
-

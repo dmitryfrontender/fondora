@@ -1,0 +1,201 @@
+.GamePad {
+    --side-padding: 20px;
+    --right-margin: 29vw;
+    --left-margin: 39vw;
+    --bottom-padding: 73px;
+
+    /* gradient color variable */
+    --g: #0000 98%, #0008;
+    /* radius of circles to substract variable */
+    --r: 34px;
+    /* margin from side variable */
+    --m: 147px;
+    --mask:
+        /* left hole */
+        radial-gradient(var(--r) at var(--m) 0, var(--g)) 0 0/50% 50% no-repeat,
+        /* right hole */
+        radial-gradient(var(--r) at calc(100% - var(--m)) 0, var(--g)) 100% 0/50% 50% no-repeat,
+        /* dummy hole empty */
+        radial-gradient(0 at 0 100%,var(--g)) 0 100%/50% 50% no-repeat,
+        /* dummy hole empty */
+        radial-gradient(0 at 100% 100%, var(--g)) 100% 100%/50% 50% no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - (var(--side-padding) * 2));
+    height: calc(100% - var(--bottom-padding));
+    padding: 0 var(--side-padding) var(--bottom-padding);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 var(--right-margin) 0 var(--left-margin);
+
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    &Block {
+        height: 100%;
+        width: 100%;
+        max-width: 600px;
+        max-height: 935px;
+    }
+
+    &BlockWrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    &BlockItem {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border-radius: 30px;
+        overflow: hidden;
+
+        .keen-slider {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 560px;
+            height: 100%;
+            z-index: 2;
+            opacity: 0.5;
+        }
+
+        &:nth-child(3) {
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 530px;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        &:first-child {
+            z-index: 3;
+            position: relative;
+        }
+    }
+
+    &Tutorial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button {
+            color: #A2A2A2;
+            font-family: var(--font-family-urbanist);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+    }
+
+    &Panel {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        text-align: left;
+
+        &Background {
+            width: calc(100% - 40px);
+            height: 100%;
+            left: 0;
+            top: 0;
+            padding: 54px 20px 20px;
+            border-radius: 30px 30px 0 0;
+            overflow:hidden;
+            /* blur effect */
+            backdrop-filter: blur(20px);
+
+            &:before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, #272727 0%, #0b0b0b 100%);
+                /* mask applied here */
+                -webkit-mask: var(--mask);
+                        mask: var(--mask);
+              }
+        }
+
+        &Buttons {
+            position: absolute;
+            bottom: calc(100% - 29px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 364px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &Item {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: linear-gradient(315deg, #1a1a1a 0%, #383838 100%);
+                backdrop-filter: blur(5px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.item-big {
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 50%;
+                }
+
+                &.item-pink {
+                    background: linear-gradient(315deg, #ea0564 0%, #ff4d7a 100%);
+                    backdrop-filter: blur(5px);
+                }
+            }
+        }
+    }
+}
