@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './ProfileComponent.scss'
 import PhotoSlider from "./PhotoSlider/PhotoSlider";
 import SVGIcon from "../../assets/icons/svgComponent";
@@ -7,21 +7,21 @@ import "keen-slider/keen-slider.min.css"
 // import { useParams } from "react-router-dom";
 
 import { sliderProfiles }  from "../../Data/SliderProfiles";
-import { ISliderProfile } from "../../model/SliderProfileModel";
+// import { ISliderProfile } from "../../model/SliderProfileModel";
 
 const ProfileComponent = (props: any) => {
-    const [currentSlide, setCurrentSlide] = React.useState(0)
-    const [loaded, setLoaded] = useState(false)
+    // const [currentSlide, setCurrentSlide] = React.useState(0)
+    // const [loaded, setLoaded] = useState(false)
 
 	const [sliderRef, instanceRef] = useKeenSlider(
 		{
             initial: 0,
             drag: false,
 			slideChanged(slider) {
-				setCurrentSlide(slider.track.details.rel)
+				// setCurrentSlide(slider.track.details.rel)
 			},
             created() {
-              setLoaded(true)
+            //   setLoaded(true)
             },
 		},
 		[

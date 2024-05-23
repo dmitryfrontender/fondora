@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './GamePad.scss';
 // import { useState } from 'react';
 import 'keen-slider/keen-slider.min.css';
-import { useKeenSlider } from 'keen-slider/react';
 
 import { sliderProfiles }  from "../../Data/SliderProfiles";
 import { ISliderProfile } from "../../model/SliderProfileModel";
@@ -12,18 +11,8 @@ import ProfileComponent from '../ProfileComponent/ProfileComponent';
 import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 
 const GamePad = () => {
-	const [sliderRef, instanceRef] = useKeenSlider(
-		{
-			slideChanged() {
-				console.log('slide changed');
-			}
-		},
-		[
-			// add plugins here
-		]
-	);
 
-	const [profileVisibility, setProfileVisibility] = useState(false);
+	const [profileVisibility] = useState(false); // TODO add setProfileVisibility
 
 	return (
 		<>
