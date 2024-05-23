@@ -24,7 +24,7 @@
                 position: relative;
                 width: 100%;
                 height: 100%;
-              
+
 
 
                 .topBlock {
@@ -96,17 +96,17 @@
                                 margin-right: 10px;
                             }
                         }
-                        
-                       
-                    }   
+
+
+                    }
                     .buttonsBlock {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                       
+
                       }
-                    
-                  
+
+
                 }
                 .chat{
 
@@ -137,7 +137,7 @@
                                 letter-spacing: 0%;
                                 align-content: center;
                                 padding: 15px 20px;
-    
+
                             }
                             textarea:focus{
                                 outline: none;
@@ -163,12 +163,12 @@
                             .activeSendBtn{
                                 background: linear-gradient(135.00deg, rgb(132, 9, 56) -0.075%,rgb(242, 34, 113) 99.925%);
                             }
-                          
+
                         }
 
-                        
 
-                      
+
+
                     }
                     .buttonWrapper {
                         display: flex;
@@ -190,98 +190,13 @@
                     }
                 }
             }
-          
+
         }
-        .userBlock {
+        .ProfileComponent {
             width: -webkit-fill-available ;
             height: 100vh;
-            background: rgb(18, 18, 18);
-            position: relative;
-            z-index: 5;
-            .userAvatar {
-                position: relative;
-                // background-size: cover;
-                // background-position-x: center;
-                height: 65vh;
-                width: 100%;
-                .navigation-wrapper {
-                    height: inherit;
-                    width: 100%;
-                    .keen-slider {
-                      .keen-slider__slide {
-                        position: relative;
-                        background-size: cover;
-                        background-position-x: center;
-                        height: 65vh;
-                        width: 100%;
-                        
-                      }
-                    }
-                  
-                }
-            //   img{
-            //     position: absolute;
-            //     width: 25vw;
-            //     left: 0;
-            //     height: 70vh;
-            //   }
-            }
-            .userInfo {
-                padding: 30px 20px;
-                .mainInfo {
-                    text-align: left;
-                    span{
-                        color: var(--white);
-                        font-family: var(--font-family-urbanist);
-                        font-size: 24px;
-                        font-weight: 700;
-                        line-height: 100%;
-                    }
-                    svg{
-                        padding-left: 5px;
-                    }
-
-                }
-
-                .additionalInfo {
-                  ul{
-                    list-style-type: none;
-                    margin: 10px 0 0;
-                    padding: 0;
-                    li{
-                        display: flex;
-                        align-items: center;
-                        text-align: start;
-                        padding: 7px 0;
-
-                        span{
-                            color: var(--white);
-                            font-family: var(--font-family-urbanist);
-                            font-size: 14px;
-                            font-weight: 400;
-                            letter-spacing: 0%;
-                            padding-left: 6px;
-                        }
-                    }
-                  }
-                }  
-                .description {
-                    position: absolute;
-                    padding: 0 10px 0 0;
-                    text-align: left;
-                    bottom: 0;
-                    max-height: 10vh;
-                    overflow: auto;
-                  p{
-                    color: var(--white);
-                    font-family: var(--font-family-urbanist);   
-                    font-size: 14px;
-                    font-weight: 400;
-                    line-height: 150%;
-                  }
-                }    
-            
-            }
+            max-height: initial;
+            border-radius: 0;
         }
     }
 }
