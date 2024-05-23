@@ -10,31 +10,33 @@ import MyProfile from "../../pages/My-profile/MyProfile";
 import EditMyProfile from "../../pages/EditMyProfile/EditMyProfile";
 import { Route, Routes } from 'react-router-dom';
 import AddBoost from "../../pages/BoostSuperlike/AddBoost/AddBoost";
-import { UseChatId } from "../../utils/ChatId";
+// import { UseChatId } from "../../utils/ChatId";
 import Chat from "../Chat/Chat";
-import { useLocation } from "react-router-dom";
+
 
 // SUBSCRIPTIONS
 import SubscriptionWrapper from "../SubscriptionWrapper/SubscriptionWrapper";
-// import Gold from "../SubscriptionWrapper/Subscriptions/Gold/Gold";
-// import Plus from "../SubscriptionWrapper/Subscriptions/Plus/Plus";
-// import Vip from "../SubscriptionWrapper/Subscriptions/Vip/Vip";
 
 import SuperLike from "../../pages/BoostSuperlike/SuperLikePage/SuperLike";
 
-import MyProfileLayout from "../MyProfileLayout/MyProfileLayout";
+import MyProfileLayout from "../Outlet/MyProfileLayout/MyProfileLayout";
+import SettingsLayout from "../Outlet/SettingLayout/SettingsLayout";
+import MessageLayout from "../Outlet/MessagesLayout/MessageLayout";
+
+import MobileLikesTop from "../../components/MobileLikesTop/MobileLikesTop";
+
 
 import './PageWrapper.scss'
 
 
 const PageWrapper = () => {
 
-    const location = useLocation();
-    const path = location.pathname;
 
+    
 
     useEffect(() => {
         window.history.scrollRestoration = 'manual';
+        
     }, []);
 
     return (
@@ -49,6 +51,7 @@ const PageWrapper = () => {
 
                 <Route path="/likes" element={<Likes />} />
                 <Route path="/top-profiles" element={<TopProfile />} />
+                <Route path="/likes-top-profile" element={<MobileLikesTop />} />
                 <Route path="/messages" element={<Messages />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/notifications" element={<Notifications />} />
@@ -60,33 +63,25 @@ const PageWrapper = () => {
                     <Route path="/my-profile/plus-subscription" element={<SubscriptionWrapper page={0}/>} />
                     <Route path="/my-profile/vip-subscription" element={<SubscriptionWrapper page={2}/>} />
                     <Route path="/my-profile/super-likes" element={<SuperLike />} />
-                    <Route path="/settings/super-likes" element={<SuperLike />} />
+                   
+
+                </Route>
+                <Route element={<SettingsLayout />}>
+                     <Route path="/settings/super-likes" element={<SuperLike />} />
                     <Route path="/settings/boosts" element={<AddBoost />} />
-                    <Route path={`/messages/chat/:${UseChatId(path)}`} element={<Chat userId={path}/>} />
 
-
+                </Route>
+                <Route element={<MessageLayout />}>
+                    {/* <Route path={`/messages/chat/:${UseChatId(path)}`} element={<Chat userId={path}/>} /> */}
+                    <Route path='/messages/chat/:id' element={<Chat/>} />
 
 
 
                     
 
                 </Route>
-
-
-
-                {/* <Route path="/my-profile" element={<MyProfile />} />
-                <Route path="/my-profile/edit-profile" element={<EditMyProfile />} /> */}
                 
-
-
-
-
             </Routes>
-
-
-
-            
-
         </div>
 
     </>

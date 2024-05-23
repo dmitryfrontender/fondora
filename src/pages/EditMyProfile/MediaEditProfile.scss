@@ -1,0 +1,33 @@
+@media screen and (max-width: 1024px) {
+    .EditMyProfile {
+        position: absolute;
+        top: 20px;
+        .pageItems {
+            width: 80vw;
+            .mediaBlock {
+              .mediaItem {
+                max-width: 35vw;
+                height: auto;
+                // min-height: 165px;
+                img{
+                    max-width: 35vw;
+
+                }
+              }
+            }
+        }
+      
+    } 
+    
+}
+
+@media screen and (max-width: 425px) {
+    .EditMyProfile {
+        .pageItems{
+            width: 95vw;
+        }
+        
+      
+    } 
+    
+}

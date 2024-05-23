@@ -37,7 +37,7 @@ const Pairs = () => {
                     {
                         pairData.map((item:IPairs) => {
                             return(
-                                <div className="pairElement">
+                                <div className="pairElement" key={item.id}>
                                     <img src={item.image} alt="pair" />
                                     <div className="pairName">
                                         <span>{item.userName}</span>

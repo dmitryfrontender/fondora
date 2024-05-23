@@ -1,0 +1,160 @@
+.MobileChat{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(18, 18, 18)0%, rgba(11, 11, 11) 100%);
+    backdrop-filter: blur(10px);
+    z-index: 15;
+    .container{
+        margin: 0 clamp(15px, 5vw, 30px);
+        .chatHeader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 20px 0;
+            svg{
+                width: clamp(17px, 5vw, 27px);
+                height: clamp(17px, 5vw, 27px);
+            }
+            .backBtn {
+              a{
+                svg{
+                    width: clamp(15px, 5vw, 25px);
+                height: clamp(15px, 5vw, 25px);
+
+                }
+              }
+            }
+            .userAvatar {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                width: 100%;
+                z-index: -1;
+                .wrapper{
+                    position: relative;
+                    img{
+                        width: clamp(35px, 7vw, 50px);
+                        height: clamp(35px, 7vw, 50px);
+                        border-radius: 50%;
+    
+                    }
+                    .onLinePin {
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      position: absolute;
+                      right: 0px;
+                      top: 0px;
+                      border: 2px solid rgb(28 16 20);
+                      background-color: rgb(34, 255, 122);
+                    }
+                }
+            }
+            .chatBtn{
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            }
+        }
+        .chatArea {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            .background {
+                position: absolute;
+                top: 0;
+                left: -40px;
+                width: 110vw;
+                // width: -webkit-fill-available;
+                height: 100vh;
+                background-image: url('../../assets/images/chatBg.png');
+            }
+            .metInfo {
+                width: fit-content;
+                height: 100%;
+                border-radius: 20px;
+                background: #151515;
+                padding: 12px 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                margin: 0 auto;
+                gap: clamp(5px, 1vw, 10px);
+                top: 10px;
+                .avatars{
+                    img{
+                        width: clamp(30px, 5vw, 35px);
+                        height: clamp(30px, 5vw, 35px);
+                        border-radius: 50%;
+                    }
+                    .second{
+                        position: relative;
+                        right: 5px;
+                    }
+                }
+                .information{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: clamp(5px, 1vw, 10px);
+                    // gap: 10px;
+                    span{
+                        color: #A2A2A2;
+                        text-align: center;
+                        font-family: var(--font-family-urbanist);
+                        font-size: clamp(12px, 2vw, 14px);
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 150%; /* 18px */
+                    }
+                    .date{
+                        svg{
+                            position: relative;
+                            top: 5px;
+                            padding-right: clamp(5px, 1vw, 10px);
+                        }
+                    }
+
+                }
+                
+               
+              
+            }
+            
+
+        }
+    }
+    
+}
+@media screen and (max-width: 375px) {
+    .MobileChat{
+        .container{
+            .chatArea {
+                .metInfo { 
+                    // flex-direction: column;
+                    justify-content: space-between;
+                    // .date{
+                    //     display: flex;
+                    // }
+                    width: -webkit-fill-available;
+                    .information{
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                  
+                }
+                
+    
+            }
+        }
+        
+    }
+        
+}

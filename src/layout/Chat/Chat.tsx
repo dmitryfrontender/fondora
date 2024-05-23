@@ -1,31 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { UseChatId } from "../../utils/ChatId";
+import React, { useEffect, useMemo, useState } from "react";
 import chatBg from '../../assets/images/chatBg.png'
 import SVGIcon from "../../assets/icons/svgComponent";
 import { IMessages } from "../../model/MessagesModel";
-import TextareaAutosize from "react-textarea-autosize";
+// import TextareaAutosize from "react-textarea-autosize";
 import { Link } from "react-router-dom";
 // import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import { useDispatch, useSelector } from "react-redux";
+import { setChatId } from "../../store/rootSlice";
 import './Chat.scss'
 import { messagesData } from "../../Data/MessagesData";
+import { useParams } from "react-router-dom";
 import userAvatar from '../../assets/avatar/user-avatar.png'
+import EnterMessage from "../../components/EnterMessage/EnterMessage";
+import { mobileScreenEnable } from "../../store/selectors";
 
 
 
-interface IProps {
-    userId: string
-}
 
+const Chat = () => {
 
-const Chat = ({userId}: IProps) => {
 
     // const [options, setOptions] = useState({})
     // const [sliderRef, slider] = useKeenSlider(options)
 
     const [chatData, setChatData] = useState ({} as IMessages);
-    const [areaValue, setAreaValue] = useState('');
-    const [sendBtn, setSendBtn] = useState(false);
+    const [mobileScreen, setMobileScreen] = useState(false);
+    const mobileDimension = useSelector(mobileScreenEnable);
+    // const [areaValue, setAreaValue] = useState('');
+    // const [sendBtn, setSendBtn] = useState(false);
+
+
+
+    const dispatch = useDispatch();
+
+
+    let {id}: any = useParams();
     // const [currentSlide, setCurrentSlide] = useState(0)
     // const [loaded, setLoaded] = useState(false)
     // const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -39,50 +49,59 @@ const Chat = ({userId}: IProps) => {
     // })
 
 
+    
+    
 
-    const resizeArea = (e: any) => {
+    // const resizeArea = (e: any) => {
 
-        if (e.target.value.length === 0) {
-            setAreaValue('');
-            setSendBtn(false);
+    //     if (e.target.value.length === 0) {
+    //         setAreaValue('');
+    //         setSendBtn(false);
 
-        } else if (e.target.value.length <= 1) {
+    //     } else if (e.target.value.length <= 1) {
 
-                setAreaValue(e.target.value.trim());
-                setSendBtn(false);
-                if (e.target.value !== ' ') {
-                    setSendBtn(true);
-
-                }
+    //             setAreaValue(e.target.value.trim());
+    //             setSendBtn(false);
+    //             if (e.target.value !== ' ') {
+    //                 setSendBtn(true);
+    //             }
                 
-  
-        } else if (e.target.value.length > 1) {
-            setAreaValue(e.target.value);
-            setSendBtn(true);
+    //     } else if (e.target.value.length > 1) {
+    //         setAreaValue(e.target.value);
+    //         setSendBtn(true);
             
-        } 
-    }
+    //     } 
+    // }
+
+
+    const checkMobileScreen = useMemo(() => {
+
+        return    mobileDimension
+    
+    }, [mobileDimension]);
 
     useEffect(() => {
-
-       
-
-
-
+        dispatch(setChatId(id))
         messagesData.forEach((item:IMessages) => {
      
-            if (item.id.toString() === UseChatId(userId)) {
+            if (item.id.toString() === id) {
                 setChatData(item);
               
             }
             
         })
 
-    },[chatData, userId])
+        checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false)
+
+
+
+
+    },[id, dispatch, checkMobileScreen])
     
 
     return(
         <>
+            {!mobileScreen ?
             <div className="page Chat">
                 
                 <div className="chatWrapper">
@@ -139,7 +158,7 @@ const Chat = ({userId}: IProps) => {
                             <div className="chat">
 
                             </div>
-                            <div className="inputBlock">
+                            {/* <div className="inputBlock">
                                 <div className="inputWrapper">
                                     <div className="input">
                                         <TextareaAutosize
@@ -178,7 +197,8 @@ const Chat = ({userId}: IProps) => {
                                 </div>
                                 
 
-                            </div>
+                            </div> */}
+                            <EnterMessage />
                             
                         </div>
                         
@@ -344,6 +364,11 @@ const Chat = ({userId}: IProps) => {
                 </div>
 
             </div>
+            :
+            null
+
+            }
+
             
         
         </>

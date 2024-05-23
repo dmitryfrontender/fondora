@@ -11,11 +11,13 @@ export interface IMessages {
     dateMet?: string
     userOnLine: boolean;
     isLike: boolean;
+    newMessages?: boolean
     messages: [{
         id: number,
         text: string,
         time: string,
         daySend: string[],
         unRead: boolean
+
     }]
 }

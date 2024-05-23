@@ -1,0 +1,101 @@
+@media screen and (max-width: 1024px) {
+    .FilterModal{
+        .modalWrapper {
+        width: 100vw !important;
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: scroll;
+        left: 0 !important;
+        border-radius: 0 !important;
+        // margin: 50px auto;
+        // padding-bottom: 50px;
+        .topItem {
+            margin: 20px 0;
+        }
+        .maxPhotos {
+            fieldset{
+                flex-wrap: wrap;
+                label{
+                margin-bottom: 15px;
+
+
+                }
+            }
+        }
+        .interestsBlock {
+            .itemWrapper {
+                flex-wrap: wrap;
+            span{
+                white-space: nowrap;
+            }
+            }
+        }
+        .buttonsWrapper{
+            margin-bottom: 50px;
+        }
+        }
+    }
+    
+}
+@media screen and (max-width: 425px) {
+    .FilterModal{
+       .modalWrapper{
+        .buttonsWrapper{
+            button{
+                padding: 10px 0;
+                span{
+                    font-size: clamp(8px, 4vw, 14px);
+                }
+            }
+        }
+       }
+    }
+
+    
+}
+@media screen and (max-width: 300px) {
+    .FilterModal{
+        .modalWrapper {
+            .filterOption {
+              .range{
+                .topValue{
+                    flex-direction: column;
+                    margin: 0 0 5px;
+                }
+              }
+              .DoubleRange{
+                .wrapper{
+                    .container{
+                        .topItem{
+                            flex-direction: column;
+                            margin: 0 0 5px;
+
+                        }
+                    }
+                }
+              }
+            }
+            .maxPhotos{
+                fieldset{
+                    justify-content: center !important;
+                }
+            }
+            .bottomOptionsWrapper {
+              .bottomOption {
+                flex-direction: column;
+                gap: 10px;
+              }
+            }
+            .buttonsWrapper {
+            //   flex-direction: column;
+            button{
+                padding: 5px 0;
+                span{
+                    font-size: clamp(8px, 4vw, 10px);
+                }
+            }
+            }
+        }
+    }
+    
+}
