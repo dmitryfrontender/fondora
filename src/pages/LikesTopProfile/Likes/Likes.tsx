@@ -5,6 +5,7 @@ import { myLikes }  from "../../../Data/MyLikes";
 import { ILikes } from "../../../model/LikesModel";
 import { useSelector, useDispatch } from "react-redux";
 import { likesModalState } from "../../../store/LikesStateSlice";
+import { bodyOverflow } from "../../../utils/bodyOverflow";
 
 
 
@@ -16,6 +17,26 @@ const Likes = () => {
     const topProfileState = useSelector((state: any) => state.mainState.topProfile);
     const dispatch = useDispatch()
 
+
+
+
+
+
+
+    // useEffect(() => {
+
+
+    //     const handleResize = (event: any) => {
+    //         setWidth(event.target.innerWidth);
+    //       };
+    //       window.addEventListener('resize', handleResize);
+    //       return () => {
+    //         window.removeEventListener('resize', handleResize);
+    //       };
+
+        
+    // },[])
+
   
     
     
@@ -24,8 +45,12 @@ const Likes = () => {
         <>
             <div className="page LikesTopProfile">
                 <div className="PagesWrapper">
+                   
                     <div className="topButtons">
-                        <div className="filter" onClick={() => {dispatch(likesModalState('open-likesModal'))}}>
+                        <div className="filter" onClick={() => {
+                            dispatch(likesModalState('open-likesModal'));
+                            bodyOverflow(true);
+                        }}>
 
                             <SVGIcon name="filtersBtn" size={20}/>
                         </div>

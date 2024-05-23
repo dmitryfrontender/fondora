@@ -1,28 +1,73 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { IMessages } from "../../model/MessagesModel";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { mobileChatState } from "../../store/rootSlice";
+import { setChatId } from "../../store/rootSlice";
+import { mobileScreenEnable } from "../../store/selectors";
+// interface IProps {
+//     mobile?: boolean | undefined
+// }
 
+// type CombinedProps = {item: IMessages} & IProps 
 
 const MessageComponent = (item: IMessages) => {
 
+    // const mobileDimension = useSelector((state: any) => state.mainState.mobileScreen, () => {return true});
+    // const [mobileScreen, setmobileScreen] = useState<boolean | undefined>(false);
+    const [mobileScreen, setMobileScreen] = useState(false);
+    const mobileDimension = useSelector(mobileScreenEnable);
 
+    // const mobileDimension = useSelector(screenSelector);
+    const dispatch = useDispatch();
 
     const handleActiveChat= (id: string) => {
         const chats = document.querySelectorAll('.chat');
         chats.forEach((chat: any) => {
             chat.id === id ? chat.classList.add('activeChat') : chat.classList.remove('activeChat');
         })
+    }
+
+    const linkToChat = (chatId: any) => {
+        
+        if (mobileScreen) {
+            dispatch(mobileChatState('mobileChat-open'));
+        } 
+        
+        dispatch(setChatId(chatId.toString()));
 
     }
 
+    const checkMobileScreen = useMemo(() => {
+
+            return    mobileDimension
+        
+    }, [mobileDimension]);
+
+
+    useEffect(() => {
+
+        checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
+
+
+    }, [checkMobileScreen]);
+
+
+    
 
     return(
         <>
-            <Link to={`/messages/chat/:${item.id}`}>
+            <Link to={`/messages/chat/${item.id}`} 
+            onClick={() => linkToChat(item.id)}
+            >
                 <li key={item.id} 
                     className="chat"   
                     id={item.id.toString()} 
-                    onClick={(event: any) => {handleActiveChat(event.currentTarget.id)}}
+                    onClick={(event: any) => {
+                        handleActiveChat(event.currentTarget.id)
+                        
+                    
+                    }}
                 >
 
                     <div className="userAvatar">
@@ -69,12 +114,9 @@ const MessageComponent = (item: IMessages) => {
                         </div>
                     </div>
                     {
-                        item.messages.map((el) => {
-                            return(
-                                el.unRead ? <div className="unReadPin" key={el.id}></div> : null
-                                
-                            )
-                        })
+   
+                        item.newMessages ? <div className="unReadPin" ></div> : null
+             
                     }
                 </li>
             </Link> 

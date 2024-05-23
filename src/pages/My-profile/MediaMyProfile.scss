@@ -1,0 +1,67 @@
+@media screen and (max-width: 1024px) {
+    .myProfile{
+        .pageItems {
+            width: 80vw;
+            .protect {
+              top: 0 !important;
+            }
+            .userInfo {
+                margin-top: 0 !important;
+
+              
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 425px) {
+    .myProfile{
+        .pageItems {
+          width: 95vw;
+        }
+        .subscriptionsBlock {
+            display: flex;
+            overflow: scroll;
+            gap: 10px;
+            justify-content: flex-start;
+            margin-bottom: 55px !important;
+            .subscription {
+                min-width: 90vw;
+                .wrapper {
+                  padding: 15px 10px !important;
+                }
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: 375px) {
+    .myProfile{    
+        .subscriptionsBlock {  
+            .subscription {
+                .wrapper {
+                    .planTitle {
+                        .logo{
+                            svg{
+                                width: clamp(55px, 27vw, 150px) !important;
+                            }
+                        }
+                        .status {
+                          span{
+                            font-size: clamp(7px, 3vw, 10px) !important;
+                          }
+                        }
+                      .buyBtn {
+                        padding: 5px !important;
+                        span{
+                            white-space: nowrap;
+                            font-size: clamp(7px, 2.5vw, 10px) !important;
+                        }
+                      }
+                    }
+                }
+            }
+        }
+    }
+    
+}

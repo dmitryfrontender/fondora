@@ -5,6 +5,7 @@ import { topProfiles }  from "../../../Data/TopProfiles";
 import { ITopProfile } from "../../../model/TopProfileModel";
 import {  useDispatch } from "react-redux";
 import { likesModalState } from "../../../store/LikesStateSlice";
+import { bodyOverflow } from "../../../utils/bodyOverflow";
 
 
 
@@ -24,7 +25,10 @@ const TopProfile = () => {
             <div className="page LikesTopProfile">
                 <div className="PagesWrapper">
                     <div className="topButtons">
-                        <div className="filter" onClick={() => {dispatch(likesModalState('open-likesModal'))}}>
+                        <div className="filter" onClick={() => {
+                            dispatch(likesModalState('open-likesModal'));
+                            bodyOverflow(true);
+                        }}>
 
                             <SVGIcon name="filtersBtn" size={20}/>
                         </div>

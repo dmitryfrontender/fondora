@@ -11,8 +11,12 @@ export const rootSlice = createSlice({
         newMessage: false,
         newNotification: true,
         newLike: true,
-        newSetting: true,
+        newSetting: false,
         topProfile: false,
+        chatId: '',
+        mobileChat: false,
+        mobileScreen: false
+
 
     },
     reducers: {
@@ -106,7 +110,26 @@ export const rootSlice = createSlice({
                 break;
             }
         },
-
+        setChatId: (state, action) => {
+            
+            state.chatId = action.payload
+        },
+        mobileChatState: (state, action) => {
+            switch(action.payload) {
+                case 'mobileChat-open':
+                    state.mobileChat = true
+                break;
+                case 'mobileChat-close':
+                    state.mobileChat = false
+                break;
+            }
+        }, 
+        setMobileScreen: (state, action) => {
+            action.payload ? 
+                state.mobileScreen = true 
+                : 
+                state.mobileScreen = false
+        }
     }
 })
 
@@ -118,7 +141,10 @@ export const {
     NewNotificationState, 
     NewLikeState, 
     NewSettingState,
-    topProfileState
+    topProfileState,
+    setChatId,
+    mobileChatState,
+    setMobileScreen
 } = rootSlice.actions
 
 export default rootSlice.reducer

@@ -1,0 +1,50 @@
+.MobileTop {
+    display: none;
+    h1{
+    color: white;
+
+
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .MobileTop {
+      // display: block;
+      // position: absolute;
+      
+      // width: 100vw;
+      // z-index: 10;
+      display: block;
+      position: fixed;
+      width: 100vw;
+      z-index: 10;
+      top: 0;
+      .topWrapper{
+      padding: clamp(3px, 2vw, 20px) clamp(10px, 3vw, 20px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+        .logo{
+            svg{
+                // width: clamp(200px , 22vw, 500px);
+                width: clamp(50px, 12vw, 150px);
+                height: clamp(30px, 4vh, 100px);
+            }
+        }
+        .topBtn {
+          button{
+            svg{
+                width: clamp(18px, 6vw, 28px);
+                height: clamp(18px, 6vw, 28px);
+
+
+                
+            }
+          }
+        }
+      }
+    }
+    
+}

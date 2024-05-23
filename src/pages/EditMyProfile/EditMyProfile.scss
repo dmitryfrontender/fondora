@@ -83,7 +83,7 @@
             border: 2px solid transparent;
             .title{
                 h3{
-                    color: rgb(162, 162, 162);;
+                    color: var(--main-text-color);;
                 }
             }
             
@@ -137,7 +137,7 @@
         bottom: 20px;
         right: 20px;
         span{
-            color: rgb(162, 162, 162);
+            color: var(--main-text-color);
             font-family: var(--font-family-urbanist);
             font-size: 12px;
             font-weight: 500;
@@ -149,3 +149,4 @@
     }
 
 }
+@import url('./MediaEditProfile.scss');

@@ -39,6 +39,7 @@
     --stroke-color: #BDBDBD;
     --white: #FFFFFF;
     --black: #000000;
+    --main-text-color: rgb(162, 162, 162);
 
 
     // VARIABLES FROM DESIGN
@@ -48,7 +49,7 @@
 
 html {
     height: 100%;
-    min-width: 320px;
+    min-width: 150px;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
@@ -56,7 +57,7 @@ html {
 body {
     font: 14px/1.2 var(--font-family-inter);
     height: 100%;
-    min-width: 320px;
+    min-width: 150px;
     position: relative;
 }
 button{
@@ -74,6 +75,10 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 .tittle{
+    .backBtn{
+        display: none;
+        
+    }
     font-family: var(--font-family-urbanist);
     font-weight: 600;
     font-size: 16px;
@@ -153,7 +158,7 @@ a:-webkit-any-link {
             align-items: start;
             // height: 145px;
             .text{
-                color: rgb(162, 162, 162);
+                color: var(--main-text-color);
                 font-family: var(--font-family-urbanist);
                 font-size: 14px;
                 font-weight: 500;
@@ -178,7 +183,7 @@ a:-webkit-any-link {
                 .description{
                     display: flex;
                     align-items: center;
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-family: var(--font-family-urbanist);
                     position: relative;
                     font-size: 14px;
@@ -210,7 +215,7 @@ a:-webkit-any-link {
                         border-radius: 30px;
                         background: rgb(2, 2, 2);
                         span{
-                            color: rgb(162, 162, 162);
+                            color: var(--main-text-color);
                             font-family: var(--font-family-urbanist);
                             font-size: 13px;
                             font-weight: 500;
@@ -228,7 +233,7 @@ a:-webkit-any-link {
                     .item{
                         padding-right: 10px;
                         p{
-                            color: rgb(162, 162, 162);
+                            color: var(--main-text-color);
                             font-family: var(--font-family-urbanist);
                             font-size: 14px;
                             font-weight: 500;
@@ -249,7 +254,7 @@ a:-webkit-any-link {
                         }
                     }
                     .text{
-                        color: rgb(162, 162, 162);
+                        color: var(--main-text-color);
                         font-family: var(--font-family-urbanist);
                         font-size: 14px;
                         font-weight: 500;
@@ -282,7 +287,7 @@ a:-webkit-any-link {
                 display: flex;
                 justify-content: start;
                 align-items: center;
-                color: rgb(162, 162, 162);
+                color: var(--main-text-color);
                 font-family: var(--font-family-urbanist);
                 font-size: 12px;
                 font-weight: 500;
@@ -303,7 +308,7 @@ a:-webkit-any-link {
 
                 }
                 .text{
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-family: var(--font-family-urbanist);
                     font-size: 14px;
                     font-weight: 600;
@@ -372,7 +377,7 @@ a:-webkit-any-link {
     }
     .description {
         p{
-            color: rgb(162, 162, 162);
+            color: var(--main-text-color);
             font-family: var(--font-family-urbanist);
             font-size: 14px;
             font-weight: 500;
@@ -383,5 +388,11 @@ a:-webkit-any-link {
         
     }
 }
+
+
+
+
+
+@import url('./MediaApp.scss');
 
 

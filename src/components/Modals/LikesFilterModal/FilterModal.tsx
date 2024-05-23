@@ -7,6 +7,7 @@ import DefaultBtn from "../../DefaultBtn/DefaultBtn";
 import ToggleBtn from "../../ToggleBtn/ToggleBtn";
 import SingleRangeSlider from "../../SingleRangeSlider/SingleRangeSlider";
 import DoubleRangeSlider from "../../DoubleRangeSlider/DoubleRange";
+import { bodyOverflow } from "../../../utils/bodyOverflow";
 
 // import likesModalState from "../../../store/rootSlice"
 
@@ -32,7 +33,10 @@ const FilterModal = () => {
                                 Фильтр лайков
                             </h3>
                         </div>
-                        <div className="closeBtn"  onClick={() => {dispatch(likesModalState('close-likesModal'))}}>
+                        <div className="closeBtn"  onClick={() => {
+                            dispatch(likesModalState('close-likesModal'));
+                            bodyOverflow(false);
+                        }}>
                             <SVGIcon name="cancelBtn"  size={25}/>
                         </div>
                     </div>
