@@ -29,6 +29,7 @@ export const messagesData: IMessages[] = [
         dateMet: '10.10.2020',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -46,6 +47,8 @@ export const messagesData: IMessages[] = [
         userName: 'Alex',
         userOnLine: false,
         isLike: true,
+        newMessages: false,
+
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -63,6 +66,8 @@ export const messagesData: IMessages[] = [
         userName: 'Строитель',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
+
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -80,6 +85,8 @@ export const messagesData: IMessages[] = [
         userName: 'Волшебный',
         userOnLine: false,
         isLike: true,
+        newMessages: false,
+
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -97,6 +104,8 @@ export const messagesData: IMessages[] = [
         userName: 'Dj Aligator',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
+
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -114,6 +123,8 @@ export const messagesData: IMessages[] = [
         userName: 'Валюха',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
+
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -131,6 +142,8 @@ export const messagesData: IMessages[] = [
         userName: 'Alex',
         userOnLine: false,
         isLike: true,
+        newMessages: true,
+
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -148,6 +161,8 @@ export const messagesData: IMessages[] = [
         userName: 'Строитель',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
+
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -165,6 +180,7 @@ export const messagesData: IMessages[] = [
         userName: 'Волшебный',
         userOnLine: false,
         isLike: true,
+        newMessages: true,
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -182,6 +198,7 @@ export const messagesData: IMessages[] = [
         userName: 'Dj Aligator',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -199,6 +216,7 @@ export const messagesData: IMessages[] = [
         userName: 'Валюха',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -216,6 +234,7 @@ export const messagesData: IMessages[] = [
         userName: 'Alex',
         userOnLine: false,
         isLike: true,
+        newMessages: false,
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -233,6 +252,7 @@ export const messagesData: IMessages[] = [
         userName: 'Строитель',
         userOnLine: true,
         isLike: false,
+        newMessages: true,
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -250,6 +270,7 @@ export const messagesData: IMessages[] = [
         userName: 'Волшебный',
         userOnLine: false,
         isLike: true,
+        newMessages: false,
         messages: [{
             id: 1,
             text: 'Привет!',
@@ -267,6 +288,7 @@ export const messagesData: IMessages[] = [
         userName: 'Dj Aligator',
         userOnLine: true,
         isLike: false,
+        newMessages: false,
         messages: [{
             id: 1,
             text: 'Привет!',

@@ -10,21 +10,50 @@ import DoubleRange from "../../components/DoubleRangeSlider/DoubleRange";
 import SingleRangeSlider from "../../components/SingleRangeSlider/SingleRangeSlider";
 import { useDispatch } from "react-redux";
 import { boostModalState } from "../../store/BoostSlice";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Settings = () => {
 
 
+
+
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
-        window.history.scrollRestoration = 'manual';
+        window.history.scrollRestoration = 'manual'
+
+
     }, []);
+
+
+
+    // const settingPageWrapper = () => {
+        
+    // }
+
+    useEffect(() => {
+
+        return () => {
+            const pageWrapper = document.querySelector('.pageWrapper');
+            (pageWrapper as HTMLElement).style.top = '60px';
+
+
+        }
+            
+        
+
+    }, [])
 
     return (
         <div className="page Settings">
+            
             <div className="tittle">
+                <div className="backBtn" onClick={() => navigate(-1)}>
+                    <SVGIcon name="arrowLeft" size={25}/>
+                </div>
                 <span>
                     Настройки
                 </span>
@@ -32,51 +61,75 @@ const Settings = () => {
             <div className="pageItems">
                 <div className="planSettings">
                     <div className="planOption plan-vip">
-                        <div className="logo">
-                            <SVGIcon name="logoVip" className="logo-effect" />
-                            <div className="status">
-                                <span>VIP</span>
+                        <div className="wrapper">
+                            <div className="logo">
+                                <SVGIcon name="logoVip" className="logo-effect" />
+                                <div className="status">
+                                    <span>VIP</span>
+                                </div>
+                            </div>
+                            <div className="planDescription">
+                                <p>
+                                    Приоритет лайков, просмотр лайков и другое!
+                                </p>
+                                <Link to={'/my-profile/vip-subscription'}>
+                                    <GoBtn/>
+                                </Link>
                             </div>
                         </div>
-                        <div className="description">
+                        <div className="mobileDescription">
                             <p>
                                 Приоритет лайков, просмотр лайков и другое!
                             </p>
-                            <Link to={'/my-profile/vip-subscription'}>
-                                <GoBtn/>
-                            </Link>
+
                         </div>
+                        
                     </div>
                     <div className="planOption plan-gold">
-                        <div className="logo">
-                            <SVGIcon name="logoGold" className="logo-effect" />
-                            <div className="status">
-                                <span>GOLD</span>
+                        <div className="wrapper">
+                            <div className="logo">
+                                <SVGIcon name="logoGold" className="logo-effect" />
+                                <div className="status">
+                                    <span>GOLD</span>
+                                </div>
+                            </div>
+                            <div className="planDescription">
+                                <p>
+                                    Узнай, кто тебя лайкнул, и многое другое!
+                                </p>
+                                <Link to={'/my-profile/gold-subscription'}>
+                                    <GoBtn/>
+                                </Link>
                             </div>
                         </div>
-                        <div className="description">
+                        <div className="mobileDescription">
                             <p>
                                 Узнай, кто тебя лайкнул, и многое другое!
                             </p>
-                            <Link to={'/my-profile/gold-subscription'}>
-                                <GoBtn/>
-                            </Link>
+                            
                         </div>
                     </div>
                     <div className="planOption plan-plus">
-                        <div className="logo">
-                            <SVGIcon name="logoPlus" className="logo-effect" />
-                            <div className="status">
-                                <span>PLUS</span>
+                        <div className="wrapper">
+                            <div className="logo">
+                                <SVGIcon name="logoPlus" className="logo-effect" />
+                                <div className="status">
+                                    <span>PLUS</span>
+                                </div>
+                            </div>
+                            <div className="planDescription">
+                                <p>
+                                    Безлимит лайков и многое другое!
+                                </p>
+                                <Link to={'/my-profile/plus-subscription'}>
+                                    <GoBtn/>
+                                </Link>
                             </div>
                         </div>
-                        <div className="description">
+                        <div className="mobileDescription">
                             <p>
                                 Безлимит лайков и многое другое!
                             </p>
-                            <Link to={'/my-profile/plus-subscription'}>
-                                <GoBtn/>
-                            </Link>
                         </div>
                     </div>
                 </div>
@@ -97,6 +150,7 @@ const Settings = () => {
                             </Link>
                             
                         </div>
+                        
                         
                     </div>
                     <div className="boost">
@@ -1049,7 +1103,7 @@ const Settings = () => {
                     </div>
                 </div>
                 <div className="deleteAccount" style={{marginBottom: '50px'}}>
-                    <SVGIcon name="deleteAccount" size={20}/>
+                    <SVGIcon name="deleteAccount" size={20} stroke={'#969696'}/>
                     <span>
                         Удалить аккаунт
                     </span>

@@ -1,0 +1,190 @@
+@media screen and (max-width: 1024px) {
+    .LikesTopProfile {
+        .PagesWrapper{
+            width: auto !important;
+            margin: 0 20px;
+            .topButtons{
+                max-width: 90vw;
+                overflow: scroll;
+                
+                .buttonItem{
+                    white-space: nowrap;
+                }
+            }
+
+            .pageGallery{
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+                max-width: clamp(250px, 80vw, 800px); //80vw;
+                .item{
+                    // width: auto !important;
+                    width: clamp(75px, 38vw, 210px) !important;
+                    .userPhoto{
+                        img{
+                            width: clamp(160px, 38vw, 240px);
+                            
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+ 
+    
+    
+}
+@media screen and (max-width: 425px) {
+
+    .LikesTopProfile{
+        .PagesWrapper{
+            .topButtons{
+                .filter{
+                    padding: 2vw !important;
+                    svg{
+                        width: 4vw;
+                        height: 4vw;
+
+                    }
+                }
+                .buttonItem{
+                    padding: 2vw !important;
+                    span{
+                        font-size: clamp(6px, 2.3vw, 10px) !important;
+                    }
+                }
+            }
+            .bannerGold{
+                .bannerDescription{
+                    p{
+                        font-size: clamp(7px, 2vw, 10px) !important;
+                    }
+                }
+                .bannerWrapper{
+                    .item{
+                        .goBtn{
+                            padding: 6px 8px;
+                            span{
+                                font-size: clamp(6px, 2vw, 10px) !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .pageGallery{
+                justify-content: space-between;
+                .item{
+                    .userPhoto{
+                        img{
+                            // width: clamp(90px, 35vw, 150px);
+                            width: -webkit-fill-available;
+                            
+                        }
+                    }
+                    .recentlyActive{
+                        .markActivity{
+                           
+                        }
+                        .description{
+                            span{
+                                font-size: clamp(6px, 2.5vw, 16px) !important;
+                                white-space: nowrap;
+                            }
+                        }
+                        
+                    }
+                    .topProfileInfo{
+                        .userInfo{
+                            .userName, .timeStamp{
+                                span{
+                                    font-size: clamp(7px, 3vw, 14px) !important;
+                                    white-space: nowrap;
+                                    line-height: 0%;
+                                }
+
+                            }
+                        }
+                        .topProfileMark{
+                            svg{
+                                width: clamp(10px, 4vw, 25px);
+                                height: clamp(10px, 4vw, 25px);
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }   
+    
+}
+
+@media screen and (max-width: 300px) {
+
+    .LikesTopProfile{
+        .PagesWrapper{
+            .pageGallery{
+                justify-content: center;
+                .item{
+                    width: clamp(75px, 85vw, 280px) !important;
+                    .userPhoto{
+                        img{
+                            // width: auto;
+                            
+                        }
+                    }
+                    .topProfileInfo{
+                        .userInfo{
+                            .userName, .timeStamp{
+                                span{
+                                    font-size: 14px !important;
+                                }
+
+                            }
+                        }
+                        .topProfileMark{
+                            svg{
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                        }
+                    }
+                    
+                }
+            }
+    
+        }
+    }  
+    
+}
+
+
+
+@media screen and (max-width: 211px) {
+    .LikesTopProfile{
+        .PagesWrapper{
+           
+            .pageGallery{
+                .item{
+                    .userPhoto{
+                        img{
+                            width: auto;
+                            
+                        }
+                    }
+                    
+                }
+            }
+
+        }
+
+    }  
+    
+}

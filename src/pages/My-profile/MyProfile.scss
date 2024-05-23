@@ -114,7 +114,7 @@
                 }
                 .userEmail{
                     padding-top: 5px;
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-family: var(--font-family-urbanist);
                     font-size: 14px;
                     font-weight: 500;
@@ -145,7 +145,7 @@
                 }
                 .description {
                     padding-bottom: 5px;
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-family: var(--font-family-urbanist);
                     font-size: 12px;
                     font-weight: 500;
@@ -385,3 +385,4 @@
         
     }
 }
+@import url('./MediaMyProfile.scss');

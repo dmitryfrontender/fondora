@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './style/App.scss';
 import PageWrapper from './layout/PageWrapper/PageWrapper';
 
@@ -11,15 +11,43 @@ import Sidebar from './layout/Sidebar/Sidebar';
 import FilterModal from './components/Modals/LikesFilterModal/FilterModal';
 import BoostModal from './components/Modals/Boosts/BoostModal';
 import { useSelector } from 'react-redux';
+import MobileChat from './components/MobileChat/MobileChat';
+
+import { setMobileScreen } from './store/rootSlice';
+import { useDispatch } from 'react-redux';
 
 // import { Route, Routes, Navigate } from 'react-router-dom';
 
 
 function App() {
 
+  const [width, setWidth] = useState(window.innerWidth);
 
   const likeModal = useSelector((state: any) => state.LikesState.likesModal);
   const boostModal = useSelector((state: any) => state.BoostState.boostModal);
+  const mobileChat = useSelector((state: any) => state.mainState.mobileChat);
+
+  const dispatch = useDispatch();
+
+  const checkScreen = useMemo(() => {
+    return width >= 1024
+  }, [width])
+  
+  
+  useEffect(() => {
+
+    checkScreen ? dispatch(setMobileScreen(false)) : dispatch(setMobileScreen(true));
+    
+    const handleResize = (event: any) => {
+      setWidth(event.target.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+
+    
+  }, [checkScreen, dispatch]);
 
 
 
@@ -27,32 +55,15 @@ function App() {
     <div className="App">
         <Sidebar />
         <PageWrapper />
-
-        {/* <Routes>
-
-          <Route path="/" element={<Navigate to="/" />} />
-          <Route path="/likes" element={<Navigate to="/likes" />} />
-          <Route path="/top-profiles" element={<Navigate to="/top-profiles" />} />
-          <Route path="/messages" element={<Navigate to="/messages" />} />
-          <Route path="/settings" element={<Navigate to="/settings" />} />
-          <Route path="/notifications" element={<Navigate to="/notifications" />} />
-          <Route path="/my-profile" element={<Navigate to="/my-profile" />} />
-
-      
-
-        </Routes> */}
-
-        {/* <Icons /> */}
-
         {
             likeModal && <FilterModal/>
         }
         {
             boostModal && <BoostModal/>
         }
-
-        
-
+        {
+          mobileChat && <MobileChat />
+        }
     </div>
   );
 }

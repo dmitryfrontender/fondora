@@ -1,0 +1,56 @@
+@media screen and (max-width: 1024px) {
+    .Settings{
+        .pageItems {
+          width: clamp(250px, 85vw, 800px);
+        }
+    }
+    
+}
+@media screen and (max-width: 755px) {
+    .Settings{
+       .planSettings{
+        .planOption{
+            .wrapper{
+                // padding-bottom: 0;
+                .planDescription{
+                    p{
+                        display: none;
+                    }
+                }
+
+            }
+            .mobileDescription {
+                display: block;
+                p{
+                    margin: 0;
+                    padding-bottom: 10px;
+                    font-family: var(--font-family-urbanist);
+                    color: var(--black);
+                }
+              
+            }
+        }
+       }
+    }
+    
+}
+@media screen and (max-width: 475px) {
+    .Settings{
+        .pageItems {
+          width: clamp(250px, 90vw, 800px);
+          .planSettings{
+
+            .planOption{
+                position: relative;
+                .description{
+                    // position: absolute;
+                    // bottom: 0;
+                }
+
+            }
+
+          }
+        }
+    }
+    
+}

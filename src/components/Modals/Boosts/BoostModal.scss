@@ -21,7 +21,7 @@
         background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
         .topDescription{
             max-width: 275px;
-            color: rgb(162, 162, 162);
+            color: var(--main-text-color);
             font-family: var(--font-family-urbanist);
             font-size: 14px;
             font-weight: 500;
@@ -51,7 +51,7 @@
                     text-align: left;
                 }
                 span{
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-family: var(--font-family-urbanist);
                     font-size: 12px;
                     font-weight: 500;

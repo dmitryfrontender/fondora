@@ -101,7 +101,7 @@
                 }
                 .description {
                   p{
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-size: 12px;
                   }
                 }
@@ -120,3 +120,4 @@
 
     }
 }
+@import url('./MediaMatching.scss');

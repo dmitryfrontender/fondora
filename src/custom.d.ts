@@ -20,4 +20,3 @@ declare module '*.webp' {
 interface EventTarget {
     value: any
   }
-

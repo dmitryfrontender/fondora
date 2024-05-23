@@ -58,7 +58,7 @@
             }
             .description{
                 span{
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-family: var(--font-family-urbanist);
                     font-size: 14px;
                     font-weight: 500;
@@ -106,7 +106,7 @@
                     box-sizing: border-box;
                     border: 1px solid rgb(101, 101, 101);
                     border-radius: 30px;
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     cursor: pointer;
                     font-family: var(--font-family-urbanist);
                     transition: all ease 0.3s;
@@ -156,7 +156,7 @@
                     border-radius: 30px;
                     background: rgb(2, 2, 2);
                     span{
-                        color: rgb(162, 162, 162);
+                        color: var(--main-text-color);
                         font-family: var(--font-family-urbanist);
                         font-size: 13px;
                         font-weight: 500;
@@ -185,7 +185,7 @@
                 border-radius: 20px;
                 background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
                 .description{
-                    color: rgb(162, 162, 162);
+                    color: var(--main-text-color);
                     font-family: var(--font-family-urbanist);
                     font-size: 14px;
                     font-weight: 500;
@@ -203,3 +203,7 @@
         }   
     }
 }
+
+
+
+@import url('./MediaFilterModal.scss');

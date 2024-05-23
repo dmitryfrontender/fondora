@@ -82,7 +82,7 @@
                         }
                         .info, .date{
                             span{
-                                color: rgb(162, 162, 162);
+                                color: var(--main-text-color);
                                 font-family: var(--font-family-urbanist);
                                 font-size: 12px;
                                 font-weight: 500;
@@ -111,84 +111,83 @@
                 .chat{
 
                 }
-                .inputBlock {
-                    backdrop-filter: blur(5px);
-                    background: rgba(4, 4, 4, 0.9);
-                    width: 100%;
-                    height: auto;
-                    position: absolute;
-                    padding-bottom: 15px;
-                    bottom: 0;
-                    .inputWrapper {
-                        padding: 10px 10px;
-                        .input {
-                            position: relative;
-                            textarea{
-                                border: none;
-                                border-radius: 30px;
-                                background: rgb(33, 32, 32);
-                                width: -webkit-fill-available;
-                                resize: none;
-                                color: var(--white);
-                                font-family: var(--font-proxima-nova);
-                                font-size: 14px;
-                                line-height: 7px;
-                                font-weight: 400;
-                                letter-spacing: 0%;
-                                align-content: center;
-                                padding: 15px 20px;
+                // .inputBlock {
+                //     backdrop-filter: blur(5px);
+                //     background: rgba(4, 4, 4, 0.9);
+                //     width: 100%;
+                //     height: auto;
+                //     position: absolute;
+                //     padding-bottom: 15px;
+                //     bottom: 0;
+                //     .inputWrapper {
+                //         padding: 10px 10px;
+                //         .input {
+                //             position: relative;
+                //             textarea{
+                //                 border: none;
+                //                 border-radius: 30px;
+                //                 background: rgb(33, 32, 32);
+                //                 width: -webkit-fill-available;
+                //                 resize: none;
+                //                 color: var(--white);
+                //                 font-family: var(--font-proxima-nova);
+                //                 font-size: 14px;
+                //                 line-height: 7px;
+                //                 font-weight: 400;
+                //                 letter-spacing: 0%;
+                //                 align-content: center;
+                //                 padding: 15px 20px;
 
-                            }
-                            textarea:focus{
-                                outline: none;
-                            }
-                            .sendBtn {
-                                position: absolute;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                padding: 5px;
-                                top: 50%;
-                                right: 2%;
-                                border-radius: 50%;
-                                background: linear-gradient(135.00deg, rgb(27, 26, 27) -0.075%,rgb(185, 185, 185) 99.925%);
-                                transform: translateY(-55%);
-                                button{
-                                    padding: 0;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                }
-                            }
-                            .activeSendBtn{
-                                background: linear-gradient(135.00deg, rgb(132, 9, 56) -0.075%,rgb(242, 34, 113) 99.925%);
-                            }
+                //             }
+                //             textarea:focus{
+                //                 outline: none;
+                //             }
+                //             .sendBtn {
+                //                 position: absolute;
+                //                 display: flex;
+                //                 align-items: center;
+                //                 justify-content: center;
+                //                 padding: 5px;
+                //                 top: 50%;
+                //                 right: 2%;
+                //                 border-radius: 50%;
+                //                 background: linear-gradient(135.00deg, rgb(27, 26, 27) -0.075%,rgb(185, 185, 185) 99.925%);
+                //                 transform: translateY(-55%);
+                //                 button{
+                //                     padding: 0;
+                //                     display: flex;
+                //                     align-items: center;
+                //                     justify-content: center;
+                //                 }
+                //             }
+                //             .activeSendBtn{
+                //                 background: linear-gradient(135.00deg, rgb(132, 9, 56) -0.075%,rgb(242, 34, 113) 99.925%);
+                //             }
 
-                        }
-
-
+                //         }
 
 
-                    }
-                    .buttonWrapper {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: 0 10px;
 
-                        button{
-                            width: 36px;
-                            height: 36px;
-                            border-radius: 15px;
-                            background: rgb(33, 32, 32);
-                        }
-                        .leftPanel {
-                          display: flex;
-                        gap: 10px;
+                //     }
+                //     .buttonWrapper {
+                //         display: flex;
+                //         justify-content: space-between;
+                //         align-items: center;
+                //         padding: 0 10px;
 
-                        }
-                    }
-                }
+                //         button{
+                //             width: 36px;
+                //             height: 36px;
+                //             border-radius: 15px;
+                //             background: rgb(33, 32, 32);
+                //         }
+                //         .leftPanel {
+                //           display: flex;
+                //         gap: 10px;
+
+                //         }
+                //     }
+                // }
             }
 
         }
@@ -200,3 +199,9 @@
         }
     }
 }
+
+
+
+
+
+@import url('./MediaChat.scss');
