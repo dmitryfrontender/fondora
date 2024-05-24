@@ -2,39 +2,21 @@ import React from "react";
 import './ProfileComponent.scss'
 import PhotoSlider from "./PhotoSlider/PhotoSlider";
 import SVGIcon from "../../assets/icons/svgComponent";
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
 // import { useParams } from "react-router-dom";
 
 import { sliderProfiles }  from "../../Data/SliderProfiles";
 // import { ISliderProfile } from "../../model/SliderProfileModel";
 
 const ProfileComponent = (props: any) => {
-    // const [currentSlide, setCurrentSlide] = React.useState(0)
-    // const [loaded, setLoaded] = useState(false)
-
-	const [sliderRef, instanceRef] = useKeenSlider(
-		{
-            initial: 0,
-            drag: false,
-			slideChanged(slider) {
-				// setCurrentSlide(slider.track.details.rel)
-			},
-            created() {
-            //   setLoaded(true)
-            },
-		},
-		[
-			// add plugins here
-		]
-	);
 
     const activeUser = sliderProfiles[0];
 
     return (
         <>
             <div className="ProfileComponent">
+
                 <PhotoSlider images={activeUser.images} />
+
                 <div className="ProfileComponentInfo">
                     <div className="ProfileComponentMainInfo">
                         <span className="name">
@@ -166,7 +148,16 @@ const ProfileComponent = (props: any) => {
                             </li>
                         </ul>
                     </div>
-                    <div className="ProfileComponentMessageBlock"></div>
+                    <div className="ProfileComponentMessageBlock">
+                        <span className="ProfileComponentMessageIcon">
+                            <SVGIcon name="messageIcon" size={20} />
+                        </span>
+                        <span className="ProfileComponentMessageText">
+                            <span className="ProfileComponentMessageTitle">Написать сообщение</span>
+                            <span className="ProfileComponentMessageSubTitle">Написать сообщение</span>
+                        </span>
+                        <input type="text" />
+                    </div>
                     <div className="ProfileComponentButtons">
                         <span className="ProfileComponentButtonsBlock">
                             <span className="ProfileComponentButtonsIcon">

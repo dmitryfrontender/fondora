@@ -12,12 +12,25 @@ import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 
 const GamePad = () => {
 
+	const [timeOut, setTimeOut] = useState(true);
+
+	// TODO add logic for timeout
+	setTimeout(() => {
+		setTimeOut(false);
+	}, 3000);
+
 	const [profileVisibility] = useState(false); // TODO add setProfileVisibility
 
 	return (
 		<>
 			<div className='GamePad'>
 				<div className="GamePadBlock">
+					{
+						timeOut &&
+						<div className="GamePadSurvey">
+							<SVGIcon name="surveyImage" />
+						</div>
+					}
 
 					{
 						profileVisibility
@@ -33,9 +46,14 @@ const GamePad = () => {
 
 											<div className="GamePadPanel">
 												<div className="GamePadPanelBackground">
-													<p>
-														{sliderProfile.userDescription}
-													</p>
+													<div className="GamePadPanelInfo">
+														{
+															sliderProfile.userDescription &&
+															<div className="GamePadPanelInfoItem">
+																{sliderProfile.userDescription}
+															</div>
+														}
+													</div>
 												</div>
 												<div className="GamePadPanelButtons">
 													<div className="GamePadPanelButtonsItem item-big">
@@ -61,7 +79,6 @@ const GamePad = () => {
 							}
 						</div>
 					}
-
 				</div>
 
 				<div className="GamePadTutorial">
