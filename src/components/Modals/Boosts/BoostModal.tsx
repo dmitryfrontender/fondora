@@ -20,7 +20,7 @@ const BoostModal = () => {
         if (e.target.className === ref.current?.className) {
             dispatch(boostModalState('close-boostModal'));
         }
-      };
+    };
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside);

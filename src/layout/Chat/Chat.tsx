@@ -14,7 +14,12 @@ import { useParams } from "react-router-dom";
 import userAvatar from '../../assets/avatar/user-avatar.png'
 import EnterMessage from "../../components/EnterMessage/EnterMessage";
 import { mobileScreenEnable } from "../../store/selectors";
+import { protectModalState, reportUserAvatar, reportUserName } from "../../store/ProtectSlice";
 import ProfileComponent from "../../components/ProfileComponent/ProfileComponent";
+import { setVideoChatModal, setUserName, setUserAvatar } from "../../store/VideoChatSlice";
+import Report from "../../components/ReportComponent/Report";
+import { useLocation } from "react-router-dom";
+import { setReportPage } from "../../store/ProtectSlice";
 
 
 
@@ -29,8 +34,26 @@ const Chat = () => {
     const [chatData, setChatData] = useState ({} as IMessages);
     const [mobileScreen, setMobileScreen] = useState(false);
     const mobileDimension = useSelector(mobileScreenEnable);
+    const reportComponent = useSelector((state: any) => state.ProtectState.reportComponent);
+    const [pathLocation, setPathLocation] = useState('');
     // const [areaValue, setAreaValue] = useState('');
     // const [sendBtn, setSendBtn] = useState(false);
+    const location = useLocation();
+
+
+    // console.log(reportComponent);
+
+    // const sidebar = document.querySelector('.Sidebar');
+    // console.log(sidebar);
+
+
+    // const checkSideBarClick = (path: string) => {
+        
+
+
+        
+    // }
+    
 
 
 
@@ -83,6 +106,16 @@ const Chat = () => {
     }, [mobileDimension]);
 
     useEffect(() => {
+
+        if (pathLocation === '') {
+            setPathLocation(location.pathname);
+        } else if (pathLocation !== location.pathname) {
+            setPathLocation(location.pathname);
+            dispatch(setReportPage(false));
+        }
+        
+
+        
         dispatch(setChatId(id))
         messagesData.forEach((item:IMessages) => {
 
@@ -95,123 +128,144 @@ const Chat = () => {
 
         checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false)
 
+        return () => {
+            dispatch(setReportPage(false))
+
+        }
 
 
 
-    },[id, dispatch, checkMobileScreen])
+
+
+    },[id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname]);
 
 
     return(
         <>
             {!mobileScreen ?
-            <div className="page Chat">
+                
+                <div className="page Chat">
 
-                <div className="chatWrapper">
-                    <div className="chatArea">
-                        <div className="chatBg">
-                            <img src={chatBg} alt="bg" />
-                        </div>
-                        <div className="chatItems">
-                            <div className="topBlock">
-                                <div className="companionAvatar">
-                                    <img src={chatData.image} alt="avatar" />
-                                    {
-                                        chatData.userOnLine ? <div className="onLinePin"></div> : null
-                                    }
+                    <div className="chatWrapper">
+                        {
+                            !reportComponent ?
+                                <div className="chatArea">
+                                <div className="chatBg">
+                                    <img src={chatBg} alt="bg" />
                                 </div>
-                                <div className="companionDescription">
-                                    <div className="avatars">
-                                        <div className="avatar">
-                                            <img src={userAvatar} alt="avatar" />
-                                        </div>
-                                        <div className="avatar rightAvatar">
+                                <div className="chatItems">
+                                    <div className="topBlock">
+                                        <div className="companionAvatar">
                                             <img src={chatData.image} alt="avatar" />
+                                            {
+                                                chatData.userOnLine ? <div className="onLinePin"></div> : null
+                                            }
                                         </div>
-                                    </div>
-                                    <div className="info">
-                                        <span>
-                                            Вы и {chatData.userName} образовали пару
+                                        <div className="companionDescription">
+                                            <div className="avatars">
+                                                <div className="avatar">
+                                                    <img src={userAvatar} alt="avatar" />
+                                                </div>
+                                                <div className="avatar rightAvatar">
+                                                    <img src={chatData.image} alt="avatar" />
+                                                </div>
+                                            </div>
+                                            <div className="info">
+                                                <span>
+                                                    Вы и {chatData.userName} образовали пару
 
-                                        </span>
-                                    </div>
-                                    <div className="date">
-                                        <SVGIcon name="calendarIcon" size={14} />
-                                        <span>13.11.2023</span>
-                                    </div>
+                                                </span>
+                                            </div>
+                                            <div className="date">
+                                                <SVGIcon name="calendarIcon" size={14} />
+                                                <span>13.11.2023</span>
+                                            </div>
 
-                                </div>
-                                <div className="buttonsBlock">
-                                    <button>
-                                        <SVGIcon name="videoCallIcon" size={20} />
-                                    </button>
-                                    <button>
-                                        <SVGIcon name="protectIcon" size={20} />
-                                    </button>
-                                    <Link to={"/messages"}>
-                                        <button>
-                                            <SVGIcon name="roundCloseBtn" size={20} />
-                                        </button>
-                                    </Link>
+                                        </div>
+                                        <div className="buttonsBlock">
+                                            <button onClick={() => {
+                                                dispatch(setVideoChatModal(true))
+                                                dispatch(setUserName(chatData.userName))
+                                                dispatch(setUserAvatar(chatData.image))
 
-                                </div>
-
-
-                            </div>
-                            <div className="chat">
-
-                            </div>
-                            {/* <div className="inputBlock">
-                                <div className="inputWrapper">
-                                    <div className="input">
-                                        <TextareaAutosize
-                                            placeholder="Напишите сообщение..."
-                                            value={areaValue}
-                                            minRows={2}
-                                            maxRows={4}
-                                            onChange={resizeArea}
-                                        />
-                                        <div className={`sendBtn ${sendBtn ? 'activeSendBtn' : ''}`}>
-                                            <button>
-                                                <SVGIcon name="sendTgBtn" size={20} />
+                                            }}>
+                                                <SVGIcon name="videoCallIcon" size={20} />
                                             </button>
+                                            <button onClick={() => {
+                                                dispatch(protectModalState(true));
+                                                dispatch(reportUserAvatar(chatData.image));
+                                                dispatch(reportUserName(chatData.userName));
+                                            }}>
+                                                <SVGIcon name="protectIcon" size={20} />
+                                            </button>
+                                            <Link to={"/messages"}>
+                                                <button>
+                                                    <SVGIcon name="roundCloseBtn" size={20} />
+                                                </button>
+                                            </Link>
+
                                         </div>
+
+
                                     </div>
+                                    <div className="chat">
+
+                                    </div>
+                                    {/* <div className="inputBlock">
+                                        <div className="inputWrapper">
+                                            <div className="input">
+                                                <TextareaAutosize
+                                                    placeholder="Напишите сообщение..."
+                                                    value={areaValue}
+                                                    minRows={2}
+                                                    maxRows={4}
+                                                    onChange={resizeArea}
+                                                />
+                                                <div className={`sendBtn ${sendBtn ? 'activeSendBtn' : ''}`}>
+                                                    <button>
+                                                        <SVGIcon name="sendTgBtn" size={20} />
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div className="buttonWrapper">
+                                            <div className="leftPanel">
+                                                <button>
+                                                    <SVGIcon size={20} name="gifBtn" />
+                                                </button>
+                                                <button>
+                                                    <SVGIcon size={20} name="smileBtn" />
+                                                </button>
+                                                <button>
+                                                    <SVGIcon size={20} name="fileBtn" />
+                                                </button>
+                                            </div>
+                                            <div className="rightPanel">
+                                                <button>
+                                                    <SVGIcon size={20} name="voiceMessageBtn" />
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div> */}
+                                    <EnterMessage />
 
                                 </div>
-                                <div className="buttonWrapper">
-                                    <div className="leftPanel">
-                                        <button>
-                                            <SVGIcon size={20} name="gifBtn" />
-                                        </button>
-                                        <button>
-                                            <SVGIcon size={20} name="smileBtn" />
-                                        </button>
-                                        <button>
-                                            <SVGIcon size={20} name="fileBtn" />
-                                        </button>
-                                    </div>
-                                    <div className="rightPanel">
-                                        <button>
-                                            <SVGIcon size={20} name="voiceMessageBtn" />
-                                        </button>
-                                    </div>
+
 
                                 </div>
-
-
-                            </div> */}
-                            <EnterMessage />
-
-                        </div>
-
+                                :
+                                <Report/>
+                        }
+                        
+                        <ProfileComponent />
 
                     </div>
 
-                    <ProfileComponent />
-
                 </div>
-
-            </div>
             :
             null
 
