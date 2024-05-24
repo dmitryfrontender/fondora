@@ -4,6 +4,8 @@ import LikesReducer from "./LikesStateSlice";
 import BoostReducer from "./BoostSlice";
 import ProtectSlice from "./ProtectSlice";
 import VideoChatSlice from "./VideoChatSlice";
+import ShareProfileSlice from "./ShareProfileSlice";
+import NewLikeSlice from "./NewLikeSlice";
 
 
 
@@ -14,6 +16,8 @@ export default configureStore({
         LikesState: LikesReducer,
         BoostState: BoostReducer,
         ProtectState: ProtectSlice,
-        VideoChatState: VideoChatSlice
+        VideoChatState: VideoChatSlice,
+        ShareProfileState: ShareProfileSlice,
+        NewLikeState: NewLikeSlice,
     }
 })

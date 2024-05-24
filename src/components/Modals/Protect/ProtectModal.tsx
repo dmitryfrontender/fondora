@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { protectModalState, toggleToReport} from "../../../store/ProtectSlice";
+import { protectModalState, toggleToReport, toggleToBlockUser} from "../../../store/ProtectSlice";
 import './ProtectModal.scss'
 import '../Modals.scss'
 import { useDispatch, useSelector } from "react-redux";
@@ -61,7 +61,9 @@ const ProtectModal = () => {
                                 </div>
                             </div>
                     </div>
-                    <div className="item">
+                    <div className="item" onClick={() => {
+                        dispatch(toggleToBlockUser())
+                    }}>
                         <div className="img">
                             <SVGIcon name="unAvailableBtn" size={25}/>
                             

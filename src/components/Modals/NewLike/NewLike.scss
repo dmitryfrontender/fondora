@@ -1,0 +1,75 @@
+.NewLikeModal{
+    .modalWrapper{
+        // border-radius: 20px;
+        background: linear-gradient(168deg, #242016 0%, rgba(26, 23, 23, 0.00) 100%);
+        backdrop-filter: blur(17px);
+        .likesPreview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .item{
+                border: 2px solid #FFD226;
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    filter: blur(7px);
+
+                }
+            }
+            .first{
+                position: relative;
+                left: 1.5vw;
+                z-index: -1;
+
+            }
+            .second{
+                img{
+                    width: 120px;
+                    height: 120px;
+
+                }
+         
+            }
+            .third{
+                position: relative;
+                right: 1.5vw;
+                z-index: 10;
+
+            }
+          
+        }
+        .description{
+            width: 50%;
+            span{
+                color: #A2A2A2;
+                text-align: center;
+                font-family: var(--font-family-urbanist);
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%; /* 21px */
+                letter-spacing: 0.28px;
+
+            }
+        }
+        .modalButtons {
+          margin-top: 40px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          width: -webkit-fill-available;
+          gap: 20px;
+          .btn{
+            width: -webkit-fill-available;
+
+
+          }
+        }
+
+    }
+
+}

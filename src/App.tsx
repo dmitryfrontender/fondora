@@ -14,6 +14,9 @@ import ProtectModal from './components/Modals/Protect/ProtectModal';
 import { useSelector } from 'react-redux';
 import MobileChat from './components/MobileChat/MobileChat';
 import VideoChatModal from './components/Modals/VideoChat/VideoChatModal';
+import BlockUser from './components/Modals/BlockUser/BlockUser';
+import ShareProfile from './components/Modals/ShareProfile/ShareProfile';
+import NewLike from './components/Modals/NewLike/NewLike';
 
 import { setMobileScreen } from './store/rootSlice';
 import { useDispatch } from 'react-redux';
@@ -29,7 +32,10 @@ function App() {
   const boostModal = useSelector((state: any) => state.BoostState.boostModal);
   const mobileChat = useSelector((state: any) => state.mainState.mobileChat);
   const protectModal = useSelector((state: any) => state.ProtectState.protectModal);
+  const shareProfileModal = useSelector((state: any) => state.ShareProfileState.shareProfileModal)
   const videoChatModal = useSelector((state: any) => state.VideoChatState.videoChatModal);
+  const blockUserModal = useSelector((state: any) => state.ProtectState.blockUserModal)
+  const newLikeModal = useSelector((state: any) => state.NewLikeState.newLikeModal)
   const dispatch = useDispatch();
 
   const checkScreen = useMemo(() => {
@@ -72,6 +78,15 @@ function App() {
         }
         {
           videoChatModal && <VideoChatModal />
+        }
+        {
+          shareProfileModal && <ShareProfile/>
+        }
+        {
+          blockUserModal && <BlockUser/>
+        }
+        {
+          newLikeModal && <NewLike/>
         }
     </div>
   );
