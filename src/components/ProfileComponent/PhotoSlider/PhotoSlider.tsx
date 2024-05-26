@@ -3,6 +3,22 @@ import './PhotoSlider.scss'
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 
+function Arrow(props: {
+  disabled: boolean
+  left?: boolean
+  onClick: (e: any) => void
+}) {
+  const disabled = props.disabled ? " arrow--disabled" : ""
+  return (
+    <span
+      onClick={props.onClick}
+      className={`arrow ${
+        props.left ? "arrow--left" : "arrow--right"
+      } ${disabled}`}
+    ></span>
+  )
+}
+
 
 const PhotoSlider = (props: any) => {
     const [currentSlide, setCurrentSlide] = React.useState(0)
@@ -11,6 +27,7 @@ const PhotoSlider = (props: any) => {
 	const [sliderRef, instanceRef] = useKeenSlider(
 		{
             initial: 0,
+            drag: false,
 			slideChanged(slider) {
 				setCurrentSlide(slider.track.details.rel)
 			},
@@ -53,6 +70,28 @@ const PhotoSlider = (props: any) => {
                             )
                         })}
                     </div>
+
+                    {loaded && instanceRef.current && (
+                        <>
+                            <Arrow
+                                left
+                                onClick={(e: any) =>
+                                    e.stopPropagation() || instanceRef.current?.prev()
+                                }
+                                disabled={currentSlide === 0}
+                            />
+
+                            <Arrow
+                                onClick={(e: any) =>
+                                    e.stopPropagation() || instanceRef.current?.next()
+                                }
+                                disabled={
+                                    currentSlide ===
+                                    instanceRef.current.track.details.slides.length - 1
+                                }
+                            />
+                        </>
+                    )}
                 </div>
             </div>
         </>
