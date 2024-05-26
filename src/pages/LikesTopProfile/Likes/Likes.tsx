@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SVGIcon from "../../../assets/icons/svgComponent";
 import '../LikesTopProfilePage.scss'
 import { myLikes }  from "../../../Data/MyLikes";
@@ -6,6 +6,7 @@ import { ILikes } from "../../../model/LikesModel";
 import { useSelector, useDispatch } from "react-redux";
 import { likesModalState } from "../../../store/LikesStateSlice";
 import { bodyOverflow } from "../../../utils/bodyOverflow";
+import { newLikeModalState } from "../../../store/NewLikeSlice";
 
 
 
@@ -23,19 +24,14 @@ const Likes = () => {
 
 
 
-    // useEffect(() => {
+    useEffect(() => {
 
+        setTimeout(() => {
+            dispatch(newLikeModalState(true))
 
-    //     const handleResize = (event: any) => {
-    //         setWidth(event.target.innerWidth);
-    //       };
-    //       window.addEventListener('resize', handleResize);
-    //       return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //       };
+        }, 1000)
 
-        
-    // },[])
+    },[dispatch])
 
   
     
