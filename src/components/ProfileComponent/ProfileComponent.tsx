@@ -153,8 +153,8 @@ const ProfileComponent = (props: any) => {
                             <SVGIcon name="messageIcon" size={20} />
                         </span>
                         <span className="ProfileComponentMessageText">
-                            <span className="ProfileComponentMessageTitle">Написать сообщение</span>
-                            <span className="ProfileComponentMessageSubTitle">Написать сообщение</span>
+                            <span className="ProfileComponentMessageTitle">Jessica Black ждет твоего сообщения! </span>
+                            <span className="ProfileComponentMessageSubTitle">Добавь его к суперлайку и увеличь шансы создать пару на 25%.</span>
                         </span>
                         <input type="text" />
                     </div>
