@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './GamePad.scss';
 // import { useState } from 'react';
-import 'keen-slider/keen-slider.min.css';
+// import 'keen-slider/keen-slider.min.css';
+
+import { useSprings, animated, to as interpolate } from '@react-spring/web'
+import { useDrag } from '@use-gesture/react'
 
 import { sliderProfiles }  from "../../Data/SliderProfiles";
 import { ISliderProfile } from "../../model/SliderProfileModel";
@@ -12,6 +15,12 @@ import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 
 const GamePad = () => {
 
+	// TODO add logic for animated div
+	// Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+	const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
+		console.log(index, down, mx, xDir, velocity);
+	})
+
 	const [timeOut, setTimeOut] = useState(true);
 
 	// TODO add logic for timeout
@@ -19,7 +28,44 @@ const GamePad = () => {
 		setTimeOut(false);
 	}, 3000);
 
-	const [profileVisibility] = useState(false); // TODO add setProfileVisibility
+	const [profileVisibility, setProfileVisibility] = useState(false); // TODO add setProfileVisibility
+
+	// TODO add logic for key press
+    const handleKeyPress = (event: any) => {
+
+		// TODO add key bindings here
+        if (event.code === "ArrowUp") {
+			event.preventDefault();
+			setProfileVisibility(true);
+        }
+
+		if (event.code === "ArrowDown") {
+			event.preventDefault();
+			setProfileVisibility(false);
+		}
+
+		if (event.code === "ArrowLeft") {
+			event.preventDefault();
+			console.log('ArrowLeft');
+		}
+
+		if (event.code === "ArrowRight") {
+			event.preventDefault();
+			console.log('ArrowRight');
+		}
+
+		if (event.code === "Enter") {
+			event.preventDefault();
+			console.log('Enter');
+		}
+    }
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeyPress, false);
+        return () => {
+          document.removeEventListener("keydown", handleKeyPress, false);
+        };
+    }, []);
 
 	return (
 		<>
@@ -39,9 +85,13 @@ const GamePad = () => {
 						:
 						<div className="GamePadBlockWrapper">
 							{
-								sliderProfiles && sliderProfiles.map((sliderProfile: ISliderProfile) => {
+								sliderProfiles && sliderProfiles.map((sliderProfile: ISliderProfile, i) => {
 									return (
-										<div className="GamePadBlockItem" key={sliderProfile.id}>
+										<animated.div
+											className="GamePadBlockItem"
+											key={sliderProfile.id}
+											{...bind(i)}
+										>
 											<PhotoSlider images={sliderProfile.images} />
 
 											<div className="GamePadPanel">
@@ -73,7 +123,7 @@ const GamePad = () => {
 													</div>
 												</div>
 											</div>
-										</div>
+										</animated.div>
 									)
 								})
 							}

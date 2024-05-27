@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './PhotoSlider.scss'
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
@@ -18,7 +18,6 @@ function Arrow(props: {
     ></span>
   )
 }
-
 
 const PhotoSlider = (props: any) => {
     const [currentSlide, setCurrentSlide] = React.useState(0)
@@ -40,6 +39,26 @@ const PhotoSlider = (props: any) => {
 		]
 	);
 
+    const handleSpacePress = (event: any) => {
+
+        if (event.code === "Space") {
+            event.preventDefault();
+            instanceRef.current?.next();
+        }
+
+        if (event.shiftKey && event.code === "Space") {
+            event.preventDefault();
+            instanceRef.current?.prev();
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleSpacePress, false);
+        return () => {
+          document.removeEventListener("keydown", handleSpacePress, false);
+        };
+    }, []);
+
     return (
         <>
             <div className="PhotoSlider">
@@ -53,7 +72,7 @@ const PhotoSlider = (props: any) => {
                             <button
                                 key={idx}
                                 onClick={() => {
-                                instanceRef.current?.moveToIdx(idx)
+                                    instanceRef.current?.moveToIdx(idx)
                                 }}
                                 className={"dot" + (currentSlide === idx ? " active" : "")}
                             ></button>
