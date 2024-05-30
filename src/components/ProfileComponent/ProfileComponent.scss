@@ -1,6 +1,4 @@
 .ProfileComponent {
-    max-width: 600px;
-    max-height: 935px;
     overflow: auto;
     border-radius: 30px;
 
@@ -140,6 +138,18 @@
             line-height: normal;
             letter-spacing: 0.28px;
         }
+    }
+
+    &MessageBlock {
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 20px;
+        border: 1px solid #FFBE18;
+        background: linear-gradient(146deg, #131417 0%, #131417 100%);
     }
 
     &Buttons {
