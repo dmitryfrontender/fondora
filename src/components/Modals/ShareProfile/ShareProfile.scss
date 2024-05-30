@@ -1,8 +1,6 @@
 .ShareProfile{
     .modalWrapper {
-      .icon{
-
-      }
+      width: clamp(300px, 40vw, 600px);
       .tittle{
         margin: 10px 0;
       }
@@ -54,3 +52,6 @@
       }
     }
 }
+
+
+@import url('./MediaShareProfile.scss');

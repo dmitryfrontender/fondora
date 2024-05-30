@@ -33,7 +33,7 @@ const Report = () => {
 
     return (
         <div className="Report">
-            <div className="container">
+            <div className="wrapper">
                 <div className="topBlock">
                     <div className="backBtn" onClick={() => goBack()}>
                         <button>

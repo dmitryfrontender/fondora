@@ -25,9 +25,6 @@
         }
         .description{
             max-width: 40%;
-            span{
-
-            }
         }
         .description, .toggleToTalk {
             span{
@@ -69,3 +66,8 @@
         }
     }
 }
+
+
+
+
+@import url('./MediaChatModal.scss');
