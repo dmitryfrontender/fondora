@@ -1,0 +1,43 @@
+@media screen and (max-width: 1024px) {
+
+    .NewLikeModal{
+        .modalWrapper {
+            .description {
+              width: 80%;
+            }
+        }
+    } 
+
+    
+}
+
+@media screen and (max-width: 425px) {
+
+    .NewLikeModal{
+        .modalWrapper {
+            .tittle {
+                h2{
+                    font-size: clamp(15px, 5vw, 20px);
+
+
+                }
+            }
+            .description {
+              width: 100%;
+            }
+            // .modalButtons {
+            //   .btn{
+            //     button{
+            //         span{
+            //             font-size: clamp(7px, 5vw, 14px);
+
+
+            //         }
+            //     }
+            //   }
+            // }
+        }
+    } 
+
+    
+}

@@ -1,5 +1,7 @@
 .Report{
-    .container {
+  overflow: auto;
+    height: 100%;
+    .wrapper {
       margin: 0 2vw;
       .topBlock{
         display: flex;
@@ -157,6 +159,12 @@
 
         }
       }
+      .defaultBtn{
+        margin-bottom: 50px;
+      }
       
     }
 }
+
+
+@import url('./MediaReport.scss')

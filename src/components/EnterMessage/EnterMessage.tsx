@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './EnterMessage.scss'
 import SVGIcon from "../../assets/icons/svgComponent";
 import TextareaAutosize from "react-textarea-autosize";
@@ -18,6 +18,9 @@ const EnterMessage = () => {
 
 
     const resizeArea = (e: any) => {
+        
+
+        
 
         if (e.target.value.length === 0) {
             setAreaValue('');
@@ -26,8 +29,9 @@ const EnterMessage = () => {
         } else if (e.target.value.length <= 1) {
 
                 setAreaValue(e.target.value.trim());
+
                 setSendBtn(false);
-                if (e.target.value !== ' ') {
+                if (e.target.value !== '') {
                     setSendBtn(true);
                 }
                 
@@ -37,6 +41,31 @@ const EnterMessage = () => {
             
         } 
     }
+
+
+    
+
+
+    const handleKeyPress = (event: any) => {
+
+        if (event.code === "Enter" && sendBtn){
+            console.log('ok');
+            
+        }
+         
+    }
+
+
+    useEffect(() => {
+            document.addEventListener("keydown", handleKeyPress, false);
+        return() => {
+            // setSendBtn(false);
+            // setAreaValue('')
+            document.removeEventListener("keydown", handleKeyPress, false);
+
+
+        }
+    })
 
 
 
