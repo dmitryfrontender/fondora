@@ -75,6 +75,14 @@
         overflow: hidden;
         touch-action: none;
 
+        &.approved {
+            transform-origin: 0 100%;
+        }
+
+        &.declined {
+            transform-origin: 100% 100%;
+        }
+
         .keen-slider {
             width: 100%;
             height: 100%;
@@ -161,6 +169,7 @@
         left: 0;
         bottom: 0;
         text-align: left;
+        z-index: 1;
 
         &Background {
             width: calc(100% - 40px);
@@ -216,6 +225,48 @@
                 }
             }
         }
+
+        &Info {
+            position: relative;
+            z-index: 1;
+        }
+
+        &MainInfo {
+            color: #FFF;
+            font-size: 24px;
+            line-height: 100%;
+
+            .name {
+                font-weight: 500;
+            }
+
+            .separator {
+                font-weight: 600;
+            }
+
+            .age {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &ProfileToggler {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        z-index: 1;
+        display: flex;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.40);
+    }
+
+    .ProfileComponent {
+        max-width: 600px;
+        max-height: 935px;
     }
 
     .ProfileComponentInfo {

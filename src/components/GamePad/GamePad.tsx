@@ -15,13 +15,42 @@ import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 
 const GamePad = () => {
 
+	const [approved, setApproved] = useState(false);
+	const [declined, setDeclined] = useState(false);
+	const [angle, setAngle] = useState(0);
+
+	const [timeOut, setTimeOut] = useState(true);
+
 	// TODO add logic for animated div
 	// Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
 	const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
-		console.log(index, down, mx, xDir, velocity);
-	})
+		const maxAngle = 15;
+		const newAngle = Math.min(0 + Math.round(mx) / maxAngle)
 
-	const [timeOut, setTimeOut] = useState(true);
+		if (down) {
+			if (xDir > 0) {
+				if (newAngle > maxAngle) {
+					setAngle(maxAngle);
+				}
+				setApproved(true);
+				setDeclined(false);
+			} else if (xDir < 0) {
+				if (newAngle < -maxAngle) {
+					setAngle(-maxAngle);
+				}
+				setDeclined(true);
+				setApproved(false);
+			} else {
+				setAngle(0);
+				setApproved(false);
+				setDeclined(false);
+			}
+		} else {
+			setAngle(0);
+			setApproved(false);
+			setDeclined(false);
+		}
+	})
 
 	// TODO add logic for timeout
 	setTimeout(() => {
@@ -88,19 +117,79 @@ const GamePad = () => {
 								sliderProfiles && sliderProfiles.map((sliderProfile: ISliderProfile, i) => {
 									return (
 										<animated.div
-											className="GamePadBlockItem"
+											className={`GamePadBlockItem ${approved ? "approved" : ""} ${declined ? "declined" : ""}`}
+											style={{
+												transform: i === 0 ? `rotate(${angle}deg)` : `translateX(-50%)`
+											}}
 											key={sliderProfile.id}
 											{...bind(i)}
 										>
-											<PhotoSlider images={sliderProfile.images} />
+											{
+												i === 0 &&
+												<PhotoSlider images={sliderProfile.images} />
+											}
+
+											{
+												i > 0 &&
+												<img src={sliderProfile.images[0].src} alt={sliderProfile.images[0].alt} />
+											}
 
 											<div className="GamePadPanel">
 												<div className="GamePadPanelBackground">
 													<div className="GamePadPanelInfo">
 														{
+															(sliderProfile.userName || sliderProfile.userAge) &&
+															<div className="GamePadPanelMainInfo">
+																{
+																	sliderProfile.userName &&
+																	<span className="name">
+																		{sliderProfile.userName}
+																	</span>
+																}
+																{
+																	sliderProfile.userName &&
+																	sliderProfile.userAge &&
+																	<span className="separator">, </span>
+																}
+																{
+																	sliderProfile.userAge &&
+																	<span className="age">
+																		{sliderProfile.userAge}
+																	</span>
+																}
+																<SVGIcon name="fillVerification" size={16} />
+															</div>
+														}
+														{
+															sliderProfile.userLocation &&
+															sliderProfile.userDistance &&
+															<div className="GamePadPanelAdditionalInfo">
+																<ul>
+																	<li>
+																		<SVGIcon name="homeIcon" size={14} />
+																		<span>{sliderProfile.userLocation}</span>
+																	</li>
+																	<li>
+																		<SVGIcon name="distanceIcon" size={14} />
+																		<span>{sliderProfile.userDistance}</span>
+																	</li>
+																	<li>
+																		<SVGIcon name="tall" size={14} />
+																		<span>{sliderProfile.userLocation}</span>
+																	</li>
+																	<li>
+																		<SVGIcon name="femaleGender" size={14} />
+																		<span>{sliderProfile.userLocation}</span>
+																	</li>
+																</ul>
+															</div>
+														}
+														{
 															sliderProfile.userDescription &&
-															<div className="GamePadPanelInfoItem">
-																{sliderProfile.userDescription}
+															<div className="GamePadPanelDescription">
+																<p>
+																	{sliderProfile.userDescription}
+																</p>
 															</div>
 														}
 													</div>
@@ -121,6 +210,9 @@ const GamePad = () => {
 													<div className="GamePadPanelButtonsItem item-big item-pink">
 														<SVGIcon name="gamepadHeartIcon" size={24} />
 													</div>
+												</div>
+												<div className="GamePadProfileToggler" onClick={() => setProfileVisibility(true)}>
+													<SVGIcon name="arrowUp" size={6} width={11} />
 												</div>
 											</div>
 										</animated.div>
