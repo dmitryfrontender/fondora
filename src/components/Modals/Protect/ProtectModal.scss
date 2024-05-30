@@ -1,13 +1,5 @@
 .ProtectModal{
     .modalWrapper {
-        // width: clamp(300px, 50vw, 600px);
-        // border-radius: 20px;
-        // background: linear-gradient(146deg, #131417 0%, #131417 100%);
-        // display: flex;
-        // position: relative;
-        // flex-direction: column;
-        // align-items: center;
-        // padding: 30px 20px;
       .tittle{
         text-align-last: left;
         margin: 0 0 10px;
@@ -64,3 +56,7 @@
       }
     }
 }
+
+
+
+@import "./MediaProtectModal.scss"

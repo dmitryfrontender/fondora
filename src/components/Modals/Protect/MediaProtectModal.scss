@@ -1,0 +1,27 @@
+@media screen and (max-width: 425px) {
+
+    .ProtectModal {
+
+        .modalWrapper {
+            .tittle {
+              h2{
+                font-size: clamp(15px, 5vw, 20px);
+              }
+            }
+            .itemWrapper {
+                .item{
+                    padding: 20px clamp(5px, 5vw, 10px);
+                    .description {
+                      padding-left: 2vw;
+                    }
+
+
+                }
+            }
+        }
+
+    }
+
+
+    
+}

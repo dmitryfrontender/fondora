@@ -17,7 +17,8 @@ export interface IMessages {
         text: string,
         time: string,
         daySend: string[],
-        unRead: boolean
+        unRead: boolean,
+        owner: boolean
 
     }]
 }
