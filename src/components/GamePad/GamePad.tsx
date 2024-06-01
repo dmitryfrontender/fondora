@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './GamePad.scss';
-// import { useState } from 'react';
-// import 'keen-slider/keen-slider.min.css';
 
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
@@ -15,8 +13,7 @@ import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 
 const GamePad = () => {
 
-	const [approved, setApproved] = useState(false);
-	const [declined, setDeclined] = useState(false);
+	const [approved, setApproved] = useState('');
 	const [angle, setAngle] = useState(0);
 
 	const [timeOut, setTimeOut] = useState(true);
@@ -24,31 +21,29 @@ const GamePad = () => {
 	// TODO add logic for animated div
 	// Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
 	const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
+		console.log(index, down, mx, xDir, velocity);
+
 		const maxAngle = 15;
-		const newAngle = Math.min(0 + Math.round(mx) / maxAngle)
+		let newAngle = 0;
 
 		if (down) {
-			if (xDir > 0) {
-				if (newAngle > maxAngle) {
-					setAngle(maxAngle);
-				}
-				setApproved(true);
-				setDeclined(false);
-			} else if (xDir < 0) {
-				if (newAngle < -maxAngle) {
-					setAngle(-maxAngle);
-				}
-				setDeclined(true);
-				setApproved(false);
+			if (mx > 0) {
+				newAngle = mx / 360 * maxAngle < maxAngle ? mx / 360 * maxAngle : maxAngle;
+				setApproved('approved');
+
+				setAngle(newAngle);
+			} else if (mx < 0) {
+				newAngle = mx / 360 * maxAngle > -maxAngle ? mx / 360 * maxAngle : -maxAngle;
+				setApproved('declined');
+
+				setAngle(newAngle);
 			} else {
 				setAngle(0);
-				setApproved(false);
-				setDeclined(false);
+				setApproved('');
 			}
 		} else {
 			setAngle(0);
-			setApproved(false);
-			setDeclined(false);
+			setApproved('');
 		}
 	})
 
@@ -117,7 +112,7 @@ const GamePad = () => {
 								sliderProfiles && sliderProfiles.map((sliderProfile: ISliderProfile, i) => {
 									return (
 										<animated.div
-											className={`GamePadBlockItem ${approved ? "approved" : ""} ${declined ? "declined" : ""}`}
+											className={`GamePadBlockItem ${approved}`}
 											style={{
 												transform: i === 0 ? `rotate(${angle}deg)` : `translateX(-50%)`
 											}}
