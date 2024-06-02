@@ -3,7 +3,7 @@ import './Report.scss'
 import SVGIcon from "../../assets/icons/svgComponent";
 import DefaultBtn from "../DefaultBtn/DefaultBtn";
 import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { setReportPage } from "../../store/ProtectSlice";
 
 const Report = () => {
@@ -12,16 +12,8 @@ const Report = () => {
     const userAvatar = useSelector((state: any) => state.ProtectState.userAvatar);
 
     const navigate = useNavigate()
-    const location = useLocation();
-    const path = location.pathname;
+    // const location = useLocation();
 
-
-
-    const cancelBtn = () => {
-
-
-
-    }
     const goBack = () => {
         setReportPage(false)
         navigate(-1)

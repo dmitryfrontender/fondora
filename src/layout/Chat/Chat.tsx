@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import chatBg from '../../assets/images/chatBg.png'
 import SVGIcon from "../../assets/icons/svgComponent";
 import { IMessages } from "../../model/MessagesModel";
@@ -20,7 +20,8 @@ import { setVideoChatModal, setUserName, setUserAvatar } from "../../store/Video
 import Report from "../../components/ReportComponent/Report";
 import { useLocation } from "react-router-dom";
 import { setReportPage } from "../../store/ProtectSlice";
-
+import Typing from "../../components/TypingElement/Typing";
+import { setRerender  } from "../../store/rootSlice";
 
 
 
@@ -28,32 +29,19 @@ import { setReportPage } from "../../store/ProtectSlice";
 const Chat = () => {
 
 
-    // const [options, setOptions] = useState({})
-    // const [sliderRef, slider] = useKeenSlider(options)
+
 
     const [chatData, setChatData] = useState ({} as IMessages);
     const [mobileScreen, setMobileScreen] = useState(false);
     const mobileDimension = useSelector(mobileScreenEnable);
     const reportComponent = useSelector((state: any) => state.ProtectState.reportComponent);
+    const typingState = useSelector((state: any) => state.mainState.typingState);
     const [pathLocation, setPathLocation] = useState('');
-    // const [areaValue, setAreaValue] = useState('');
-    // const [sendBtn, setSendBtn] = useState(false);
+    const [forceUpdate, setForceUpdate] = useState(false);
+
     const location = useLocation();
 
 
-    // console.log(reportComponent);
-
-    // const sidebar = document.querySelector('.Sidebar');
-    // console.log(sidebar);
-
-
-    // const checkSideBarClick = (path: string) => {
-        
-
-
-        
-    // }
-    
 
 
 
@@ -61,42 +49,21 @@ const Chat = () => {
 
 
     let {id}: any = useParams();
-    // const [currentSlide, setCurrentSlide] = useState(0)
-    // const [loaded, setLoaded] = useState(false)
-    // const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    //     initial: 0,
-    //     slideChanged(slider) {
-    //     setCurrentSlide(slider.track.details.rel)
-    //     },
-    //     created() {
-    //         setLoaded(true)
-    //     },
-    // })
 
 
 
+    const forceRerender = useCallback(() => {
+        
+        
+        setForceUpdate(prevForceUpdate => !prevForceUpdate)
+        dispatch(setRerender())
 
 
-    // const resizeArea = (e: any) => {
 
-    //     if (e.target.value.length === 0) {
-    //         setAreaValue('');
-    //         setSendBtn(false);
+    }, [dispatch]);
 
-    //     } else if (e.target.value.length <= 1) {
 
-    //             setAreaValue(e.target.value.trim());
-    //             setSendBtn(false);
-    //             if (e.target.value !== ' ') {
-    //                 setSendBtn(true);
-    //             }
-
-    //     } else if (e.target.value.length > 1) {
-    //         setAreaValue(e.target.value);
-    //         setSendBtn(true);
-
-    //     }
-    // }
+  
 
 
     const checkMobileScreen = useMemo(() => {
@@ -137,7 +104,7 @@ const Chat = () => {
 
 
 
-    },[id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname]);
+    },[id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate]);
 
 
     return(
@@ -209,10 +176,42 @@ const Chat = () => {
 
                                     </div>
                                     <div className="chat">
+                                        <div className="wrapper">
+                                        {
+                                                typingState 
+                                                    &&
+                                                <Typing userId={chatData.id} userName={chatData.userName} userAvatar={chatData.image} key={chatData.id}/>
+
+                                            }
+                                            
+                                            <div className="messages" >
+                                            {Object.keys(chatData).length > 0 ?  chatData.messages.map((item, index) => (
+
+                                                <>
+                                                    <div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index}>
+                                                        <span key={index}>{item.text}</span>
+                                                    </div>
+
+                                                
+
+
+
+
+                                                </>
+
+                                                ))
+                                                : 
+                                                null
+
+                                                }
+
+                                            </div>
+               
+                                        </div>
 
                                     </div>
                                     
-                                    <EnterMessage />
+                                    <EnterMessage forceRerender={forceRerender} chatId={id}/>
 
                                 </div>
 

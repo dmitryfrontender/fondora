@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import './MobileChat.scss'
 import { mobileChatState } from "../../store/rootSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,11 +12,8 @@ import EnterMessage from "../EnterMessage/EnterMessage";
 import { setVideoChatModal, setUserName, setUserAvatar } from "../../store/VideoChatSlice";
 import {protectModalState, reportUserAvatar, reportUserName } from "../../store/ProtectSlice";
 import Report from "../ReportComponent/Report";
+import Typing from "../TypingElement/Typing";
 
-
-// interface IProps {
-//     chatId: boolean
-// }
 
 
 const MobileChat = () => {
@@ -28,31 +25,55 @@ const MobileChat = () => {
 
     const chatId = useSelector((state: any) => state.mainState.chatId);
 
+    const typingState = useSelector((state: any) => state.mainState.typingState);
+
     const [chatData, setChatData] = useState ({} as IMessages);
 
-    // const {id}:any = useParams();
+    const [forceUpdate, setForceUpdate] = useState(false);
 
+   
 
-    console.log(reportComponent);
     
 
     const dispatch = useDispatch();
 
 
+    const forceRerender = useCallback(() => {
+        
+        
+        setForceUpdate(prevForceUpdate => !prevForceUpdate)
+
+
+
+    }, []);
+
+  
+
+
+
+
+
+
 
     useEffect(() => {
 
-            messagesData.forEach((item:IMessages) => {
+        
 
-                if (item.id.toString() === chatId) {
-                    setChatData(item);
-                  
-                }
+            const filteredMessage = messagesData.filter((msg:IMessages) => 
+                msg.id.toString() === chatId
     
-            })
+            )
+            
+            setChatData(filteredMessage[0]);
+            
+
+        
+        
+        
+
             
         
-    }, [chatId]);
+    }, [chatId, forceUpdate, chatData]);
 
 
 
@@ -120,18 +141,63 @@ const MobileChat = () => {
                                                 Вы и {chatData.userName} образовали пару 
                                             </span>
                                             <div className="date">
-                                            <SVGIcon name="calendarIcon" size={20} />
-                                            <span>
-                                                {chatData.dateMet}
-                                            </span>
+                                                <SVGIcon name="calendarIcon" size={20} />
+                                                <span>
+                                                    {chatData.dateMet}
+                                                </span>
+                                            </div>
                                         </div>
+                                    </div>
+                                    <div className="chatWrapper">
+                                        {
+                                            typingState 
+                                                &&
+                                            <Typing userName={chatData.userName} userAvatar={chatData.image}/>
+
+                                        }
+                                        <div className="messages">
+                                        {Object.keys(chatData).length > 0 ?  chatData.messages.map((item, index) => (
+
+                                            <>
+                                                <div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index}>
+                                                    <span key={index}>{item.text}</span>
+                                                </div>
+
+                                            
+
+
+
+
+                                            </>
+
+                                            ))
+                                            : 
+                                            null
+
+                                            }
+
                                         </div>
+
+                                        
                                         
 
+                                        
+
+                                                
+
+                                            
+                                        
+                                    
+                                        
+                                         
+
+                                          
+                                            
+                                        
                                     </div>
 
                                 </div>
-                                <EnterMessage />
+                                <EnterMessage forceRerender={forceRerender} chatId={chatId}/>
                             </div>
                             
                         
