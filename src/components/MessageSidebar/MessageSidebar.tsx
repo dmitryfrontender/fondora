@@ -15,6 +15,9 @@ const MessageSidebar = () => {
     const newMessages = useSelector((state: any) => state.mainState.newMessage);
     const mobileDimension = useSelector(mobileScreenEnable);
     const [mobileScreen, setMobileScreen] = useState(false);
+    const rerender = useSelector((state: any) => state.mainState.rerender);
+    const typingState = useSelector((state: any) => state.mainState.typingState)
+    const typingChatId = useSelector((state: any) => state.mainState.typingChatId)
 
 
     const checkMobileScreen = useMemo(() => {
@@ -28,8 +31,10 @@ const MessageSidebar = () => {
     useEffect(() => {
 
         checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
+
+        
       
-    }, [checkMobileScreen]);
+    }, [checkMobileScreen, rerender]);
 
 
     const listMessages = () => {
@@ -39,16 +44,16 @@ const MessageSidebar = () => {
         let newListMessages = [];
 
         messagesData.forEach((item:IMessages) => {
-            // item.messages.forEach((message) => {
                 item.newMessages ? unReadMessages.push(item) : readMessages.push(item);
-            // })
         })
 
         newListMessages = [...unReadMessages, ...readMessages];
 
         return newListMessages.map((item:IMessages) => {
             return(
-                <MessageComponent {...item} key={item.id}/>
+                // <MessageComponent {...item} key={item.id} />
+                <MessageComponent item={item} typingState={typingState} typingChatId={typingChatId}  key={item.id} />
+
             )
         })
 
@@ -77,7 +82,7 @@ const MessageSidebar = () => {
                                         messagesData.map((item: IMessages) => {
 
                                             return(
-                                                <MessageComponent {...item}   key={item.id}/>
+                                                <MessageComponent item={item}   key={item.id}/>
                                             )
 
                                         }) 
@@ -126,7 +131,7 @@ const MessageSidebar = () => {
                                 messagesData.map((item: IMessages) => {
 
                                     return(
-                                        <MessageComponent {...item} key={item.id}/>
+                                        <MessageComponent item={item} typingState={typingState} typingChatId={typingChatId}  key={item.id} />
                                     )
 
                                 }) 

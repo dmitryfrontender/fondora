@@ -15,7 +15,10 @@ export const rootSlice = createSlice({
         topProfile: false,
         chatId: '',
         mobileChat: false,
-        mobileScreen: false
+        mobileScreen: false,
+        typingState: false,
+        typingChatId: 0,
+        rerender: false
 
 
     },
@@ -129,6 +132,18 @@ export const rootSlice = createSlice({
                 state.mobileScreen = true 
                 : 
                 state.mobileScreen = false
+        },
+        setTypingState: (state, action) => {
+            action.payload ? 
+                state.typingState = true 
+                : 
+                state.typingState = false
+        },
+        setTypingChatId: (state, action) => {
+            state.typingChatId = action.payload
+        },
+        setRerender: (state) => {
+            state.rerender = !state.rerender
         }
     }
 })
@@ -144,7 +159,10 @@ export const {
     topProfileState,
     setChatId,
     mobileChatState,
-    setMobileScreen
+    setMobileScreen,
+    setTypingState,
+    setTypingChatId,
+    setRerender
 } = rootSlice.actions
 
 export default rootSlice.reducer

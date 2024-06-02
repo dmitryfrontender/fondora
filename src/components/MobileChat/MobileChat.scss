@@ -12,6 +12,7 @@
     z-index: 15;
     .container{
         margin: 0 clamp(15px, 5vw, 30px);
+        height: -webkit-fill-available;
         .chatHeader{
             display: flex;
             justify-content: space-between;
@@ -65,8 +66,10 @@
         }
         .chatArea {
             width: 100%;
-            height: 100%;
+            // height: 100%;
+            height: calc(100% - 220px);
             position: relative;
+
             .background {
                 position: absolute;
                 top: 0;
@@ -78,7 +81,7 @@
             }
             .metInfo {
                 width: fit-content;
-                height: 100%;
+                height: auto;
                 border-radius: 20px;
                 background: #151515;
                 padding: 12px 15px;
@@ -89,6 +92,7 @@
                 margin: 0 auto;
                 gap: clamp(5px, 1vw, 10px);
                 top: 10px;
+                z-index: 5;
                 .avatars{
                     img{
                         width: clamp(30px, 5vw, 35px);
@@ -128,6 +132,59 @@
                
               
             }
+            .chatWrapper {
+                position: absolute;
+                bottom: 0;
+                height: -webkit-fill-available;
+                padding: 80px 0 0 0;
+                display: flex;
+                overflow-y: auto;
+                min-height: 0;
+                flex-direction: column-reverse;
+                width: 100%;
+                .messages {
+                    gap: 10px;
+                    justify-content: flex-end;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    .message {
+                
+                        padding: 15px 20px;
+                        width: 75vw;
+                        text-align: left;
+                        // position: relative;
+        
+                        // position: absolute;
+        
+                        span{
+                            color: white;
+                            font-family: var(--font-family-urbanist);
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 150%; /* 21px */
+        
+                        }
+                      }
+                      .owner{
+                        border-radius: 20px 0px 20px 20px;
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), linear-gradient(92deg, #373FFF 0.03%, #22CAFF 100.03%), linear-gradient(90deg, #F02270 0.1%, #8A0B3B 102.02%);
+                        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+                        align-self: flex-end;
+                      }
+                      .notOwner{
+                        border-radius: 0px 20px 20px 20px;
+                        background: linear-gradient(90deg, #272626 0.1%, #1E1E26 102.02%);
+                        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+                        align-self: flex-start;
+        
+                      }
+                }
+              
+            }
+            
             
 
         }

@@ -5,20 +5,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { mobileChatState } from "../../store/rootSlice";
 import { setChatId } from "../../store/rootSlice";
 import { mobileScreenEnable } from "../../store/selectors";
-// interface IProps {
-//     mobile?: boolean | undefined
-// }
+interface IProps {
+    item: IMessages
+    typingState?: boolean 
+    typingChatId?: number
+}
 
 // type CombinedProps = {item: IMessages} & IProps 
 
-const MessageComponent = (item: IMessages) => {
+const MessageComponent = ({item, typingState, typingChatId}: IProps) => {
 
-    // const mobileDimension = useSelector((state: any) => state.mainState.mobileScreen, () => {return true});
-    // const [mobileScreen, setmobileScreen] = useState<boolean | undefined>(false);
+    
+
     const [mobileScreen, setMobileScreen] = useState(false);
     const mobileDimension = useSelector(mobileScreenEnable);
+ 
 
-    // const mobileDimension = useSelector(screenSelector);
     const dispatch = useDispatch();
 
     const handleActiveChat= (id: string) => {
@@ -45,12 +47,17 @@ const MessageComponent = (item: IMessages) => {
     }, [mobileDimension]);
 
 
+  
+    
+
     useEffect(() => {
+
+        
 
         checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
 
 
-    }, [checkMobileScreen]);
+    }, [checkMobileScreen, item]);
 
 
     
@@ -96,13 +103,25 @@ const MessageComponent = (item: IMessages) => {
                             {
                                 item.userOnLine ?
                                     <span>
-                                        {item.messages.map((item) => {
-                                            return(
-                                                <span key={item.id}>
-                                                    {item.text}
-                                                </span>
-                                            )
-                                        })}
+                                   
+                                        {
+                                            typingState && typingChatId === item.id ?
+
+                                            <>
+                                                Пишет...
+
+                                            </>
+
+
+                                            :
+                                            item.messages[item.messages.length - 1].text 
+                                    
+
+
+
+
+                                        }
+                                       
                                     </span>
                                     :
                                     <span className="lastUserActivity">
