@@ -261,6 +261,10 @@
             height: 100vh;
             max-height: initial;
             border-radius: 0;
+            .ProfileComponentInfo{
+                position: relative
+            }
+
         }
     }
 }

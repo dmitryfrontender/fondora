@@ -68,9 +68,17 @@ const MobileTop = () => {
                             <Link  to='/notifications'>
                                 <SVGIcon name="notification" stroke="#BDBDBD"/>
                             </Link>
-                            <Link to='/settings'>
-                                <SVGIcon name="settings" stroke="#BDBDBD"/>
-                            </Link>
+                            {
+                                path === '/my-profile' ? 
+                                <Link to='/settings'>
+                                    <SVGIcon name="protectIcon" stroke="#BDBDBD"/>
+                                </Link>
+                                :
+                                <Link to='/settings'>
+                                    <SVGIcon name="settings" stroke="#BDBDBD"/>
+                                </Link>
+                            }
+                            
                         </div>
                     </div>
                 </div>

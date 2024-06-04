@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import './ProfileComponent.scss'
 import PhotoSlider from "./PhotoSlider/PhotoSlider";
 import SVGIcon from "../../assets/icons/svgComponent";
+import TextAreaAutosize from 'react-textarea-autosize'
+import companionAvatar from '../../assets/avatar/companionAvatar.png'
 // import { useParams } from "react-router-dom";
 
 import { sliderProfiles }  from "../../Data/SliderProfiles";
@@ -10,6 +12,7 @@ import { sliderProfiles }  from "../../Data/SliderProfiles";
 const ProfileComponent = (props: any) => {
 
     const activeUser = sliderProfiles[0];
+    const [inputValue, setInputValue] = useState('')
 
     return (
         <>
@@ -149,14 +152,34 @@ const ProfileComponent = (props: any) => {
                         </ul>
                     </div>
                     <div className="ProfileComponentMessageBlock">
-                        <span className="ProfileComponentMessageIcon">
-                            <SVGIcon name="messageIcon" size={20} />
-                        </span>
-                        <span className="ProfileComponentMessageText">
-                            <span className="ProfileComponentMessageTitle">Jessica Black ждет твоего сообщения! </span>
-                            <span className="ProfileComponentMessageSubTitle">Добавь его к суперлайку и увеличь шансы создать пару на 25%.</span>
-                        </span>
-                        <input type="text" />
+                        <div className="ProfileComponentMessageBlockTop">
+                            <span className="ProfileComponentMessageIcon">
+                                <div className="imageContainer">
+                                    <div className="imageBorder"></div>
+                                    <img src={companionAvatar} alt="avatar" />
+
+
+                                </div>
+                                <SVGIcon name="writeMessageIcon" size={15}   />
+                            </span>
+                            <span className="ProfileComponentMessageText">
+                                <span className="ProfileComponentMessageTitle">Jessica Black ждет твоего сообщения! </span>
+                                <span className="ProfileComponentMessageSubTitle">Добавь его к суперлайку и увеличь шансы создать пару на 25%.</span>
+                            </span>
+
+                        </div>
+
+                        
+                        <TextAreaAutosize
+                            placeholder="Напишите сообщение..."
+                            value={inputValue}
+                            minRows={1}
+                            maxRows={4}
+                            onChange={(e) => setInputValue(e.target.value)}
+                        
+                        
+                        
+                        />
                     </div>
                     <div className="ProfileComponentButtons">
                         <span className="ProfileComponentButtonsBlock">
