@@ -18,6 +18,7 @@ export const rootSlice = createSlice({
         mobileScreen: false,
         typingState: false,
         typingChatId: 0,
+        messageSmile: false,
         rerender: false
 
 
@@ -144,6 +145,11 @@ export const rootSlice = createSlice({
         },
         setRerender: (state) => {
             state.rerender = !state.rerender
+        },
+        setMessageSmile: (state, action) => {
+            console.log(action.payload);
+            
+            state.messageSmile = action.payload
         }
     }
 })
@@ -162,7 +168,8 @@ export const {
     setMobileScreen,
     setTypingState,
     setTypingChatId,
-    setRerender
+    setRerender,
+    setMessageSmile,
 } = rootSlice.actions
 
 export default rootSlice.reducer

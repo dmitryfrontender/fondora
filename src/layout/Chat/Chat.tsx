@@ -2,9 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import chatBg from '../../assets/images/chatBg.png'
 import SVGIcon from "../../assets/icons/svgComponent";
 import { IMessages } from "../../model/MessagesModel";
-// import TextareaAutosize from "react-textarea-autosize";
 import { Link } from "react-router-dom";
-// import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import { useDispatch, useSelector } from "react-redux";
 import { setChatId } from "../../store/rootSlice";
@@ -22,6 +20,9 @@ import { useLocation } from "react-router-dom";
 import { setReportPage } from "../../store/ProtectSlice";
 import Typing from "../../components/TypingElement/Typing";
 import { setRerender  } from "../../store/rootSlice";
+import MessageSmile from "../../components/MessageSmile/MessageSmile";
+import {  setMessageSmile } from "../../store/rootSlice";  // {setMessageSmile}
+
 
 
 
@@ -38,6 +39,8 @@ const Chat = () => {
     const typingState = useSelector((state: any) => state.mainState.typingState);
     const [pathLocation, setPathLocation] = useState('');
     const [forceUpdate, setForceUpdate] = useState(false);
+    const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
+    const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
 
     const location = useLocation();
 
@@ -53,6 +56,7 @@ const Chat = () => {
 
 
     const forceRerender = useCallback(() => {
+
         
         
         setForceUpdate(prevForceUpdate => !prevForceUpdate)
@@ -72,7 +76,33 @@ const Chat = () => {
 
     }, [mobileDimension]);
 
+
+    const handleSmileReaction = (messageId: number) => {
+        
+        setSelectedMessage(messageId);
+
+        chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
+
+
+
+    }
+
+    const handleAddReaction = (messageId: number, reaction: string) => {
+
+        chatData.messages.forEach((message: any) => {
+
+            if (message.id === messageId) {
+                message.reaction = reaction;
+                forceRerender();
+            }
+            
+        })
+        
+    }
+
     useEffect(() => {
+
+        
 
         if (pathLocation === '') {
             setPathLocation(location.pathname);
@@ -180,22 +210,51 @@ const Chat = () => {
                                         {
                                                 typingState 
                                                     &&
-                                                <Typing userId={chatData.id} userName={chatData.userName} userAvatar={chatData.image} key={chatData.id}/>
+                                                <Typing key={chatData.id} userId={chatData.id} userName={chatData.userName} userAvatar={chatData.image} />
 
                                             }
                                             
                                             <div className="messages" >
                                             {Object.keys(chatData).length > 0 ?  chatData.messages.map((item, index) => (
 
-                                                <>
-                                                    <div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index}>
-                                                        <span key={index}>{item.text}</span>
-                                                    </div>
-
+                                                
                                                 
 
+                                                <>
+                                                    <div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={item.id} onClick={(event) => handleSmileReaction(item.id)
+                                                    }>
+                                                        {selectedMessage === item.id && chatSmile &&
+                                                            <div className="smileBlock">
+                                                                <MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)}/>
+                                                            </div>
+                                                        }
+                                                        {
+                                  
+                                                            item.reaction && 
+                                                            <div className="reaction">
+                                                                <span>{item.reaction}</span>
+                                                            </div>
+                                                        }
+                                                       
+                                                            <span key={index}>{item.text}</span>
 
+                                                        {
+                                                            item.imageUrl ? <img src={item.imageUrl} alt="message" /> : null
+                                                        }
+                                                        {
+                                                            item.storagePhotoArr ? item.storagePhotoArr.map((elem: string) => <img src={elem} alt="message" />) : null
+                                                        }
 
+                                                        <div className="timeSend" style={{left: item.owner ? '' : '15px'}}>
+                                                            <span>
+                                                                {
+                                                                    item.time
+                                                                }
+                                                            </span>
+                                                        </div>
+                                                      
+                                                        
+                                                    </div>
 
                                                 </>
 

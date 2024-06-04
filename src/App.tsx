@@ -36,7 +36,17 @@ function App() {
   const videoChatModal = useSelector((state: any) => state.VideoChatState.videoChatModal);
   const blockUserModal = useSelector((state: any) => state.ProtectState.blockUserModal)
   const newLikeModal = useSelector((state: any) => state.NewLikeState.newLikeModal)
+  const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
+
+  const pageWrapper = document.querySelector('.pageWrapper')
   const dispatch = useDispatch();
+
+  // console.log(mobileScreen);
+  if (mobileScreen) {
+    (pageWrapper as HTMLElement).style.top = '0'
+
+  }
+  
 
   const checkScreen = useMemo(() => {
     return width >= 1024

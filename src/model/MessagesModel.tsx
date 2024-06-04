@@ -18,7 +18,10 @@ export interface IMessages {
         time: string,
         daySend: string[],
         unRead: boolean,
-        owner: boolean
+        owner: boolean,
+        imageUrl?: string,
+        storagePhotoArr?: string[],
+        reaction: string
 
     }]
 }

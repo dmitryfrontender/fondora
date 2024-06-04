@@ -1,0 +1,27 @@
+@media screen and (max-width: 700px) {
+
+    .superLikeWrapper{
+        width: clamp(300px, 90vw, 550px) !important;
+        .superLikeBanner{
+            .bannerTitle{
+                max-width: 35vw;
+                text-align: start;
+            }
+            
+        }
+        .cardWrapper{
+            .itemWrapper{
+                display: flex;
+                flex-wrap: nowrap;
+                width: 100%;
+                overflow: scroll;
+                .item{
+                    min-width: 70vw;
+                }
+
+            }
+        }
+
+    }
+    
+}

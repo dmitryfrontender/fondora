@@ -6,6 +6,10 @@ import { messagesData } from '../../Data/MessagesData'
 import { IMessages } from "../../model/MessagesModel";
 import { setTypingState } from "../../store/rootSlice";
 import { useDispatch } from "react-redux";
+import ChatSmiles from "../ChatExtra/ChatSmiles/ChatSmiles";
+import ChatGifs from "../ChatExtra/ChatGifs/ChatGifs";
+import AddPhoto from "../ChatExtra/AddPhotos/AddPhotos";
+
 
 
 interface IProps {
@@ -20,13 +24,19 @@ interface IProps {
 const EnterMessage = ({chatId, forceRerender}: IProps) => {
 
 
-
-    // console.log(chatId);
     
 
 
     const [areaValue, setAreaValue] = useState('');
     const [sendBtn, setSendBtn] = useState(false);
+
+
+
+    const [smileBlock, setSmileBlock] = useState<boolean>(false)
+    const [mediaBlock, setMediaBlock] = useState<boolean>(false)
+    const [imagesBlock, setImagesBlock] = useState<boolean>(false)
+
+
 
     const dispatch = useDispatch();
 
@@ -64,14 +74,20 @@ const EnterMessage = ({chatId, forceRerender}: IProps) => {
     }
 
 
-    const handleKeyPress = (event: any) => {        
-
-        // if (event.code === "Enter" && sendBtn && areaValue.length > 0){
+    const handleKeyPress = (event: any) => {    
+        
+        
         if (event.code === "Enter" ){
 
             setAreaValue('');
 
             setSendBtn(false);
+
+            const date = new Date();
+            const timeSend = `${date.getHours()}:${date.getMinutes()}`
+
+
+
 
 
             const newMessage = messagesData.filter((elem: IMessages) => {
@@ -93,10 +109,11 @@ const EnterMessage = ({chatId, forceRerender}: IProps) => {
                     
                     id: messageId + 1,
                     text: areaValue,
-                    time: '21:21',
+                    time: timeSend,
                     daySend: ['Tuesday'],
                     unRead: false,
-                    owner: true
+                    owner: true,
+                    reaction: ''
                            
                 })
                 
@@ -113,6 +130,10 @@ const EnterMessage = ({chatId, forceRerender}: IProps) => {
             }, 1000)
 
             setTimeout(() => {
+
+                const date = new Date();
+                const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+
                 newMessage.forEach((elem: any) => {
 
                     elem.messages.forEach((id: any) => {
@@ -125,10 +146,11 @@ const EnterMessage = ({chatId, forceRerender}: IProps) => {
                         
                         id: messageId + 1,
                         text: `companion answer ${+messageId - 1}`,
-                        time: '21:21',
+                        time: timeSend,
                         daySend: ['Tuesday'],
                         unRead: false,
-                        owner: false
+                        owner: false,
+                        reaction: ''
                                
                     })
                     
@@ -152,6 +174,140 @@ const EnterMessage = ({chatId, forceRerender}: IProps) => {
     }
 
 
+    const handleSmile = (smile: string) => {
+        
+        setAreaValue(areaValue + smile)
+
+    }
+
+    const handleGif = (gif: string) => {
+
+        let messageId = 0;
+        const newMessage = messagesData.filter((elem: IMessages) => {
+                
+            return  elem.id === +chatId
+            
+        })
+        newMessage.forEach((elem: any) => {
+            // elem.messages.forEach((id: any) => {
+                
+            //     messageId = id.id
+            // })
+
+            elem.messages.forEach((message: any) => {
+                if (!messageId || message.id > messageId) {
+                    messageId = message.id;
+                }
+            });
+
+            elem.messages.push({
+                
+                id: messageId + 1,
+                text: '',
+                imageUrl: gif,
+                time: '21:21',
+                daySend: ['Tuesday'],
+                unRead: false,
+                owner: true,
+                       
+            })
+            
+            // console.log(elem);
+
+        })
+        messageId = 0
+        refreshData();  
+
+
+
+
+        
+
+    }
+
+    const handlePhoto = (photos: any) => {
+
+
+        const photosArr = photos.map((elem: any) => {
+            return elem.src
+            
+        })
+        
+        let messageId = 0;
+        const newMessage = messagesData.filter((elem: IMessages) => {
+                
+            return  elem.id === +chatId
+            
+        })
+        newMessage.forEach((elem: any) => {
+         
+
+            elem.messages.forEach((message: any) => {
+                if (!messageId || message.id > messageId) {
+                    messageId = message.id;
+                }
+            });
+
+            elem.messages.push({
+                
+                id: messageId + 1,
+                text: '',
+                storagePhotoArr: photosArr,
+                time: '21:21',
+                daySend: ['Tuesday'],
+                unRead: false,
+                owner: true,
+                       
+            })
+            
+            // console.log(elem);
+
+        })
+        messageId = 0
+        refreshData(); 
+
+    }
+
+
+    const selectExtra = (extra: string) => {
+
+        switch (extra) {
+            case 'smile':
+                if (smileBlock){
+                    setSmileBlock(false) 
+                } else {
+                    setSmileBlock(true)
+
+                    setMediaBlock(false)
+                    setImagesBlock(false)
+                }
+                break;
+            case 'media':
+                if (mediaBlock){
+                    setMediaBlock(false)
+                } else {
+                    setSmileBlock(false)
+                    setMediaBlock(true)
+                    setImagesBlock(false)
+                }
+                break;
+            case 'images':
+                if (imagesBlock){
+                    setImagesBlock(false) 
+                } else {
+                    setSmileBlock(false)
+                    setMediaBlock(false)
+                    setImagesBlock(true)
+                }
+                break;
+            default:
+            break;
+        }
+
+    }
+
+
+
     useEffect(() => {
             document.addEventListener("keydown", handleKeyPress, false);
         return() => {
@@ -168,33 +324,53 @@ const EnterMessage = ({chatId, forceRerender}: IProps) => {
     return(
         <>
             <div className="inputBlock">
-                <div className="inputWrapper">
-                    <div className="input">
-                        <TextareaAutosize
-                            placeholder="Напишите сообщение..."
-                            value={areaValue}
-                            minRows={2}
-                            maxRows={4}
-                            onChange={resizeArea}
-                        />
-                        <div className={`sendBtn ${sendBtn ? 'activeSendBtn' : ''}`}>
-                            <button onClick={() => handleKeyPress({code: 'Enter'})}>
-                                <SVGIcon name="sendTgBtn" size={20} />
-                            </button>
+                {
+                    !mediaBlock && !imagesBlock &&
+                    <div className="inputWrapper">
+                        <div className="input">
+                            <TextareaAutosize
+                                placeholder="Напишите сообщение..."
+                                value={areaValue}
+                                minRows={2}
+                                maxRows={4}
+                                onChange={resizeArea}
+                            />
+                            <div className={`sendBtn ${sendBtn ? 'activeSendBtn' : ''}`}>
+                                <button onClick={() => handleKeyPress({code: 'Enter'})}>
+                                    <SVGIcon name="sendTgBtn" size={20} />
+                                </button>
+                            </div>
                         </div>
-                    </div>
                     
-                </div>
+                    </div>
+
+                }
+                
+
+                {
+                    smileBlock && <ChatSmiles addSmile={handleSmile}/>
+                }
+                {
+                    imagesBlock && <ChatGifs addGif={handleGif}/>
+                }
+                {
+                    mediaBlock && <AddPhoto addPhoto={handlePhoto}/>
+                }
+
+
+
                 <div className="buttonWrapper">
                     <div className="leftPanel">
-                        <button>
-                            <SVGIcon size={20} name="gifBtn" />
+                        <button onClick={() => selectExtra('images')}>
+                            <SVGIcon size={20} name="gifBtn" style={imagesBlock ? {fill: '#F22271 '} : {fill: '#ACACAC'}}/>
                         </button>
-                        <button>
-                            <SVGIcon size={20} name="smileBtn" />
+                        {/* <button onClick={() => setSmileBlock(!smileBlock)}> */}
+                        <button onClick={() => selectExtra('smile')}>
+
+                            <SVGIcon size={20} name="smileBtn" style={smileBlock ? {fill: '#F22271 '} : {fill: '#ACACAC'}}/>
                         </button>
-                        <button>
-                            <SVGIcon size={20} name="fileBtn" />
+                        <button onClick={() => selectExtra('media')}>
+                            <SVGIcon size={20} name="fileBtn" style={mediaBlock ? {fill: '#F22271 '} : {fill: '#ACACAC'}}/>
                         </button>
                     </div>
                     <div className="rightPanel">
