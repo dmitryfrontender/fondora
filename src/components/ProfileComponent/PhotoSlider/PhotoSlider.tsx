@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import './PhotoSlider.scss'
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
+import SVGIcon from "../../../assets/icons/svgComponent";
 
 function Arrow(props: {
-  disabled: boolean
+  disabled: boolean,
   left?: boolean
   onClick: (e: any) => void
 }) {
@@ -61,7 +62,10 @@ const PhotoSlider = (props: any) => {
 
     return (
         <>
-            <div className="PhotoSlider">
+            <div
+                className={`PhotoSlider ${props.cssClass}`}
+                style={props.cssStyle}
+            >
                 <div className="PhotoSliderAvatar">
                     {loaded && instanceRef.current && (
                         <div className="dots">
@@ -112,6 +116,20 @@ const PhotoSlider = (props: any) => {
                         </>
                     )}
                 </div>
+
+                {
+                    props.sliderIndex === 0 &&
+                    <div className="GamePadApproveBlock">
+                        {
+                            props.cssClass === "approved" &&
+                            <SVGIcon className="GamePadApproveIcon" name="approvedIcon" size={74} width={149} />
+                        }
+                        {
+                            props.cssClass === "declined" &&
+                            <SVGIcon className="GamePadDeclineIcon" name="declinedIcon" size={74} width={109} />
+                        }
+                    </div>
+                }
             </div>
         </>
     )
