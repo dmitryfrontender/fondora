@@ -13,6 +13,9 @@ import { setVideoChatModal, setUserName, setUserAvatar } from "../../store/Video
 import {protectModalState, reportUserAvatar, reportUserName } from "../../store/ProtectSlice";
 import Report from "../ReportComponent/Report";
 import Typing from "../TypingElement/Typing";
+import MessageSmile from "../MessageSmile/MessageSmile";
+import { setMessageSmile } from "../../store/rootSlice";
+
 
 
 
@@ -30,6 +33,9 @@ const MobileChat = () => {
     const [chatData, setChatData] = useState ({} as IMessages);
 
     const [forceUpdate, setForceUpdate] = useState(false);
+    const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
+    const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
+
 
    
 
@@ -47,6 +53,30 @@ const MobileChat = () => {
 
     }, []);
 
+    const handleSmileReaction = (messageId: number) => {
+        
+        setSelectedMessage(messageId);
+
+        chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
+
+
+
+    }
+
+
+
+    const handleAddReaction = (messageId: number, reaction: string) => {
+
+        chatData.messages.forEach((message: any) => {
+
+            if (message.id === messageId) {
+                message.reaction = reaction;
+                forceRerender();
+            }
+            
+        })
+        
+    }
   
 
 
@@ -159,14 +189,34 @@ const MobileChat = () => {
                                         {Object.keys(chatData).length > 0 ?  chatData.messages.map((item, index) => (
 
                                             <>
-                                                <div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index}>
+                                                <div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={(event) => handleSmileReaction(item.id)}>
                                                     <span key={index}>{item.text}</span>
+                                                    {selectedMessage === item.id && chatSmile &&
+                                                        <div className="smileBlock">
+                                                            <MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)}/>
+                                                        </div>
+                                                    }
+                                                    {
+                                  
+                                                        item.reaction && 
+                                                        <div className="reaction">
+                                                            <span>{item.reaction}</span>
+                                                        </div>
+                                                    }
+                                                    {
+                                                        item.imageUrl ? <img src={item.imageUrl} alt="message" /> : null
+                                                    }
+                                                    {
+                                                        item.storagePhotoArr ? item.storagePhotoArr.map((elem: string) => <img src={elem} alt="message" />) : null
+                                                    }
+                                                    <div className="timeSend" style={{left: item.owner ? '' : '15px'}}>
+                                                        <span>
+                                                            {
+                                                                item.time
+                                                            }
+                                                        </span>
+                                                    </div>
                                                 </div>
-
-                                            
-
-
-
 
                                             </>
 

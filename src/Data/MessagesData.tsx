@@ -36,7 +36,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: true,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -56,7 +57,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -77,7 +79,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: false
+            owner: false,
+            reaction: ''
 
 
 
@@ -97,7 +100,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -118,7 +122,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -139,7 +144,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -160,7 +166,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -181,7 +188,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -201,7 +209,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: true,
-            owner: false
+            owner: false,
+            reaction: ''
 
 
 
@@ -221,7 +230,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -241,7 +251,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: true,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -261,7 +272,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: false
+            owner: false,
+            reaction: ''
 
 
 
@@ -281,7 +293,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -301,7 +314,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: true
+            owner: true,
+            reaction: ''
 
 
 
@@ -321,7 +335,8 @@ export const messagesData: IMessages[] = [
             time: '10:00',
             daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
             unRead: false,
-            owner: false
+            owner: false,
+            reaction: ''
 
 
 

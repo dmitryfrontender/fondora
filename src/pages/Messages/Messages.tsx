@@ -11,11 +11,6 @@ import NoMessages from "../../layout/NoMessageLayout/NoMessages";
 const Messages = () => {
 
     const messageState = useSelector((state: any) => state.mainState.isMessage)
-
-
-
-    
-
     return (
         <>
             {
@@ -24,20 +19,9 @@ const Messages = () => {
                         <NoMessages/> 
 
                     </>
-                    
-
                 : 
-                <div className="message">
-                    <h1>messages exist</h1>
-                </div>
+                <div className="message"></div>
             }
-        
-        
-        
-        
-        
-        
-        
         </>
     ) 
     

@@ -4,6 +4,12 @@
         top: 20px;
         .pageItems {
             width: 80vw;
+            .topTittle{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
             .mediaBlock {
               .mediaItem {
                 max-width: 35vw;
