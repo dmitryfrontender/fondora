@@ -15,14 +15,12 @@ const GamePad = () => {
 
 	const [approved, setApproved] = useState('');
 	const [angle, setAngle] = useState(0);
+	const [superLike, setSuperLike] = useState(false);
 
 	const [timeOut, setTimeOut] = useState(true);
 
-	// TODO add logic for animated div
-	// Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+	// logic for animated div
 	const bind = useDrag(({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
-		console.log(index, down, mx, xDir, velocity);
-
 		const maxAngle = 15;
 		let newAngle = 0;
 
@@ -38,23 +36,44 @@ const GamePad = () => {
 
 				setAngle(newAngle);
 			} else {
-				setAngle(0);
-				setApproved('');
+				resetPosition();
 			}
 		} else {
-			setAngle(0);
-			setApproved('');
+			resetPosition();
 		}
 	})
 
-	// TODO add logic for timeout
+	const resetPosition = () => {
+		setAngle(0);
+		setApproved('');
+	}
+
+	// survey logic for disable in 3s
 	setTimeout(() => {
 		setTimeOut(false);
 	}, 3000);
 
-	const [profileVisibility, setProfileVisibility] = useState(false); // TODO add setProfileVisibility
+	const [profileVisibility, setProfileVisibility] = useState(false); // logic for setProfileVisibility
 
-	// TODO add logic for key press
+	const handleApprove = () => {
+		setApproved('approved');
+		setAngle(15);
+
+		setTimeout(() => {
+			resetPosition();
+		}, 1000);
+	}
+
+	const handleDecline = () => {
+		setApproved('declined');
+		setAngle(-15);
+
+		setTimeout(() => {
+			resetPosition();
+		}, 1000);
+	}
+
+	// logic for key press
     const handleKeyPress = (event: any) => {
 
 		// TODO add key bindings here
@@ -70,24 +89,31 @@ const GamePad = () => {
 
 		if (event.code === "ArrowLeft") {
 			event.preventDefault();
-			console.log('ArrowLeft');
+			handleDecline();
 		}
 
 		if (event.code === "ArrowRight") {
 			event.preventDefault();
-			console.log('ArrowRight');
+			handleApprove();
 		}
 
 		if (event.code === "Enter") {
 			event.preventDefault();
-			console.log('Enter');
+			setSuperLike(true);
+
+			setTimeout(() => {
+				setSuperLike(false);
+			}, 1000);
 		}
     }
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeyPress, false);
+        document.addEventListener("mouseup", resetPosition, false);
+
         return () => {
           document.removeEventListener("keydown", handleKeyPress, false);
+		  document.removeEventListener("mouseup", resetPosition, false);
         };
     }, []);
 
@@ -112,16 +138,20 @@ const GamePad = () => {
 								sliderProfiles && sliderProfiles.map((sliderProfile: ISliderProfile, i) => {
 									return (
 										<animated.div
-											className={`GamePadBlockItem ${approved}`}
-											style={{
-												transform: i === 0 ? `rotate(${angle}deg)` : `translateX(-50%)`
-											}}
+											className={`GamePadBlockItem`}
 											key={sliderProfile.id}
 											{...bind(i)}
 										>
 											{
 												i === 0 &&
-												<PhotoSlider images={sliderProfile.images} />
+												<PhotoSlider
+													images={sliderProfile.images}
+													cssClass={approved}
+													cssStyle={{
+														transform: i === 0 ? `rotate(${angle}deg)` : `translateX(-50%)`
+													}}
+													sliderIndex={i}
+												/>
 											}
 
 											{
@@ -129,87 +159,100 @@ const GamePad = () => {
 												<img src={sliderProfile.images[0].src} alt={sliderProfile.images[0].alt} />
 											}
 
-											<div className="GamePadPanel">
-												<div className="GamePadPanelBackground">
-													<div className="GamePadPanelInfo">
-														{
-															(sliderProfile.userName || sliderProfile.userAge) &&
-															<div className="GamePadPanelMainInfo">
-																{
-																	sliderProfile.userName &&
-																	<span className="name">
-																		{sliderProfile.userName}
-																	</span>
-																}
-																{
-																	sliderProfile.userName &&
-																	sliderProfile.userAge &&
-																	<span className="separator">, </span>
-																}
-																{
-																	sliderProfile.userAge &&
-																	<span className="age">
-																		{sliderProfile.userAge}
-																	</span>
-																}
-																<SVGIcon name="fillVerification" size={16} />
-															</div>
-														}
-														{
-															sliderProfile.userLocation &&
-															sliderProfile.userDistance &&
-															<div className="GamePadPanelAdditionalInfo">
-																<ul>
-																	<li>
-																		<SVGIcon name="homeIcon" size={14} />
-																		<span>{sliderProfile.userLocation}</span>
-																	</li>
-																	<li>
-																		<SVGIcon name="distanceIcon" size={14} />
-																		<span>{sliderProfile.userDistance}</span>
-																	</li>
-																	<li>
-																		<SVGIcon name="tall" size={14} />
-																		<span>{sliderProfile.userLocation}</span>
-																	</li>
-																	<li>
-																		<SVGIcon name="femaleGender" size={14} />
-																		<span>{sliderProfile.userLocation}</span>
-																	</li>
-																</ul>
-															</div>
-														}
-														{
-															sliderProfile.userDescription &&
-															<div className="GamePadPanelDescription">
-																<p>
-																	{sliderProfile.userDescription}
-																</p>
-															</div>
-														}
+											{
+												i === 0 &&
+												<div className="GamePadMatchBlock">
+													{
+														superLike &&
+														<SVGIcon name="bigMatchIcon" />
+													}
+												</div>
+											}
+
+											{
+												i === 0 &&
+												<div className="GamePadPanel">
+													<div className="GamePadPanelBackground">
+														<div className="GamePadPanelInfo">
+															{
+																(sliderProfile.userName || sliderProfile.userAge) &&
+																<div className="GamePadPanelMainInfo">
+																	{
+																		sliderProfile.userName &&
+																		<span className="name">
+																			{sliderProfile.userName}
+																		</span>
+																	}
+																	{
+																		sliderProfile.userName &&
+																		sliderProfile.userAge &&
+																		<span className="separator">, </span>
+																	}
+																	{
+																		sliderProfile.userAge &&
+																		<span className="age">
+																			{sliderProfile.userAge}
+																		</span>
+																	}
+																	<SVGIcon name="fillVerification" size={16} />
+																</div>
+															}
+															{
+																sliderProfile.userLocation &&
+																sliderProfile.userDistance &&
+																<div className="GamePadPanelAdditionalInfo">
+																	<ul>
+																		<li>
+																			<SVGIcon name="homeIcon" size={14} />
+																			<span>{sliderProfile.userLocation}</span>
+																		</li>
+																		<li>
+																			<SVGIcon name="distanceIcon" size={14} />
+																			<span>{sliderProfile.userDistance}</span>
+																		</li>
+																		<li>
+																			<SVGIcon name="tall" size={14} />
+																			<span>{sliderProfile.userLocation}</span>
+																		</li>
+																		<li>
+																			<SVGIcon name="femaleGender" size={14} />
+																			<span>{sliderProfile.userLocation}</span>
+																		</li>
+																	</ul>
+																</div>
+															}
+															{
+																sliderProfile.userDescription &&
+																<div className="GamePadPanelDescription">
+																	<p>
+																		{sliderProfile.userDescription}
+																	</p>
+																</div>
+															}
+														</div>
+													</div>
+													<div className="GamePadPanelButtons">
+														<div className="GamePadPanelButtonsItem item-big">
+															<SVGIcon name="gamepadNoIcon" size={24} />
+														</div>
+														<div className="GamePadPanelButtonsItem">
+															<SVGIcon name="gamepadRebootIcon" size={16} />
+														</div>
+														<div className="GamePadPanelButtonsItem">
+															<SVGIcon name="gamepadStarIcon" size={16} />
+														</div>
+														<div className="GamePadPanelButtonsItem">
+															<SVGIcon name="gamepadBoltIcon" size={16} />
+														</div>
+														<div className="GamePadPanelButtonsItem item-big item-pink">
+															<SVGIcon name="gamepadHeartIcon" size={24} />
+														</div>
+													</div>
+													<div className="GamePadProfileToggler" onClick={() => setProfileVisibility(true)}>
+														<SVGIcon name="arrowUp" size={6} width={11} />
 													</div>
 												</div>
-												<div className="GamePadPanelButtons">
-													<div className="GamePadPanelButtonsItem item-big">
-														<SVGIcon name="gamepadNoIcon" size={24} />
-													</div>
-													<div className="GamePadPanelButtonsItem">
-														<SVGIcon name="gamepadRebootIcon" size={16} />
-													</div>
-													<div className="GamePadPanelButtonsItem">
-														<SVGIcon name="gamepadStarIcon" size={16} />
-													</div>
-													<div className="GamePadPanelButtonsItem">
-														<SVGIcon name="gamepadBoltIcon" size={16} />
-													</div>
-													<div className="GamePadPanelButtonsItem item-big item-pink">
-														<SVGIcon name="gamepadHeartIcon" size={24} />
-													</div>
-												</div>
-												<div className="GamePadProfileToggler" onClick={() => setProfileVisibility(true)}>
-													<SVGIcon name="arrowUp" size={6} width={11} />
-												</div>
-											</div>
+											}
 										</animated.div>
 									)
 								})

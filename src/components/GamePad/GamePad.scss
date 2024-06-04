@@ -24,11 +24,10 @@
     align-items: center;
     justify-content: center;
     width: calc(100% - (var(--side-padding) * 2));
+    max-width: 23.942vw;
     height: calc(100% - var(--bottom-padding));
     padding: 0 var(--side-padding) var(--bottom-padding);
     position: relative;
-    width: 100%;
-    max-width: 600px;
     margin: 0 var(--right-margin) 0 var(--left-margin);
 
     @media screen and (max-width: 1024px) {
@@ -57,7 +56,9 @@
         height: 100%;
         width: 100%;
         max-width: 600px;
-        max-height: 935px;
+        // max-height: 935px;
+        height: 58.256vh;
+        max-height: 910px;
         position: relative;
     }
 
@@ -71,17 +72,8 @@
         height: 100%;
         width: 100%;
         position: absolute;
-        border-radius: 30px;
-        overflow: hidden;
+        // overflow: hidden;
         touch-action: none;
-
-        &.approved {
-            transform-origin: 0 100%;
-        }
-
-        &.declined {
-            transform-origin: 100% 100%;
-        }
 
         .keen-slider {
             width: 100%;
@@ -90,6 +82,19 @@
             img {
                 width: 100%;
                 height: 100%;
+            }
+        }
+
+        .PhotoSlider {
+            overflow: hidden;
+            border-radius: 30px;
+
+            &.approved {
+                transform-origin: 0 100%;
+            }
+
+            &.declined {
+                transform-origin: 100% 100%;
             }
         }
 
@@ -119,6 +124,12 @@
             z-index: 3;
             position: relative;
         }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 30px;
+        }
     }
 
     &Tutorial {
@@ -129,6 +140,7 @@
         bottom: 12px;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 3;
 
         @media screen and (max-width: 1024px) {
             display: none;
@@ -262,6 +274,32 @@
         align-items: center;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.40);
+    }
+
+    &ApproveBlock {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &ApproveIcon {
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        transform: translateY(-50%) rotate(-15deg);
+    }
+
+    &DeclineIcon {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
     }
 
     .ProfileComponent {
