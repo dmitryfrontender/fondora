@@ -2,6 +2,7 @@
     .pageItems{
         position: relative;
         .protect{
+            display: block;
             width: min-content;
             height: min-content;
             position: absolute;
@@ -12,6 +13,7 @@
           display: block;
           position: relative;
           margin-top: 75px;
+          
           .userAvatar {
             position: relative;
             background-image: url('../../assets/avatar/userAvatar.png');
@@ -125,7 +127,12 @@
 
             }
             
-        }
+          }
+          .mobileBg {
+            display: none;
+          }
+          
+
         }
         .extraBlock {
           display: grid;

@@ -1,67 +1,184 @@
 @media screen and (max-width: 1024px) {
-    .myProfile{
-        .pageItems {
-            width: 80vw;
-            .protect {
-              top: 0 !important;
-            }
-            .userInfo {
-                margin-top: 0 !important;
+    .App{
+//         // background: linear-gradient(168deg, #24161B 0%, rgba(26, 23, 23, 0.00) 100%);
+//         // backdrop-filter: blur(17px);
+//         background: linear-gradient(168deg, #24161B 0%, rgba(26, 23, 23, 0.00) 100%);
+// backdrop-filter: blur(17px);
+        background-color: #221b1d;
+        background-image: none;
+        .pageWrapper {
+            // margin-bottom: 0;
+            .myProfile{
+                position: relative !important;
+                .pageItems {
+                    position: unset;
+                    width: -webkit-fill-available;
+                    
+                    .userInfo {
+                        height: -webkit-fill-available;
+                        margin-top: 85px;
+                
 
+                        .mobileBg {
+                            // background-image: url('../../assets/images/mobileBg.png');
+                        //   background-repeat: no-repeat;
+                        display: block;
+                            width: 100vw;
+                            height: 250px;
+                            position: absolute;
+                            top: -70px;
+                            left: 0;
+                            width: 100vw;
+                            height: 250px;
+                            z-index: -1;
+                            svg{
+                                position: relative;
+                                left: 30px;
+                                
+                            }
+        
+                          }
+        
+                    }
+                    .extraWrapper {
+                        background-color: #060606;
+                        position: relative;
+                        // padding: 30px;
+                        padding: 30px 30px 5vh;
+                        border-radius: 40px 40px 0 0;
+                     
+                        // bottom: -60px;
+                        .protect {
+                            top: 0 !important;
+                          }
+                          .userInfo {
+                              margin-top: 0 !important;
               
+                            
+                          }
+                      
+                    }
+                    .protect{
+                        display: none;
+                    }
+                    
+                }
             }
+            
         }
+        
     }
+        
+    
     
 }
 @media screen and (max-width: 425px) {
-    .myProfile{
-        .pageItems {
-          width: 95vw;
-        }
-        .subscriptionsBlock {
-            display: flex;
-            overflow: scroll;
-            gap: 10px;
-            justify-content: flex-start;
-            margin-bottom: 55px !important;
-            .subscription {
-                min-width: 90vw;
-                .wrapper {
-                  padding: 15px 10px !important;
+    .App{
+        .pageWrapper{
+            margin-bottom: 14vh;
+            .myProfile{
+                .pageItems {
+                //   width: 95vw;
+                //   margin: 0 auto;
+                    .extraWrapper{
+                    padding: 30px 15px;
+                    position: absolute;
+                    max-width: -webkit-fill-available;
+                    top: 55vh;
+
+
+                    }
                 }
-            }
-        }
-    }
-    
-}
-@media screen and (max-width: 375px) {
-    .myProfile{    
-        .subscriptionsBlock {  
-            .subscription {
-                .wrapper {
-                    .planTitle {
-                        .logo{
-                            svg{
-                                width: clamp(55px, 27vw, 150px) !important;
-                            }
+                .userInfo{
+                    position: fixed;
+                    z-index: -1;
+                    width: -webkit-fill-available;
+                    margin-top: 20px !important;
+                    .userAvatar {
+                        width: 20vh;
+                        height: 20vh;
+                    }
+                    .mobileBg{
+                        
+                        top: -40px !important;
+                        svg{
+                            width: 30vh !important;
+                        height: 30vh !important;
+
                         }
-                        .status {
-                          span{
-                            font-size: clamp(7px, 3vw, 10px) !important;
-                          }
+                    }
+                }
+                .subscriptionsBlock {
+                    display: flex;
+                    overflow: scroll;
+                    gap: 10px;
+                    justify-content: flex-start;
+                    // margin-bottom: 55px !important;
+                    margin: 25px 0 0 0;
+                    .subscription {
+                        min-width: 90vw;
+                        .wrapper {
+                          padding: 15px 10px !important;
                         }
-                      .buyBtn {
-                        padding: 5px !important;
-                        span{
-                            white-space: nowrap;
-                            font-size: clamp(7px, 2.5vw, 10px) !important;
-                        }
-                      }
                     }
                 }
             }
+
         }
     }
+  
+    
+}
+@media screen and (max-width: 375px) {
+    .App{
+        .pageWrapper{
+            .myProfile{    
+                .pageItems {
+                  .userInfo{
+                    .mobileBg{
+                        svg{
+                            left: 15px;
+                        }
+                    }
+                  }
+                  .extraWrapper{
+                    .wrapper{
+                        // padding: 5px;
+                        .description {
+                          font-size: 10px;
+                        }
+                    }
+                  }
+                }
+                .subscriptionsBlock {  
+                    .subscription {
+                        .wrapper {
+                            .planTitle {
+                                .logo{
+                                    svg{
+                                        width: clamp(55px, 27vw, 150px) !important;
+                                    }
+                                }
+                                .status {
+                                  span{
+                                    font-size: clamp(7px, 3vw, 10px) !important;
+                                  }
+                                }
+                              .buyBtn {
+                                padding: 5px !important;
+                                span{
+                                    white-space: nowrap;
+                                    font-size: clamp(7px, 2.5vw, 10px) !important;
+                                }
+                              }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    
     
 }

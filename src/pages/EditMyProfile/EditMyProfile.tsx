@@ -84,13 +84,6 @@ const EditMyProfile = () => {
 											</div>
 											<div className='value'>
 												<ToggleBtn />
-												{/* <div className="text">
-                                                    <span>
-                                                        Выбрать
-                                                    </span>
-                                                </div>
-                                                <SVGIcon name="arrowRight" size={20}  />
-                                                <div className="underline"></div> */}
 											</div>
 										</div>
 										<div className='optionDescription'>
