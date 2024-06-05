@@ -150,74 +150,6 @@
         border-radius: 20px;
         border: 1px solid #FFBE18;
         background: linear-gradient(146deg, #131417 0%, #131417 100%);
-        .ProfileComponentMessageBlockTop{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 10px;
-            .ProfileComponentMessageIcon{
-                position: relative;
-                width: 30%;
-                .imageContainer {
-                    position: relative; 
-                    display: inline-block; 
-                    border-radius: 50%;
-                    overflow: hidden; 
-                    padding: 1px;
-                    .imageBorder {
-                        position: absolute;
-                        top: -3px; left: -3px; right: -3px; bottom: -3px;
-                        background: linear-gradient(180deg, #E8206C 0%, #2E97FE 100%);
-                        border-radius: calc(50% + 3px);
-                        z-index: 0;
-                    }
-                    img {
-            
-                        display: block; 
-                        width: 100%; 
-                        height: auto; 
-                        border-radius: 50%;
-                        position: relative; 
-                        z-index: 1; 
-                    }
-                }
-                svg{
-                    position: absolute;
-                    bottom: 0;
-                    right: 50%;
-                    z-index: 1;
-                    transform: translate(50%, 30%);
-                    border-radius: 20px;
-                    padding: 5px;
-                    background: rgba(0, 0, 0, 0.70);
-                }
-                
-            }
-            .ProfileComponentMessageText{
-                text-align: start;
-                .ProfileComponentMessageTitle{
-                    display: block;
-                    color: #FFBE18;
-                    font-family: var(--font-family-urbanist);
-                    font-size: 14px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: 150%; /* 21px */
-                    letter-spacing: 0.28px;
-                }
-                .ProfileComponentMessageSubTitle{
-                    display: block;
-                    color: #A2A2A2;
-                    font-family: var(--font-family-urbanist);
-                    font-size: 13px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: 150%; /* 19.5px */
-                }
-
-            }
-            
-        }
        
         textarea{
             width: -webkit-fill-available;
@@ -225,6 +157,7 @@
             background: #212020;
             padding: 10px 20px;
             font-family: var(--font-family-urbanist);
+            resize: none;
             color: white;
         }
         textarea::placeholder{
@@ -238,6 +171,79 @@
         textarea:focus{
             outline: none;
         }
+    }
+
+    &MessageBlockTop{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+        
+    
+        
+    }
+    &MessageIcon{
+        position: relative;
+        width: 30%;
+        .imageContainer {
+            position: relative; 
+            display: inline-block; 
+            border-radius: 50%;
+            overflow: hidden; 
+            padding: 1px;
+            .imageBorder {
+                position: absolute;
+                top: -3px; left: -3px; right: -3px; bottom: -3px;
+                background: linear-gradient(180deg, #E8206C 0%, #2E97FE 100%);
+                border-radius: calc(50% + 3px);
+                z-index: 0;
+            }
+            img {
+    
+                display: block; 
+                width: 100%; 
+                height: auto; 
+                border-radius: 50%;
+                position: relative; 
+                z-index: 1; 
+            }
+        }
+        svg{
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            z-index: 1;
+            transform: translate(50%, 30%);
+            border-radius: 20px;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.70);
+        }
+        
+    }
+    &MessageText{
+        text-align: start;
+        
+        
+
+    }
+    &MessageTitle{
+        display: block;
+        color: #FFBE18;
+        font-family: var(--font-family-urbanist);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.28px;
+    }
+    &MessageSubTitle{
+        display: block;
+        color: #A2A2A2;
+        font-family: var(--font-family-urbanist);
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 19.5px */
     }
 
     &Buttons {
