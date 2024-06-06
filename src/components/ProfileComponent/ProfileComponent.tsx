@@ -21,6 +21,12 @@ const ProfileComponent = (props: any) => {
                 <PhotoSlider images={activeUser.images} />
 
                 <div className="ProfileComponentInfo">
+                    {
+                        props.profileVisibility &&
+                        <div className="ProfileComponentProfileToggler" onClick={() => props.sendDataToGamepad(false)}>
+                            <SVGIcon name="arrowDown" size={6} width={11} />
+                        </div>
+                    }
                     <div className="ProfileComponentMainInfo">
                         <span className="name">
                             {activeUser.userName}
@@ -169,16 +175,16 @@ const ProfileComponent = (props: any) => {
 
                         </div>
 
-                        
+
                         <TextAreaAutosize
                             placeholder="Напишите сообщение..."
                             value={inputValue}
                             minRows={1}
                             maxRows={4}
                             onChange={(e) => setInputValue(e.target.value)}
-                        
-                        
-                        
+
+
+
                         />
                     </div>
                     <div className="ProfileComponentButtons">

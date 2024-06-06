@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     width: calc(100% - (var(--side-padding) * 2));
-    max-width: 23.942vw;
+    width: 600px;
     height: calc(100% - var(--bottom-padding));
     padding: 0 var(--side-padding) var(--bottom-padding);
     position: relative;
@@ -32,7 +32,9 @@
 
     @media screen and (max-width: 1024px) {
         max-width: 100%;
+        width: 100%;
         padding: 0;
+        margin: 0;
     }
 
     &Survey {
@@ -53,26 +55,23 @@
     }
 
     &Block {
-        height: 100%;
-        width: 100%;
-        max-width: 600px;
-        // max-height: 935px;
-        height: 58.256vh;
-        max-height: 910px;
+        height: 910px;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
         position: relative;
     }
 
     &BlockWrapper {
         width: 100%;
         height: 100%;
-        position: relative;
+        position: absolute;
     }
 
     &BlockItem {
         height: 100%;
         width: 100%;
         position: absolute;
-        // overflow: hidden;
         touch-action: none;
 
         .keen-slider {
@@ -103,7 +102,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
-            max-width: 560px;
+            max-width: 93.334%;
             height: 100%;
             z-index: 2;
             opacity: 0.5;
@@ -114,7 +113,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
-            max-width: 530px;
+            max-width: 88.334%;
             height: 100%;
             z-index: 1;
             opacity: 0.5;
@@ -247,6 +246,7 @@
             color: #FFF;
             font-size: 24px;
             line-height: 100%;
+            margin-bottom: 12px;
 
             .name {
                 font-weight: 500;
@@ -258,6 +258,51 @@
 
             .age {
                 font-weight: 700;
+            }
+
+            .verified {
+                margin-left: 10px;
+            }
+        }
+
+        &AdditionalInfo {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+        }
+
+        &LabelsList {
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .tag {
+                font-size: 13px;
+                color: #A2A2A2;
+                display: flex;
+                padding: 5px 15px;
+                align-items: center;
+                gap: 5px;
+                border-radius: 30px;
+                background: #212020;
+                white-space: nowrap;
             }
         }
     }
@@ -310,7 +355,6 @@
     .ProfileComponentInfo {
         border-radius: 30px 30px 0 0;
         margin-top: -200px;
-        overflow: hidden;
         position: relative;
     }
 }

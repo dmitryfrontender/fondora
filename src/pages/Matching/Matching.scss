@@ -12,6 +12,7 @@
         position: absolute;
         right: 0;
         top: 0;
+        z-index: 3;
         .settings{
             display: block;
             text-align: -webkit-right;
@@ -34,7 +35,7 @@
             .SettingsBtn{
                 margin: 0 10px;
             }
-    
+
         }
         .rightSideSettings {
             width: clamp(240px, 21vw, 365px);
