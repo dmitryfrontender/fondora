@@ -63,8 +63,8 @@ const PhotoSlider = (props: any) => {
     return (
         <>
             <div
-                className={`PhotoSlider ${props.cssClass}`}
-                style={props.cssStyle}
+                className={`PhotoSlider ${props.cssClass ? props.cssClass : ''}`}
+                style={props.cssStyle ? props.cssStyle : {}}
             >
                 <div className="PhotoSliderAvatar">
                     {loaded && instanceRef.current && (
