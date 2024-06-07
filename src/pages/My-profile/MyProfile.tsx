@@ -1,28 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import SettingsBtn from "../../components/SettingsBtn/SettingsBtn.tsx";
 import "./MyProfile.scss"
 import SVGIcon from "../../assets/icons/svgComponent";
 import { Link } from "react-router-dom";
-import {  useDispatch } from "react-redux";
+import {  useDispatch, useSelector } from "react-redux";
 import { boostModalState } from "../../store/BoostSlice";
+import { setVerifyProfileModal } from "../../store/VerifyProfileSlice";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 
 
 
 const MyProfile = () => {
-    // const pathname = useLocation();
 
     const dispatch = useDispatch();
+    const [showTooltip, setShowTooltip] = useState(false);
 
+    const verifyProfileState = useSelector((state: any) => state.VerifyProfileState.isUserVerify)
+
+    const showVerifyTooltip = () => {
+        setTimeout(() => {
+            setShowTooltip(true)
+        },1000)
+
+        setTimeout(() => {
+            setShowTooltip(false)
+        },5000)
+
+    }
 
     useEffect(() => {
+
+        if (!verifyProfileState) {
+            showVerifyTooltip()
+        }
+
         window.history.scrollRestoration = 'manual';
-    }, []);
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    //     console.log('ololo');
-        
-    // }, [pathname]);
+    }, [verifyProfileState]);
+
 
     return (
     
@@ -56,7 +71,30 @@ const MyProfile = () => {
                                     <h2>
                                         Alex, 41
                                     </h2>
-                                    <SVGIcon name="verificationProfile" size={20} />
+
+                                    <SVGIcon 
+                                        onMouseOver={() => setShowTooltip(true)}
+                                        onMouseLeave={() => setShowTooltip(false)}
+                                        onClick={() => dispatch(setVerifyProfileModal(true))}
+
+                                        data-tooltip-id='verifyTooltip'
+                                        name="verifiedProfile" 
+                                        size={20} 
+                                        style={{fill: verifyProfileState ? '#19FF75' : '#7F7F7F'}} 
+                                    />
+                                    <ReactTooltip
+                                        id="verifyTooltip"
+                                        // place="top"
+                                        // variant="info"
+
+                                        place="top"
+                                        // type="dark"
+                                        // effect="solid"
+                                        // globalEventOff="click"
+                                        content="Подтверди свой профиль"
+                                        isOpen={showTooltip}
+                                        className="customTooltip"
+                                    />
                                     
                                 </div>
                                 <div className="userEmail">

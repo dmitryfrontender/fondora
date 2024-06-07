@@ -1,7 +1,21 @@
+@media screen and (max-width: 1024px) {
+    .SuperLikes{
+        .superLikeWrapper{
+            padding: 50px 0 40px 0  !important;
+    
+    
+        }
+
+    }
+
+  
+}
 @media screen and (max-width: 700px) {
+
 
     .superLikeWrapper{
         width: clamp(300px, 90vw, 550px) !important;
+        // padding: 35px 0 40px 0 !important;
         .superLikeBanner{
             .bannerTitle{
                 max-width: 35vw;
@@ -21,6 +35,18 @@
 
             }
         }
+        .goldPlanBanner{
+            margin-bottom: 90px;
+            .description{
+                p{
+          
+                    font-size: clamp(8px, 2.3vw, 14px) !important;
+                    padding: 0 10px;
+                }
+            }
+            
+        }
+       
 
     }
     

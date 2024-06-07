@@ -6,6 +6,7 @@ import ProtectSlice from "./ProtectSlice";
 import VideoChatSlice from "./VideoChatSlice";
 import ShareProfileSlice from "./ShareProfileSlice";
 import NewLikeSlice from "./NewLikeSlice";
+import VerifyProfileSlice from "./VerifyProfileSlice";
 
 
 
@@ -19,5 +20,7 @@ export default configureStore({
         VideoChatState: VideoChatSlice,
         ShareProfileState: ShareProfileSlice,
         NewLikeState: NewLikeSlice,
+        VerifyProfileState: VerifyProfileSlice 
+
     }
 })

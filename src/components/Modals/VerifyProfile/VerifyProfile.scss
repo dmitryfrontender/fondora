@@ -1,0 +1,59 @@
+.VerifyProfile{
+    .modalWrapper{
+        .title{
+            h2{
+                color: #FFF;
+                text-align: center;
+                font-family: var(--font-family-urbanist);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+
+            }
+        }
+        .modalItem{
+            .textTop {
+              span{
+                color: #FFF;
+                text-align: center;
+                font-family: var(--font-family-urbanist);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: 0.32px;
+
+              }
+            }
+            .selfieIcon {
+                padding: 30px 0;
+                svg{
+
+                }
+              
+            }
+            .note {
+                max-width: 60%;
+                padding-bottom: 30px;
+                margin: 0 auto;
+                span{
+                    max-width: 30vw;
+                    color: #A2A2A2;
+                    text-align: center;
+                    font-family: var(--font-family-urbanist);
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%; /* 21px */
+                    letter-spacing: 0.28px;
+    
+                }
+              
+
+            }
+          
+
+        }
+    }
+}

@@ -118,7 +118,6 @@ const EditMyProfile = () => {
 								<ul>
 									<li>
 										<div className='itemWrapper'>
-											{/* <div className="description"> */}
 											<div className='optionWrapper'>
 												<div className='option'>
 													<span>Дети 90-х</span>

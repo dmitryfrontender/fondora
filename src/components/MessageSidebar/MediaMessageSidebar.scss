@@ -39,7 +39,7 @@
             // padding-bottom: 150px;
             ul{
                 // height: -webkit-fill-available;
-                margin-bottom: 150px;
+                margin-bottom: 175px;
                 display: flex;
                 flex-direction: column;
                 padding-left: 0;
@@ -155,6 +155,18 @@
                     margin-top: 0;
                 }
             }
+            .messagesWrapper{
+                ul{
+                    a{
+                        li{
+                            .userMessage{
+                                text-align: left;
+
+                            }
+                        }
+                    }
+                }
+            } 
 
         }
     }
