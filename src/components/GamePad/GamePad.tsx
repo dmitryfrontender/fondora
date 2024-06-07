@@ -10,14 +10,21 @@ import { ISliderProfile } from "../../model/SliderProfileModel";
 
 import SVGIcon from "../../assets/icons/svgComponent";
 import ProfileComponent from '../ProfileComponent/ProfileComponent';
+import MatchBlock from '../MatchBlock/MatchBlock';
 import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 
 const GamePad = () => {
 
 	const [profileVisibility, setProfileVisibility] = useState(false); // logic for setProfileVisibility
 
-	function handleProfileVisibilityFromProfileComponent(data: boolean) {
+	const [matchBlockVisibility, setMatchBlockVisibility] = useState(true);
+
+	function handleProfileVisibility(data: boolean) {
 		setProfileVisibility(data);
+	}
+
+	function handleMatchBlockVisibility(data: boolean) {
+		setMatchBlockVisibility(data);
 	}
 
 	const [verified, setVerified] = useState(true);
@@ -87,12 +94,12 @@ const GamePad = () => {
 		// TODO add key bindings here
         if (event.code === "ArrowUp") {
 			event.preventDefault();
-			setProfileVisibility(true);
+			handleProfileVisibility(true);
         }
 
 		if (event.code === "ArrowDown") {
 			event.preventDefault();
-			setProfileVisibility(false);
+			handleProfileVisibility(false);
 		}
 
 		if (event.code === "ArrowLeft") {
@@ -130,6 +137,7 @@ const GamePad = () => {
 			<div className='GamePad'>
 				<div className="GamePadBlock">
 					{
+						!matchBlockVisibility &&
 						timeOut &&
 						<div className="GamePadSurvey">
 							<SVGIcon name="surveyImage" />
@@ -139,11 +147,13 @@ const GamePad = () => {
 					{
 						profileVisibility
 						?
-						<ProfileComponent profileVisibility={profileVisibility} sendDataToGamepad={handleProfileVisibilityFromProfileComponent} />
+						<ProfileComponent profileVisibility={profileVisibility} sendDataToGamepad={handleProfileVisibility} />
 						:
 						<div className="GamePadBlockWrapper">
 							{
-								sliderProfiles && sliderProfiles.map((sliderProfile: ISliderProfile, i) => {
+								!matchBlockVisibility &&
+								sliderProfiles &&
+								sliderProfiles.map((sliderProfile: ISliderProfile, i) => {
 									return (
 										<animated.div
 											className={`GamePadBlockItem`}
@@ -284,6 +294,11 @@ const GamePad = () => {
 								})
 							}
 						</div>
+					}
+
+					{
+						matchBlockVisibility &&
+						<MatchBlock sendDataToGamepad={handleMatchBlockVisibility} />
 					}
 				</div>
 

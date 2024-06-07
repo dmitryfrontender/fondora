@@ -87,6 +87,7 @@
         .PhotoSlider {
             overflow: hidden;
             border-radius: 30px;
+            max-height: 100%;
 
             &.approved {
                 transform-origin: 0 100%;
@@ -126,7 +127,7 @@
 
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
             border-radius: 30px;
         }
     }
@@ -188,7 +189,7 @@
             left: 0;
             top: 0;
             padding: 54px 20px 20px;
-            border-radius: 30px 30px 0 0;
+            border-radius: 30px;
             overflow:hidden;
             /* blur effect */
             backdrop-filter: blur(20px);
