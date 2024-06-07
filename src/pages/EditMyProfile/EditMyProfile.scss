@@ -112,6 +112,19 @@
           border: 1px dashed rgb(109, 109, 109);
           border-radius: 10px;
           background: rgb(48, 48, 48);
+          padding-top: 35vh;
+          img{
+            top: 0;
+            max-width: 35vw;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+          svg{
+            position: absolute;
+            transform: translate(0, -20%);
+            top: 50%;
+          }
         }
     }
     .descriptionArea {

@@ -17,9 +17,11 @@ import VideoChatModal from './components/Modals/VideoChat/VideoChatModal';
 import BlockUser from './components/Modals/BlockUser/BlockUser';
 import ShareProfile from './components/Modals/ShareProfile/ShareProfile';
 import NewLike from './components/Modals/NewLike/NewLike';
+import VerifyProfile from './components/Modals/VerifyProfile/VerifyProfile';
 
 import { setMobileScreen } from './store/rootSlice';
 import { useDispatch } from 'react-redux';
+// import { verifyProfileState } from './store/VerifyProfileSlice';
 
 // import { Route, Routes, Navigate } from 'react-router-dom';
 
@@ -36,17 +38,20 @@ function App() {
   const videoChatModal = useSelector((state: any) => state.VideoChatState.videoChatModal);
   const blockUserModal = useSelector((state: any) => state.ProtectState.blockUserModal)
   const newLikeModal = useSelector((state: any) => state.NewLikeState.newLikeModal)
-  const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
+  const verifyProfileModal = useSelector((state: any) => state.VerifyProfileState.verifyProfileModal)
+  // const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
 
-  const pageWrapper = document.querySelector('.pageWrapper')
+  // const pageWrapper = document.querySelector('.pageWrapper')
   const dispatch = useDispatch();
 
   // console.log(mobileScreen);
-  if (mobileScreen) {
-    (pageWrapper as HTMLElement).style.top = '0'
+  // if (mobileScreen) {
+  //   (pageWrapper as HTMLElement).style.top = '0'
 
-  }
+  // }
   
+  
+  console.log(verifyProfileModal);
 
   const checkScreen = useMemo(() => {
     return width >= 1024
@@ -54,6 +59,9 @@ function App() {
   
   
   useEffect(() => {
+
+
+    
 
     checkScreen ? dispatch(setMobileScreen(false)) : dispatch(setMobileScreen(true));
     
@@ -97,6 +105,9 @@ function App() {
         }
         {
           newLikeModal && <NewLike/>
+        }
+        {
+          verifyProfileModal && <VerifyProfile/>
         }
     </div>
   );

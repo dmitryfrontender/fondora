@@ -1,39 +1,53 @@
 @media screen and (max-width: 1024px) {
-    .LikesTopProfile {
-        .PagesWrapper{
-            width: auto !important;
-            margin: 0 20px;
-            .topButtons{
-                max-width: 90vw;
-                overflow: scroll;
+    .App{
+        .pageWrapper{
+            .ToggleLikeTop{
+                position: relative;
+                top: 60px;
                 
-                .buttonItem{
-                    white-space: nowrap;
-                }
             }
-
-            .pageGallery{
-                width: 100% !important;
-                display: flex !important;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: 0 auto;
-                max-width: clamp(250px, 80vw, 800px); //80vw;
-                .item{
-                    // width: auto !important;
-                    width: clamp(75px, 38vw, 210px) !important;
-                    .userPhoto{
-                        img{
-                            width: clamp(160px, 38vw, 240px);
-                            
+            .LikesTopProfile {
+                position: relative;
+                top: 60px;
+                .PagesWrapper{
+                    width: auto !important;
+                    margin: 0 20px;
+                    .topButtons{
+                        max-width: 90vw;
+                        overflow: scroll;
+                        
+                        .buttonItem{
+                            white-space: nowrap;
                         }
                     }
+        
+                    .pageGallery{
+                        width: 100% !important;
+                        display: flex !important;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        margin: 0 auto;
+                        max-width: clamp(250px, 80vw, 800px); //80vw;
+                        padding-bottom: 120px;
+                        .item{
+                            // width: auto !important;
+                            width: clamp(75px, 38vw, 210px) !important;
+                            .userPhoto{
+                                img{
+                                    width: clamp(160px, 38vw, 240px);
+                                    
+                                }
+                            }
+                        }
+        
+                    }
                 }
-
             }
+
         }
     }
+  
  
     
     

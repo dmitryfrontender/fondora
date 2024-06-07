@@ -1,7 +1,15 @@
 @media screen and (max-width: 1024px) {
-    .Settings{
-        .pageItems {
-          width: clamp(250px, 85vw, 800px);
+    .App{
+        .pageWrapper{
+            // top: 0 !important;
+
+            .Settings{
+                top: 0;
+                .pageItems {
+                width: clamp(250px, 85vw, 800px);
+                }
+            }
+
         }
     }
     
