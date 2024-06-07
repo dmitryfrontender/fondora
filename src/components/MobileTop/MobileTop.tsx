@@ -16,28 +16,28 @@ const MobileTop = () => {
 
 
     const settingPageWrapper = (path: string) => {
-        const pageWrapper = document.querySelector('.pageWrapper');
-        const mobileTop = document.querySelector('.MobileTop')
+        // const pageWrapper = document.querySelector('.pageWrapper');
+        // const mobileTop = document.querySelector('.MobileTop')
 
         
-        if (path === '/settings'){
-            (pageWrapper as HTMLElement).style.top = '0';
+        // if (path === '/settings'){
+        //     // (pageWrapper as HTMLElement).style.top = '0';
 
 
-        } else if(path === '/my-profile/subscriptions' || path === '/my-profile/super-likes' || path === '/settings/boosts' || path === '/my-profile/edit-profile') {
-            (pageWrapper as HTMLElement).style.top = '0';
-            (mobileTop as HTMLElement).style.display = 'none'
+        // } else if(path === '/my-profile/subscriptions' || path === '/my-profile/super-likes' || path === '/settings/boosts' || path === '/my-profile/edit-profile') {
+        //     // (pageWrapper as HTMLElement).style.top = '0';
+        //     (mobileTop as HTMLElement).style.display = 'none'
 
 
-        }
+        // }
 
-        else {
-            (pageWrapper as HTMLElement).style.top = '60px';
-            (mobileTop as HTMLElement).style.display = 'block'
+        // else {
+        //     // (pageWrapper as HTMLElement).style.top = '60px';
+        //     (mobileTop as HTMLElement).style.display = 'block'
 
 
 
-        }
+        // }
     }
 
 
@@ -45,7 +45,6 @@ const MobileTop = () => {
 
         settingPageWrapper(path)
 
-        console.log(path);
         
 
     },[path])

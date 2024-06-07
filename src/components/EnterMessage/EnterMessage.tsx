@@ -84,7 +84,7 @@ const EnterMessage = ({chatId, forceRerender}: IProps) => {
             setSendBtn(false);
 
             const date = new Date();
-            const timeSend = `${date.getHours()}:${date.getMinutes()}`
+            const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`
 
 
 

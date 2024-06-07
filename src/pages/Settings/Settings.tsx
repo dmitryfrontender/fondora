@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect } from "react";
 import './Settings.scss'
 import GoBtn from "../../components/goBtn/GoBtn";
 import SVGIcon from "../../assets/icons/svgComponent.jsx";
@@ -8,10 +8,12 @@ import Checkbox from "../../components/Checkbox/Checkbox";
 import { Link } from "react-router-dom";
 import DoubleRange from "../../components/DoubleRangeSlider/DoubleRange";
 import SingleRangeSlider from "../../components/SingleRangeSlider/SingleRangeSlider";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
 import { boostModalState } from "../../store/BoostSlice";
 import { useNavigate } from "react-router-dom";
-import { mobileScreenEnable } from "../../store/selectors";
+// import { mobileScreenEnable } from "../../store/selectors";
 
 
 
@@ -20,8 +22,8 @@ const Settings = () => {
 
 
 
-    const mobileDimension = useSelector(mobileScreenEnable);
-    const [mobileScreen,  setMobileScreen] = useState(false);
+    // const mobileDimension = useSelector(mobileScreenEnable);
+    // const [mobileScreen,  setMobileScreen] = useState(false);
 
 
 
@@ -36,24 +38,24 @@ const Settings = () => {
     }, []);
 
 
-    const checkMobileScreen = useMemo(() => {
+//     const checkMobileScreen = useMemo(() => {
 
-        return    mobileDimension
+//         return    mobileDimension
     
-}, [mobileDimension]);
+// }, [mobileDimension]);
 
 
-    useEffect(() => {
-        checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
+    // useEffect(() => {
+    //     // checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
 
 
-        return () => {
-            const pageWrapper = document.querySelector('.pageWrapper');
-            if(mobileScreen) {
-                (pageWrapper as HTMLElement).style.top = '0'
-            }
-        }
-    }, [checkMobileScreen, mobileScreen]);
+    //     // return () => {
+    //     //     const pageWrapper = document.querySelector('.pageWrapper');
+    //     //     if(mobileScreen) {
+    //     //         (pageWrapper as HTMLElement).style.top = '0'
+    //     //     }
+    //     // }
+    // }, [checkMobileScreen]);
 
     return (
         <div className="page Settings">

@@ -7,16 +7,19 @@
         background-color: #221b1d;
         background-image: none;
         .pageWrapper {
-            // margin-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 120px;
+            // top: 60px;
             .myProfile{
                 position: relative !important;
                 .pageItems {
-                    position: unset;
+                    position: relative;
                     width: -webkit-fill-available;
+                    z-index: 10;
                     
                     .userInfo {
                         height: -webkit-fill-available;
-                        margin-top: 85px;
+                        margin-top: 140px;
                 
 
                         .mobileBg {
@@ -46,6 +49,7 @@
                         // padding: 30px;
                         padding: 30px 30px 5vh;
                         border-radius: 40px 40px 0 0;
+                        padding-bottom: 120px;
                      
                         // bottom: -60px;
                         .protect {
@@ -75,39 +79,41 @@
 @media screen and (max-width: 425px) {
     .App{
         .pageWrapper{
-            margin-bottom: 14vh;
+            // margin-bottom: 14vh;
             .myProfile{
                 .pageItems {
                 //   width: 95vw;
                 //   margin: 0 auto;
                     .extraWrapper{
-                    padding: 30px 15px;
+                    padding: 30px 15px 120px;
                     position: absolute;
                     max-width: -webkit-fill-available;
-                    top: 55vh;
+                    // top: 55vh;
 
 
                     }
-                }
-                .userInfo{
-                    position: fixed;
-                    z-index: -1;
-                    width: -webkit-fill-available;
-                    margin-top: 20px !important;
-                    .userAvatar {
-                        width: 20vh;
-                        height: 20vh;
-                    }
-                    .mobileBg{
-                        
-                        top: -40px !important;
-                        svg{
-                            width: 30vh !important;
-                        height: 30vh !important;
-
+                    .userInfo{
+                        // position: fixed;
+                        z-index: -1;
+                        width: -webkit-fill-available;
+                        margin-top: 85px;
+                        // margin-top: 20px !important;
+                        .userAvatar {
+                            width: 20vh;
+                            height: 20vh;
+                        }
+                        .mobileBg{
+                            
+                            top: -40px !important;
+                            svg{
+                                width: 30vh !important;
+                            height: 30vh !important;
+    
+                            }
                         }
                     }
                 }
+               
                 .subscriptionsBlock {
                     display: flex;
                     overflow: scroll;
