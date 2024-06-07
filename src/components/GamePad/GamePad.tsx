@@ -297,6 +297,7 @@ const GamePad = () => {
 					}
 
 					{
+						!profileVisibility &&
 						matchBlockVisibility &&
 						<MatchBlock sendDataToGamepad={handleMatchBlockVisibility} />
 					}
