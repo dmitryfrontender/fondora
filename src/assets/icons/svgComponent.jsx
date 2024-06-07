@@ -1336,6 +1336,29 @@ const icons = {
 			<path fill='#fff' d='M16.05 17.25L12 13.2l-4.05 4.05-1.2-1.2L10.8 12 6.75 7.95l1.2-1.2L12 10.8l4.05-4.05 1.2 1.2L13.2 12l4.05 4.05-1.2 1.2z'></path>
 		</svg>
 	),
+	darkRoundCloseBtn: (
+		<svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g opacity="0.3" filter="url(#filter0_b_836_66315)">
+				<circle cx="34" cy="34" r="29" fill="url(#paint0_linear_836_66315)" fillOpacity="0.95"/>
+			</g>
+			<path d="M26.0033 42L42 26" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			<path d="M26.0033 42L42 26" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			<path d="M41.9967 42L26 26" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			<path d="M41.9967 42L26 26" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			<defs>
+				<filter id="filter0_b_836_66315" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+				<feFlood floodOpacity="0" result="BackgroundImageFix"/>
+				<feGaussianBlur in="BackgroundImageFix" stdDeviation="2.5"/>
+				<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_836_66315"/>
+				<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_836_66315" result="shape"/>
+				</filter>
+				<linearGradient id="paint0_linear_836_66315" x1="63" y1="63" x2="3.15261" y2="61.0266" gradientUnits="userSpaceOnUse">
+				<stop stopColor="#1A1A1A"/>
+				<stop offset="1" stopColor="#383838"/>
+				</linearGradient>
+			</defs>
+		</svg>
+	),
 	gifBtn: (
 		<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'  viewBox='0 0 22 22'>
 			<rect width='21' height='21'  fillOpacity='0' transform='translate(.5 .5)'></rect>
@@ -1838,20 +1861,20 @@ const icons = {
 					<feBlend mode='normal' in='SourceGraphic' in2='effect1_backgroundBlur_836_66107' result='shape' />
 				</filter>
 				<radialGradient id='paint0_radial_836_66107' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(202.411 247.954) rotate(-28.8459) scale(235.403 235.211)'>
-					<stop stop-color='#FCAA46' />
-					<stop offset='0.105' stop-color='#FCA648' />
-					<stop offset='0.198' stop-color='#FC9B50' />
-					<stop offset='0.288' stop-color='#FC895D' />
-					<stop offset='0.374' stop-color='#FC6F6F' />
-					<stop offset='0.412' stop-color='#FC627A' />
-					<stop offset='0.467' stop-color='#FC627A' stop-opacity='0.983' />
-					<stop offset='0.527' stop-color='#FC627A' stop-opacity='0.931' />
-					<stop offset='0.59' stop-color='#FC627A' stop-opacity='0.845' />
-					<stop offset='0.653' stop-color='#FC627A' stop-opacity='0.724' />
-					<stop offset='0.718' stop-color='#FC627A' stop-opacity='0.569' />
-					<stop offset='0.784' stop-color='#FC627A' stop-opacity='0.379' />
-					<stop offset='0.85' stop-color='#FC627A' stop-opacity='0.158' />
-					<stop offset='0.892' stop-color='#FC627A' stop-opacity='0' />
+					<stop stopColor='#FCAA46' />
+					<stop offset='0.105' stopColor='#FCA648' />
+					<stop offset='0.198' stopColor='#FC9B50' />
+					<stop offset='0.288' stopColor='#FC895D' />
+					<stop offset='0.374' stopColor='#FC6F6F' />
+					<stop offset='0.412' stopColor='#FC627A' />
+					<stop offset='0.467' stopColor='#FC627A' stopOpacity='0.983' />
+					<stop offset='0.527' stopColor='#FC627A' stopOpacity='0.931' />
+					<stop offset='0.59' stopColor='#FC627A' stopOpacity='0.845' />
+					<stop offset='0.653' stopColor='#FC627A' stopOpacity='0.724' />
+					<stop offset='0.718' stopColor='#FC627A' stopOpacity='0.569' />
+					<stop offset='0.784' stopColor='#FC627A' stopOpacity='0.379' />
+					<stop offset='0.85' stopColor='#FC627A' stopOpacity='0.158' />
+					<stop offset='0.892' stopColor='#FC627A' stopOpacity='0' />
 				</radialGradient>
 				<clipPath id='clip0_836_66107'>
 					<rect width='41.887' height='41.887' fill='white' transform='matrix(-0.841522 -0.540223 -0.540223 0.841522 307.875 43.6282)' />
