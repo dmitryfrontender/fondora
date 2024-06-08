@@ -46,14 +46,18 @@
 			width: -webkit-fill-available;
 			border-radius: 30px;
 			background: #212020;
-			padding: 10px 20px;
+			padding: 19px 20px;
 			font-family: var(--font-family-urbanist);
 			resize: none;
 			color: white;
+			display: flex;
+			font-size: 14px;
+			font-weight: 600;
+			letter-spacing: 0.28px;
 		}
 		textarea::placeholder {
 			color: #a2a2a2;
-			font-size: 11px;
+			font-size: 14px;
 			font-style: normal;
 			font-weight: 400;
 			height: -webkit-fill-available;
@@ -148,6 +152,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+			font-size: 30px;
             gap: 5px;
             flex: 1 0 0;
             border-radius: 30px;

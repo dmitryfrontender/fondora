@@ -93,27 +93,27 @@ const GamePad = () => {
 
 		// TODO add key bindings here
         if (event.code === "ArrowUp") {
-			event.preventDefault();
+			// event.preventDefault();
 			handleProfileVisibility(true);
         }
 
 		if (event.code === "ArrowDown") {
-			event.preventDefault();
+			// event.preventDefault();
 			handleProfileVisibility(false);
 		}
 
 		if (event.code === "ArrowLeft") {
-			event.preventDefault();
+			// event.preventDefault();
 			handleDecline();
 		}
 
 		if (event.code === "ArrowRight") {
-			event.preventDefault();
+			// event.preventDefault();
 			handleApprove();
 		}
 
 		if (event.code === "Enter") {
-			event.preventDefault();
+			// event.preventDefault();
 			setSuperLike(true);
 
 			setTimeout(() => {
