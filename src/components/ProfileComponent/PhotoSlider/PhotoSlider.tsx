@@ -43,12 +43,10 @@ const PhotoSlider = (props: any) => {
     const handleSpacePress = (event: any) => {
 
         if (event.code === "Space") {
-            event.preventDefault();
             instanceRef.current?.next();
         }
 
         if (event.shiftKey && event.code === "Space") {
-            event.preventDefault();
             instanceRef.current?.prev();
         }
     }

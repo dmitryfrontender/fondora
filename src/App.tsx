@@ -49,22 +49,22 @@ function App() {
   //   (pageWrapper as HTMLElement).style.top = '0'
 
   // }
-  
-  
-  console.log(verifyProfileModal);
+
+
+  // console.log(verifyProfileModal);
 
   const checkScreen = useMemo(() => {
     return width >= 1024
   }, [width])
-  
-  
+
+
   useEffect(() => {
 
 
-    
+
 
     checkScreen ? dispatch(setMobileScreen(false)) : dispatch(setMobileScreen(true));
-    
+
     const handleResize = (event: any) => {
       setWidth(event.target.innerWidth);
     };
@@ -73,7 +73,7 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
 
-    
+
   }, [checkScreen, dispatch]);
 
 

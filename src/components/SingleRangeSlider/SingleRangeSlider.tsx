@@ -44,15 +44,15 @@ const SingleRangeSlider = ({ min, max, defaultValue, topValue, textSlider }: Sin
 
                 }
 
-                
+
 
                 <label htmlFor='range' className='range__label'>
-                    <input 
-                        type='range' 
+                    <input
+                        type='range'
                         id='range'
-                        min={min} 
-                        max={max} 
-                        defaultValue={defaultValue}  
+                        min={min}
+                        max={max}
+                        defaultValue={defaultValue}
                         onChange={(e) => {setValue((e.target.value)); console.log(e)}}
                     />
                     <div className='range__background'></div>
@@ -60,8 +60,6 @@ const SingleRangeSlider = ({ min, max, defaultValue, topValue, textSlider }: Sin
                 </label>
                 {
                    !topValue && <div className='value'>{value}</div>
-
-
                 }
             </div>
         </>

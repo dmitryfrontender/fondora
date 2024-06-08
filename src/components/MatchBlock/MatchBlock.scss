@@ -1,28 +1,162 @@
 .MatchBlock {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 30px;
+	overflow: hidden;
 
-    &Toggler {
+	&Toggler {
+		position: absolute;
+		top: 32px;
+		left: 10px;
+		z-index: 2;
+		cursor: pointer;
+	}
+
+	&HeartBlock {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&MessageBlock {
         position: absolute;
-        top: 32px;
-        left: 10px;
-        z-index: 2;
-        cursor: pointer;
-    }
+        bottom: 30px;
+        left: 30px;
+        right: 30px;
+		display: flex;
+		padding: 20px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		align-self: stretch;
+        border-radius: 20px;
+        background: linear-gradient(146deg, rgba(19, 20, 23, 0.11) 0%, rgba(19, 20, 23, 0.11) 100%);
+        backdrop-filter: blur(12px);
+        z-index: 3;
 
-    &HeartBlock {
+		textarea {
+			width: -webkit-fill-available;
+			border-radius: 30px;
+			background: #212020;
+			padding: 19px 20px;
+			font-family: var(--font-family-urbanist);
+			resize: none;
+			color: white;
+			display: flex;
+			font-size: 14px;
+			font-weight: 600;
+			letter-spacing: 0.28px;
+		}
+		textarea::placeholder {
+			color: #a2a2a2;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			height: -webkit-fill-available;
+		}
+		textarea:focus {
+			outline: none;
+		}
+	}
+
+	&MessageBlockTop {
+		display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
         width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+	}
+	&MessageIcon {
+		position: relative;
+		width: 30%;
+		max-width: 50px;
+		.imageContainer {
+			position: relative;
+			display: inline-block;
+			border-radius: 50%;
+			overflow: hidden;
+			padding: 1px;
+			.imageBorder {
+				position: absolute;
+				top: -3px;
+				left: -3px;
+				right: -3px;
+				bottom: -3px;
+				background: linear-gradient(180deg, #e8206c 0%, #2e97fe 100%);
+				border-radius: calc(50% + 3px);
+				z-index: 0;
+			}
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 50%;
+				position: relative;
+				z-index: 1;
+			}
+		}
+		svg {
+			position: absolute;
+			bottom: 0;
+			right: 50%;
+			z-index: 1;
+			transform: translate(50%, 30%);
+			border-radius: 20px;
+			padding: 5px;
+			background: rgba(0, 0, 0, 0.7);
+		}
+	}
+	&MessageText {
+		text-align: start;
+        width: 100%;
+	}
+	&MessageTitle {
+		display: block;
+		color: #ffbe18;
+		font-family: var(--font-family-urbanist);
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 150%; /* 21px */
+		letter-spacing: 0.28px;
+	}
+	&MessageSubTitle {
+		display: block;
+		color: #a2a2a2;
+		font-family: var(--font-family-urbanist);
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 150%; /* 19.5px */
+	}
+
+    &Btns {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+
+        &Item {
+            cursor: pointer;
+            display: flex;
+            padding: 8px 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+			font-size: 30px;
+            gap: 5px;
+            flex: 1 0 0;
+            border-radius: 30px;
+            background: rgba(33, 32, 32, 0.50);
+        }
     }
 }
