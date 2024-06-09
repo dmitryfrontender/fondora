@@ -40,23 +40,24 @@ const PhotoSlider = (props: any) => {
 		]
 	);
 
-    const handleSpacePress = (event: any) => {
-
-        if (event.code === "Space") {
-            instanceRef.current?.next();
-        }
-
-        if (event.shiftKey && event.code === "Space") {
-            instanceRef.current?.prev();
-        }
-    }
-
     useEffect(() => {
+
+        const handleSpacePress = (event: any) => {
+
+            if (event.code === "Space") {
+                instanceRef.current?.next();
+            }
+
+            if (event.shiftKey && event.code === "Space") {
+                instanceRef.current?.prev();
+            }
+        }
+
         document.addEventListener("keydown", handleSpacePress, false);
         return () => {
           document.removeEventListener("keydown", handleSpacePress, false);
         };
-    }, []);
+    }, [instanceRef]);
 
     return (
         <>

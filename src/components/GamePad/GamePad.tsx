@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './GamePad.scss';
+import './MediaGamePad.scss';
 
-import { useSprings, animated, to as interpolate } from '@react-spring/web'
+import { animated } from '@react-spring/web'
 
 import { useDrag } from '@use-gesture/react'
 
@@ -17,7 +18,7 @@ const GamePad = () => {
 
 	const [profileVisibility, setProfileVisibility] = useState(false); // logic for setProfileVisibility
 
-	const [matchBlockVisibility, setMatchBlockVisibility] = useState(true);
+	const [matchBlockVisibility, setMatchBlockVisibility] = useState(false);
 
 	function handleProfileVisibility(data: boolean) {
 		setProfileVisibility(data);
@@ -27,8 +28,8 @@ const GamePad = () => {
 		setMatchBlockVisibility(data);
 	}
 
-	const [verified, setVerified] = useState(true);
-	const [zodiac, setZodiac] = useState(true);
+	const [verified] = useState(true);
+	const [zodiac] = useState(false);
 
 	const [approved, setApproved] = useState('');
 	const [angle, setAngle] = useState(0);
@@ -70,59 +71,59 @@ const GamePad = () => {
 		setTimeOut(false);
 	}, 3000);
 
-	const handleApprove = () => {
-		setApproved('approved');
-		setAngle(15);
-
-		setTimeout(() => {
-			resetPosition();
-		}, 1000);
-	}
-
-	const handleDecline = () => {
-		setApproved('declined');
-		setAngle(-15);
-
-		setTimeout(() => {
-			resetPosition();
-		}, 1000);
-	}
-
-	// logic for key press
-    const handleKeyPress = (event: any) => {
-
-		// TODO add key bindings here
-        if (event.code === "ArrowUp") {
-			// event.preventDefault();
-			handleProfileVisibility(true);
-        }
-
-		if (event.code === "ArrowDown") {
-			// event.preventDefault();
-			handleProfileVisibility(false);
-		}
-
-		if (event.code === "ArrowLeft") {
-			// event.preventDefault();
-			handleDecline();
-		}
-
-		if (event.code === "ArrowRight") {
-			// event.preventDefault();
-			handleApprove();
-		}
-
-		if (event.code === "Enter") {
-			// event.preventDefault();
-			setSuperLike(true);
+    useEffect(() => {
+		const handleApprove = () => {
+			setApproved('approved');
+			setAngle(15);
 
 			setTimeout(() => {
-				setSuperLike(false);
+				resetPosition();
 			}, 1000);
 		}
-    }
 
-    useEffect(() => {
+		const handleDecline = () => {
+			setApproved('declined');
+			setAngle(-15);
+
+			setTimeout(() => {
+				resetPosition();
+			}, 1000);
+		}
+
+		// logic for key press
+		const handleKeyPress = (event: any) => {
+
+			// TODO add key bindings here
+			if (event.code === "ArrowUp") {
+				// event.preventDefault();
+				handleProfileVisibility(true);
+			}
+
+			if (event.code === "ArrowDown") {
+				// event.preventDefault();
+				handleProfileVisibility(false);
+			}
+
+			if (event.code === "ArrowLeft") {
+				// event.preventDefault();
+				handleDecline();
+			}
+
+			if (event.code === "ArrowRight") {
+				// event.preventDefault();
+				handleApprove();
+			}
+
+			if (event.code === "Enter") {
+				// event.preventDefault();
+				setSuperLike(true);
+
+				setTimeout(() => {
+					setSuperLike(false);
+				}, 1000);
+			}
+		}
+
         document.addEventListener("keydown", handleKeyPress, false);
         document.addEventListener("mouseup", resetPosition, false);
 
