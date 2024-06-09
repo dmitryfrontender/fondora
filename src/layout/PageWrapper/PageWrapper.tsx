@@ -12,7 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 import AddBoost from "../../pages/BoostSuperlike/AddBoost/AddBoost";
 // import { UseChatId } from "../../utils/ChatId";
 import Chat from "../Chat/Chat";
-
+import NewChat from "../NewChat/NewChat";
 
 // SUBSCRIPTIONS
 import SubscriptionWrapper from "../SubscriptionWrapper/SubscriptionWrapper";
@@ -22,11 +22,13 @@ import SuperLike from "../../pages/BoostSuperlike/SuperLikePage/SuperLike";
 import MyProfileLayout from "../Outlet/MyProfileLayout/MyProfileLayout";
 import SettingsLayout from "../Outlet/SettingLayout/SettingsLayout";
 import MessageLayout from "../Outlet/MessagesLayout/MessageLayout";
-
+import PairsLayout from "../Outlet/PairsLayout/PairsLayout";
 import MobileLikesTop from "../../components/MobileLikesTop/MobileLikesTop";
+import GoalPage from "../../pages/GoalPage/GoalPage";
 
 
 import './PageWrapper.scss'
+import MobileSettings from "../../pages/MobileSettings/MobileSettings";
 
 
 const PageWrapper = () => {
@@ -53,7 +55,14 @@ const PageWrapper = () => {
                 <Route path="/top-profiles" element={<TopProfile />} />
                 <Route path="/likes-top-profile" element={<MobileLikesTop />} />
                 <Route path="/messages" element={<Messages />} />
+                <Route path="/pairs" element={<Messages />} />
+
+
+                {/* <Route path="/pairs" element={<Messages />} /> */}
+                <Route path="/mobile-settings" element={<MobileSettings />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/goal-page" element={<GoalPage />} />
+
                 <Route path="/notifications" element={<Notifications />} />
                 <Route element={<MyProfileLayout />}>
                     <Route path="/my-profile" element={<MyProfile />} />
@@ -63,8 +72,6 @@ const PageWrapper = () => {
                     <Route path="/my-profile/plus-subscription" element={<SubscriptionWrapper page={0}/>} />
                     <Route path="/my-profile/vip-subscription" element={<SubscriptionWrapper page={2}/>} />
                     <Route path="/my-profile/super-likes" element={<SuperLike />} />
-                   
-
                 </Route>
                 <Route element={<SettingsLayout />}>
                      <Route path="/settings/super-likes" element={<SuperLike />} />
@@ -72,13 +79,11 @@ const PageWrapper = () => {
 
                 </Route>
                 <Route element={<MessageLayout />}>
-                    {/* <Route path={`/messages/chat/:${UseChatId(path)}`} element={<Chat userId={path}/>} /> */}
                     <Route path='/messages/chat/:id' element={<Chat/>} />
 
-
-
-                    
-
+                </Route>
+                <Route element={<PairsLayout />}>
+                    <Route path='/pairs/newChat/:id' element={<NewChat/>} />
                 </Route>
                 
             </Routes>

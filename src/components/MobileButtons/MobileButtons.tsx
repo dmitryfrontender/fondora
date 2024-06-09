@@ -31,6 +31,10 @@ const MobileButtons = () => {
                     <SVGIcon name="heartIcon" className={`menu-icon ${path === "/likes" || path === "/likes-top-profile" ? "active-menu" : ""}`}  stroke="#BDBDBD"/>
                     {likeState ? <div className="pinnedItem"></div> : null}
                 </Link>
+                <Link to="goal-page">
+                    <SVGIcon name="goalIcon" size={20} fill={`${path === "/goal-page" ?  '#F22271' : '#BDBDBD'}`}/>
+                
+                </Link>
                 <Link to="/messages" >
                     <SVGIcon name="messageIcon" className={`menu-icon ${path === "/messages" ? "active-menu" : ""}`} stroke="#BDBDBD"/>
                     {

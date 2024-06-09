@@ -105,16 +105,25 @@ const MessageSidebar = () => {
                             <SVGIcon name="arrowLeft" size={20} />
                         </div>
                     </Link>
-                    <div className={`textBtn ${pressMessageBtn ? 'activeBtn' : ''}`} onClick={() => setPressMessageBtn(true)}>
-                        <span>
-                            Сообщения
-                        </span>
-                    </div>
-                    <div className={`textBtn ${pressMessageBtn ? '' : 'activeBtn'}`} onClick={() => setPressMessageBtn(false)}>
-                        <span>
-                            Новые пары
-                        </span>
-                    </div>
+                    <Link to={'/messages'}>
+                        <div className={`textBtn ${pressMessageBtn ? 'activeBtn' : ''}`} onClick={() => {
+                                setPressMessageBtn(true)}}>
+                            <span>
+                                Сообщения
+                            </span>
+                        </div>
+                    </Link>
+
+                    <Link to={'/pairs'}>
+                        <div className={`textBtn ${pressMessageBtn ? '' : 'activeBtn'}`} onClick={() => {
+                            setPressMessageBtn(false);}}>
+                            <span>
+                                Новые пары
+                            </span>
+                        </div>
+                    </Link>
+                    
+                  
                 </div>
                 {
                     pressMessageBtn ?

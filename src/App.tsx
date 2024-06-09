@@ -18,6 +18,7 @@ import BlockUser from './components/Modals/BlockUser/BlockUser';
 import ShareProfile from './components/Modals/ShareProfile/ShareProfile';
 import NewLike from './components/Modals/NewLike/NewLike';
 import VerifyProfile from './components/Modals/VerifyProfile/VerifyProfile';
+import GoalModal from './components/Modals/GoalModal/GoalModal';
 
 import { setMobileScreen } from './store/rootSlice';
 import { useDispatch } from 'react-redux';
@@ -39,6 +40,7 @@ function App() {
   const blockUserModal = useSelector((state: any) => state.ProtectState.blockUserModal)
   const newLikeModal = useSelector((state: any) => state.NewLikeState.newLikeModal)
   const verifyProfileModal = useSelector((state: any) => state.VerifyProfileState.verifyProfileModal)
+  const goalModal = useSelector((state: any) => state.goalPageState.goalPageModal)
   // const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
 
   // const pageWrapper = document.querySelector('.pageWrapper')
@@ -60,6 +62,7 @@ function App() {
 
   useEffect(() => {
 
+    
 
 
 
@@ -108,6 +111,9 @@ function App() {
         }
         {
           verifyProfileModal && <VerifyProfile/>
+        }
+        {
+          goalModal && <GoalModal/>
         }
     </div>
   );
