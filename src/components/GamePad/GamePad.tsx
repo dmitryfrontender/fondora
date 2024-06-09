@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './GamePad.scss';
 import './MediaGamePad.scss';
 
@@ -20,9 +20,9 @@ const GamePad = () => {
 
 	const [matchBlockVisibility, setMatchBlockVisibility] = useState(false);
 
-	function handleProfileVisibility(data: boolean) {
+	const handleProfileVisibility = useCallback((data: boolean) => {
 		setProfileVisibility(data);
-	}
+	}, []);
 
 	function handleMatchBlockVisibility(data: boolean) {
 		setMatchBlockVisibility(data);
@@ -61,69 +61,75 @@ const GamePad = () => {
 		}
 	})
 
-	const resetPosition = () => {
+	const resetPosition = useCallback(() => {
 		setAngle(0);
 		setApproved('');
-	}
+	}, []);
 
 	// survey logic for disable in 3s
 	setTimeout(() => {
 		setTimeOut(false);
 	}, 3000);
 
+	const handleApprove = useCallback(() => {
+		setApproved('approved');
+		setAngle(15);
+
+		setTimeout(() => {
+			resetPosition();
+		}, 1000);
+	}, [resetPosition]);
+
+	const handleDecline = useCallback(() => {
+		setApproved('declined');
+		setAngle(-15);
+
+		setTimeout(() => {
+			resetPosition();
+		}, 1000);
+	}, [resetPosition]);
+
+	// logic for key press
+	const handleKeyPress = useCallback((event: any) => {
+
+		// TODO add key bindings here
+		if (event.code === "ArrowUp") {
+			// event.preventDefault();
+			handleProfileVisibility(true);
+		}
+
+		if (event.code === "ArrowDown") {
+			// event.preventDefault();
+			handleProfileVisibility(false);
+		}
+
+		if (event.code === "ArrowLeft") {
+			// event.preventDefault();
+			handleDecline();
+		}
+
+		if (event.code === "ArrowRight") {
+			// event.preventDefault();
+			handleApprove();
+		}
+
+		if (event.code === "Enter") {
+			// event.preventDefault();
+			setSuperLike(true);
+
+			setTimeout(() => {
+				setSuperLike(false);
+			}, 1000);
+		}
+	}, [
+		handleDecline,
+		handleApprove,
+		handleProfileVisibility,
+		setSuperLike
+	]);
+
+
     useEffect(() => {
-		const handleApprove = () => {
-			setApproved('approved');
-			setAngle(15);
-
-			setTimeout(() => {
-				resetPosition();
-			}, 1000);
-		}
-
-		const handleDecline = () => {
-			setApproved('declined');
-			setAngle(-15);
-
-			setTimeout(() => {
-				resetPosition();
-			}, 1000);
-		}
-
-		// logic for key press
-		const handleKeyPress = (event: any) => {
-
-			// TODO add key bindings here
-			if (event.code === "ArrowUp") {
-				// event.preventDefault();
-				handleProfileVisibility(true);
-			}
-
-			if (event.code === "ArrowDown") {
-				// event.preventDefault();
-				handleProfileVisibility(false);
-			}
-
-			if (event.code === "ArrowLeft") {
-				// event.preventDefault();
-				handleDecline();
-			}
-
-			if (event.code === "ArrowRight") {
-				// event.preventDefault();
-				handleApprove();
-			}
-
-			if (event.code === "Enter") {
-				// event.preventDefault();
-				setSuperLike(true);
-
-				setTimeout(() => {
-					setSuperLike(false);
-				}, 1000);
-			}
-		}
-
         document.addEventListener("keydown", handleKeyPress, false);
         document.addEventListener("mouseup", resetPosition, false);
 
@@ -131,7 +137,7 @@ const GamePad = () => {
           document.removeEventListener("keydown", handleKeyPress, false);
 		  document.removeEventListener("mouseup", resetPosition, false);
         };
-    }, []);
+    }, [handleKeyPress, resetPosition]);
 
 	return (
 		<>
@@ -269,7 +275,10 @@ const GamePad = () => {
 														</div>
 													</div>
 													<div className="GamePadPanelButtons">
-														<div className="GamePadPanelButtonsItem item-big">
+														<div
+															className={`GamePadPanelButtonsItem item-big ${approved === 'declined' ? 'declined' : ''}`}
+															onClick={() => handleDecline()}
+														>
 															<SVGIcon name="gamepadNoIcon" size={24} />
 														</div>
 														<div className="GamePadPanelButtonsItem">
@@ -281,7 +290,10 @@ const GamePad = () => {
 														<div className="GamePadPanelButtonsItem">
 															<SVGIcon name="gamepadBoltIcon" size={16} />
 														</div>
-														<div className="GamePadPanelButtonsItem item-big item-pink">
+														<div
+															className={`GamePadPanelButtonsItem item-big ${approved === 'approved' ? 'approved' : ''} ${approved === 'declined' ? 'upside-down' : 'item-pink'}`}
+															onClick={() => handleApprove()}
+														>
 															<SVGIcon name="gamepadHeartIcon" size={24} />
 														</div>
 													</div>
