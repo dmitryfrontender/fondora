@@ -13,6 +13,7 @@ import BoostModal from './components/Modals/Boosts/BoostModal';
 import ProtectModal from './components/Modals/Protect/ProtectModal';
 import { useSelector } from 'react-redux';
 import MobileChat from './components/MobileChat/MobileChat';
+import MobileNewChat from './components/MobileNewChat/MobileNewChat';
 import VideoChatModal from './components/Modals/VideoChat/VideoChatModal';
 import BlockUser from './components/Modals/BlockUser/BlockUser';
 import ShareProfile from './components/Modals/ShareProfile/ShareProfile';
@@ -34,6 +35,7 @@ function App() {
   const likeModal = useSelector((state: any) => state.LikesState.likesModal);
   const boostModal = useSelector((state: any) => state.BoostState.boostModal);
   const mobileChat = useSelector((state: any) => state.mainState.mobileChat);
+  const mobileNewChat = useSelector((state: any) => state.mainState.mobileNewChat);
   const protectModal = useSelector((state: any) => state.ProtectState.protectModal);
   const shareProfileModal = useSelector((state: any) => state.ShareProfileState.shareProfileModal)
   const videoChatModal = useSelector((state: any) => state.VideoChatState.videoChatModal);
@@ -97,6 +99,9 @@ function App() {
         }
         {
           mobileChat && <MobileChat />
+        }
+        {
+          mobileNewChat && <MobileNewChat />
         }
         {
           protectModal && <ProtectModal />

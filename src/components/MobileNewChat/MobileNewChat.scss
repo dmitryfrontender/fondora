@@ -1,0 +1,165 @@
+.MobileNewChat{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    // overflow-y: auto;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(18, 18, 18)0%, rgba(11, 11, 11) 100%);
+    backdrop-filter: blur(10px);
+    z-index: 15;
+    .container{
+        margin: 0 1vw;
+        .chatHeader{
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin: 0 clamp(15px, 5vw, 30px);
+
+            padding: 20px 0;
+            svg{
+                width: clamp(17px, 5vw, 27px);
+                height: clamp(17px, 5vw, 27px);
+            }
+            .backBtn {
+              a{
+                svg{
+                    width: clamp(15px, 5vw, 25px);
+                height: clamp(15px, 5vw, 25px);
+
+                }
+              }
+            }
+            .userAvatar {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                width: 100%;
+                z-index: -1;
+                .wrapper{
+                    position: relative;
+                    img{
+                        width: clamp(35px, 7vw, 50px);
+                        height: clamp(35px, 7vw, 50px);
+                        border-radius: 50%;
+    
+                    }
+                    .onLinePin {
+                      width: 5px;
+                      height: 5px;
+                      border-radius: 50%;
+                      position: absolute;
+                      right: 0px;
+                      top: 0px;
+                      border: 2px solid rgb(28 16 20);
+                      background-color: rgb(34, 255, 122);
+                    }
+                }
+            }
+            .chatBtn{
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            }
+        }
+        .addNotification {
+            border-radius: 10px;
+            background: linear-gradient(180deg, #903C5C 0%, #621533 100%);
+            padding: 10px 20px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: clamp(250px, 70vw, 600px);
+            .tittleNote {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items: baseline;
+                gap: 5px;
+                h4{
+                    margin: 0;
+                    color: #FFF;
+                    font-family: var(--font-family-urbanist);
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: 0.24px;
+                }
+                span{
+                    color: #A2A2A2;
+                    font-family: var(--font-family-urbanist);
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                }
+              
+
+            }
+            
+          
+        }
+        .emptyChat {
+            .tittle{
+                margin: 20px auto;
+              h2{
+                  font-size: clamp(13px, 1vw, 20px);
+              }
+            }
+            .subText {
+              color: #A2A2A2;
+              text-align: center;
+              font-family: var(--font-family-urbanist);
+              font-size: 13px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 150%; /* 19.5px */
+            }
+            .userAvatar{
+              margin: 15px 0 25px;
+              .imageContainer {
+                width: clamp(80px, 10vw, 130px);
+                height: clamp(80px, 10vw, 130px);
+                margin: 0 auto;
+                // width: 130px;
+                // height: 130px;
+                padding: 3px;
+                img{
+                  width: clamp(80px, 10vw, 130px);
+                  height: clamp(80px, 10vw, 130px);
+                  border-radius: 50%;
+                  // width: 130px;
+                  // height: 130px;
+                }
+              }
+            }
+            .showedNote {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              border-radius: 30px;
+              max-width: fit-content;
+              margin: 20px auto;
+              padding: 10px;
+              background: linear-gradient(92deg, #373FFF 0.03%, #22CAFF 100.03%), linear-gradient(158deg, #181920 0%, #0F0F13 100%);
+              span{
+                color: #FFF;
+                text-align: center;
+                font-family: var(--font-family-urbanist);
+                font-size: clamp(7px, 0.8vw, 10px);
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+              }
+            } 
+          }
+
+    }
+
+}

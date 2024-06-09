@@ -150,7 +150,7 @@ const MobileChat = () => {
                                             dispatch(reportUserAvatar(chatData.image));
                                             dispatch(reportUserName(chatData.userName));
                                         }}>
-                                            <SVGIcon name="protectIcon" size={30} />
+                                            <SVGIcon name="protectIcon" size={30} stroke="#fff"/>
                                         </button>
 
                                     </div>

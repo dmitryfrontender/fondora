@@ -81,6 +81,8 @@ const GoalPage = () => {
                 <div className="cardWrapper">
                     <div className="card">
                         <img src={goal1} alt="card" />
+                        <div className="bg"></div>
+
                         <span>
                             Ищю Любовь
 
@@ -89,6 +91,7 @@ const GoalPage = () => {
                     </div>
                     <div className="card">
                         <img src={goal2} alt="card" />
+                        <div className="bg"></div>
                         <span>
                             Планы на сегодня
                             
@@ -97,6 +100,8 @@ const GoalPage = () => {
                     </div>
                     <div className="card">
                         <img src={goal3} alt="card" />
+                        <div className="bg"></div>
+
                         <span>
                             Ищю Любовь
 
@@ -105,6 +110,8 @@ const GoalPage = () => {
                     </div>
                     <div className="card">
                         <img src={goal4} alt="card" />
+                        <div className="bg"></div>
+
                         <span>
                             Планы на сегодня
                         </span>

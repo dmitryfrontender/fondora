@@ -38,11 +38,7 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 20px 0;
-              .userAvatar {
-               
-               
-
-              }
+           
             }
             .addNotification {
                 border-radius: 10px;
@@ -83,7 +79,7 @@
             .emptyChat {
               .tittle{
                 h2{
-                    font-size: 20px;
+                    font-size: clamp(13px, 1vw, 20px);
                 }
               }
               .subText {
@@ -98,12 +94,16 @@
               .userAvatar{
                 margin: 15px 0 25px;
                 .imageContainer {
-                  width: 130px;
-                  height: 130px;
+                  width: clamp(80px, 10vw, 130px);
+                  height: clamp(80px, 10vw, 130px);
+                  // width: 130px;
+                  // height: 130px;
                   padding: 3px;
                   img{
-                    width: 130px;
-                    height: 130px;
+                    width: clamp(80px, 10vw, 130px);
+                    height: clamp(80px, 10vw, 130px);
+                    // width: 130px;
+                    // height: 130px;
                   }
                 }
               }
@@ -117,6 +117,15 @@
                 margin: 20px auto;
                 padding: 10px;
                 background: linear-gradient(92deg, #373FFF 0.03%, #22CAFF 100.03%), linear-gradient(158deg, #181920 0%, #0F0F13 100%);
+                span{
+                  color: #FFF;
+                  text-align: center;
+                  font-family: var(--font-family-urbanist);
+                  font-size: clamp(7px, 0.8vw, 10px);
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: normal;
+                }
               } 
             }
           }
