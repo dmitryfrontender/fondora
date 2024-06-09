@@ -1,165 +1,163 @@
-.EditMyProfile{
-    .topTittle {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-        margin: 30px 0 10px;
-        .backBtn {
-            transition: all ease 0.2s;
-        }
-        .backBtn:hover {
-            cursor: pointer;
-            transform: scale(1.2);
-            transition: all ease 0.3s;
+.EditMyProfile {
+	.topTittle {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		align-items: center;
+		margin: 30px 0 10px;
+		.backBtn {
+			transition: all ease 0.2s;
+		}
+		.backBtn:hover {
+			cursor: pointer;
+			transform: scale(1.2);
+			transition: all ease 0.3s;
+		}
+		.tittle {
+			font-size: clamp(10px, 1.3vw, 16px);
+			margin: 0;
+		}
+		.completeBtn {
+			cursor: pointer;
+			span {
+				color: rgb(53, 77, 255);
+				font-family: var(--font-family-urbanist);
+				font-size: 13px;
+				font-weight: 500;
+				line-height: 150%;
+				letter-spacing: 2%;
+				text-align: center;
+			}
+		}
+	}
+	.titleWrapper {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		.extraFlag {
+			border-radius: 30px;
+			padding: 0 5px 3px;
+			margin: 0 10px;
+			background: linear-gradient(135deg, rgb(132, 9, 56) -0.138%, rgb(242, 34, 113) 99.862%), linear-gradient(135deg, rgb(24, 25, 32) 0%, rgb(15, 15, 19) 100%);
+			span {
+				color: var(--white);
+				font-family: var(--font-family-urbanist);
+				font-size: 10px;
+				font-weight: 700;
+				line-height: 12px;
+				letter-spacing: 0%;
+			}
+		}
+		.percentage {
+			color: rgb(252, 189, 23);
+			font-family: var(--font-family-urbanist);
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19px;
+			letter-spacing: 0%;
+		}
+	}
+	.enterPageOption {
+		width: 100%;
+		height: auto;
+		.itemWrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.item {
+				width: -webkit-fill-available;
+				border-bottom: 2px solid var(--white);
+				cursor: pointer;
+				.title {
+					h3 {
+						color: var(--white);
+						font-family: var(--font-family-urbanist);
+						font-size: 14px;
+						font-weight: 600;
+						line-height: 17px;
+						letter-spacing: 0%;
+					}
+				}
+			}
+			.itemDisable {
+				border: 2px solid transparent;
+				.title {
+					h3 {
+						color: var(--main-text-color);
+					}
+				}
+			}
+		}
+	}
+	.mediaBlock {
+		// display: grid;
+		// grid-template-columns: 1fr 1fr 1fr;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+		.mediaItem {
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			position: relative;
+			width: 193px;
+			height: 270px;
+			border: 1px dashed rgb(109, 109, 109);
+			border-radius: 10px;
+			background: rgb(48, 48, 48);
+			padding-top: 35vh;
+			img {
+				top: 0;
+				max-width: 35vw;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+			svg {
+				position: absolute;
+				transform: translate(0, -20%);
+				top: 50%;
+			}
+		}
+	}
+	.descriptionArea {
+		display: block;
+		position: relative;
+		textarea {
+			width: 100%;
+			min-height: 130px;
+			box-sizing: border-box;
+			border: 1px solid rgb(187, 187, 187);
+			border-radius: 10px;
+			padding: 20px;
+			background: rgb(2, 2, 2);
+			color: var(--white);
+		}
+		textarea:focus {
+			outline: none;
+		}
+		.enterSymbols {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			span {
+				color: var(--main-text-color);
+				font-family: var(--font-family-urbanist);
+				font-size: 12px;
+				font-weight: 500;
+				line-height: 150%;
+				letter-spacing: 0%;
+				text-align: right;
+			}
+		}
+	}
 
-        }
-        .tittle {
-            font-size: clamp(10px, 1.3vw, 16px);
-            margin: 0;
-        }
-        .completeBtn {
-            cursor: pointer;
-            span{
-                color: rgb(53, 77, 255);
-                font-family: var(--font-family-urbanist);
-                font-size: 13px;
-                font-weight: 500;
-                line-height: 150%;
-                letter-spacing: 2%;
-                text-align: center;
-            }
-        }
-    }
-    .titleWrapper {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        .extraFlag {
-            border-radius: 30px;
-            padding: 0 5px 3px;
-            margin: 0 10px;
-            background: linear-gradient(135.00deg, rgb(132, 9, 56) -0.138%,rgb(242, 34, 113) 99.862%),linear-gradient(135.00deg, rgb(24, 25, 32) 0%,rgb(15, 15, 19) 100%);
-            span{
-                color: var(--white);
-                font-family: var(--font-family-urbanist);
-                font-size: 10px;
-                font-weight: 700;
-                line-height: 12px;
-                letter-spacing: 0%;
-            }
-        }
-        .percentage {
-            color: rgb(252, 189, 23);
-            font-family: var(--font-family-urbanist);
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 19px;
-            letter-spacing: 0%;
-        }
-    }
-    .enterPageOption {
-      width: 100%;
-      height: auto;
-      .itemWrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .item {
-            width: -webkit-fill-available;
-            border-bottom: 2px solid var(--white);
-            cursor: pointer;
-            .title {
-              h3{
-                color: var(--white);
-                font-family: var(--font-family-urbanist);
-                font-size: 14px;
-                font-weight: 600;
-                line-height: 17px;
-                letter-spacing: 0%;
-              }
-            }
-        }
-        .itemDisable{
-            border: 2px solid transparent;
-            .title{
-                h3{
-                    color: var(--main-text-color);;
-                }
-            }
-            
-
-        }
-      }
-    }
-    .mediaBlock {
-        // display: grid;
-        // grid-template-columns: 1fr 1fr 1fr;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        .mediaItem{
-          box-sizing: border-box;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          position: relative;
-          width: 193px;
-          height: 270px;
-          border: 1px dashed rgb(109, 109, 109);
-          border-radius: 10px;
-          background: rgb(48, 48, 48);
-          padding-top: 35vh;
-          img{
-            top: 0;
-            max-width: 35vw;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-          }
-          svg{
-            position: absolute;
-            transform: translate(0, -20%);
-            top: 50%;
-          }
-        }
-    }
-    .descriptionArea {
-        display: block;
-        position: relative;
-      textarea{
-        width: 100%;
-        min-height: 130px;
-        box-sizing: border-box;
-        border: 1px solid rgb(187, 187, 187);
-        border-radius: 10px;
-        padding: 20px;
-        background: rgb(2, 2, 2);
-        color: var(--white);
-
-        
-      }
-      textarea:focus{
-        outline: none;
-      }
-      .enterSymbols {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        span{
-            color: var(--main-text-color);
-            font-family: var(--font-family-urbanist);
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 150%;
-            letter-spacing: 0%;
-            text-align: right;
-        }
-      }
-    }
-
+	.previewBlock {
+		padding: 20px 0;
+	}
 }
 @import url('./MediaEditProfile.scss');

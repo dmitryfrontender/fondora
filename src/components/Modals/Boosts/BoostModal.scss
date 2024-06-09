@@ -1,75 +1,73 @@
-.BoostModal{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8);
-    top: 0;
-    left: 0;
-    color: white;
-    z-index: 10;
-    .boostWrapper {
-        padding: 30px 20px;
-        width: 600px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 20px;
-        background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
-        .topDescription{
-            max-width: 275px;
-            color: var(--main-text-color);
-            font-family: var(--font-family-urbanist);
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 150%;
-            letter-spacing: 2%;
-            text-align: center;
-        }
-        .boostInfo{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            width: -webkit-fill-available;
-            margin: 0 20px 20px;
-            padding: 10px;
-            gap: 20px;
-            background: linear-gradient(180.00deg, rgb(51, 58, 83),rgb(24, 33, 64) 100%);
-            .description{
-                h3{
-                    margin: 0;
-                    color: var(--white);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 14px;
-                    font-weight: 800;
-                    line-height: 150%;
-                    letter-spacing: 0%;
-                    text-align: left;
-                }
-                span{
-                    color: var(--main-text-color);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 12px;
-                    font-weight: 500;
-                    line-height: 150%;
-                    letter-spacing: 2%;
-                    text-align: center;
-                }
-                .quantity{
-                    color: rgb(48, 110, 255);
-                }
-            }
-            
-        }
-        a{
-            width: -webkit-fill-available;
-        }
-      
-    }
+.BoostModal {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	color: white;
+	z-index: 10;
+	.boostWrapper {
+		padding: 30px 20px;
+		width: 600px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 20px;
+		background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
+		.topDescription {
+			max-width: 275px;
+			color: var(--main-text-color);
+			font-family: var(--font-family-urbanist);
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 150%;
+			letter-spacing: 2%;
+			text-align: center;
+		}
+		.boostInfo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 10px;
+			width: -webkit-fill-available;
+			margin: 0 20px 20px;
+			padding: 10px;
+			gap: 20px;
+			background: linear-gradient(180deg, rgb(51, 58, 83), rgb(24, 33, 64) 100%);
+			.description {
+				h3 {
+					margin: 0;
+					color: var(--white);
+					font-family: var(--font-family-urbanist);
+					font-size: 14px;
+					font-weight: 800;
+					line-height: 150%;
+					letter-spacing: 0%;
+					text-align: left;
+				}
+				span {
+					color: var(--main-text-color);
+					font-family: var(--font-family-urbanist);
+					font-size: 12px;
+					font-weight: 500;
+					line-height: 150%;
+					letter-spacing: 2%;
+					text-align: center;
+				}
+				.quantity {
+					color: rgb(48, 110, 255);
+				}
+			}
+		}
+		a {
+			width: -webkit-fill-available;
+		}
+	}
 }
 
-@import url('./MediaBoost.scss')
+@import url('./MediaBoost.scss');

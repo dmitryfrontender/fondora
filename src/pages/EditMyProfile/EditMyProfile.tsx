@@ -694,7 +694,7 @@ const EditMyProfile = () => {
 							</div>
 						</>
 					) : (
-						<div className='prewiewBlock'>
+						<div className='previewBlock'>
 							<ProfileComponent />
 						</div>
 					)}

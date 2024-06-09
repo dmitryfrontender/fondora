@@ -1,4 +1,4 @@
 export interface IGifs {
-    id: number;
-    url: string;
+	id: number;
+	url: string;
 }

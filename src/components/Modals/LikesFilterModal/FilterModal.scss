@@ -1,209 +1,201 @@
-.FilterModal{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.7);
-    .modalWrapper{
-        position: relative;
-        left: 10vw;
-        width: 600px;
-        // height: 732px;
-        border-radius: 20px;
-        padding: 30px 20px;
-        background: rgb(19, 20, 23);
-        .topItem{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            .title{
-                h3{
-                    margin: 0;
-                }
-            }
-            .closeBtn {
-              cursor: pointer;
-            }
-        }
-        .filterOption {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            box-sizing: border-box;
-            margin: 10px 0;
-            min-height: 106px;
-            border: 1px solid rgb(84, 72, 77);
-            border-radius: 20px;
-            background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
-            padding: 20px;
-            .range{
-                padding-top: 0;
-                padding-bottom: 10px;
-            }
-            .DoubleRange{
-                .wrapper{
-                    .container{
-                        height: auto;
-                    }
-                } 
-            }
-            .multi-range-slider{
-                padding: 10px ;
-            }
-            .description{
-                span{
-                    color: var(--main-text-color);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 150%;
-                    letter-spacing: 0%;
-                }
-            }
-            .value{
-                span{
-                    color: var(--white);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 17px;
-                    font-weight: 700;
-                    line-height: 150%;
-                    letter-spacing: 0%;
-                    text-align: center;
-                }
-            }
+.FilterModal {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.7);
+	.modalWrapper {
+		position: relative;
+		left: 10vw;
+		width: 600px;
+		// height: 732px;
+		border-radius: 20px;
+		padding: 30px 20px;
+		background: rgb(19, 20, 23);
+		.topItem {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 20px;
+			.title {
+				h3 {
+					margin: 0;
+				}
+			}
+			.closeBtn {
+				cursor: pointer;
+			}
+		}
+		.filterOption {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			box-sizing: border-box;
+			margin: 10px 0;
+			min-height: 106px;
+			border: 1px solid rgb(84, 72, 77);
+			border-radius: 20px;
+			background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
+			padding: 20px;
+			.range {
+				padding-top: 0;
+				padding-bottom: 10px;
+			}
+			.DoubleRange {
+				.wrapper {
+					.container {
+						height: auto;
+					}
+				}
+			}
+			.multi-range-slider {
+				padding: 10px;
+			}
+			.description {
+				span {
+					color: var(--main-text-color);
+					font-family: var(--font-family-urbanist);
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 150%;
+					letter-spacing: 0%;
+				}
+			}
+			.value {
+				span {
+					color: var(--white);
+					font-family: var(--font-family-urbanist);
+					font-size: 17px;
+					font-weight: 700;
+					line-height: 150%;
+					letter-spacing: 0%;
+					text-align: center;
+				}
+			}
+		}
+		.maxPhotos {
+			.optionTitle {
+				h3 {
+					color: var(--white);
+					font-family: var(--font-family-urbanist);
+					font-size: 16px;
+					font-weight: 600;
+					line-height: 19px;
+					letter-spacing: 0%;
+					text-align: left;
+				}
+			}
+			fieldset {
+				border: none;
+				display: flex;
+				justify-content: flex-start;
+				gap: 10px;
+				padding: 10px 0;
+				input[type='radio'] {
+					display: none;
+				}
+				.radioItem {
+					box-sizing: border-box;
+					border: 1px solid rgb(101, 101, 101);
+					border-radius: 30px;
+					color: var(--main-text-color);
+					cursor: pointer;
+					font-family: var(--font-family-urbanist);
+					transition: all ease 0.3s;
+					font-size: 13px;
+					font-weight: 500;
+					line-height: 150%;
+					letter-spacing: 2%;
+					padding: 10px 15px;
+					// margin: 0 5px;
+					text-align: center;
+					background: rgb(2, 2, 2);
+				}
+				input[type='radio']:checked + .radioItem {
+					box-sizing: border-box;
+					transition: all ease 0.3s;
 
-
-
-        }
-        .maxPhotos{
-            .optionTitle {
-              h3{
-                color: var(--white);
-                font-family: var(--font-family-urbanist);
-                font-size: 16px;
-                font-weight: 600;
-                line-height: 19px;
-                letter-spacing: 0%;
-                text-align: left;
-              }
-            }
-            fieldset{
-                border: none;
-                display: flex;
-                justify-content: flex-start;
-                gap: 10px;
-                padding: 10px 0;
-                input[type="radio"] {
-                    display: none;
-                }
-                .radioItem {
-                    box-sizing: border-box;
-                    border: 1px solid rgb(101, 101, 101);
-                    border-radius: 30px;
-                    color: var(--main-text-color);
-                    cursor: pointer;
-                    font-family: var(--font-family-urbanist);
-                    transition: all ease 0.3s;
-                    font-size: 13px;
-                    font-weight: 500;
-                    line-height: 150%;
-                    letter-spacing: 2%;
-                    padding: 10px 15px;
-                    // margin: 0 5px;
-                    text-align: center;
-                    background: rgb(2, 2, 2);
-                }   
-                input[type="radio"]:checked + .radioItem {
-                    box-sizing: border-box;
-                    transition: all ease 0.3s;
-
-                    border: 1px solid rgb(147, 13, 64);
-                    border-radius: 30px;
-                    color: var(--white);
-                    background: rgb(238, 34, 111);
-                  }
-                // .radioItem:nth-child(1) {
-                //     margin-left: 0;
-                // }
-            }
-        }
-        .interestsBlock {
-        margin-top: 20px;
-            .title{
-                color: var(--white);
-                font-family: var(--font-family-urbanist);
-                font-size: 16px;
-                font-weight: 600;
-                line-height: 19px;
-                letter-spacing: 0%;
-                text-align: left;
-            }
-            .itemWrapper{
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 10px;
-                .item{
-                    box-sizing: border-box;
-                    border: 1px solid rgb(101, 101, 101);
-                    padding: 10px 15px;
-                    border-radius: 30px;
-                    background: rgb(2, 2, 2);
-                    span{
-                        color: var(--main-text-color);
-                        font-family: var(--font-family-urbanist);
-                        font-size: 13px;
-                        font-weight: 500;
-                        line-height: 150%;
-                        letter-spacing: 2%;
-                        text-align: center;
-                    
-                    
-                    
-                    }
-                }
-            }
-        }  
-        .bottomOptionsWrapper{
-            margin: 10px 0 30px;
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-            .bottomOption {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                box-sizing: border-box;
-                border: 1px solid rgb(84, 72, 77);
-                padding: 20px;
-                border-radius: 20px;
-                background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
-                .description{
-                    color: var(--main-text-color);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 150%;
-                    letter-spacing: 0%;
-                    text-align: left;
-                }
-            }
-        } 
-        .buttonsWrapper{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }   
-    }
+					border: 1px solid rgb(147, 13, 64);
+					border-radius: 30px;
+					color: var(--white);
+					background: rgb(238, 34, 111);
+				}
+				// .radioItem:nth-child(1) {
+				//     margin-left: 0;
+				// }
+			}
+		}
+		.interestsBlock {
+			margin-top: 20px;
+			.title {
+				color: var(--white);
+				font-family: var(--font-family-urbanist);
+				font-size: 16px;
+				font-weight: 600;
+				line-height: 19px;
+				letter-spacing: 0%;
+				text-align: left;
+			}
+			.itemWrapper {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 10px;
+				.item {
+					box-sizing: border-box;
+					border: 1px solid rgb(101, 101, 101);
+					padding: 10px 15px;
+					border-radius: 30px;
+					background: rgb(2, 2, 2);
+					span {
+						color: var(--main-text-color);
+						font-family: var(--font-family-urbanist);
+						font-size: 13px;
+						font-weight: 500;
+						line-height: 150%;
+						letter-spacing: 2%;
+						text-align: center;
+					}
+				}
+			}
+		}
+		.bottomOptionsWrapper {
+			margin: 10px 0 30px;
+			display: flex;
+			gap: 10px;
+			flex-direction: column;
+			.bottomOption {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				box-sizing: border-box;
+				border: 1px solid rgb(84, 72, 77);
+				padding: 20px;
+				border-radius: 20px;
+				background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
+				.description {
+					color: var(--main-text-color);
+					font-family: var(--font-family-urbanist);
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 150%;
+					letter-spacing: 0%;
+					text-align: left;
+				}
+			}
+		}
+		.buttonsWrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+		}
+	}
 }
-
-
 
 @import url('./MediaFilterModal.scss');

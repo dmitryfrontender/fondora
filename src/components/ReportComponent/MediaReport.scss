@@ -1,32 +1,26 @@
 @media screen and (max-width: 1023px) {
-
-    .Report{
-        .wrapper{
-            .note{
-                span{
-                    color: #A2A2A2;
-                }
-            }
-        }
-    }
-    
+	.Report {
+		.wrapper {
+			.note {
+				span {
+					color: #a2a2a2;
+				}
+			}
+		}
+	}
 }
 
-
-
 @media screen and (max-width: 425px) {
-
-    .Report{
-        .wrapper{
-            .tittle {
-              width: 100%;
-            }
-            .moreInfo {
-              span{
-                padding-left: 1vw;
-              }
-            }
-        }
-    }
-    
+	.Report {
+		.wrapper {
+			.tittle {
+				width: 100%;
+			}
+			.moreInfo {
+				span {
+					padding-left: 1vw;
+				}
+			}
+		}
+	}
 }

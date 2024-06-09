@@ -1,14 +1,12 @@
 @media screen and (max-width: 1023px) {
-
-    .Chat{
-        width: 100vw;
-        height: 100vh;
-        z-index: 10;
-        .chatWrapper{
-            .userBlock {
-              display: none;
-            }
-        }
-    }
-    
+	.Chat {
+		width: 100vw;
+		height: 100vh;
+		z-index: 10;
+		.chatWrapper {
+			.userBlock {
+				display: none;
+			}
+		}
+	}
 }

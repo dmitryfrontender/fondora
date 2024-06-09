@@ -1,174 +1,155 @@
 @media screen and (max-width: 1023px) {
-    .mobileMessageSidebar {
-      width: 100vw;
-      height: -webkit-fill-available;
-      z-index: 5;
-      margin-top: 50px;
-      overflow-y: hidden;
-      display: block;
-      position: absolute;
-      .container{
-        max-width: 95vw;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        // overflow: hidden;
-        // overflow-y: hidden;
-        .Pairs{
-            display: block;
-            // position: absolute;
-            height: fit-content;
-            overflow: hidden;
-            max-width: -webkit-fill-available;
+	.mobileMessageSidebar {
+		width: 100vw;
+		height: -webkit-fill-available;
+		z-index: 5;
+		margin-top: 50px;
+		overflow-y: hidden;
+		display: block;
+		position: absolute;
+		.container {
+			max-width: 95vw;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			// overflow: hidden;
+			// overflow-y: hidden;
+			.Pairs {
+				display: block;
+				// position: absolute;
+				height: fit-content;
+				overflow: hidden;
+				max-width: -webkit-fill-available;
 
+				.pairsWrapper {
+					flex-wrap: nowrap;
+					width: 100%;
+				}
+			}
+			.messagesWrapper {
+				position: relative;
+				height: 75vh;
 
-            .pairsWrapper{
-                flex-wrap: nowrap;
-            width: 100%;
+				width: 100%;
+				overflow: scroll;
+				// padding-bottom: 150px;
+				ul {
+					// height: -webkit-fill-available;
+					margin-bottom: 175px;
+					display: flex;
+					flex-direction: column;
+					padding-left: 0;
+					gap: 10px;
+					a {
+						li {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
 
-
-            }
-        }
-        .messagesWrapper {
-            position: relative;
-            height: 75vh;
-
-            width: 100%;
-            overflow: scroll;
-            // padding-bottom: 150px;
-            ul{
-                // height: -webkit-fill-available;
-                margin-bottom: 175px;
-                display: flex;
-                flex-direction: column;
-                padding-left: 0;
-                gap: 10px;
-                a{
-                    li{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        
-                        .userAvatar {
-                            // margin-right: 20px;
-                            position: relative;
-                            img{
-                                width: 50px;
-                                height: 50px;
-                                border-radius: 50%;
-                            }
-                            .onLinePin {
-                              width: 8px;
-                              height: 8px;
-                              border-radius: 50%;
-                              position: absolute;
-                              right: 0px;
-                              top: 2px;
-                              border: 2px solid rgb(28 16 20);
-                              background-color: rgb(34, 255, 122);
-                            }
-        
-        
-                        }
-                        .userMessage {
-                            padding: 5px 15px;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            gap: 5px;
-                            width: -webkit-fill-available;
-                            height: auto;
-                            .userName{
-                                display: flex;
-                                justify-content: flex-start;
-                                align-items: center;
-                                gap: 10px;
-                                .name{
-                                    span{
-                                        color: var(--white);
-                                        text-align: center;
-                                        font-family: var(--font-family-urbanist);
-                                        font-size: 14px;
-                                        font-style: normal;
-                                        font-weight: 600;
-                                        line-height: normal;
-                                        letter-spacing: 0.28px;
-        
-                                    }
-                                }
-                                .likeLabel {
-                                    border-radius: 5px;
-                                    padding: 2px 5px 2px 5px;
-                                    background: rgb(225, 162, 0);
-                                  span{
-                                    color: var(--black);
-                                    font-family: var(--font-family-urbanist);
-                                    font-size: 12px;
-                                    font-weight: 500;
-                                    line-height: 14px;
-                                    letter-spacing: 0%;
-                                    text-align: center;
-                                  }
-                                }   
-                            }
-        
-                        }
-                        .message{
-                            span{
-                                color: var(--white);
-                                font-family: var(--font-family-urbanist);
-                                font-size: 13px;
-                                font-style: normal;
-                                font-weight: 500;
-                                line-height: 150%; /* 19.5px */
-                            }
-                        }
-                        .unReadPin {
-                            width: 8px;
-                            height: 8px;
-                            border-radius: 50%;
-                            background: var(--main-red);
-                            margin-right: 10px;
-                        }
-
-
-                    }
-              
-
-                }
-                
-
-
-            }
-        }
-      }
-
-    }
-    
+							.userAvatar {
+								// margin-right: 20px;
+								position: relative;
+								img {
+									width: 50px;
+									height: 50px;
+									border-radius: 50%;
+								}
+								.onLinePin {
+									width: 8px;
+									height: 8px;
+									border-radius: 50%;
+									position: absolute;
+									right: 0px;
+									top: 2px;
+									border: 2px solid rgb(28 16 20);
+									background-color: rgb(34, 255, 122);
+								}
+							}
+							.userMessage {
+								padding: 5px 15px;
+								display: flex;
+								flex-direction: column;
+								align-items: flex-start;
+								gap: 5px;
+								width: -webkit-fill-available;
+								height: auto;
+								.userName {
+									display: flex;
+									justify-content: flex-start;
+									align-items: center;
+									gap: 10px;
+									.name {
+										span {
+											color: var(--white);
+											text-align: center;
+											font-family: var(--font-family-urbanist);
+											font-size: 14px;
+											font-style: normal;
+											font-weight: 600;
+											line-height: normal;
+											letter-spacing: 0.28px;
+										}
+									}
+									.likeLabel {
+										border-radius: 5px;
+										padding: 2px 5px 2px 5px;
+										background: rgb(225, 162, 0);
+										span {
+											color: var(--black);
+											font-family: var(--font-family-urbanist);
+											font-size: 12px;
+											font-weight: 500;
+											line-height: 14px;
+											letter-spacing: 0%;
+											text-align: center;
+										}
+									}
+								}
+							}
+							.message {
+								span {
+									color: var(--white);
+									font-family: var(--font-family-urbanist);
+									font-size: 13px;
+									font-style: normal;
+									font-weight: 500;
+									line-height: 150%; /* 19.5px */
+								}
+							}
+							.unReadPin {
+								width: 8px;
+								height: 8px;
+								border-radius: 50%;
+								background: var(--main-red);
+								margin-right: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 425px) {
-    .mobileMessageSidebar{
-        .container{
-            .Pairs{
-                .pairsWrapper{
-                    margin-top: 0;
-                }
-            }
-            .messagesWrapper{
-                ul{
-                    a{
-                        li{
-                            .userMessage{
-                                text-align: left;
-
-                            }
-                        }
-                    }
-                }
-            } 
-
-        }
-    }
-    
+	.mobileMessageSidebar {
+		.container {
+			.Pairs {
+				.pairsWrapper {
+					margin-top: 0;
+				}
+			}
+			.messagesWrapper {
+				ul {
+					a {
+						li {
+							.userMessage {
+								text-align: left;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,62 +1,54 @@
-.ProtectModal{
-    .modalWrapper {
-      .tittle{
-        text-align-last: left;
-        margin: 0 0 10px;
-        width: 100%;
-      }
-      .itemWrapper {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        gap: 10px;
-        .item{
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            position: relative;
-            border-radius: 20px;
-            width: calc(100% - 40px);
-            transition: all ease 0.3s;
-            border: 1px solid #54484D;
-            cursor: pointer;
-            background: linear-gradient(146deg, #131417 0%, #131417 100%);
-            padding: 10px 20px ;
-            gap: 10px;
-            .description {
-                text-align: left;
-                font-family: var(--font-family-urbanist);
-                font-style: normal;
-                font-weight: 500;
-                line-height: 150%; /* 21px */
-                .main {
-                  color: var(--white);
-                  font-size: 14px;
-                }
-                .sub{
-                        color: #A2A2A2;
-                        font-size: 13px;
-
-                  
-
-                }
-
-            }
-        }
-        .item:hover{
-            border: 1px solid var(--main-red);
-            transition: all ease 0.3s;
-            background: linear-gradient(146deg, #27292f 0%, #25272d 100%);
-        }
-
-
-      }
-    }
+.ProtectModal {
+	.modalWrapper {
+		.tittle {
+			text-align-last: left;
+			margin: 0 0 10px;
+			width: 100%;
+		}
+		.itemWrapper {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			position: relative;
+			width: 100%;
+			gap: 10px;
+			.item {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				position: relative;
+				border-radius: 20px;
+				width: calc(100% - 40px);
+				transition: all ease 0.3s;
+				border: 1px solid #54484d;
+				cursor: pointer;
+				background: linear-gradient(146deg, #131417 0%, #131417 100%);
+				padding: 10px 20px;
+				gap: 10px;
+				.description {
+					text-align: left;
+					font-family: var(--font-family-urbanist);
+					font-style: normal;
+					font-weight: 500;
+					line-height: 150%; /* 21px */
+					.main {
+						color: var(--white);
+						font-size: 14px;
+					}
+					.sub {
+						color: #a2a2a2;
+						font-size: 13px;
+					}
+				}
+			}
+			.item:hover {
+				border: 1px solid var(--main-red);
+				transition: all ease 0.3s;
+				background: linear-gradient(146deg, #27292f 0%, #25272d 100%);
+			}
+		}
+	}
 }
 
-
-
-@import "./MediaProtectModal.scss"
+@import './MediaProtectModal.scss';

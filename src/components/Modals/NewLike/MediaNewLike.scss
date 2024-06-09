@@ -1,33 +1,24 @@
 @media screen and (max-width: 1023px) {
-
-    .NewLikeModal{
-        .modalWrapper {
-            .description {
-              width: 80%;
-            }
-        }
-    } 
-
-    
+	.NewLikeModal {
+		.modalWrapper {
+			.description {
+				width: 80%;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 425px) {
-
-    .NewLikeModal{
-        .modalWrapper {
-            .tittle {
-                h2{
-                    font-size: clamp(15px, 5vw, 20px);
-
-
-                }
-            }
-            .description {
-              width: 100% !important;
-            }
-  
-        }
-    } 
-
-    
+	.NewLikeModal {
+		.modalWrapper {
+			.tittle {
+				h2 {
+					font-size: clamp(15px, 5vw, 20px);
+				}
+			}
+			.description {
+				width: 100% !important;
+			}
+		}
+	}
 }

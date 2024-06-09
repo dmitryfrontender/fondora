@@ -1,90 +1,71 @@
 @media screen and (max-width: 1023px) {
-
-    .ShareProfile {
-        .modalWrapper {
-            // max-width: 40vw;
-            width: clamp(200px, 60vw, 600px);
-        }
-    }
-    
+	.ShareProfile {
+		.modalWrapper {
+			// max-width: 40vw;
+			width: clamp(200px, 60vw, 600px);
+		}
+	}
 }
 
-
-
 @media screen and (max-width: 425px) {
-    .ShareProfile {
+	.ShareProfile {
+		.modalWrapper {
+			// max-width: 40vw ;
 
-        .modalWrapper {
-            // max-width: 40vw ;
-
-            .socialsList {
-                .icon{
-                    svg{
-                        width: clamp(20px, 7vw, 30px);
-                        height: clamp(20px, 7vw, 30px);
-                    }
-                   
-                }
-              .item{
-              
-                span{
-                    font-size: clamp(7px, 2.5vw, 12px);
-                }
-              }
-            }
-            .copyLink {
-                .icon{
-                  svg{
-                      width: clamp(15px, 6vw, 30px);
-                      height: clamp(15px, 6vw, 30px);
-                  }
-                }
-                span{
-                  
-                }
-              }
-            
-        }
-    }
-
-    
+			.socialsList {
+				.icon {
+					svg {
+						width: clamp(20px, 7vw, 30px);
+						height: clamp(20px, 7vw, 30px);
+					}
+				}
+				.item {
+					span {
+						font-size: clamp(7px, 2.5vw, 12px);
+					}
+				}
+			}
+			.copyLink {
+				.icon {
+					svg {
+						width: clamp(15px, 6vw, 30px);
+						height: clamp(15px, 6vw, 30px);
+					}
+				}
+				span {
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 370px) {
-    .ShareProfile {
-
-        .modalWrapper {
-            .socialsList {
-              .item{
-                .icon{
-                    svg{
-                        width: clamp(20px, 12vw, 30px);
-                        height: clamp(20px, 12vw, 30px);
-                    }
-                   
-
-                }
-                span{
-                    display: none;
-                }
-                    
-                
-              }
-            }
-            .copyLink {
-              .icon{
-                svg{
-                    width: clamp(15px, 6vw, 30px);
-                    height: clamp(15px, 6vw, 30px);
-                }
-              }
-              span{
-                font-size: clamp(10px, 2.5vw, 12px); 
-
-              }
-            }
-        }
-    }
-
-    
+	.ShareProfile {
+		.modalWrapper {
+			.socialsList {
+				.item {
+					.icon {
+						svg {
+							width: clamp(20px, 12vw, 30px);
+							height: clamp(20px, 12vw, 30px);
+						}
+					}
+					span {
+						display: none;
+					}
+				}
+			}
+			.copyLink {
+				.icon {
+					svg {
+						width: clamp(15px, 6vw, 30px);
+						height: clamp(15px, 6vw, 30px);
+					}
+				}
+				span {
+					font-size: clamp(10px, 2.5vw, 12px);
+				}
+			}
+		}
+	}
 }

@@ -1,5 +1,5 @@
 export interface ILikes {
-    id: number
-    recentlyActive: boolean
-    image: string
+	id: number;
+	recentlyActive: boolean;
+	image: string;
 }

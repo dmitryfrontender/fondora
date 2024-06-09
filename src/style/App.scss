@@ -77,7 +77,7 @@ a:-webkit-any-link {
 .tittle{
     .backBtn{
         display: none;
-        
+
     }
     font-family: var(--font-family-urbanist);
     font-weight: 600;
@@ -193,8 +193,8 @@ a:-webkit-any-link {
                     .text{
                         padding-left: 10px;
                     }
-                    
-                   
+
+
                 }
                 .optionWrapper{
                     // display: grid;
@@ -208,7 +208,7 @@ a:-webkit-any-link {
                     flex-wrap: wrap;
                     gap: 10px;
                     width: 100%;
-                    .option{ 
+                    .option{
                         padding: 10px 15px;
                         box-sizing: border-box;
                         border: 1px solid rgb(101, 101, 101);
@@ -277,9 +277,9 @@ a:-webkit-any-link {
                     .underline{
                         width: 100%;
                         transition: all ease 0.3s;
-    
+
                     }
-                    
+
                 }
 
             }
@@ -343,7 +343,7 @@ a:-webkit-any-link {
         border: 1px solid var(--stroke-color);
         transition: all ease 0.3s;
     }
-    
+
 }
 
 .goldMarker{
@@ -382,7 +382,7 @@ a:-webkit-any-link {
             letter-spacing: 2%;
             text-align: center;
         }
-        
+
     }
 }
 
@@ -391,5 +391,3 @@ a:-webkit-any-link {
 
 
 @import url('./MediaApp.scss');
-
-

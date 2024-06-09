@@ -1,62 +1,46 @@
 @media screen and (max-width: 1023px) {
+	.Modal {
+		z-index: 15 !important;
 
-
-    .Modal{
-        z-index: 15 !important;
-
-        .modalWrapper{
-            width: clamp(200px, 80vw, 600px) !important;
-
-        }
-    }
-
-
-    
+		.modalWrapper {
+			width: clamp(200px, 80vw, 600px) !important;
+		}
+	}
 }
 
 @media screen and (max-width: 425px) {
-
-
-    .Modal{
-        .modalWrapper{
-            padding: 20px 10px !important;
-            width: clamp(200px, 85vw, 600px) !important;
-            .likesPreview{
-                .first{
-                    left: 2.5vw !important;
-                }
-                .first, .third{
-                    width: clamp(35px, 20vw, 80px) !important;
-                    height: clamp(35px, 20vw, 80px) !important;
-
-                }
-                .second{
-                    img{
-                        width: clamp(55px, 25vw, 100px) !important;
-                        height: clamp(55px, 25vw, 100px) !important;
-                    }
-
-                }
-                .third{
-                    right: 2.5vw !important;
-
-                }
-            }
-            .modalButtons {
-                .btn{
-                  button{
-                      span{
-                          font-size: clamp(7px, 5vw, 14px);
-  
-  
-                      }
-                  }
-                }
-              }
-
-        }
-    }
-
-
-    
+	.Modal {
+		.modalWrapper {
+			padding: 20px 10px !important;
+			width: clamp(200px, 85vw, 600px) !important;
+			.likesPreview {
+				.first {
+					left: 2.5vw !important;
+				}
+				.first,
+				.third {
+					width: clamp(35px, 20vw, 80px) !important;
+					height: clamp(35px, 20vw, 80px) !important;
+				}
+				.second {
+					img {
+						width: clamp(55px, 25vw, 100px) !important;
+						height: clamp(55px, 25vw, 100px) !important;
+					}
+				}
+				.third {
+					right: 2.5vw !important;
+				}
+			}
+			.modalButtons {
+				.btn {
+					button {
+						span {
+							font-size: clamp(7px, 5vw, 14px);
+						}
+					}
+				}
+			}
+		}
+	}
 }

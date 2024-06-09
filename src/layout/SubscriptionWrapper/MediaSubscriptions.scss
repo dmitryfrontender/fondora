@@ -1,117 +1,89 @@
 @media screen and (max-width: 1023px) {
-
-  .Subscription {
-    .plus, .vip, .gold{
-      padding: 20px 0 140px;
-      
-    }
-  }
-  
-  
+	.Subscription {
+		.plus,
+		.vip,
+		.gold {
+			padding: 20px 0 140px;
+		}
+	}
 }
 
 @media screen and (max-width: 720px) {
-
-    .Subscription {
-      .subscriptionWrapper{
-        width: clamp(200px, 90vw, 600px);
-      }
-      .navigation-wrapper {
-        width: clamp(200px, 90vw, 600px);
-
-        
-      }
-      .navigation-wrapper{
-        .keen-slider{
-            .keen-slider__slide{
-                .banner{
-                    justify-content: space-between;
-                    position: relative;
-                    width: clamp(259px, 80vw, 720px);
-                    // gap: 30vw;
-                    .buyBtn{
-                        // position: relative;
-                        // right: 45vw;
-                        // position: absolute;
-                        // right: 30%;
-                    
-                        
-                    }
-
-                }
-                
-
-            }
-
-        }  
-      }
-    }
-
-
-    
+	.Subscription {
+		.subscriptionWrapper {
+			width: clamp(200px, 90vw, 600px);
+		}
+		.navigation-wrapper {
+			width: clamp(200px, 90vw, 600px);
+		}
+		.navigation-wrapper {
+			.keen-slider {
+				.keen-slider__slide {
+					.banner {
+						justify-content: space-between;
+						position: relative;
+						width: clamp(259px, 80vw, 720px);
+						// gap: 30vw;
+						.buyBtn {
+							// position: relative;
+							// right: 45vw;
+							// position: absolute;
+							// right: 30%;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 425px) {
+	.Subscription {
+		.bannerItem {
+			.subscriptionWrapper {
+				padding: 0 0 20px;
+			}
+		}
 
-    .Subscription {
-      .bannerItem{
-        .subscriptionWrapper{
-          padding: 0 0 20px;
-        }
-      }
-
-      .subscriptionWrapper{
-        // padding: 10px 0;
-        // padding: 0px 0 120px;
-        .optionWrapper{
-            padding: 0 10px 10px 10px;
-            .itemWrapper{
-                .option{
-                    max-width: 60vw;
-                }
-
-            }
-        }
-
-      }
-      .navigation-wrapper{
-        .keen-slider{
-            .keen-slider__slide{
-                .banner{
-                    width: clamp(259px, 77vw, 400px);
-                }
-
-            }
-
-        }  
-      }
-     
-    }
+		.subscriptionWrapper {
+			// padding: 10px 0;
+			// padding: 0px 0 120px;
+			.optionWrapper {
+				padding: 0 10px 10px 10px;
+				.itemWrapper {
+					.option {
+						max-width: 60vw;
+					}
+				}
+			}
+		}
+		.navigation-wrapper {
+			.keen-slider {
+				.keen-slider__slide {
+					.banner {
+						width: clamp(259px, 77vw, 400px);
+					}
+				}
+			}
+		}
+	}
 }
 
-
 @media screen and (max-width: 375px) {
-
-    .Subscription {
-      .navigation-wrapper{
-        .keen-slider{
-            .keen-slider__slide{
-
-                .banner{
-                    width: clamp(259px, 75vw, 375px);
-                    .bannerImg {
-                      svg{
-                        width: clamp(50px, 20vw, 150px);
-                      }
-                    }
-
-
-                }
-            }
-
-        }  
-
-      }
-     
-    }
+	.Subscription {
+		.navigation-wrapper {
+			.keen-slider {
+				.keen-slider__slide {
+					.banner {
+						width: clamp(259px, 75vw, 375px);
+						.bannerImg {
+							svg {
+								width: clamp(50px, 20vw, 150px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

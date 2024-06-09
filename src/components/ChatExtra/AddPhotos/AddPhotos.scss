@@ -1,89 +1,73 @@
-.AddPhoto{
+.AddPhoto {
+	.btn {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		// width: 20vw;
+		margin: 10px 20px 0;
 
-    .btn{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        // width: 20vw;
-        margin: 10px 20px 0;
+		button {
+			// padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 5px;
+			// top: 50%;
+			// right: 2%;
+			border-radius: 50%;
+			background: linear-gradient(135deg, rgb(27, 26, 27) -0.075%, rgb(185, 185, 185) 99.925%);
+			// transform: translateY(-55%);
+		}
+	}
 
-        
-                button{
-                    // padding: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 5px;
-                    // top: 50%;
-                    // right: 2%;
-                    border-radius: 50%;
-                    background: linear-gradient(135.00deg, rgb(27, 26, 27) -0.075%,rgb(185, 185, 185) 99.925%);
-                    // transform: translateY(-55%);
-
-                }
-        
-    }
-    
-    .photoWrapper {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: scroll;
-        width: 50vw;
-        gap: 10px;
-        max-height: 20vh;
-        padding: 10px 10px 15px;
-        margin-bottom: 10px;
-        .item{
-            position: relative;
-            img{
-                height: 100%;
-                width: -webkit-fill-available;
-            }
-            .addPhoto {
-                width: 20px;
-                height: 20px;
-                border: 4px solid white;
-                position: absolute;
-                top: 5px;
-                right: 5px;
-                border-radius: 50%;
-              }
-
-        }
-        .activeItem{
-            .addPhoto{
-                border: 4px solid var(--main-red);
-
-
-            }
-
-
-        }
-        
-      
-    }
-    
+	.photoWrapper {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		overflow-x: scroll;
+		width: 50vw;
+		gap: 10px;
+		max-height: 20vh;
+		padding: 10px 10px 15px;
+		margin-bottom: 10px;
+		.item {
+			position: relative;
+			img {
+				height: 100%;
+				width: -webkit-fill-available;
+			}
+			.addPhoto {
+				width: 20px;
+				height: 20px;
+				border: 4px solid white;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				border-radius: 50%;
+			}
+		}
+		.activeItem {
+			.addPhoto {
+				border: 4px solid var(--main-red);
+			}
+		}
+	}
 }
 
-
 @media screen and (max-width: 1023px) {
-
-    .AddPhoto{
-        .photoWrapper{
-            width: -webkit-fill-available;
-            padding-right: 20px;
-            flex-wrap: wrap;
-        }
-        .btn{
-            margin: 10px 20px;
-            .defaultBtn{
-                span{
-                font-size: clamp(10px, 3vw, 14px);
-
-                }
-            }
-        }
-    }
-    
+	.AddPhoto {
+		.photoWrapper {
+			width: -webkit-fill-available;
+			padding-right: 20px;
+			flex-wrap: wrap;
+		}
+		.btn {
+			margin: 10px 20px;
+			.defaultBtn {
+				span {
+					font-size: clamp(10px, 3vw, 14px);
+				}
+			}
+		}
+	}
 }

@@ -1,52 +1,49 @@
 @media screen and (max-width: 1023px) {
-    .App{
-        background: linear-gradient(135.00deg, rgb(36, 22, 27) 0%,rgba(26, 23, 23, 0) 100%),rgb(0, 0, 0);
-        background-image: url('../assets/images/pageBg.png');
-        background-repeat: no-repeat;
-        background-position: right;
-        min-height: unset !important;
-        height: 100vh;
-        overflow: hidden;
-        aside{
-            display: none;
-        }
-        .pageWrapper{
-            left: 0;
-            // top: 60px;
-            position: relative;
-            // padding-top: 50px;
-            display: block;
-            height: -webkit-fill-available !important;
-            flex-direction: column;
-            background: none !important;
-            background-image: none;
-            background-size: unset;
-            background-repeat: unset;
-            margin-bottom: 100px;
-            .message{
-                display: none;
-            }
-        }
-        .tittle{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: normal;
-            width: 85vw;
+	.App {
+		background: linear-gradient(135deg, rgb(36, 22, 27) 0%, rgba(26, 23, 23, 0) 100%), rgb(0, 0, 0);
+		background-image: url('../assets/images/pageBg.png');
+		background-repeat: no-repeat;
+		background-position: right;
+		min-height: unset !important;
+		height: 100vh;
+		overflow: hidden;
+		aside {
+			display: none;
+		}
+		.pageWrapper {
+			left: 0;
+			// top: 60px;
+			position: relative;
+			// padding-top: 50px;
+			display: block;
+			height: -webkit-fill-available !important;
+			flex-direction: column;
+			background: none !important;
+			background-image: none;
+			background-size: unset;
+			background-repeat: unset;
+			margin-bottom: 100px;
+			.message {
+				display: none;
+			}
+		}
+		.tittle {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			line-height: normal;
+			width: 85vw;
 
-            position: relative;
-            .backBtn{
-                display: block;
-                position: absolute;
-                cursor : pointer;
-                left: 0;
-            }
-        }
-        .page{
-            padding-left: unset !important;
-        }
-
-    }
-    
-    
+			position: relative;
+			.backBtn {
+				display: block;
+				position: absolute;
+				cursor: pointer;
+				left: 0;
+			}
+		}
+		.page {
+			padding-left: unset !important;
+		}
+	}
 }

@@ -1,57 +1,55 @@
-.ShareProfile{
-    .modalWrapper {
-      width: clamp(300px, 40vw, 600px);
-      .tittle{
-        margin: 10px 0;
-      }
-      .socialsList {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: -webkit-fill-available;
-        gap: 10px;
+.ShareProfile {
+	.modalWrapper {
+		width: clamp(300px, 40vw, 600px);
+		.tittle {
+			margin: 10px 0;
+		}
+		.socialsList {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: -webkit-fill-available;
+			gap: 10px;
 
-
-        .item{
-            padding: 8px 10px;
-            border-radius: 30px;
-            background: #212020;
-            width: -webkit-fill-available;
-            cursor: pointer;
-            span{
-                color: #A2A2A2;
-                text-align: center;
-                font-family: var(--font-family-urbanist);
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: normal;
-                letter-spacing: 0.24px;
-            }
-        }
-      }
-      .copyLink{
-        border-radius: 30px;
-        background: #212020;
-        width: -webkit-fill-available;
-        margin-top: 20px;
-        padding: 8px 10px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        cursor: pointer;
-        gap: 10px;
-        .icon{
-            border-radius: 50%;
-            background: #151313;
-            padding: 10px ;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-      }
-    }
+			.item {
+				padding: 8px 10px;
+				border-radius: 30px;
+				background: #212020;
+				width: -webkit-fill-available;
+				cursor: pointer;
+				span {
+					color: #a2a2a2;
+					text-align: center;
+					font-family: var(--font-family-urbanist);
+					font-size: 12px;
+					font-style: normal;
+					font-weight: 600;
+					line-height: normal;
+					letter-spacing: 0.24px;
+				}
+			}
+		}
+		.copyLink {
+			border-radius: 30px;
+			background: #212020;
+			width: -webkit-fill-available;
+			margin-top: 20px;
+			padding: 8px 10px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			cursor: pointer;
+			gap: 10px;
+			.icon {
+				border-radius: 50%;
+				background: #151313;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
 }
-
 
 @import url('./MediaShareProfile.scss');

@@ -1,311 +1,304 @@
 .ProfileComponent {
-    overflow: auto;
-    border-radius: 30px;
+	overflow: auto;
+	border-radius: 30px;
 
-    &Title {
-        color: #FFF;
-        text-align: left;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        letter-spacing: 0.32px;
-        margin: 10px 0 20px;
-    }
+	&Title {
+		color: #fff;
+		text-align: left;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		letter-spacing: 0.32px;
+		margin: 10px 0 20px;
+	}
 
-    &Info {
-        background-color: #121212;
-        padding: 32px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        position: relative;
-        z-index: 1;
+	&Info {
+		background-color: #121212;
+		padding: 32px 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		position: relative;
+		z-index: 1;
 
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
 
-        .tag {
-            font-size: 13px;
-            color: #A2A2A2;
-            display: flex;
-            padding: 5px 15px;
-            align-items: center;
-            gap: 5px;
-            border-radius: 30px;
-            background: #212020;
-            white-space: nowrap;
-        }
-    }
+		.tag {
+			font-size: 13px;
+			color: #a2a2a2;
+			display: flex;
+			padding: 5px 15px;
+			align-items: center;
+			gap: 5px;
+			border-radius: 30px;
+			background: #212020;
+			white-space: nowrap;
+		}
+	}
 
-    &ProfileToggler {
-        position: absolute;
-        top: -15px;
-        right: 50px;
-        z-index: 1;
-        display: flex;
-        width: 30px;
-        height: 30px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        background: #EB0565;
-    }
+	&ProfileToggler {
+		position: absolute;
+		top: -15px;
+		right: 50px;
+		z-index: 1;
+		display: flex;
+		width: 30px;
+		height: 30px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		background: #eb0565;
+	}
 
-    &MainInfo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+	&MainInfo {
+		display: flex;
+		align-items: center;
+		gap: 10px;
 
-        .name {
-            color: #FFF;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 100%;
-        }
+		.name {
+			color: #fff;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 100%;
+		}
 
-        .age {
-            color: #FFF;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 100%;
-        }
-    }
+		.age {
+			color: #fff;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 100%;
+		}
+	}
 
-    &AdditionalInfo {
+	&AdditionalInfo {
+		ul {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+		}
 
-        ul {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-        }
+		li {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+		}
 
-        li {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+		span {
+			color: #fff;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+		}
+	}
 
-        span {
-            color: #FFF;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-        }
-    }
+	&DescriptionInfo {
+		p {
+			color: #fff;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 150%;
+			text-align: left;
+		}
+	}
 
-    &DescriptionInfo {
-        p {
-            color: #FFF;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%;
-            text-align: left;
-        }
-    }
+	&Searching {
+		&Block {
+			display: flex;
+			padding: 10px 20px;
+			align-items: center;
+			gap: 15px;
+			align-self: stretch;
+			border-radius: 30px;
+			background: #212020;
+		}
 
-    &Searching {
-        &Block {
-            display: flex;
-            padding: 10px 20px;
-            align-items: center;
-            gap: 15px;
-            align-self: stretch;
-            border-radius: 30px;
-            background: #212020;
-        }
+		&Icon {
+			font-size: 34px;
+			line-height: 31px;
+		}
 
-        &Icon {
-            font-size: 34px;
-            line-height: 31px;
-        }
+		&Text {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
-        &Text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+		&Title {
+			color: #a2a2a2;
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 150%;
+		}
 
-        &Title {
-            color: #A2A2A2;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 150%;
-        }
+		&SubTitle {
+			color: #a2a2a2;
+			text-align: center;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			letter-spacing: 0.28px;
+		}
+	}
 
-        &SubTitle {
-            color: #A2A2A2;
-            text-align: center;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-            letter-spacing: 0.28px;
-        }
-    }
+	&MessageBlock {
+		display: flex;
+		padding: 20px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		align-self: stretch;
+		border-radius: 20px;
+		border: 1px solid #ffbe18;
+		background: linear-gradient(146deg, #131417 0%, #131417 100%);
 
-    &MessageBlock {
-        display: flex;
-        padding: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        align-self: stretch;
-        border-radius: 20px;
-        border: 1px solid #FFBE18;
-        background: linear-gradient(146deg, #131417 0%, #131417 100%);
+		textarea {
+			width: -webkit-fill-available;
+			border-radius: 30px;
+			background: #212020;
+			padding: 10px 20px;
+			font-family: var(--font-family-urbanist);
+			resize: none;
+			color: white;
+		}
+		textarea::placeholder {
+			color: #a2a2a2;
+			font-size: 11px;
+			font-style: normal;
+			font-weight: 400;
+			height: -webkit-fill-available;
+		}
+		textarea:focus {
+			outline: none;
+		}
+	}
 
-        textarea{
-            width: -webkit-fill-available;
-            border-radius: 30px;
-            background: #212020;
-            padding: 10px 20px;
-            font-family: var(--font-family-urbanist);
-            resize: none;
-            color: white;
-        }
-        textarea::placeholder{
-            color: #A2A2A2;
-            font-size: 11px;
-            font-style: normal;
-            font-weight: 400;
-            height: -webkit-fill-available;
+	&MessageBlockTop {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 15px;
+	}
+	&MessageIcon {
+		position: relative;
+		width: 30%;
+		max-width: 50px;
+		.imageContainer {
+			position: relative;
+			display: inline-block;
+			border-radius: 50%;
+			overflow: hidden;
+			padding: 1px;
+			.imageBorder {
+				position: absolute;
+				top: -3px;
+				left: -3px;
+				right: -3px;
+				bottom: -3px;
+				background: linear-gradient(180deg, #e8206c 0%, #2e97fe 100%);
+				border-radius: calc(50% + 3px);
+				z-index: 0;
+			}
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 50%;
+				position: relative;
+				z-index: 1;
+			}
+		}
+		svg {
+			position: absolute;
+			bottom: 0;
+			right: 50%;
+			z-index: 1;
+			transform: translate(50%, 30%);
+			border-radius: 20px;
+			padding: 5px;
+			background: rgba(0, 0, 0, 0.7);
+		}
+	}
+	&MessageText {
+		text-align: start;
+	}
+	&MessageTitle {
+		display: block;
+		color: #ffbe18;
+		font-family: var(--font-family-urbanist);
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 150%; /* 21px */
+		letter-spacing: 0.28px;
+	}
+	&MessageSubTitle {
+		display: block;
+		color: #a2a2a2;
+		font-family: var(--font-family-urbanist);
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 150%; /* 19.5px */
+	}
 
-        }
-        textarea:focus{
-            outline: none;
-        }
-    }
+	&Buttons {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		gap: 20px;
 
-    &MessageBlockTop{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 15px;
+		&Block {
+			display: flex;
+			padding: 10px 20px;
+			align-items: center;
+			gap: 15px;
+			align-self: stretch;
+			border-radius: 20px;
+			border: 1px solid #54484d;
+			background: linear-gradient(146deg, #131417 0%, #131417 100%);
+		}
 
+		&Icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
+		&Text {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
-    }
-    &MessageIcon{
-        position: relative;
-        width: 30%;
-        max-width: 50px;
-        .imageContainer {
-            position: relative;
-            display: inline-block;
-            border-radius: 50%;
-            overflow: hidden;
-            padding: 1px;
-            .imageBorder {
-                position: absolute;
-                top: -3px; left: -3px; right: -3px; bottom: -3px;
-                background: linear-gradient(180deg, #E8206C 0%, #2E97FE 100%);
-                border-radius: calc(50% + 3px);
-                z-index: 0;
-            }
-            img {
+		&Title {
+			color: #fff;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 150%;
+		}
 
-                display: block;
-                width: 100%;
-                height: auto;
-                border-radius: 50%;
-                position: relative;
-                z-index: 1;
-            }
-        }
-        svg{
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            z-index: 1;
-            transform: translate(50%, 30%);
-            border-radius: 20px;
-            padding: 5px;
-            background: rgba(0, 0, 0, 0.70);
-        }
-
-    }
-    &MessageText{
-        text-align: start;
-
-
-
-    }
-    &MessageTitle{
-        display: block;
-        color: #FFBE18;
-        font-family: var(--font-family-urbanist);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 150%; /* 21px */
-        letter-spacing: 0.28px;
-    }
-    &MessageSubTitle{
-        display: block;
-        color: #A2A2A2;
-        font-family: var(--font-family-urbanist);
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 150%; /* 19.5px */
-    }
-
-    &Buttons {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        gap: 20px;
-
-        &Block {
-            display: flex;
-            padding: 10px 20px;
-            align-items: center;
-            gap: 15px;
-            align-self: stretch;
-            border-radius: 20px;
-            border: 1px solid #54484D;
-            background: linear-gradient(146deg, #131417 0%, #131417 100%);
-        }
-
-        &Icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &Text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        &Title {
-            color: #FFF;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 150%;
-        }
-
-        &SubTitle {
-            color: #A2A2A2;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 500;
-            line-height: 150%;
-        }
-    }
+		&SubTitle {
+			color: #a2a2a2;
+			text-align: center;
+			font-size: 13px;
+			font-weight: 500;
+			line-height: 150%;
+		}
+	}
 }

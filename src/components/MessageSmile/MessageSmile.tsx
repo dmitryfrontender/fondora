@@ -1,34 +1,24 @@
-import React from "react";
-import './MessageSmile.scss'
-
+import React from 'react';
+import './MessageSmile.scss';
 
 interface MessageSmileProps {
-    onSelect: (reaction: string) => void;
+	onSelect: (reaction: string) => void;
 }
 
+const MessageSmile = ({ onSelect }: MessageSmileProps) => {
+	const smiles = ['😍', '👍🏻', '❤', '🫶', '😭'];
 
+	return (
+		<>
+			<div className='messageSmiles'>
+				{smiles.map((smile, index) => (
+					<span key={index} onClick={() => onSelect(smile)}>
+						{smile}
+					</span>
+				))}
+			</div>
 
-const MessageSmile = ({onSelect}: MessageSmileProps) => {
-
-    const smiles = ['😍', '👍🏻', '❤', '🫶', '😭'];
-
-
-
-
-
-
-
-
-    return(
-        <>
-            <div className="messageSmiles" >
-                {smiles.map((smile, index) => (
-                    <span key={index} onClick={() => onSelect(smile)}>{smile}</span>
-                ))}
-            </div>
-
-
-            {/* <div className="MessageSmile">
+			{/* <div className="MessageSmile">
                 <div className="wrapper">
                     <div className="smile">
                         <span>
@@ -43,25 +33,25 @@ const MessageSmile = ({onSelect}: MessageSmileProps) => {
                     <div className="smile">
                         <span>
                             👍🏻
-                            
+
                         </span>
                     </div>
                     <div className="smile">
                         <span>
                             ❤
-                            
+
                         </span>
                     </div>
                     <div className="smile">
                         <span>
                             👎🏻
-                            
+
                         </span>
                     </div>
                     <div className="smile">
                         <span>
                             😭
-                            
+
                         </span>
                     </div>
                     <div className="btnDown">
@@ -70,11 +60,8 @@ const MessageSmile = ({onSelect}: MessageSmileProps) => {
                 </div>
 
             </div> */}
-        
-        </>
-    )
-}
+		</>
+	);
+};
 
-
-
-export default MessageSmile
+export default MessageSmile;
