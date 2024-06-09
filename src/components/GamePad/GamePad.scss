@@ -30,7 +30,7 @@
     position: relative;
     margin: 0 var(--right-margin) 0 var(--left-margin);
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
         max-width: 100%;
         width: 100%;
         padding: 0;
@@ -142,7 +142,7 @@
         transform: translateX(-50%);
         z-index: 3;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 1023px) {
             display: none;
         }
 
