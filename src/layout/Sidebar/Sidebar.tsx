@@ -74,6 +74,9 @@ const Dashboard = () => {
 		}
 	};
 
+	console.log(mobileScreen);
+	
+
 	const checkMobileScreen = useMemo(() => {
 		return mobileDimension;
 	}, [mobileDimension]);
