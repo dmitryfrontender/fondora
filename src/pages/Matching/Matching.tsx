@@ -65,7 +65,7 @@ const Matching = () => {
 											<div className='text'>
 												<span>Женщины</span>
 											</div>
-											<SVGIcon name='arrowRight'  width={20} height={20} />
+											<SVGIcon name='arrowRight' width={20} height={20} />
 											<div className='underline'></div>
 										</div>
 									</div>

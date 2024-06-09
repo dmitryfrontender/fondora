@@ -1,79 +1,70 @@
-.ChatGifs{
-     
+.ChatGifs {
+	display: block;
+	height: -moz-fit-content;
+	height: fit-content;
+	overflow: hidden;
+	max-width: -webkit-fill-available;
+	.input {
+		position: relative;
+		textarea {
+			// display: flex;
+			width: -webkit-fill-available;
+			height: 46px;
+			align-items: center;
+			gap: 10px;
+			border-radius: 30px;
+			background: #212020;
+			border: none;
+			margin: 10px;
+			resize: none;
+			color: var(--white);
+			font-family: var(--font-proxima-nova);
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 0%;
+			align-content: center;
+			padding: 5px 20px 5px 40px;
+		}
+		textarea:focus {
+			outline: none;
+		}
 
-    display: block;
-        height: -moz-fit-content;
-        height: fit-content;
-        overflow: hidden;
-        max-width: -webkit-fill-available;
-        .input{
-            position: relative;
-            textarea{
-                // display: flex;
-                width: -webkit-fill-available;
-                height: 46px;
-                align-items: center;
-                gap: 10px;
-                border-radius: 30px;
-                background: #212020;
-                border: none;
-                margin: 10px;
-                resize: none;
-                color: var(--white);
-                font-family: var(--font-proxima-nova);
-                font-size: 14px;
-                font-weight: 400;
-                letter-spacing: 0%;
-                align-content: center;
-                padding: 5px 20px 5px 40px;
+		svg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: translate(100%, 100%);
+		}
+	}
+	.gifWrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		flex-direction: row;
+		align-items: center;
+		// margin-bottom: 10px;
+		padding-bottom: 15px;
+		margin: 0 10px 15px;
+		gap: 1vw;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		flex-wrap: nowrap;
+		width: 100%;
+		max-width: 50vw;
 
-            }
-            textarea:focus{
-                outline: none;
-            }
-            
-            
-            svg{
-                position: absolute;
-                left: 0;
-                top: 0;
-                transform: translate(100%, 100%);
-            }
-        }
-    .gifWrapper{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        flex-direction: row;
-        align-items: center;
-        // margin-bottom: 10px;
-        padding-bottom: 15px;
-        margin: 0 10px 15px;
-        gap: 1vw;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        flex-wrap: nowrap;
-        width: 100%;
-        max-width: 50vw;
-        
-        .gif{
-            img{
-    
-            }
-        }
-
-    }
-    
+		.gif {
+			img {
+			}
+		}
+	}
 }
 @media screen and (max-width: 1023px) {
-
-    .ChatGifs{
-        .gifWrapper{
-            max-width: 100%;
-            padding-right: 20px;
-            flex-wrap: wrap;
-        }
-    }
-    
+	.ChatGifs {
+		.gifWrapper {
+			max-width: 100%;
+			padding-right: 20px;
+			flex-wrap: wrap;
+		}
+	}
 }

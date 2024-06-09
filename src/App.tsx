@@ -27,105 +27,68 @@ import { useDispatch } from 'react-redux';
 
 // import { Route, Routes, Navigate } from 'react-router-dom';
 
-
 function App() {
+	const [width, setWidth] = useState(window.innerWidth);
 
-  const [width, setWidth] = useState(window.innerWidth);
+	const likeModal = useSelector((state: any) => state.LikesState.likesModal);
+	const boostModal = useSelector((state: any) => state.BoostState.boostModal);
+	const mobileChat = useSelector((state: any) => state.mainState.mobileChat);
+	const mobileNewChat = useSelector((state: any) => state.mainState.mobileNewChat);
+	const protectModal = useSelector((state: any) => state.ProtectState.protectModal);
+	const shareProfileModal = useSelector((state: any) => state.ShareProfileState.shareProfileModal);
+	const videoChatModal = useSelector((state: any) => state.VideoChatState.videoChatModal);
+	const blockUserModal = useSelector((state: any) => state.ProtectState.blockUserModal);
+	const newLikeModal = useSelector((state: any) => state.NewLikeState.newLikeModal);
+	const verifyProfileModal = useSelector((state: any) => state.VerifyProfileState.verifyProfileModal);
+	const goalModal = useSelector((state: any) => state.goalPageState.goalPageModal);
+	// const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
 
-  const likeModal = useSelector((state: any) => state.LikesState.likesModal);
-  const boostModal = useSelector((state: any) => state.BoostState.boostModal);
-  const mobileChat = useSelector((state: any) => state.mainState.mobileChat);
-  const mobileNewChat = useSelector((state: any) => state.mainState.mobileNewChat);
-  const protectModal = useSelector((state: any) => state.ProtectState.protectModal);
-  const shareProfileModal = useSelector((state: any) => state.ShareProfileState.shareProfileModal)
-  const videoChatModal = useSelector((state: any) => state.VideoChatState.videoChatModal);
-  const blockUserModal = useSelector((state: any) => state.ProtectState.blockUserModal)
-  const newLikeModal = useSelector((state: any) => state.NewLikeState.newLikeModal)
-  const verifyProfileModal = useSelector((state: any) => state.VerifyProfileState.verifyProfileModal)
-  const goalModal = useSelector((state: any) => state.goalPageState.goalPageModal)
-  // const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
+	// const pageWrapper = document.querySelector('.pageWrapper')
+	const dispatch = useDispatch();
 
-  // const pageWrapper = document.querySelector('.pageWrapper')
-  const dispatch = useDispatch();
+	// console.log(mobileScreen);
+	// if (mobileScreen) {
+	//   (pageWrapper as HTMLElement).style.top = '0'
 
-  // console.log(mobileScreen);
-  // if (mobileScreen) {
-  //   (pageWrapper as HTMLElement).style.top = '0'
+	// }
 
-  // }
+	// console.log(verifyProfileModal);
 
+	const checkScreen = useMemo(() => {
+		return width > 1023;
+	}, [width]);
 
+	useEffect(() => {
+		checkScreen ? dispatch(setMobileScreen(false)) : dispatch(setMobileScreen(true));
 
-  // console.log(verifyProfileModal);
+		const handleResize = (event: any) => {
+			setWidth(event.target.innerWidth);
+		};
+		window.addEventListener('resize', handleResize);
+		console.log(checkScreen);
 
-  const checkScreen = useMemo(() => {
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, [checkScreen, dispatch]);
 
-    return width > 1023
-  }, [width])
-
-
-  useEffect(() => {
-
-
-
-
-
-    checkScreen ? dispatch(setMobileScreen(false)) : dispatch(setMobileScreen(true));
-
-    const handleResize = (event: any) => {
-      setWidth(event.target.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    console.log(checkScreen);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-
-
-  }, [checkScreen, dispatch]);
-
-
-
-  return (
-    <div className="App">
-        <Sidebar />
-        <PageWrapper />
-        {
-            likeModal && <FilterModal/>
-        }
-        {
-            boostModal && <BoostModal/>
-        }
-        {
-          mobileChat && <MobileChat />
-        }
-        {
-          mobileNewChat && <MobileNewChat />
-        }
-        {
-          protectModal && <ProtectModal />
-        }
-        {
-          videoChatModal && <VideoChatModal />
-        }
-        {
-          shareProfileModal && <ShareProfile/>
-        }
-        {
-          blockUserModal && <BlockUser/>
-        }
-        {
-          newLikeModal && <NewLike/>
-        }
-        {
-          verifyProfileModal && <VerifyProfile/>
-        }
-        {
-          goalModal && <GoalModal/>
-        }
-    </div>
-  );
+	return (
+		<div className='App'>
+			<Sidebar />
+			<PageWrapper />
+			{likeModal && <FilterModal />}
+			{boostModal && <BoostModal />}
+			{mobileChat && <MobileChat />}
+			{mobileNewChat && <MobileNewChat />}
+			{protectModal && <ProtectModal />}
+			{videoChatModal && <VideoChatModal />}
+			{shareProfileModal && <ShareProfile />}
+			{blockUserModal && <BlockUser />}
+			{newLikeModal && <NewLike />}
+			{verifyProfileModal && <VerifyProfile />}
+			{goalModal && <GoalModal />}
+		</div>
+	);
 }
 
 export default App;

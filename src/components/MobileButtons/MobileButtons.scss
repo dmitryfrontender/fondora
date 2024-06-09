@@ -1,92 +1,84 @@
-.MobileButtons{
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
+.MobileButtons {
+	position: fixed;
+	bottom: 0;
+	z-index: 10;
 
-    width: 100%;
-    .buttonsWrapper {
-        // width: clamp(120px, 90vw, 60%);
-        // height: clamp(40px, 8vw, 65px);
-        width: clamp(120px, 45vw, 900px);
-        // height: clamp(40px, 5vw, 65px);
-        height: 70px;
-        margin: 0 auto;
-        border-radius: 35px;
-        opacity: 0.9;
-        background: linear-gradient(180deg, #121212 0%, #0B0B0B 100%);
-        backdrop-filter: blur(2.5px);
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 15px;
-        align-items: center;
-        position: relative;
-        svg{
-            // width: clamp(20px, 5vw, 40px);
-            width: clamp(20px, 3vw, 35px);
-            max-width: fit-content;
-            height: clamp(20px, 5vw, 40px);
-        }
-        img{
-            width: clamp(20px, 3.7vw, 35px);
-        }
-        a{
-            position: relative;
-            .active-menu{
-                stroke: var(--main-red);
-            }
-            .pinnedItem{
-                // width: 1vw;
-                // height: 1vw;
-                width: clamp(5px, 1vw, 7px);
-                height: clamp(5px, 1vw, 7px);
-                border: 2px solid rgb(19, 17, 17);
-                position: absolute;
-                top: 0.4vw;
-                right: 0;
-                border-radius: 50%;
-                background: var(--main-red);
-                transform: translateX(10%);
-            }
-        }
-    }
-
+	width: 100%;
+	.buttonsWrapper {
+		// width: clamp(120px, 90vw, 60%);
+		// height: clamp(40px, 8vw, 65px);
+		width: clamp(120px, 45vw, 900px);
+		// height: clamp(40px, 5vw, 65px);
+		height: 70px;
+		margin: 0 auto;
+		border-radius: 35px;
+		opacity: 0.9;
+		background: linear-gradient(180deg, #121212 0%, #0b0b0b 100%);
+		backdrop-filter: blur(2.5px);
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 15px;
+		align-items: center;
+		position: relative;
+		svg {
+			// width: clamp(20px, 5vw, 40px);
+			width: clamp(20px, 3vw, 35px);
+			max-width: fit-content;
+			height: clamp(20px, 5vw, 40px);
+		}
+		img {
+			width: clamp(20px, 3.7vw, 35px);
+		}
+		a {
+			position: relative;
+			.active-menu {
+				stroke: var(--main-red);
+			}
+			.pinnedItem {
+				// width: 1vw;
+				// height: 1vw;
+				width: clamp(5px, 1vw, 7px);
+				height: clamp(5px, 1vw, 7px);
+				border: 2px solid rgb(19, 17, 17);
+				position: absolute;
+				top: 0.4vw;
+				right: 0;
+				border-radius: 50%;
+				background: var(--main-red);
+				transform: translateX(10%);
+			}
+		}
+	}
 }
 @media screen and (max-width: 750px) {
-    .MobileButtons{
-        .buttonsWrapper{
-            a{
-                .pinnedItem{
-                    top: 0.3vw;
-                    transform: translateX(30%);
-                }
-
-            }
-
-        }
-    }
-
+	.MobileButtons {
+		.buttonsWrapper {
+			a {
+				.pinnedItem {
+					top: 0.3vw;
+					transform: translateX(30%);
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 490px) {
-    .MobileButtons{
-        .buttonsWrapper{
-            a{
-                .pinnedItem{
-                    top: 0vw;
-                    // transform: translate(15%);
-                    transform: translate(30%, -20%);
-                }
-
-            }
-
-        }
-    }
-
+	.MobileButtons {
+		.buttonsWrapper {
+			a {
+				.pinnedItem {
+					top: 0vw;
+					// transform: translate(15%);
+					transform: translate(30%, -20%);
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 480px) {
-    .MobileButtons{
-        .buttonsWrapper{
-            width: clamp(120px, 95vw, 400px);
-        }
-    }
-
+	.MobileButtons {
+		.buttonsWrapper {
+			width: clamp(120px, 95vw, 400px);
+		}
+	}
 }

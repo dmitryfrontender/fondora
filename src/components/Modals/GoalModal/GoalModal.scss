@@ -1,67 +1,65 @@
-.GoalModal{
-    display: flex;
-    flex-direction: column;
-    .prevBlock{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        max-width: 95vw;
-        // gap: 10px;
-        // img{
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100%;
-        //     height: 100%;
-        //     object-fit: cover;
-        // }
-        img{
-            max-width: -webkit-fill-available;
-        }
-        h1{
-            position: absolute;
-            color: #FFF;
-            font-family: var(--font-family-urbanist);
-            font-size: 68px;
-            font-style: normal;
-            font-weight: 900;
-            transform: rotate(-20deg);
-            z-index: 1;
-        }
-        svg{
-            position: absolute;
-        }
-    }
-    .modalWrapper {
-        .tittle {
-            margin: 0;
+.GoalModal {
+	display: flex;
+	flex-direction: column;
+	.prevBlock {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		max-width: 95vw;
+		// gap: 10px;
+		// img{
+		//     position: absolute;
+		//     top: 0;
+		//     left: 0;
+		//     width: 100%;
+		//     height: 100%;
+		//     object-fit: cover;
+		// }
+		img {
+			max-width: -webkit-fill-available;
+		}
+		h1 {
+			position: absolute;
+			color: #fff;
+			font-family: var(--font-family-urbanist);
+			font-size: 68px;
+			font-style: normal;
+			font-weight: 900;
+			transform: rotate(-20deg);
+			z-index: 1;
+		}
+		svg {
+			position: absolute;
+		}
+	}
+	.modalWrapper {
+		.tittle {
+			margin: 0;
 
-          h2{
-            margin: 0;
-            font-size: clamp(15px, 5vw, 20px);
-          }
-        }
-        .description {
-            min-width: 70vw;
-            padding: 20px 0;
-            color: #A2A2A2;
-            text-align: center;
-            font-family: var(--font-family-urbanist);
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 500;
-            letter-spacing: 0.28px;
-        }
-        .btn{
-            width: 80vw;
-            max-width: -webkit-fill-available;
-            .defaultBtn{
-                padding: clamp(7px, 2vw, 15px) 0;
-
-            }
-        }
-      
-    }
+			h2 {
+				margin: 0;
+				font-size: clamp(15px, 5vw, 20px);
+			}
+		}
+		.description {
+			min-width: 70vw;
+			padding: 20px 0;
+			color: #a2a2a2;
+			text-align: center;
+			font-family: var(--font-family-urbanist);
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 500;
+			letter-spacing: 0.28px;
+		}
+		.btn {
+			width: 80vw;
+			max-width: -webkit-fill-available;
+			.defaultBtn {
+				padding: clamp(7px, 2vw, 15px) 0;
+			}
+		}
+	}
 }

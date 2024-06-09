@@ -1,53 +1,39 @@
 @media screen and (max-width: 1023px) {
-    .SuperLikes{
-        .superLikeWrapper{
-            padding: 50px 0 40px 0  !important;
-    
-    
-        }
-
-    }
-
-  
+	.SuperLikes {
+		.superLikeWrapper {
+			padding: 50px 0 40px 0 !important;
+		}
+	}
 }
 @media screen and (max-width: 700px) {
-
-
-    .superLikeWrapper{
-        width: clamp(300px, 90vw, 550px) !important;
-        // padding: 35px 0 40px 0 !important;
-        .superLikeBanner{
-            .bannerTitle{
-                max-width: 35vw;
-                text-align: start;
-            }
-            
-        }
-        .cardWrapper{
-            .itemWrapper{
-                display: flex;
-                flex-wrap: nowrap;
-                width: 100%;
-                overflow: scroll;
-                .item{
-                    min-width: 70vw;
-                }
-
-            }
-        }
-        .goldPlanBanner{
-            margin-bottom: 90px;
-            .description{
-                p{
-          
-                    font-size: clamp(8px, 2.3vw, 14px) !important;
-                    padding: 0 10px;
-                }
-            }
-            
-        }
-       
-
-    }
-    
+	.superLikeWrapper {
+		width: clamp(300px, 90vw, 550px) !important;
+		// padding: 35px 0 40px 0 !important;
+		.superLikeBanner {
+			.bannerTitle {
+				max-width: 35vw;
+				text-align: start;
+			}
+		}
+		.cardWrapper {
+			.itemWrapper {
+				display: flex;
+				flex-wrap: nowrap;
+				width: 100%;
+				overflow: scroll;
+				.item {
+					min-width: 70vw;
+				}
+			}
+		}
+		.goldPlanBanner {
+			margin-bottom: 90px;
+			.description {
+				p {
+					font-size: clamp(8px, 2.3vw, 14px) !important;
+					padding: 0 10px;
+				}
+			}
+		}
+	}
 }

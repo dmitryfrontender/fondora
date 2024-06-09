@@ -33,22 +33,22 @@
 			}
 		}
 
-        .arrow {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            height: 100%;
-            z-index: 1;
-            width: 50%;
-            cursor: pointer;
+		.arrow {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			z-index: 1;
+			width: 50%;
+			cursor: pointer;
 
-            &--left {
-                left: 0;
-            }
+			&--left {
+				left: 0;
+			}
 
-            &--right {
-                right: 0;
-            }
-        }
+			&--right {
+				right: 0;
+			}
+		}
 	}
 }

@@ -1,12 +1,12 @@
-import { ISliderProfileImage } from "./SliderProfileImageModel";
+import { ISliderProfileImage } from './SliderProfileImageModel';
 
 export interface ISliderProfile {
-    id: number
-    images: ISliderProfileImage[],
-    userName: string,
-    userAge: number,
-    timeStamp: number,
-    userLocation: string,
-    userDistance: string,
-    userDescription: string
+	id: number;
+	images: ISliderProfileImage[];
+	userName: string;
+	userAge: number;
+	timeStamp: number;
+	userLocation: string;
+	userDistance: string;
+	userDescription: string;
 }

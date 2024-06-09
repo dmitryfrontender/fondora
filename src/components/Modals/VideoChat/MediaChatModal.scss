@@ -1,33 +1,30 @@
 @media screen and (max-width: 1023px) {
-    .videoChatModal{
-        .modalWrapper {
-          .tittle{
-            min-width: 80%;
-          }
-        }
-    }
-    
+	.videoChatModal {
+		.modalWrapper {
+			.tittle {
+				min-width: 80%;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 750px) {
-    .videoChatModal{
-        .modalWrapper {
-          .description {
-            min-width: 80%;
-          }
-        }
-    }
-    
+	.videoChatModal {
+		.modalWrapper {
+			.description {
+				min-width: 80%;
+			}
+		}
+	}
 }
 @media screen and (max-width: 425px) {
-    .videoChatModal{
-        .modalWrapper {
-          .tittle{
-            h2{
-                font-size: clamp(15px, 5vw, 20px);
-            }
-          }
-        }
-    }
-    
+	.videoChatModal {
+		.modalWrapper {
+			.tittle {
+				h2 {
+					font-size: clamp(15px, 5vw, 20px);
+				}
+			}
+		}
+	}
 }

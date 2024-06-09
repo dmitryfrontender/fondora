@@ -1,128 +1,119 @@
-.typing{
-    width: -webkit-fill-available;
-    position: relative;
-    bottom: 0;
-    margin: 20px 0 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    .dotWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+.typing {
+	width: -webkit-fill-available;
+	position: relative;
+	bottom: 0;
+	margin: 20px 0 5px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	.dotWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
 
-        .typingDot{
-            width: 5px;
-            height: 5px;
-            background: var(--main-red);
-            border-radius: 50%;
-            margin: 0 5px;
-            animation: dotAnimation linear 1s infinite;
-        }
-        .typingDot:nth-child(1) {
-            animation-delay: 0s;
-          }
-      
-          .typingDot:nth-child(2) {
-            animation-delay: 0.2s;
-          }
-      
-          .typingDot:nth-child(3) {
-            animation-delay: 0.4s;
-          }
-      
-        @keyframes dotAnimation {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        33% {
-            transform: translateY(-5px);
-        }
-        66% {
-            transform: translateY(5px);
-        }
-        }
-        
+		.typingDot {
+			width: 5px;
+			height: 5px;
+			background: var(--main-red);
+			border-radius: 50%;
+			margin: 0 5px;
+			animation: dotAnimation linear 1s infinite;
+		}
+		.typingDot:nth-child(1) {
+			animation-delay: 0s;
+		}
 
-    }
-    .avatar{
-        img{
-            width: clamp(25px, 5vw, 35px);
-            height: clamp(25px, 5vw, 35px);
-            border-radius: 50%;
-        }
-    }
-    .userName {
-      span{
-        color: var(--white);
-        font-family: var(--font-family-urbanist);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-      }
-    }
-    .description {
-      span{
-        color: #A2A2A2;
-        text-align: center;
-        font-family: var(--font-family-urbanist);
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        animation: typingAnimation 1.5s infinite linear;
-      }
+		.typingDot:nth-child(2) {
+			animation-delay: 0.2s;
+		}
 
-      @keyframes typingAnimation {
-        0% {
-            opacity: 0.9;
-        }
-        33% {
-            opacity: 0.6;
-        }
-        66% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0.9;
-        }
-        
-      }
-      
-    }
-    .textDot {
-        span{
-            color: #A2A2A2;
-            font-family: var(--font-family-urbanist);
-            font-size: 20px;
-            position: relative;
-            bottom: 3px;
-            animation: textDot 1s infinite linear;
+		.typingDot:nth-child(3) {
+			animation-delay: 0.4s;
+		}
 
-        }
-        span:nth-child(1) {
-            animation-delay: 0s;
-        }
-        span:nth-child(2) {
-            animation-delay: 0.5s;
+		@keyframes dotAnimation {
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+			33% {
+				transform: translateY(-5px);
+			}
+			66% {
+				transform: translateY(5px);
+			}
+		}
+	}
+	.avatar {
+		img {
+			width: clamp(25px, 5vw, 35px);
+			height: clamp(25px, 5vw, 35px);
+			border-radius: 50%;
+		}
+	}
+	.userName {
+		span {
+			color: var(--white);
+			font-family: var(--font-family-urbanist);
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 500;
+		}
+	}
+	.description {
+		span {
+			color: #a2a2a2;
+			text-align: center;
+			font-family: var(--font-family-urbanist);
+			font-size: 12px;
+			font-style: normal;
+			font-weight: 500;
+			animation: typingAnimation 1.5s infinite linear;
+		}
 
-        }
-        span:nth-child(3) {
-            animation-delay: 0.8s;
-
-        }
-        @keyframes textDot {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 1;
-            }
-            
-        }
-        
-    }
-    
+		@keyframes typingAnimation {
+			0% {
+				opacity: 0.9;
+			}
+			33% {
+				opacity: 0.6;
+			}
+			66% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0.9;
+			}
+		}
+	}
+	.textDot {
+		span {
+			color: #a2a2a2;
+			font-family: var(--font-family-urbanist);
+			font-size: 20px;
+			position: relative;
+			bottom: 3px;
+			animation: textDot 1s infinite linear;
+		}
+		span:nth-child(1) {
+			animation-delay: 0s;
+		}
+		span:nth-child(2) {
+			animation-delay: 0.5s;
+		}
+		span:nth-child(3) {
+			animation-delay: 0.8s;
+		}
+		@keyframes textDot {
+			0% {
+				opacity: 0;
+			}
+			50% {
+				opacity: 0.5;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+	}
 }

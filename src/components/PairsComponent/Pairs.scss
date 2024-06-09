@@ -1,103 +1,83 @@
-.Pairs{
-    max-height: 70vh;
-    padding-bottom: 2vh;
-    overflow: auto;
+.Pairs {
+	max-height: 70vh;
+	padding-bottom: 2vh;
+	overflow: auto;
 
+	.pairsWrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		flex-direction: row;
+		align-items: center;
+		margin-top: 30px;
+		// gap: 1vw;
+		gap: 0.8vw;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
 
-    .pairsWrapper{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 30px;
-        // gap: 1vw;
-        gap: 0.8vw;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-       
-        .pairElement {
-            position: relative;
-    
-            .pairName{
-                text-align: center;
-                padding: 15px 0 5px;
-                display: flex;
-                gap: 5px;
-                justify-content: center;
-                span{
-                    color: var(--main-text-color);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 12px;
-                    font-weight: 500;
-                    line-height: 150%;
-                    letter-spacing: 2%;
-                }
-                
-            }
-          
-        }
-        .likes{
-            .blurWrapper {
-                // position: relative;
-                overflow: hidden;
-                border-radius: 20px;
-                border: 2px solid rgb(255, 187, 12);
-                position: relative;
+		.pairElement {
+			position: relative;
 
-                img{
-                    filter: blur(10px);
-    
-                }
-                .countSlides {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    
-                  span{
-                    color: var(--white);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 13px;
-                    font-weight: 500;
-                    line-height: 150%;
-                    letter-spacing: 2%;
-                    padding: 5px 8px;
-                    border-radius: 50%;
-                    text-align: center;
-                    background: linear-gradient(135.00deg, rgb(172, 125, 2) 0%,rgb(255, 187, 12) 100%);
+			.pairName {
+				text-align: center;
+				padding: 15px 0 5px;
+				display: flex;
+				gap: 5px;
+				justify-content: center;
+				span {
+					color: var(--main-text-color);
+					font-family: var(--font-family-urbanist);
+					font-size: 12px;
+					font-weight: 500;
+					line-height: 150%;
+					letter-spacing: 2%;
+				}
+			}
+		}
+		.likes {
+			.blurWrapper {
+				// position: relative;
+				overflow: hidden;
+				border-radius: 20px;
+				border: 2px solid rgb(255, 187, 12);
+				position: relative;
 
-                  }
-                }
-                
-              
-            }
-            .heartIcon {
-                position: absolute;
-                overflow: visible;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                svg{
-                    padding: 5px;
-                    fill: white;
-                    border-radius: 50%;
-                    background: linear-gradient(135.00deg, rgb(172, 125, 2) 0%,rgb(255, 187, 12) 100%);
-                }
-            }
-            
-     
+				img {
+					filter: blur(10px);
+				}
+				.countSlides {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
 
-        }
-    
-    }
-
-
-
-
-
+					span {
+						color: var(--white);
+						font-family: var(--font-family-urbanist);
+						font-size: 13px;
+						font-weight: 500;
+						line-height: 150%;
+						letter-spacing: 2%;
+						padding: 5px 8px;
+						border-radius: 50%;
+						text-align: center;
+						background: linear-gradient(135deg, rgb(172, 125, 2) 0%, rgb(255, 187, 12) 100%);
+					}
+				}
+			}
+			.heartIcon {
+				position: absolute;
+				overflow: visible;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				svg {
+					padding: 5px;
+					fill: white;
+					border-radius: 50%;
+					background: linear-gradient(135deg, rgb(172, 125, 2) 0%, rgb(255, 187, 12) 100%);
+				}
+			}
+		}
+	}
 }
-
-
-
-

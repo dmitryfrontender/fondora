@@ -1,5 +1,5 @@
 export interface IStoragePhoto {
-    id: number
-    src: string
-    alt: string
+	id: number;
+	src: string;
+	alt: string;
 }
