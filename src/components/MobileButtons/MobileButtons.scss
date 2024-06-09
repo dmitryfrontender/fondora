@@ -8,7 +8,8 @@
         // width: clamp(120px, 90vw, 60%);
         // height: clamp(40px, 8vw, 65px);
         width: clamp(120px, 45vw, 900px);
-        height: clamp(40px, 5vw, 65px);
+        // height: clamp(40px, 5vw, 65px);
+        height: 70px;
         margin: 0 auto;
         border-radius: 35px;
         opacity: 0.9;
@@ -60,10 +61,10 @@
                 }
 
             }
-            
+
         }
     }
-    
+
 }
 @media screen and (max-width: 490px) {
     .MobileButtons{
@@ -76,10 +77,10 @@
                 }
 
             }
-            
+
         }
     }
-    
+
 }
 @media screen and (max-width: 480px) {
     .MobileButtons{
@@ -87,5 +88,5 @@
             width: clamp(120px, 95vw, 400px);
         }
     }
-    
+
 }

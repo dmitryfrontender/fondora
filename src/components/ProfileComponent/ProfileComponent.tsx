@@ -4,10 +4,8 @@ import PhotoSlider from "./PhotoSlider/PhotoSlider";
 import SVGIcon from "../../assets/icons/svgComponent";
 import TextAreaAutosize from 'react-textarea-autosize'
 import companionAvatar from '../../assets/avatar/companionAvatar.png'
-// import { useParams } from "react-router-dom";
 
 import { sliderProfiles }  from "../../Data/SliderProfiles";
-// import { ISliderProfile } from "../../model/SliderProfileModel";
 
 const ProfileComponent = (props: any) => {
 
@@ -23,7 +21,9 @@ const ProfileComponent = (props: any) => {
                 <div className="ProfileComponentInfo">
                     {
                         props.profileVisibility &&
-                        <div className="ProfileComponentProfileToggler" onClick={() => props.sendDataToGamepad(false)}>
+                        <div className="ProfileComponentProfileToggler" onClick={() => {
+                            props.sendDataToGamepad(false);
+                        }}>
                             <SVGIcon name="arrowDown" size={6} width={11} />
                         </div>
                     }

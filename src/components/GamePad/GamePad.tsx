@@ -22,6 +22,13 @@ const GamePad = () => {
 
 	const handleProfileVisibility = useCallback((data: boolean) => {
 		setProfileVisibility(data);
+
+		if (data) {
+			document.body.classList.add('profileOpened');
+		} else {
+			document.body.classList.remove('profileOpened');
+		}
+
 	}, []);
 
 	function handleMatchBlockVisibility(data: boolean) {
@@ -297,7 +304,7 @@ const GamePad = () => {
 															<SVGIcon name="gamepadHeartIcon" size={24} />
 														</div>
 													</div>
-													<div className="GamePadProfileToggler" onClick={() => setProfileVisibility(true)}>
+													<div className="GamePadProfileToggler" onClick={() => handleProfileVisibility(true)}>
 														<SVGIcon name="arrowUp" size={6} width={11} />
 													</div>
 												</div>
