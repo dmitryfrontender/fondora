@@ -1,0 +1,151 @@
+.NewChat{
+    .chatWrapper {
+      
+        .chatArea {
+
+          .chatItems {
+            margin: 0 2vw;
+
+            .imageContainer {
+                position: relative;
+                display: inline-block;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                overflow: hidden;
+                padding: 1px;
+                .imageBorder {
+                    position: absolute;
+                    top: -3px; left: -3px; right: -3px; bottom: -3px;
+                    background: linear-gradient(180deg, #E8206C 0%, #2E97FE 100%);
+                    border-radius: calc(50% + 3px);
+                    z-index: 0;
+                }
+                img {
+    
+                    display: block;
+                    width: 35px;
+                    height: 35px;
+                    height: auto;
+                    border-radius: 50%;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+
+            .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 0;
+              .userAvatar {
+               
+               
+
+              }
+            }
+            .addNotification {
+                border-radius: 10px;
+                background: linear-gradient(180deg, #903C5C 0%, #621533 100%);
+                padding: 10px 20px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                .tittleNote {
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: baseline;
+                    gap: 5px;
+                    h4{
+                        margin: 0;
+                        color: #FFF;
+                        font-family: var(--font-family-urbanist);
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: 0.24px;
+                    }
+                    span{
+                        color: #A2A2A2;
+                        font-family: var(--font-family-urbanist);
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 500;
+                    }
+                  
+
+                }
+                
+              
+            }
+            .emptyChat {
+              .tittle{
+                h2{
+                    font-size: 20px;
+                }
+              }
+              .subText {
+                color: #A2A2A2;
+                text-align: center;
+                font-family: var(--font-family-urbanist);
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%; /* 19.5px */
+              }
+              .userAvatar{
+                margin: 15px 0 25px;
+                .imageContainer {
+                  width: 130px;
+                  height: 130px;
+                  padding: 3px;
+                  img{
+                    width: 130px;
+                    height: 130px;
+                  }
+                }
+              }
+              .showedNote {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                border-radius: 30px;
+                max-width: fit-content;
+                margin: 20px auto;
+                padding: 10px;
+                background: linear-gradient(92deg, #373FFF 0.03%, #22CAFF 100.03%), linear-gradient(158deg, #181920 0%, #0F0F13 100%);
+              } 
+            }
+          }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url('./MediaNewChat.scss')

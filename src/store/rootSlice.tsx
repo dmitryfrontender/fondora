@@ -14,6 +14,7 @@ export const rootSlice = createSlice({
         newSetting: false,
         topProfile: false,
         chatId: '',
+        newChatId: '',
         mobileChat: false,
         mobileScreen: false,
         typingState: false,
@@ -118,6 +119,10 @@ export const rootSlice = createSlice({
             
             state.chatId = action.payload
         },
+        setNewChatId: (state, action) => {
+            state.newChatId = action.payload
+            
+        },
         mobileChatState: (state, action) => {
             switch(action.payload) {
                 case 'mobileChat-open':
@@ -163,6 +168,7 @@ export const {
     NewSettingState,
     topProfileState,
     setChatId,
+    setNewChatId,
     mobileChatState,
     setMobileScreen,
     setTypingState,

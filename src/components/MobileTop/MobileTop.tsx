@@ -55,7 +55,7 @@ const MobileTop = () => {
     return(
         <>  
             {
-                location.pathname === '/settings' ? 
+                location.pathname === '/mobile-settings' || location.pathname === '/goal-page' ? 
                 null
                 :
                 <div className="MobileTop">
@@ -63,7 +63,9 @@ const MobileTop = () => {
                         <div className="logo">
                             <SVGIcon name="mainLogo" />
                         </div>
-                        <div className="topBtn">
+                        
+                            
+                            <div className="topBtn">
                             <Link  to='/notifications'>
                                 <SVGIcon name="notification" stroke="#BDBDBD"/>
                             </Link>
@@ -73,12 +75,15 @@ const MobileTop = () => {
                                     <SVGIcon name="protectIcon" stroke="#BDBDBD"/>
                                 </Link>
                                 :
-                                <Link to='/settings'>
+                                <Link to='/mobile-settings'>
                                     <SVGIcon name="settings" stroke="#BDBDBD"/>
                                 </Link>
                             }
                             
-                        </div>
+                            </div>
+                      
+                        
+                        
                     </div>
                 </div>
             }

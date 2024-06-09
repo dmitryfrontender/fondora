@@ -24,6 +24,7 @@ const Dashboard = () => {
   const settingState = useSelector((state: any) => state.mainState.newSetting);
   const isNewMessage = useSelector((state: any) => state.mainState.newMessage);
   const chatId = useSelector((state: any) => state.mainState.chatId);
+  const newChatId = useSelector((state: any) => state.mainState.newChatId);
   const [mobileScreen, setMobileScreen] = useState(false);
   const mobileDimension = useSelector(mobileScreenEnable);
 
@@ -70,6 +71,10 @@ const Dashboard = () => {
         return "/messages";
       case `/messages/chat/${chatId}`:
         return `/messages/chat/${chatId}`;
+        case "/pairs":
+        return "/pairs";
+      case `/pairs/newChat/${newChatId}`:
+        return `/pairs/newChat/${newChatId}`;
 
       default:
         return false;

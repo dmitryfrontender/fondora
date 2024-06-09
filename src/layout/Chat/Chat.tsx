@@ -193,7 +193,7 @@ const Chat = () => {
                                                 dispatch(reportUserAvatar(chatData.image));
                                                 dispatch(reportUserName(chatData.userName));
                                             }}>
-                                                <SVGIcon name="protectIcon" size={20} />
+                                                <SVGIcon name="protectIcon" size={20} stroke={'#fff'}/>
                                             </button>
                                             <Link to={"/messages"}>
                                                 <button>
