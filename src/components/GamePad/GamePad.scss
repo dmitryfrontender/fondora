@@ -30,13 +30,6 @@
     position: relative;
     margin: 0 var(--right-margin) 0 var(--left-margin);
 
-    @media screen and (max-width: 1023px) {
-        max-width: 100%;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
     &Survey {
         --survey-bp: 40px;
         position: absolute;

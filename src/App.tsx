@@ -52,7 +52,7 @@ function App() {
 
   // }
 
-  
+
 
   // console.log(verifyProfileModal);
 
@@ -64,7 +64,7 @@ function App() {
 
   useEffect(() => {
 
-    
+
 
 
 
@@ -79,7 +79,7 @@ function App() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-    
+
 
   }, [checkScreen, dispatch]);
 
