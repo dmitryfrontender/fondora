@@ -108,6 +108,10 @@ const Dashboard = () => {
     }
 
     checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
+    // console.log(checkMobileScreen, '2');
+    // console.log(mobileScreen, '3');
+    
+    
 
 
 
@@ -126,8 +130,10 @@ const Dashboard = () => {
   return (
     <>
       {
-        // width <= 1024 ?
-        mobileScreen ?
+        // width <= 1023 ?
+        // mobileScreen ?
+        checkMobileScreen ?
+
 
           <>
             <MobileTop /> 

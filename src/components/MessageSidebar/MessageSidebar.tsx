@@ -62,7 +62,7 @@ const MessageSidebar = () => {
     return(
         <>
             {
-                // width <= 1024 ?
+                // width <= 1023 ?
                 mobileScreen ?
 
                 <>

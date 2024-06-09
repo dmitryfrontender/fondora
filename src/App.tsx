@@ -52,11 +52,13 @@ function App() {
 
   // }
 
+  
 
   // console.log(verifyProfileModal);
 
   const checkScreen = useMemo(() => {
-    return width >= 1024
+
+    return width > 1023
   }, [width])
 
 
@@ -72,10 +74,12 @@ function App() {
       setWidth(event.target.innerWidth);
     };
     window.addEventListener('resize', handleResize);
+    console.log(checkScreen);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-
+    
 
   }, [checkScreen, dispatch]);
 
