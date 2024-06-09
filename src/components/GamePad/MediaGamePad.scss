@@ -1,0 +1,50 @@
+@media screen and (max-width: 1024px) {
+    .GamePad {
+        width: 100vw;
+        max-width: 600px;
+        height: calc(100vh - clamp(102px, 13vw, 110px));
+        padding: clamp(102px, 13vw, 110px) 0 0;
+        margin: 0 auto;
+
+        &Block {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        &BlockItem {
+            .PhotoSlider {
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
+
+                &Avatar {
+                    height: 100%;
+                    width: 100%;
+
+                    .dots {
+                        top: 10px;
+                        width: 96%;
+                    }
+                }
+            }
+
+            img {
+                border-radius: 10px;
+            }
+        }
+
+        &PanelButtons {
+            width: 100%;
+            padding: 0 20vw;
+        }
+
+        &PanelBackground {
+            padding-bottom: 60px;
+        }
+    }
+
+    .App .pageWrapper {
+        padding-bottom: 0 !important;
+    }
+}
