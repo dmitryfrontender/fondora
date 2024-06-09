@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { pairData } from "../../Data/PairData";
 import { IPairs } from "../../model/PairsModel";
 import SVGIcon from "../../assets/icons/svgComponent";
 import './Pairs.scss'
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setNewChatId } from "../../store/rootSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { mobileNewChatState, setNewChatId } from "../../store/rootSlice";
+import { mobileScreenEnable } from "../../store/selectors";
 
 
 
@@ -16,6 +17,8 @@ const Pairs = () => {
 
 
     const dispatch = useDispatch();
+    const [mobileScreen, setMobileScreen] = useState(false);
+    const mobileDimension = useSelector(mobileScreenEnable);
 
 
     // const sendMessage = (person: IPairs) => {
@@ -33,13 +36,31 @@ const Pairs = () => {
         
 
     // }
+    const checkMobileScreen = useMemo(() => {
+
+        return    mobileDimension
+    
+}, [mobileDimension]);
 
 
     const linkToNewChat = (newChatId: number) => {
 
+        if (mobileScreen) {
+            dispatch(mobileNewChatState('mobileNewChat-open'));
+        } 
+
         dispatch(setNewChatId(newChatId.toString()));
 
     }
+
+    useEffect(() => {
+
+        
+
+        checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
+
+
+    }, [checkMobileScreen, ]);
 
 
 

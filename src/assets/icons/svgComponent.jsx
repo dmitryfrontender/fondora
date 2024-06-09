@@ -1195,8 +1195,8 @@ const icons = {
 	),
 	showedIcon: (
 		<svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M1.63867 8.99368L4.6325 12L10.6325 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-			<path d="M10.6309 10.4211L12.3615 12L18.3615 6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M1.63867 8.99368L4.6325 12L10.6325 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			<path d="M10.6309 10.4211L12.3615 12L18.3615 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 		</svg>
 
 	),
