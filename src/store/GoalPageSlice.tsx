@@ -11,10 +11,8 @@ export const GoalPageSlice = createSlice({
 			state.goalPage = action.payload;
 		},
 		setGoalPageModal: (state, action) => {
-			// console.log(state.goalPageModal);
 
 			state.goalPageModal = action.payload;
-			// console.log(state.goalPageModal);
 		}
 	}
 });

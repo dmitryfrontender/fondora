@@ -46,13 +46,11 @@ function App() {
 	// const pageWrapper = document.querySelector('.pageWrapper')
 	const dispatch = useDispatch();
 
-	// console.log(mobileScreen);
 	// if (mobileScreen) {
 	//   (pageWrapper as HTMLElement).style.top = '0'
 
 	// }
 
-	// console.log(verifyProfileModal);
 
 	const checkScreen = useMemo(() => {
 		return width > 1023;
@@ -65,7 +63,6 @@ function App() {
 			setWidth(event.target.innerWidth);
 		};
 		window.addEventListener('resize', handleResize);
-		console.log(checkScreen);
 
 		return () => {
 			window.removeEventListener('resize', handleResize);

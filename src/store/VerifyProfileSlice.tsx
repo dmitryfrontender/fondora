@@ -8,10 +8,8 @@ export const verifyProfileState = createSlice({
 	},
 	reducers: {
 		setVerifyProfileModal: (state, action) => {
-			console.log(state.verifyProfileModal, 'ok1');
 
 			state.verifyProfileModal = action.payload;
-			console.log(state.verifyProfileModal, 'ok2');
 		},
 		setUserVerify: (state, action) => {
 			state.isUserVerify = action.payload;

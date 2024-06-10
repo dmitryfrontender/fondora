@@ -41,7 +41,7 @@ const NewLike = () => {
 		getData();
 		document.addEventListener('mousedown', handleClickOutside);
 		return () => document.removeEventListener('mousedown', handleClickOutside);
-	}, []);
+	}, [handleClickOutside]);
 
 	return (
 		<>

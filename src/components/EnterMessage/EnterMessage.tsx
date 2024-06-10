@@ -76,7 +76,6 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 					reaction: ''
 				});
 
-				// console.log(elem);
 			});
 			messageId = 0;
 
@@ -105,7 +104,6 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 						reaction: ''
 					});
 
-					// console.log(elem);
 				});
 				messageId = 0;
 				refreshData();
@@ -145,7 +143,6 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 				owner: true
 			});
 
-			// console.log(elem);
 		});
 		messageId = 0;
 		refreshData();
@@ -177,7 +174,6 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 				owner: true
 			});
 
-			// console.log(elem);
 		});
 		messageId = 0;
 		refreshData();

@@ -19,9 +19,6 @@ const Pairs = () => {
 
 	//     const newPairData = pairArray.filter(element => element.id !== person.id);
 	//     setPairArray(newPairData);
-	//     // // console.log(pairArray);
-
-	//     // console.log(newPairData);
 
 	// }
 	const checkMobileScreen = useMemo(() => {
@@ -60,7 +57,7 @@ const Pairs = () => {
 					</div>
 					{pairData.map((item: IPairs) => {
 						return (
-							<Link to={`/pairs/newChat/${item.id}`}>
+							<Link to={`/pairs/newChat/${item.id}`} key={item.id}>
 								<div className='pairElement' key={item.id} onClick={() => linkToNewChat(item.id)}>
 									<img src={item.image} alt='pair' />
 									<div className='pairName'>
