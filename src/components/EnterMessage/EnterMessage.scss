@@ -29,6 +29,47 @@
 			textarea:focus {
 				outline: none;
 			}
+			// .textarea:placeholder {
+			// 	display: flex;
+			// 	align-items: center;
+			// 	justify-content: center;
+			// 	height: 100%;
+			// 	position: absolute;
+			// 	top: 50%
+			//   }
+			// textarea::-webkit-input-placeholder  {
+			// 	text-align: center;
+			// 	line-height: 60px; // Input Height
+			//  }
+			 
+			//  textarea:-moz-placeholder { /* Firefox 18- */
+			// 	text-align: center;
+			// 	line-height: 60px; // Input Height
+			//  }
+			 
+			//  textarea::-moz-placeholder {  /* Firefox 19+ */
+			// 	text-align: center;
+			// 	line-height: 60px; // Input Height
+			//  }
+			 
+			//  textarea:-ms-input-placeholder {  
+			// 	text-align: center;
+			// 	line-height: 60px; // Input Height
+			//  }
+			textarea::-webkit-input-placeholder {
+				text-align:center;
+				height: 100%;
+			}
+			textarea:-moz-placeholder {
+				text-align:center;
+				height: 100%;
+
+			}
+			textarea:-ms-input-placeholder {
+				text-align:center;
+				height: 100%;
+
+			}
 			.sendBtn {
 				position: absolute;
 				display: flex;

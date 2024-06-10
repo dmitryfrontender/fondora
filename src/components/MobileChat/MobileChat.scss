@@ -23,6 +23,7 @@
 			align-items: center;
 			position: relative;
 			margin: 0 clamp(15px, 5vw, 30px);
+            z-index: 1;
 
 			padding: 20px 0;
 			svg {
@@ -72,11 +73,19 @@
 			// width: 100%;
 			// height: 100%;
 			// height: calc(100% - 220px);
-			margin: 10px clamp(15px, 2vw, 30px);
+			// margin: 10px clamp(15px, 2vw, 30px);
+            // overflow-y: scroll;
 
-			height: -webkit-fill-available;
-			position: relative;
-
+			// height: -webkit-fill-available;
+			// position: relative;
+            margin: 10px clamp(15px, 2vw, 30px);
+            overflow-y: scroll;
+            height: -webkit-fill-available;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            // overflow: inherit;
+            justify-content: space-between;
 			.background {
 				position: absolute;
 				top: 0;
