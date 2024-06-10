@@ -71,43 +71,47 @@ const MobileChat = () => {
 						<>
 							<div className='container'>
 								<div className='chatHeader'>
-									<div
-										className='backBtn'
-										onClick={() => {
-											dispatch(mobileChatState('mobileChat-close'));
-											dispatch(setChatId(''));
-										}}
-									>
-										<Link to='/messages'>
-											<SVGIcon name='arrowLeft' size={30} />
-										</Link>
-									</div>
-									<div className='userAvatar'>
-										<div className='wrapper'>
-											<img src={chatData.image} alt='user' />
-											{chatData.userOnLine ? <div className='onLinePin'></div> : null}
+									<div className="wrapper">
+										<div
+											className='backBtn'
+											onClick={() => {
+												dispatch(mobileChatState('mobileChat-close'));
+												dispatch(setChatId(''));
+											}}
+										>
+											<Link to='/messages'>
+												<SVGIcon name='arrowLeft' size={30} />
+											</Link>
 										</div>
+										<div className='userAvatar'>
+											<div className='wrapper'>
+												<img src={chatData.image} alt='user' />
+												{chatData.userOnLine ? <div className='onLinePin'></div> : null}
+											</div>
+										</div>
+										<div className='chatBtn'>
+											<button
+												onClick={() => {
+													dispatch(setVideoChatModal(true));
+													dispatch(setUserName(chatData.userName));
+													dispatch(setUserAvatar(chatData.image));
+												}}
+											>
+												<SVGIcon name='videoCallIcon' size={30} />
+											</button>
+											<button
+												onClick={() => {
+													dispatch(protectModalState(true));
+													dispatch(reportUserAvatar(chatData.image));
+													dispatch(reportUserName(chatData.userName));
+												}}
+											>
+												<SVGIcon name='protectIcon' size={30} stroke='#fff' />
+											</button>
+										</div>
+
 									</div>
-									<div className='chatBtn'>
-										<button
-											onClick={() => {
-												dispatch(setVideoChatModal(true));
-												dispatch(setUserName(chatData.userName));
-												dispatch(setUserAvatar(chatData.image));
-											}}
-										>
-											<SVGIcon name='videoCallIcon' size={30} />
-										</button>
-										<button
-											onClick={() => {
-												dispatch(protectModalState(true));
-												dispatch(reportUserAvatar(chatData.image));
-												dispatch(reportUserName(chatData.userName));
-											}}
-										>
-											<SVGIcon name='protectIcon' size={30} stroke='#fff' />
-										</button>
-									</div>
+									
 								</div>
 								<div className='chatArea'>
 									<div className='background'>{/* <img src={chatBg} alt="bg" /> */}</div>
