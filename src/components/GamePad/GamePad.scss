@@ -12,7 +12,8 @@
 	--m: 147px;
 	--mask:
         /* left hole */ radial-gradient(var(--r) at var(--m) 0, var(--g)) 0 0/50% 50% no-repeat,
-		/* right hole */ radial-gradient(var(--r) at calc(100% - var(--m)) 0, var(--g)) 100% 0/50% 50% no-repeat, /* dummy hole empty */ radial-gradient(0 at 0 100%, var(--g)) 0 100%/50% 50% no-repeat,
+		/* right hole */ radial-gradient(var(--r) at calc(100% - var(--m)) 0, var(--g)) 100% 0/50% 50% no-repeat,
+		/* dummy hole empty */ radial-gradient(0 at 0 100%, var(--g)) 0 100%/50% 50% no-repeat,
 		/* dummy hole empty */ radial-gradient(0 at 100% 100%, var(--g)) 100% 100%/50% 50% no-repeat;
 	display: flex;
 	flex-direction: column;
