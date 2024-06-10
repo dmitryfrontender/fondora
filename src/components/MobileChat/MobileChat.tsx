@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import './MobileChat.scss';
 import { mobileChatState } from '../../store/rootSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,10 +29,17 @@ const MobileChat = () => {
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
 
+
 	const dispatch = useDispatch();
+	// const messagesEndRef = useRef<null | HTMLDivElement>(null)
+
+	// const scrollToBottom = () => {
+	// 	messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+	// }
 
 	const forceRerender = useCallback(() => {
 		setForceUpdate((prevForceUpdate) => !prevForceUpdate);
+		// window.scrollY = 0;
 	}, []);
 
 	const handleSmileReaction = (messageId: number) => {
@@ -52,7 +59,7 @@ const MobileChat = () => {
 
 	useEffect(() => {
 		const filteredMessage = messagesData.filter((msg: IMessages) => msg.id.toString() === chatId);
-
+		// scrollToBottom()
 		setChatData(filteredMessage[0]);
 	}, [chatId, forceUpdate, chatData]);
 
@@ -119,6 +126,7 @@ const MobileChat = () => {
 									</div>
 									<div className='chatWrapper'>
 										{typingState && <Typing userName={chatData.userName} userAvatar={chatData.image} />}
+
 										<div className='messages'>
 											{Object.keys(chatData).length > 0
 												? chatData.messages.map((item, index) => (
@@ -144,8 +152,13 @@ const MobileChat = () => {
 														</>
 												  ))
 												: null}
+									{/* <div ref={messagesEndRef}/> */}
+
 										</div>
+
+
 									</div>
+
 								</div>
 								<EnterMessage forceRerender={forceRerender} chatId={chatId} />
 							</div>
