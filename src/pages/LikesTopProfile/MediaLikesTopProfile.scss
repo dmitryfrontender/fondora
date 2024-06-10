@@ -9,7 +9,7 @@
 				position: relative;
 				top: 60px;
 				.PagesWrapper {
-					width: auto !important;
+					width: -webkit-fill-available !important;
 					margin: 0 20px;
 					.topButtons {
 						max-width: 90vw;
@@ -31,7 +31,8 @@
 						padding-bottom: 120px;
 						.item {
 							// width: auto !important;
-							width: clamp(75px, 38vw, 210px) !important;
+							// width: clamp(75px, 38vw, 210px) !important;
+							width: clamp(75px, 43vw, 210px) !important;
 							.userPhoto {
 								img {
 									width: clamp(160px, 38vw, 240px);
@@ -44,130 +45,152 @@
 		}
 	}
 }
-@media screen and (max-width: 425px) {
-	.LikesTopProfile {
-		.PagesWrapper {
-			.topButtons {
-				.filter {
-					padding: 2vw !important;
-					svg {
-						width: 4vw;
-						height: 4vw;
-					}
-				}
-				.buttonItem {
-					padding: 2vw !important;
-					span {
-						font-size: clamp(6px, 2.3vw, 10px) !important;
-					}
-				}
-			}
-			.bannerGold {
-				.bannerDescription {
-					p {
-						font-size: clamp(7px, 2vw, 10px) !important;
-					}
-				}
-				.bannerWrapper {
-					.item {
-						.goBtn {
-							padding: 6px 8px;
+@media screen and (max-width: 480px) {
+	.App{
+		.pageWrapper{
+			.LikesTopProfile {
+				.PagesWrapper {
+					margin: 0 4vw;
+					.topButtons {
+						.filter {
+							padding: 2vw !important;
+							svg {
+								width: 4vw;
+								height: 4vw;
+							}
+						}
+						.buttonItem {
+							padding: 2vw !important;
 							span {
-								font-size: clamp(6px, 2vw, 10px) !important;
+								font-size: clamp(6px, 2.3vw, 10px) !important;
 							}
 						}
 					}
-				}
-			}
-			.pageGallery {
-				justify-content: space-between;
-				.item {
-					.userPhoto {
-						img {
-							// width: clamp(90px, 35vw, 150px);
-							width: -webkit-fill-available;
-						}
-					}
-					.recentlyActive {
-						.markActivity {
-						}
-						.description {
-							span {
-								font-size: clamp(6px, 2.5vw, 16px) !important;
-								white-space: nowrap;
+					.bannerGold {
+						.bannerDescription {
+							p {
+								font-size: clamp(7px, 2vw, 10px) !important;
 							}
 						}
-					}
-					.topProfileInfo {
-						.userInfo {
-							.userName,
-							.timeStamp {
-								span {
-									font-size: clamp(7px, 3vw, 14px) !important;
-									white-space: nowrap;
-									line-height: 0%;
+						.bannerWrapper {
+							.item {
+								.goBtn {
+									padding: 6px 8px;
+									span {
+										font-size: clamp(6px, 2vw, 10px) !important;
+									}
 								}
 							}
 						}
-						.topProfileMark {
-							svg {
-								width: clamp(10px, 4vw, 25px);
-								height: clamp(10px, 4vw, 25px);
+					}
+					.pageGallery {
+						justify-content: space-between;
+						margin-bottom: unset;
+						margin: 0 auto 50px;
+						max-width: clamp(250px, 90vw, 800px);
+						.item {
+							.userPhoto {
+								img {
+									// width: clamp(90px, 35vw, 150px);
+									width: -webkit-fill-available;
+								}
+							}
+							.recentlyActive {
+								.markActivity {
+								}
+								.description {
+									span {
+										font-size: clamp(6px, 2.5vw, 16px) !important;
+										white-space: nowrap;
+									}
+								}
+							}
+							.topProfileInfo {
+								.userInfo {
+									.userName,
+									.timeStamp {
+										span {
+											font-size: clamp(7px, 3vw, 14px) !important;
+											white-space: nowrap;
+											line-height: 0%;
+										}
+									}
+								}
+								.topProfileMark {
+									svg {
+										width: clamp(10px, 4vw, 25px);
+										height: clamp(10px, 4vw, 25px);
+									}
+								}
 							}
 						}
 					}
 				}
 			}
+
 		}
 	}
+	
 }
 
 @media screen and (max-width: 300px) {
-	.LikesTopProfile {
-		.PagesWrapper {
-			.pageGallery {
-				justify-content: center;
-				.item {
-					width: clamp(75px, 85vw, 280px) !important;
-					.userPhoto {
-						img {
-							// width: auto;
-						}
-					}
-					.topProfileInfo {
-						.userInfo {
-							.userName,
-							.timeStamp {
-								span {
-									font-size: 14px !important;
+	.App{
+		.pageWrapper{
+			.LikesTopProfile {
+				.PagesWrapper {
+					.pageGallery {
+						justify-content: center;
+						.item {
+							width: clamp(75px, 85vw, 280px) !important;
+							.userPhoto {
+								img {
+									// width: auto;
+								}
+							}
+							.topProfileInfo {
+								.userInfo {
+									.userName,
+									.timeStamp {
+										span {
+											font-size: 14px !important;
+										}
+									}
+								}
+								.topProfileMark {
+									svg {
+										width: 20px;
+										height: 20px;
+									}
 								}
 							}
 						}
-						.topProfileMark {
-							svg {
-								width: 20px;
-								height: 20px;
+					}
+				}
+			}
+
+		}
+	}
+	
+}
+
+@media screen and (max-width: 211px) {
+	.App{
+		.pageWrapper{
+			.LikesTopProfile {
+				.PagesWrapper {
+					.pageGallery {
+						.item {
+							.userPhoto {
+								img {
+									width: auto;
+								}
 							}
 						}
 					}
 				}
 			}
-		}
-	}
-}
 
-@media screen and (max-width: 211px) {
-	.LikesTopProfile {
-		.PagesWrapper {
-			.pageGallery {
-				.item {
-					.userPhoto {
-						img {
-							width: auto;
-						}
-					}
-				}
-			}
 		}
 	}
+	
 }
