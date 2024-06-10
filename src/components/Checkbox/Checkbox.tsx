@@ -9,7 +9,6 @@ const Checkbox = () => {
 
 	const toggleCheckbox = () => {
 		setIsChecked(!isChecked);
-		console.log(isChecked);
 	};
 
 	return (

@@ -28,7 +28,6 @@ const NewChat = () => {
 			if (item.id === +id) {
 				setChatData(item);
 			}
-			// console.log(item.id, +id);
 		});
 
 		checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);

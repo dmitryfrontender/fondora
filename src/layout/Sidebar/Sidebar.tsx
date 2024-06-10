@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import './Sidebar.scss';
 // import userAvatar from '../../assets/avatar/user-avatar.png'
 import userAvatar from '../../assets/avatar/user-avatar.png';
@@ -23,7 +23,7 @@ const Dashboard = () => {
 	const isNewMessage = useSelector((state: any) => state.mainState.newMessage);
 	const chatId = useSelector((state: any) => state.mainState.chatId);
 	const newChatId = useSelector((state: any) => state.mainState.newChatId);
-	const [mobileScreen, setMobileScreen] = useState(false);
+	// const [mobileScreen, setMobileScreen] = useState(false);
 	const mobileDimension = useSelector(mobileScreenEnable);
 
 	// const [newMessageState, setNewMessageState] = useState(false);
@@ -37,10 +37,8 @@ const Dashboard = () => {
 	// };
 
 	const checkNewMessage = useMemo(() => {
-		// return console.log(valera());
 		// messagesData
 		return messagesData.some((item) => item.newMessages);
-		// console.log(item.newMessages);
 		// return item.newMessages;
 
 		// if (item.newMessages) {
@@ -74,7 +72,6 @@ const Dashboard = () => {
 		}
 	};
 
-	console.log(mobileScreen);
 	
 
 	const checkMobileScreen = useMemo(() => {
@@ -97,9 +94,8 @@ const Dashboard = () => {
 			// setNewMessageState(false);
 		}
 
-		checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
-		// console.log(checkMobileScreen, '2');
-		// console.log(mobileScreen, '3');
+		// checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
+	
 	}, [likeState, messageState, notificationState, settingState, isNewMessage, dispatch, checkNewMessage, checkMobileScreen]);
 
 	return (

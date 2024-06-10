@@ -40,7 +40,6 @@ const SingleRangeSlider = ({ min, max, defaultValue, topValue, textSlider }: Sin
 						defaultValue={defaultValue}
 						onChange={(e) => {
 							setValue(e.target.value);
-							console.log(e);
 						}}
 					/>
 					<div className='range__background'></div>

@@ -18,7 +18,7 @@
 					z-index: 10;
 
 					.userInfo {
-						height: -webkit-fill-available;
+						height: auto;
 						margin-top: 140px;
 
 						.mobileBg {
@@ -39,7 +39,7 @@
 							}
 						}
 					}
-					.extraWrapper {
+                    .extraWrapper {
 						background-color: #060606;
 						position: relative;
 						// padding: 30px;
@@ -58,6 +58,7 @@
 					.protect {
 						display: none;
 					}
+					
 				}
 			}
 		}
@@ -73,7 +74,7 @@
 					//   margin: 0 auto;
 					.extraWrapper {
 						padding: 30px 15px 120px;
-						position: absolute;
+						// position: absolute;
 						max-width: -webkit-fill-available;
 						// top: 55vh;
 					}

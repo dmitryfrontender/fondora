@@ -10,7 +10,6 @@ const VideoChatModal = () => {
 	const userName = useSelector((state: any) => state.VideoChatState.userName);
 	const userAvatar = useSelector((state: any) => state.VideoChatState.userAvatar);
 
-	console.log(userName, userAvatar);
 
 	const dispatch = useDispatch();
 	const ref = useRef<HTMLInputElement>(null);
