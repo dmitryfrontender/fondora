@@ -21,17 +21,6 @@
 							}
 						}
 					}
-					.mediaBlock {
-						// justify-content: flex-start;
-						.mediaItem {
-							max-width: 35vw;
-							height: auto;
-							// min-height: 165px;
-							img {
-								max-width: 35vw;
-							}
-						}
-					}
 				}
 			}
 		}
@@ -57,11 +46,7 @@
 						max-width: clamp(250px, 80vw, 800px);
 						padding-bottom: 20px;
 						.mediaItem {
-							padding-top: 48vw;
-							img {
-								width: clamp(160px, 38vw, 240px) !important;
-								object-fit: scale-down;
-							}
+							width: 48%;
 						}
 					}
 				}

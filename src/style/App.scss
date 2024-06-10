@@ -106,8 +106,7 @@ a:-webkit-any-link {
     flex-direction: column;
 }
 .pageItems {
-    width: clamp(300px, 50vw, 60vw);
-
+    width: clamp(300px, 50vw, 600px);
 }
 
 
