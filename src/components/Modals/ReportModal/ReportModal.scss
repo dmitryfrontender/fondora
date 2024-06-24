@@ -1,0 +1,162 @@
+.ReportModal{
+    .modalWrapper{
+        margin: 0 2vw;
+        max-height: 90vh;
+        overflow: scroll;
+		.topBlock {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 20px 0;
+            width: inherit;
+			.backBtn {
+				cursor: pointer;
+			}
+
+			.cancelBtn {
+				cursor: pointer;
+				span {
+					color: #a2a2a2;
+					text-align: center;
+					font-family: var(--font-family-urbanist);
+					font-size: clamp(12px, 2vw, 14px);
+					font-style: normal;
+					font-weight: 500;
+					letter-spacing: 0.28px;
+				}
+			}
+		}
+		.progressBar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+            width: inherit;
+			gap: 2px;
+			.item {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				width: 50%;
+				padding-bottom: 15px;
+				border-bottom: 2px solid transparent;
+				transition: all ease 0.3s;
+				cursor: pointer;
+				span {
+					color: #a2a2a2;
+					font-family: var(--font-family-urbanist);
+					font-size: clamp(9px, 4vw, 14px);
+					transition: all ease 0.3s;
+					font-style: normal;
+					font-weight: 600;
+					line-height: normal;
+				}
+				.border {
+					width: 100%;
+					height: 5px;
+					background-color: #a2a2a2;
+					margin-top: 5px;
+					transition: all ease 0.3s;
+					margin-top: 10px;
+				}
+				.border-left {
+					border-radius: 2px 0px 0px 2px;
+				}
+				.border-right {
+					border-radius: 0px 2px 2px 0px;
+				}
+				.border-active {
+					background-color: var(--main-red);
+				}
+			}
+		}
+		.formComplain {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+            width: inherit;
+			gap: 10px;
+			.item {
+				border-radius: 20px;
+				border: 1px solid #54484d;
+				padding: 20px;
+				text-align: start;
+				width: -webkit-fill-available;
+				transition: all ease 0.3s;
+				cursor: pointer;
+				background: linear-gradient(146deg, #131417 0%, #131417 100%);
+				span {
+					color: #a2a2a2;
+					font-family: var(--font-family-urbanist);
+					font-size: 14px;
+					font-style: normal;
+					font-weight: 500;
+					line-height: 150%; /* 21px */
+				}
+			}
+			.item:hover {
+				border: 1px solid var(--main-red);
+				transition: all ease 0.3s;
+			}
+		}
+		.hrElement {
+			width: -webkit-fill-available;
+			background-color: #3c3c3c;
+			margin: 20px 0;
+			height: 1px;
+		}
+		.moreInfo {
+			border-radius: 20px;
+			background: #232323;
+			display: flex;
+			padding: 15px;
+			align-items: flex-start;
+			justify-content: flex-start;
+			.image {
+				display: flex;
+				align-items: flex-start;
+				gap: 1px;
+				position: relative;
+				width: 50px;
+				height: 50px;
+
+				.pin {
+					width: 4px;
+					height: 4px;
+					background-color: white;
+					border-radius: 50%;
+					position: relative;
+					display: inline-block;
+					top: 15%;
+					right: 0;
+				}
+			}
+			span {
+				color: #a2a2a2;
+				font-family: var(--font-family-urbanist);
+				font-size: 12px;
+				font-style: normal;
+				font-weight: 500;
+				text-align: start;
+				line-height: 150%; /* 18px */
+			}
+		}
+		.note {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 30px 0;
+			gap: 10px;
+			img {
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+			}
+		}
+		.defaultBtn {
+			margin-bottom: 50px;
+		}
+
+    }
+}

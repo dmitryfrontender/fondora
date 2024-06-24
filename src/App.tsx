@@ -20,6 +20,7 @@ import ShareProfile from './components/Modals/ShareProfile/ShareProfile';
 import NewLike from './components/Modals/NewLike/NewLike';
 import VerifyProfile from './components/Modals/VerifyProfile/VerifyProfile';
 import GoalModal from './components/Modals/GoalModal/GoalModal';
+import ReportModal from './components/Modals/ReportModal/ReportModal';
 
 import { setMobileScreen } from './store/rootSlice';
 import { useDispatch } from 'react-redux';
@@ -41,6 +42,7 @@ function App() {
 	const newLikeModal = useSelector((state: any) => state.NewLikeState.newLikeModal);
 	const verifyProfileModal = useSelector((state: any) => state.VerifyProfileState.verifyProfileModal);
 	const goalModal = useSelector((state: any) => state.goalPageState.goalPageModal);
+	const reportModal = useSelector((state: any) => state.ProtectState.reportModal);
 	// const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
 
 	// const pageWrapper = document.querySelector('.pageWrapper')
@@ -84,6 +86,8 @@ function App() {
 			{newLikeModal && <NewLike />}
 			{verifyProfileModal && <VerifyProfile />}
 			{goalModal && <GoalModal />}
+			{reportModal && <ReportModal />}
+
 		</div>
 	);
 }
