@@ -17,7 +17,7 @@ import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 const GamePad = () => {
 	const [profileVisibility, setProfileVisibility] = useState(false); // logic for setProfileVisibility
 
-	const [matchBlockVisibility, setMatchBlockVisibility] = useState(false);
+	const [matchBlockVisibility, setMatchBlockVisibility] = useState(true);
 
 	const handleProfileVisibility = useCallback((data: boolean) => {
 		setProfileVisibility(data);
