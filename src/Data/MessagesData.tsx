@@ -26,15 +26,16 @@ export const messagesData: IMessages[] = [
 		isLike: false,
 		newMessages: false,
 		messages: [
-			{
-				id: 1,
-				text: 'Привет!',
-				time: '10:00',
-				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
-				unRead: true,
-				owner: true,
-				reaction: ''
-			}
+			// {
+			// 	id: 1,
+			// 	text: 'Привет!',
+			// 	time: '10:00',
+			// 	daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
+			// 	unRead: false,
+			// 	owner: true,
+			// 	reaction: ''
+			// }
+		
 		]
 	},
 	{

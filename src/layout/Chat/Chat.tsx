@@ -22,6 +22,7 @@ import Typing from '../../components/TypingElement/Typing';
 import { setRerender } from '../../store/rootSlice';
 import MessageSmile from '../../components/MessageSmile/MessageSmile';
 import { setMessageSmile } from '../../store/rootSlice'; // {setMessageSmile}
+import EmptyChat from '../../components/EmptyChat/EmptyChat';
 
 const Chat = () => {
 	const [chatData, setChatData] = useState({} as IMessages);
@@ -33,6 +34,7 @@ const Chat = () => {
 	const [forceUpdate, setForceUpdate] = useState(false);
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
+	const [chatLength, setChatLength] = useState<boolean | undefined>(false);
 
 	const location = useLocation();
 
@@ -65,6 +67,7 @@ const Chat = () => {
 	};
 
 	useEffect(() => {
+		
 		if (pathLocation === '') {
 			setPathLocation(location.pathname);
 		} else if (pathLocation !== location.pathname) {
@@ -79,12 +82,27 @@ const Chat = () => {
 			}
 		});
 
+		// if(chatData.messages.length !== undefined) {
+		// 	// setChatLength(!chatData.messages.length ? true : false);
+		// 	console.log('1');
+			
+			
+
+		// }
+		if (chatData.messages) {
+			setChatLength(chatData.messages.length ? true : false);
+		}
+		// console.log(chatData.messages);
+		
+		
+
+
 		checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
 
 		return () => {
 			dispatch(setReportPage(false));
 		};
-	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate]);
+	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate, chatData.messages]);
 
 	return (
 		<>
@@ -146,14 +164,20 @@ const Chat = () => {
 										</div>
 									</div>
 									<div className='chat'>
-										<div className='wrapper'>
+										<div className='wrapper' >
 											{typingState && <Typing key={chatData.id} userId={chatData.id} userName={chatData.userName} userAvatar={chatData.image} />}
-
-											<div className='messages'>
-												{Object.keys(chatData).length > 0
+											{chatLength ? 
+												<div className='messages'>
+												{
+													// chatLength
+												Object.keys(chatData).length > 0
+												// chatData.messages.length > 0
+												// chatData.messages.length
 													? chatData.messages.map((item, index) => (
+														// console.log(chatData.messages.length),
+														
 															<>
-																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={item.id} onClick={(event) => handleSmileReaction(item.id)}>
+																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={(event) => handleSmileReaction(item.id)}>
 																	{selectedMessage === item.id && chatSmile && (
 																		<div className='smileBlock'>
 																			<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
@@ -176,8 +200,15 @@ const Chat = () => {
 																</div>
 															</>
 													  ))
-													: null}
-											</div>
+													: 
+													<>
+														null
+													</>}
+												</div>
+												: 
+												<EmptyChat />
+											}
+										
 										</div>
 									</div>
 

@@ -24,5 +24,7 @@ export interface IMessages {
 			storagePhotoArr?: string[];
 			reaction: string;
 		}
-	];
+		
+	] | [];
+
 }
