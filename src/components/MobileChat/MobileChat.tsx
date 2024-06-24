@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './MobileChat.scss';
 import { mobileChatState } from '../../store/rootSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -111,7 +111,7 @@ const MobileChat = () => {
 										</div>
 
 									</div>
-									
+
 								</div>
 								<div className='chatArea'>
 									<div className='background'>{/* <img src={chatBg} alt="bg" /> */}</div>

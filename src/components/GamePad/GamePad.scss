@@ -1,8 +1,9 @@
 .GamePad {
 	--side-padding: 20px;
+	--top-padding: 20px;
 	--right-margin: 29vw;
 	--left-margin: 39vw;
-	--bottom-padding: 73px;
+	--bottom-padding: 83px;
 
 	/* gradient color variable */
 	--g: #0000 98%, #0008;
@@ -20,7 +21,7 @@
 	width: calc(100% - (var(--side-padding) * 2));
 	width: 600px;
 	height: calc(100% - var(--bottom-padding));
-	padding: 0 var(--side-padding) var(--bottom-padding);
+	padding: var(--top-padding) var(--side-padding) var(--bottom-padding);
 	position: relative;
 	margin: 0 var(--right-margin) 0 var(--left-margin);
 
@@ -124,7 +125,7 @@
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		bottom: 12px;
+		bottom: 32px;
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 3;
@@ -385,11 +386,11 @@
 
 	.ProfileComponent {
 		max-width: 600px;
-		max-height: 935px;
+		max-height: 100%;
 	}
 
 	.ProfileComponentInfo {
-		border-radius: 30px 30px 0 0;
+		border-radius: 30px;
 		margin-top: -200px;
 		position: relative;
 	}

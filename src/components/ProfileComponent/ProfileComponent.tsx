@@ -7,7 +7,14 @@ import companionAvatar from '../../assets/avatar/companionAvatar.png';
 
 import { sliderProfiles } from '../../Data/SliderProfiles';
 
+import { toggleToReport, toggleToBlockUser, protectModalState, reportUserAvatar, reportUserName } from '../../store/ProtectSlice';
+
+import { useDispatch } from 'react-redux';
+import { shareProfileState } from '../../store/ShareProfileSlice';
+
 const ProfileComponent = (props: any) => {
+	const dispatch = useDispatch();
+
 	const activeUser = sliderProfiles[0];
 	const [inputValue, setInputValue] = useState('');
 
@@ -168,7 +175,12 @@ const ProfileComponent = (props: any) => {
 						<TextAreaAutosize placeholder='Напишите сообщение...' value={inputValue} minRows={1} maxRows={4} onChange={(e) => setInputValue(e.target.value)} />
 					</div>
 					<div className='ProfileComponentButtons'>
-						<span className='ProfileComponentButtonsBlock'>
+						<span
+							className='ProfileComponentButtonsBlock'
+							onClick={() => {
+								dispatch(shareProfileState(true));
+							}}
+						>
 							<span className='ProfileComponentButtonsIcon'>
 								<SVGIcon name='shareProfile' size={20} />
 							</span>
@@ -177,7 +189,15 @@ const ProfileComponent = (props: any) => {
 								<span className='ProfileComponentButtonsSubTitle'>Узнай, что думают друзья.</span>
 							</div>
 						</span>
-						<span className='ProfileComponentButtonsBlock'>
+						<span
+							className='ProfileComponentButtonsBlock'
+							onClick={() => {
+								dispatch(protectModalState(true));
+								dispatch(reportUserAvatar(companionAvatar));
+								dispatch(reportUserName(activeUser.userName));
+								dispatch(toggleToBlockUser());
+							}}
+						>
 							<span className='ProfileComponentButtonsIcon'>
 								<SVGIcon name='blockProfile' size={20} />
 							</span>
@@ -186,7 +206,15 @@ const ProfileComponent = (props: any) => {
 								<span className='ProfileComponentButtonsSubTitle'>Вы больше не будете видеть друг друга.</span>
 							</div>
 						</span>
-						<span className='ProfileComponentButtonsBlock'>
+						<span
+							className='ProfileComponentButtonsBlock'
+							onClick={() => {
+								dispatch(protectModalState(true));
+								dispatch(reportUserAvatar(companionAvatar));
+								dispatch(reportUserName(activeUser.userName));
+								dispatch(toggleToReport());
+							}}
+						>
 							<span className='ProfileComponentButtonsIcon'>
 								<SVGIcon name='reportProfile' size={20} />
 							</span>
