@@ -112,10 +112,17 @@ const Chat = () => {
 						{!reportComponent ? (
 							<div className='chatArea'>
 								<div className='chatBg'>
-									<img src={chatBg} alt='bg' />
+									{
+										chatLength ? 
+										<img src={chatBg} alt='bg' />
+										:
+										null
+									}
 								</div>
 								<div className='chatItems'>
-									<div className='topBlock'>
+									{
+										chatLength ? 
+										<div className='topBlock'>
 										<div className='companionAvatar'>
 											<img src={chatData.image} alt='avatar' />
 											{chatData.userOnLine ? <div className='onLinePin'></div> : null}
@@ -162,7 +169,59 @@ const Chat = () => {
 												</button>
 											</Link>
 										</div>
-									</div>
+										</div>
+										:
+										null
+
+									}
+									{/* <div className='topBlock'>
+										<div className='companionAvatar'>
+											<img src={chatData.image} alt='avatar' />
+											{chatData.userOnLine ? <div className='onLinePin'></div> : null}
+										</div>
+										<div className='companionDescription'>
+											<div className='avatars'>
+												<div className='avatar'>
+													<img src={userAvatar} alt='avatar' />
+												</div>
+												<div className='avatar rightAvatar'>
+													<img src={chatData.image} alt='avatar' />
+												</div>
+											</div>
+											<div className='info'>
+												<span>Вы и {chatData.userName} образовали пару</span>
+											</div>
+											<div className='date'>
+												<SVGIcon name='calendarIcon' size={14} />
+												<span>13.11.2023</span>
+											</div>
+										</div>
+										<div className='buttonsBlock'>
+											<button
+												onClick={() => {
+													dispatch(setVideoChatModal(true));
+													dispatch(setUserName(chatData.userName));
+													dispatch(setUserAvatar(chatData.image));
+												}}
+											>
+												<SVGIcon name='videoCallIcon' size={20} />
+											</button>
+											<button
+												onClick={() => {
+													dispatch(protectModalState(true));
+													dispatch(reportUserAvatar(chatData.image));
+													dispatch(reportUserName(chatData.userName));
+												}}
+											>
+												<SVGIcon name='protectIcon' size={20} stroke={'#fff'} />
+											</button>
+											<Link to={'/messages'}>
+												<button>
+													<SVGIcon name='roundCloseBtn' size={20} />
+												</button>
+											</Link>
+										</div>
+									</div> */}
 									<div className='chat'>
 										<div className='wrapper' >
 											{typingState && <Typing key={chatData.id} userId={chatData.id} userName={chatData.userName} userAvatar={chatData.image} />}

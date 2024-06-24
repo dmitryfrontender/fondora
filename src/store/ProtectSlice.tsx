@@ -5,6 +5,7 @@ export const protectSlice = createSlice({
 	initialState: {
 		protectModal: false,
 		reportComponent: true,
+		reportModal: false,
 		blockUserModal: false,
 		userAvatar: '',
 		userName: ''
@@ -23,6 +24,17 @@ export const protectSlice = createSlice({
 				state.userName = '';
 				state.userAvatar = '';
 			}
+		},
+		setReportModal: (state, action) => {
+			state.reportModal = action.payload;
+			
+			if (action.payload === false) {
+				state.userName = '';
+				state.userAvatar = '';
+
+
+			}
+			
 		},
 		toggleToReport: (state) => {
 			state.protectModal = false;
@@ -48,5 +60,5 @@ export const protectSlice = createSlice({
 	}
 });
 
-export const { protectModalState, setReportPage, reportUserAvatar, reportUserName, toggleToReport, blockUserModalState, toggleToBlockUser } = protectSlice.actions;
+export const { protectModalState, setReportPage, reportUserAvatar, reportUserName, toggleToReport, blockUserModalState, toggleToBlockUser, setReportModal } = protectSlice.actions;
 export default protectSlice.reducer;

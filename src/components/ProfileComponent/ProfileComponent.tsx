@@ -7,7 +7,7 @@ import companionAvatar from '../../assets/avatar/companionAvatar.png';
 
 import { sliderProfiles } from '../../Data/SliderProfiles';
 
-import { toggleToReport, toggleToBlockUser, protectModalState, reportUserAvatar, reportUserName } from '../../store/ProtectSlice';
+import { toggleToReport, toggleToBlockUser, protectModalState, reportUserAvatar, reportUserName, setReportModal } from '../../store/ProtectSlice';
 
 import { useDispatch } from 'react-redux';
 import { shareProfileState } from '../../store/ShareProfileSlice';
@@ -209,13 +209,28 @@ const ProfileComponent = (props: any) => {
 						<span
 							className='ProfileComponentButtonsBlock'
 							onClick={() => {
-								dispatch(protectModalState(true));
-								dispatch(reportUserAvatar(companionAvatar));
-								dispatch(reportUserName(activeUser.userName));
-								dispatch(toggleToReport());
+								console.log('click');
+								
+								// dispatch(protectModalState(true));
+								// dispatch(reportUserAvatar(companionAvatar));
+								// dispatch(reportUserName(activeUser.userName));
+								// dispatch(toggleToReport());
+								dispatch(setReportModal(true));
+									dispatch(reportUserAvatar(companionAvatar));
+									dispatch(reportUserName(activeUser.userName));
 							}}
 						>
-							<span className='ProfileComponentButtonsIcon'>
+							<span 
+								className='ProfileComponentButtonsIcon'
+								// onClick={() => {
+								// 	console.log('click');
+									
+								// 	dispatch(protectModalState(true));
+								// 	dispatch(reportUserAvatar(companionAvatar));
+								// 	dispatch(reportUserName(activeUser.userName));
+									
+								// }}
+							>
 								<SVGIcon name='reportProfile' size={20} />
 							</span>
 							<div className='ProfileComponentButtonsText'>
