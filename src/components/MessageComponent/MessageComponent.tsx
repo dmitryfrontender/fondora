@@ -14,6 +14,11 @@ interface IProps {
 // type CombinedProps = {item: IMessages} & IProps
 
 const MessageComponent = ({ item, typingState, typingChatId }: IProps) => {
+
+
+
+	// console.log(item);
+	
 	const [mobileScreen, setMobileScreen] = useState(false);
 	const mobileDimension = useSelector(mobileScreenEnable);
 
@@ -25,6 +30,11 @@ const MessageComponent = ({ item, typingState, typingChatId }: IProps) => {
 			chat.id === id ? chat.classList.add('activeChat') : chat.classList.remove('activeChat');
 		});
 	};
+
+	const insertText = (messages: IMessages["messages"]) => {
+		return messages.length ? item.messages[item.messages.length - 1].text : '';
+		
+	}
 
 	const linkToChat = (chatId: any) => {
 		if (mobileScreen) {
@@ -70,7 +80,7 @@ const MessageComponent = ({ item, typingState, typingChatId }: IProps) => {
 						</div>
 						<div className='message'>
 							{item.userOnLine ? (
-								<span>{typingState && typingChatId === item.id ? <>Пишет...</> : item.messages[item.messages.length - 1].text}</span>
+								<span>{typingState && typingChatId === item.id ? <>Пишет...</> : insertText(item.messages)}</span>
 							) : (
 								<span className='lastUserActivity'>Был(а) недавно, создай пару прямо сейчас!</span>
 							)}
