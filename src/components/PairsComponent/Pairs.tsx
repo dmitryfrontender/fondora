@@ -57,13 +57,13 @@ const Pairs = () => {
 					</div>
 					{pairData.map((item: IPairs) => {
 						return (
-							<Link to={`/pairs/newChat/${item.id}`} key={item.id}>
-								<div className='pairElement' key={item.id} onClick={() => linkToNewChat(item.id)}>
+							<Link className='pairElement' to={`/pairs/newChat/${item.id}`} key={item.id} onClick={() => linkToNewChat(item.id)}>
+								<div className="userPhoto">
 									<img src={item.image} alt='pair' />
-									<div className='pairName'>
-										<span>{item.userName}</span>
-										{item.verification ? <SVGIcon name='verificationProfile' fill='green' size={15} /> : null}
-									</div>
+								</div>
+								<div className='pairName'>
+									<span>{item.userName}</span>
+									{item.verification ? <SVGIcon name='verificationProfile' fill='green' size={15} /> : null}
 								</div>
 							</Link>
 						);

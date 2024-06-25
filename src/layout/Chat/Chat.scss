@@ -2,8 +2,9 @@
 	background: rgb(18, 18, 18);
 	overflow: hidden;
 	position: relative;
-	padding-left: clamp(200px, 30vw, 356px);
-	// padding-left: clamp(200px, 32vw, 356px);
+	// padding-left: clamp(200px, 30vw, 356px);
+	padding-left: clamp(317px, 30vw, 320px);
+
 	.chatWrapper {
 		display: grid;
 		grid-template-columns: 2fr 1fr;

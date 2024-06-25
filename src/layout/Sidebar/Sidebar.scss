@@ -1,6 +1,7 @@
 .Sidebar {
 	// max-width: 356px;
-	width: clamp(200px, 32vw, 356px);
+	// width: clamp(200px, 32vw, 356px);
+	width: clamp(200px, 32vw, 320px);
 	height: 100vh;
 	position: relative;
 	z-index: 5;
@@ -69,6 +70,14 @@
 			img {
 				display: inline-block;
 				padding-right: 10px;
+				display: inline-block;
+				padding-right: 10px;
+				// width: 7vw;
+				// height: 7vw;
+				width: clamp(50px, 6vw, 100px);
+				height: clamp(50px, 6vw, 100px);
+				border-radius: 50%;
+				object-fit: fill;
 			}
 		}
 		.userInfo {

@@ -26,7 +26,6 @@
 						display: block;
 						width: 35px;
 						height: 35px;
-						height: auto;
 						border-radius: 50%;
 						position: relative;
 						z-index: 1;
@@ -97,6 +96,7 @@
 							img {
 								width: clamp(80px, 10vw, 130px);
 								height: clamp(80px, 10vw, 130px);
+								object-fit: cover;
 								// width: 130px;
 								// height: 130px;
 							}
