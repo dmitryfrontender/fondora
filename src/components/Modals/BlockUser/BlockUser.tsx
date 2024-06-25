@@ -44,7 +44,7 @@ const BlockUser = () => {
 								dispatch(blockUserModalState(false));
 							}}
 						>
-							<DefaultBtn text='Нет, назад в профиль' arrow={false} background='transparent' />
+							<DefaultBtn text='Нет, назад в профиль' arrowLeft={true} arrow={false} background='transparent' />
 						</div>
 						<div className='btn'>
 							<DefaultBtn text='Да, заблокировать' arrow={false} background='red' />

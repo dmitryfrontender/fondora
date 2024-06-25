@@ -5,11 +5,12 @@ import './DefaultBtn.scss';
 interface buttonProps {
 	background: string;
 	arrow: boolean;
+	arrowLeft?: boolean;
 	text: string;
 	// children?: React.ReactNode
 }
 
-const DefaultBtn = ({ background, arrow, text }: buttonProps) => {
+const DefaultBtn = ({ background, arrow, arrowLeft, text }: buttonProps) => {
 	const buttonBg = (background: string) => {
 		switch (background) {
 			case 'red':
@@ -42,6 +43,7 @@ const DefaultBtn = ({ background, arrow, text }: buttonProps) => {
 
 	return (
 		<button className='defaultBtn' style={buttonBg(background)}>
+			{arrowLeft ? <SVGIcon name='pointerIcon' size={20} /> : null}
 			<span>{text}</span>
 			{arrow ? <SVGIcon name='cursorRight' size={20} /> : null}
 		</button>

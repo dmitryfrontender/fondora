@@ -394,4 +394,11 @@
 		margin-top: -200px;
 		position: relative;
 	}
+
+	.mobileDotsMenu {
+		position: absolute;
+		left: 24px;
+		top: 32px;
+		z-index: 3;
+	}
 }
