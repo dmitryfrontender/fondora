@@ -9,15 +9,88 @@
 	font-weight: normal;
 	line-height: 1.42rem;
 	list-style: none outside none;
+	transition: all ease 0.3s;
+	border-radius: 30px;
 	margin: 0;
 	padding: 16px 0;
 	text-decoration: none;
 	text-indent: 0;
 	width: 100%;
 
+
+	&.redBtnBg {
+		background: linear-gradient(135.00deg, rgb(132, 9, 56) -0.15%, rgb(242, 34, 113) 99.85%),
+		  linear-gradient(135.00deg, rgb(24, 25, 32) 0%, rgb(15, 15, 19) 100%);
+		  @media screen and (min-width: 1023px) {
+			&:hover {
+				background: linear-gradient(135.00deg, rgb(112, 0, 46) -0.15%, rgb(222, 24, 103) 99.85%);
+			  }
+		  }
+		
+	  }
+	
+	  &.blueBtnBg {
+		background: linear-gradient(
+		  135.00deg,
+		  rgb(55, 63, 255) 0.009%,
+		  rgb(34, 202, 255) 100.009%
+		),
+		linear-gradient(135.00deg, rgb(132, 9, 56) -0.15%, rgb(242, 34, 113) 99.85%),
+		linear-gradient(135.00deg, rgb(24, 25, 32) 0%, rgb(15, 15, 19) 100%);
+		@media screen and (min-width: 1023px) {
+			&:hover {
+				background: linear-gradient(
+				  135.00deg,
+				  rgb(35, 43, 235) 0.009%,
+				  rgb(14, 182, 235) 100.009%
+				),
+				linear-gradient(135.00deg, rgb(112, 0, 46) -0.15%, rgb(222, 24, 103) 99.85%),
+				linear-gradient(135.00deg, rgb(4, 5, 12) 0%, rgb(0, 0, 6) 100%);
+			  }
+		}
+		
+	  }
+	
+	  &.roseAquaGradientBtnBg {
+		background: linear-gradient(
+		  135.85deg,
+		  rgb(255, 55, 223) 0.08%,
+		  rgb(34, 255, 242) 100.222%
+		),
+		linear-gradient(180.00deg, rgb(255, 55, 223), rgb(34, 255, 242) 100%),
+		linear-gradient(180.00deg, rgb(55, 63, 255), rgb(34, 202, 255) 100%),
+		linear-gradient(135.00deg, rgb(132, 9, 56) -0.144%, rgb(242, 34, 113) 99.856%),
+		linear-gradient(135.00deg, rgb(24, 25, 32), rgb(15, 15, 19) 100%);
+		@media screen and (min-width: 1023px) {
+			&:hover {
+				background: linear-gradient(
+				  135.85deg,
+				  rgb(235, 35, 203) 0.08%,
+				  rgb(14, 235, 222) 100.222%
+				),
+				linear-gradient(180.00deg, rgb(235, 35, 203), rgb(14, 235, 222) 100%),
+				linear-gradient(180.00deg, rgb(35, 43, 235), rgb(14, 182, 235) 100%),
+				linear-gradient(135.00deg, rgb(112, 0, 46) -0.144%, rgb(222, 24, 103) 99.856%),
+				linear-gradient(135.00deg, rgb(4, 5, 12), rgb(0, 0, 6) 100%);
+			  }
+		}
+		
+	  }
+	
+	  &.transparentBtnBg {
+		background: transparent;
+		border: 1px solid white;
+		@media screen and (min-width: 1023px) {
+			&:hover {
+				background: black;
+			}
+		}
+		
+	  }
+
 	span {
 		color: var(--white);
-		// font-family: Urbanist;
+		font-family: var(--font-family-urbanist);
 		font-size: 20px;
 		font-weight: 700;
 		line-height: 24px;

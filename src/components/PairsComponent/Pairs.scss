@@ -2,23 +2,53 @@
 	max-height: 70vh;
 	padding-bottom: 2vh;
 	overflow: auto;
+	padding-right: 10px;
+	margin-top: 10px;
 
 	.pairsWrapper {
-		display: flex;
-		flex-wrap: wrap;
+		// display: flex;
+		// flex-wrap: wrap;
+		// justify-content: flex-start;
+		// flex-direction: row;
+		// align-items: center;
+		// margin-top: 30px;
+		// // gap: 1vw;
+		// gap: 0.8vw;
+		// width: 100%;
+		// height: 100%;
+		// overflow: auto;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 		justify-content: flex-start;
-		flex-direction: row;
-		align-items: center;
-		margin-top: 30px;
-		// gap: 1vw;
+		padding-bottom: 50px;
+		// margin-top: 30px;
 		gap: 0.8vw;
 		width: 100%;
 		height: 100%;
 		overflow: auto;
-
 		.pairElement {
 			position: relative;
-
+			.userPhoto::before{
+				display: block;
+				content: "";
+				width: 100%;
+				padding-top: 145%;
+			}
+			.userPhoto{
+				position: relative;
+				overflow: hidden;
+				border-radius: 10px;
+				img{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					min-width: 100%;
+					min-height: 100%;
+				}
+			}
+			
+			
 			.pairName {
 				text-align: center;
 				padding: 15px 0 5px;

@@ -6,6 +6,7 @@ import { ITopProfile } from '../../../model/TopProfileModel';
 import { useDispatch } from 'react-redux';
 import { likesModalState } from '../../../store/LikesStateSlice';
 import { bodyOverflow } from '../../../utils/bodyOverflow';
+import DefaultBtn from '../../../components/DefaultBtn/DefaultBtn';
 
 const TopProfile = () => {
 	const dispatch = useDispatch();
@@ -79,6 +80,9 @@ const TopProfile = () => {
 								</div>
 							);
 						})}
+					</div>
+					<div className="callToActions">
+						<DefaultBtn background={'blue'} arrow={false} text={' Получите доступ к топ профилям'} />
 					</div>
 				</div>
 			</div>
