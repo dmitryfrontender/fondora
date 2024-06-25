@@ -1,0 +1,46 @@
+.DotsModal{
+    .modalWrapper{
+        margin: 0 2vw;
+        max-height: 90vh;
+        overflow: scroll;
+		.topBlock {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: column;
+			padding: 0 0 20px;
+            width: inherit;
+			gap: 20px;
+
+			.userAvatar {
+				width: 42px;
+				height: 42px;
+				border-radius: 50%;
+				overflow: hidden;
+				position: relative;
+
+				img {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 100%;
+					min-height: 100%;
+				}
+			}
+
+			.userName {
+				display: flex;
+				align-items: center;
+				span {
+					display: inline-block;
+					margin-right: 10px;
+				}
+			}
+		}
+    }
+
+	.ProfileComponentButtons {
+		width: 100%;
+	}
+}

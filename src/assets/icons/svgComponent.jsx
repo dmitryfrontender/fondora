@@ -473,6 +473,12 @@ const icons = {
 			<path fill='#920D3F' fillOpacity='1' fillRule='evenodd' d='M0 8.666V26c9.573 0 17.333-7.76 17.333-17.334A8.667 8.667 0 000 8.666z' clipRule='evenodd'></path>
 		</svg>
 	),
+	pointerIcon: (
+		<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M4.25 12.5829L19.25 12.5829" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			<path d="M10.2969 6.55848L4.24687 12.5825L10.2969 18.6075" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+		</svg>
+	),
 	subscribeIcon: (
 		<svg xmlns='http://www.w3.org/2000/svg' width='30' height='32' fill='none' viewBox='0 0 30 32'>
 			<defs>
@@ -1137,6 +1143,15 @@ const icons = {
 		</svg>
 	),
 
+	threeDots: (
+		<svg width="18" height="4" viewBox="0 0 18 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g opacity="0.5">
+			<circle cx="2" cy="2" r="2" fill="white"/>
+			<circle cx="9" cy="2" r="2" fill="white"/>
+			<circle cx="16" cy="2" r="2" fill="white"/>
+			</g>
+		</svg>
+	),
 	arrowRight: (
 		<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 14 14'>
 			<path fill='#FFF' fillOpacity='0' d='M0 0H14V14H0z' transform='rotate(-180 7 6.75)'></path>

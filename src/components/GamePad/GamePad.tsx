@@ -13,8 +13,12 @@ import SVGIcon from '../../assets/icons/svgComponent';
 import ProfileComponent from '../ProfileComponent/ProfileComponent';
 import MatchBlock from '../MatchBlock/MatchBlock';
 import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
+import { reportUserAge, reportUserAvatar, reportUserName, reportUserVerified, setDotsModal } from '../../store/ProtectSlice';
+import { useDispatch } from 'react-redux';
 
 const GamePad = () => {
+	const dispatch = useDispatch();
+
 	const [profileVisibility, setProfileVisibility] = useState(false); // logic for setProfileVisibility
 
 	const [matchBlockVisibility, setMatchBlockVisibility] = useState(true);
@@ -160,14 +164,28 @@ const GamePad = () => {
 									return (
 										<animated.div className={`GamePadBlockItem`} key={sliderProfile.id} {...bind(i)}>
 											{i === 0 && (
-												<PhotoSlider
-													images={sliderProfile.images}
-													cssClass={approved}
-													cssStyle={{
-														transform: i === 0 ? `rotate(${angle}deg)` : `translateX(-50%)`
-													}}
-													sliderIndex={i}
-												/>
+												<>
+													<div
+														className="mobileDotsMenu"
+														onClick={() => {
+															dispatch(setDotsModal(true));
+															dispatch(reportUserAvatar(sliderProfile.images[0].src));
+															dispatch(reportUserName(sliderProfile.userName));
+															dispatch(reportUserAge(sliderProfile.userAge));
+															dispatch(reportUserVerified(verified));
+														}}
+													>
+														<SVGIcon name='threeDots' />
+													</div>
+													<PhotoSlider
+														images={sliderProfile.images}
+														cssClass={approved}
+														cssStyle={{
+															transform: i === 0 ? `rotate(${angle}deg)` : `translateX(-50%)`
+														}}
+														sliderIndex={i}
+													/>
+												</>
 											)}
 
 											{i > 0 && <img src={sliderProfile.images[0].src} alt={sliderProfile.images[0].alt} />}
