@@ -18,8 +18,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: calc(100% - (var(--side-padding) * 2));
-	width: 600px;
+	width: calc(100% - var(--left-margin) - var(--right-margin));
+	min-width: 600px;
 	height: calc(100% - var(--bottom-padding));
 	padding: var(--top-padding) var(--side-padding) var(--bottom-padding);
 	position: relative;
@@ -56,35 +56,40 @@
 		position: absolute;
 	}
 
+	.keen-slider {
+		width: 100%;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.PhotoSlider {
+		overflow: hidden;
+		border-radius: 30px;
+		max-height: 100%;
+		height: 100%;
+
+		&Avatar {
+			height: 100%;
+		}
+
+		&.approved {
+			transform-origin: 0 100%;
+		}
+
+		&.declined {
+			transform-origin: 100% 100%;
+		}
+	}
+
 	&BlockItem {
 		height: 100%;
 		width: 100%;
 		position: absolute;
 		touch-action: none;
-
-		.keen-slider {
-			width: 100%;
-			height: 100%;
-
-			img {
-				width: 100%;
-				height: 100%;
-			}
-		}
-
-		.PhotoSlider {
-			overflow: hidden;
-			border-radius: 30px;
-			max-height: 100%;
-
-			&.approved {
-				transform-origin: 0 100%;
-			}
-
-			&.declined {
-				transform-origin: 100% 100%;
-			}
-		}
 
 		&:nth-child(2) {
 			top: -15px;
