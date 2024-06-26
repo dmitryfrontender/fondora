@@ -60,10 +60,9 @@ const MobileChat = () => {
 	const insertText = (messages: IMessages["messages"]) => {
 		return messages.length ? chatData.messages[chatData.messages.length - 1].text : '';
 	}
-
+	
 	useEffect(() => {
 		const filteredMessage = messagesData.filter((msg: IMessages) => msg.id.toString() === chatId);
-		// scrollToBottom()
 		setChatData(filteredMessage[0]);
 	}, [chatId, forceUpdate, chatData]);
 

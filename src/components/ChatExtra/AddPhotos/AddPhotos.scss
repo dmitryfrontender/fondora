@@ -7,16 +7,14 @@
 		margin: 10px 20px 0;
 
 		button {
-			// padding: 0;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			width: 30px;
+			height: 30px;
 			padding: 5px;
-			// top: 50%;
-			// right: 2%;
 			border-radius: 50%;
 			background: linear-gradient(135deg, rgb(27, 26, 27) -0.075%, rgb(185, 185, 185) 99.925%);
-			// transform: translateY(-55%);
 		}
 	}
 
