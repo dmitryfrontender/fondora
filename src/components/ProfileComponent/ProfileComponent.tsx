@@ -60,7 +60,7 @@ const ProfileComponent = (props: any) => {
 						</ul>
 					</div>
 					<div className='ProfileComponentDescriptionInfo'>
-						<p>Не люблю длинные переписки( лучше увидимся на нашем первом свидании. Пригласить можешь в заведение. Гулять п...</p>
+						<p>{ activeUser.userDescription }</p>
 					</div>
 					<div className='ProfileComponentSearching'>
 						<span className='ProfileComponentSearchingBlock'>
