@@ -141,7 +141,7 @@ const Chat = () => {
 											</div>
 											<div className='date'>
 												<SVGIcon name='calendarIcon' size={14} />
-												<span>13.11.2023</span>
+												<span>{chatData.dateMet}</span>
 											</div>
 										</div>
 										<div className='buttonsBlock'>
