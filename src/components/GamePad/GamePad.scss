@@ -218,6 +218,12 @@
 				align-items: center;
 				justify-content: center;
 
+				@media screen and (min-width: 1024px) {
+					&:hover {
+						background: linear-gradient(315deg, #3b3b3b 0%, #676767 100%);
+					}
+				}
+
 				&.item-big {
 					width: 58px;
 					height: 58px;
@@ -227,6 +233,12 @@
 				&.item-pink {
 					background: linear-gradient(315deg, #ea0564 0%, #ff4d7a 100%);
 					backdrop-filter: blur(5px);
+
+					@media screen and (min-width: 1024px) {
+						&:hover {
+							background: linear-gradient(315deg, #ec1c73 0%, #ff5e86 100%);
+						}
+					}
 				}
 
 				&.approved {
@@ -370,6 +382,12 @@
 		align-items: center;
 		border-radius: 50%;
 		background: rgba(255, 255, 255, 0.4);
+
+		@media screen and (min-width: 1024px) {
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.6);
+			}
+		}
 	}
 
 	&ApproveBlock {

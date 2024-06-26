@@ -57,6 +57,12 @@
 		align-items: center;
 		border-radius: 50%;
 		background: #eb0565;
+
+		@media screen and (min-width: 1024px) {
+			&:hover {
+				background: #ff5e86;
+			}
+		}
 	}
 
 	&MainInfo {
