@@ -1,9 +1,9 @@
 .GamePad {
 	--side-padding: 20px;
-	--top-padding: 20px;
+	--top-padding: 50px;
 	--right-margin: 29vw;
 	--left-margin: 39vw;
-	--bottom-padding: 83px;
+	--bottom-padding: 93px;
 
 	/* gradient color variable */
 	--g: #0000 98%, #0008;
@@ -19,8 +19,8 @@
 	align-items: center;
 	justify-content: center;
 	width: calc(100% - var(--left-margin) - var(--right-margin));
-	min-width: 600px;
-	height: calc(100% - var(--bottom-padding));
+	min-width: 35vh;
+	height: calc(100% - var(--bottom-padding) - var(--top-padding));
 	padding: var(--top-padding) var(--side-padding) var(--bottom-padding);
 	position: relative;
 	margin: 0 var(--right-margin) 0 var(--left-margin);
@@ -148,7 +148,7 @@
 			align-items: center;
 		}
 
-		button {
+		span {
 			color: #a2a2a2;
 			font-family: var(--font-family-urbanist);
 			font-size: 12px;
@@ -163,7 +163,6 @@
 			background: none;
 			border: none;
 			padding: 0;
-			cursor: pointer;
 			white-space: nowrap;
 		}
 	}
