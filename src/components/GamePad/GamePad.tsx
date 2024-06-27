@@ -287,40 +287,40 @@ const GamePad = () => {
 				<div className='GamePadTutorial'>
 					<ul>
 						<li>
-							<button>
+							<span>
 								<SVGIcon name='noBtn' width={21} size={19} />
 								<span className='text'>Неа</span>
-							</button>
+							</span>
 						</li>
 						<li>
-							<button>
+							<span>
 								<SVGIcon name='likeBtn' width={21} size={19} />
 								<span className='text'>Лайк</span>
-							</button>
+							</span>
 						</li>
 						<li>
-							<button>
+							<span>
 								<SVGIcon name='openProfile' width={21} size={19} />
 								<span className='text'>Открыть профиль</span>
-							</button>
+							</span>
 						</li>
 						<li>
-							<button>
+							<span>
 								<SVGIcon name='closeProfile' width={21} size={19} />
 								<span className='text'>Закрыть профиль</span>
-							</button>
+							</span>
 						</li>
 						<li>
-							<button>
+							<span>
 								<SVGIcon name='superLikeBtn' width={41} size={19} />
 								<span className='text'>Суперлайк</span>
-							</button>
+							</span>
 						</li>
 						<li>
-							<button>
+							<span>
 								<SVGIcon name='swipeBtn' width={61} size={19} />
 								<span className='text'>Свайп фото</span>
-							</button>
+							</span>
 						</li>
 					</ul>
 				</div>

@@ -1,5 +1,5 @@
 .FilterModal {
-	
+
 
 	width: 100vw;
 	height: 100vh;
@@ -85,7 +85,7 @@
 				}
 			}
 		}
-		@media screen and (min-width: 1023px) {
+		@media screen and (min-width: 1024px) {
 			.filterOption:hover{
 				// background: linear-gradient(135deg, rgb(32, 34, 39) 0%, rgb(35, 37, 43) 100%);
 				background: black;
@@ -93,7 +93,7 @@
 
 
 			}
-			
+
 		}
 		.maxPhotos {
 			.optionTitle {
@@ -136,12 +136,12 @@
 					text-align: center;
 					background: rgb(2, 2, 2);
 				}
-				@media screen and (min-width: 1023px) {
+				@media screen and (min-width: 1024px) {
 					.radioItem:hover{
 						// background: linear-gradient(135deg, rgb(32, 34, 39) 0%, rgb(35, 37, 43) 100%);
 						background: transparent;
 					}
-					
+
 				}
 				input[type='radio']:checked + .radioItem {
 					box-sizing: border-box;
@@ -188,12 +188,12 @@
 						text-align: center;
 					}
 				}
-				@media screen and (min-width: 1023px) {
+				@media screen and (min-width: 1024px) {
 					.item:hover{
 						background: transparent;
 						cursor: pointer;
 					}
-					
+
 				}
 			}
 		}
@@ -223,7 +223,7 @@
 				}
 			}
 
-			@media screen and (min-width: 1023px) {
+			@media screen and (min-width: 1024px) {
 				.bottomOption:hover{
 					// background: linear-gradient(135deg, rgb(32, 34, 39) 0%, rgb(35, 37, 43) 100%);
 					background: black;
