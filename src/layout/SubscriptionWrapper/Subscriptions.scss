@@ -55,6 +55,13 @@
 			padding: 10px;
 			cursor: pointer;
 			background: linear-gradient(135deg, rgb(132, 9, 56) -0.14%, rgb(242, 34, 113) 99.86%), linear-gradient(135deg, rgb(24, 25, 32) 0%, rgb(15, 15, 19) 100%);
+
+			@media screen and (min-width: 1024px) {
+				&:hover {
+					background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(92deg, #840938 -0.15%, #F22271 99.85%), linear-gradient(158deg, #181920 0%, #0F0F13 100%);
+				}
+			}
+
 			span {
 				color: var(--white);
 				font-family: var(--font-family-urbanist);
