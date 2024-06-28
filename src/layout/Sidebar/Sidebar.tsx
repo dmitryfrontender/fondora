@@ -41,19 +41,6 @@ const Dashboard = () => {
 		return messagesData.some((item) => item.newMessages);
 		// return item.newMessages;
 
-		// if (item.newMessages) {
-
-		// } else {
-		//   dispatch(NewMessageState("newMessage-false"));
-		//   setNewMessageState(false);
-		// }
-
-		// return item.newMessages;
-
-		// })
-		// return messagesArr.length > 0;
-
-		// valera()
 	}, []);
 
 	const checkPath = (path: string) => {
@@ -79,6 +66,9 @@ const Dashboard = () => {
 	}, [mobileDimension]);
 
 	useEffect(() => {
+
+
+		
 		const checkMessages = () => {
 			messagesData.length > 0 ? dispatch(MessageState('messages-true')) : dispatch(MessageState('messages-false'));
 		};

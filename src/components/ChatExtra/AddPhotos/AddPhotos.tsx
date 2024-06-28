@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { storagePhotos } from '../../../Data/StoragePhoto';
 // import DefaultBtn from "../../DefaultBtn/DefaultBtn";
 import './AddPhotos.scss';
@@ -15,12 +15,27 @@ interface IProps {
 
 const AddPhoto = ({ addPhoto }: IProps) => {
 	const [selectedPhotos, setSelectedPhotos] = useState<IPhoto[]>([]);
+	const [photoCounter, setPhotoCounter] = useState<number>(0)
 
-	const handlePhotoClick = (photo: IPhoto) => {
+	const counterRef = useRef<HTMLDivElement>(null)
+
+	const handlePhotoClick = (photo: IPhoto, element: any) => {
+
+		console.log(element);
+		
 		setSelectedPhotos((prevSelectedPhotos) => {
 			if (prevSelectedPhotos.includes(photo)) {
+				if (photoCounter !== 0) {
+					setPhotoCounter(photoCounter - 1)
+				}
 				return prevSelectedPhotos.filter((selectedPhoto) => selectedPhoto !== photo);
 			} else {
+				setPhotoCounter(photoCounter + 1)
+				// if (counterRef.current) {
+				// 	counterRef.current.textContent = `${photoCounter}`;
+				// }
+				// console.log(counterRef.current);
+				
 				return [...prevSelectedPhotos, photo];
 			}
 		});
@@ -36,6 +51,14 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 		border: `4px solid #DF3C5E`,
 		borderRadius: '15px'
 	};
+
+	console.log(photoCounter)
+
+	useEffect(() => {
+		if (counterRef.current) {
+			counterRef.current.textContent = `${photoCounter}`;
+		}
+	}, [photoCounter]);
 
 	const activeBtn = 'linear-gradient(135.00deg, rgb(132, 9, 56) -0.075%,rgb(242, 34, 113) 99.925%)';
 
@@ -57,9 +80,9 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 				{storagePhotos.map((item, index) => {
 					const isSelected = selectedPhotos.includes(item);
 					return (
-						<div className={`item ${isSelected ? 'activeItem' : ''}`} key={index} onClick={() => handlePhotoClick(item)} style={isSelected ? activeStyle : defaultStyle}>
+						<div className={`item ${isSelected ? 'activeItem' : ''}`} key={index} onClick={(event) => handlePhotoClick(item, event)} style={isSelected ? activeStyle : defaultStyle} ref={counterRef}>
 							<img src={item.src} alt={item.alt} />
-							<div className='addPhoto'></div>
+							<div className='addPhoto' ></div>
 						</div>
 					);
 				})}

@@ -29,89 +29,158 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 		if (forceRerender) forceRerender();
 	};
 
-	const resizeArea = (e: any) => {
-		if (e.target.value.length === 0) {
-			setAreaValue('');
-			setSendBtn(false);
-		} else if (e.target.value.length <= 1) {
-			setAreaValue(e.target.value.trim());
+	// const handleKeyPress = (event: any) => {
+	// 	if (
+	// 		// event.code === 'Enter'
+	// 		event.code === 'Enter' && !event.shiftKey
+	// 		) {
+	// 			event.preventDefault();
+	// 		setAreaValue('');
 
-			setSendBtn(false);
-			if (e.target.value !== '') {
-				setSendBtn(true);
-			}
-		} else if (e.target.value.length > 1) {
-			setAreaValue(e.target.value);
-			setSendBtn(true);
+	// 		setSendBtn(false);
+
+	// 		const date = new Date();
+	// 		const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+
+	// 		const newMessage = messagesData.filter((elem: IMessages) => {
+	// 			return elem.id === +chatId;
+	// 		});
+
+	// 		let messageId = 0;
+
+	// 		newMessage.forEach((elem: any) => {
+	// 			elem.messages.forEach((id: any) => {
+	// 				messageId = id.id;
+	// 			});
+
+	// 			elem.messages.push({
+	// 				id: messageId + 1,
+	// 				text: areaValue,
+	// 				time: timeSend,
+	// 				daySend: ['Tuesday'],
+	// 				unRead: false,
+	// 				owner: true,
+	// 				reaction: ''
+	// 			});
+
+	// 		});
+	// 		messageId = 0;
+
+	// 		refreshData();
+
+	// 		setTimeout(() => {
+	// 			dispatch(setTypingState(true));
+	// 		}, 1000);
+
+	// 		setTimeout(() => {
+	// 			const date = new Date();
+	// 			const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+
+	// 			newMessage.forEach((elem: any) => {
+	// 				elem.messages.forEach((id: any) => {
+	// 					messageId = id.id;
+	// 				});
+
+	// 				elem.messages.push({
+	// 					id: messageId + 1,
+	// 					text: `companion answer ${+messageId - 1}`,
+	// 					time: timeSend,
+	// 					daySend: ['Tuesday'],
+	// 					unRead: false,
+	// 					owner: false,
+	// 					reaction: ''
+	// 				});
+
+	// 			});
+	// 			messageId = 0;
+	// 			refreshData();
+	// 			dispatch(setTypingState(false));
+	// 		}, 3000);
+	// 	}
+	// };
+
+    const resizeArea = (e: any) => {
+
+        const value = e.target.value;
+
+		if (value.trim().length > 0 || value.length === 0) {
+			setAreaValue(value);
+
 		}
-	};
+		
+        setSendBtn(value.trim().length > 0);
+    };
 
-	const handleKeyPress = (event: any) => {
-		if (event.code === 'Enter') {
-			setAreaValue('');
+    const handleKeyPress = (event: any) => {
+        if (event.code === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            const trimmedText = areaValue.trim(); 
+            if (trimmedText) {
+                const date = new Date();
+                const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
 
-			setSendBtn(false);
+                const newMessage = messagesData.filter((elem: IMessages) => {
+                    return elem.id === +chatId;
+                });
 
-			const date = new Date();
-			const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+                let messageId = 0;
 
-			const newMessage = messagesData.filter((elem: IMessages) => {
-				return elem.id === +chatId;
-			});
+                newMessage.forEach((elem: any) => {
+                    elem.messages.forEach((id: any) => {
+                        messageId = id.id;
+                    });
 
-			let messageId = 0;
+                    elem.messages.push({
+                        id: messageId + 1,
+                        text: trimmedText, // Use trimmed text
+                        time: timeSend,
+                        daySend: ['Tuesday'],
+                        unRead: false,
+                        owner: true,
+                        reaction: ''
+                    });
+                });
 
-			newMessage.forEach((elem: any) => {
-				elem.messages.forEach((id: any) => {
-					messageId = id.id;
-				});
+                messageId = 0;
+                refreshData();
 
-				elem.messages.push({
-					id: messageId + 1,
-					text: areaValue,
-					time: timeSend,
-					daySend: ['Tuesday'],
-					unRead: false,
-					owner: true,
-					reaction: ''
-				});
+                setAreaValue('');
+                setSendBtn(false);
 
-			});
-			messageId = 0;
+				// setTimeout(() => {
+				// 	const ownerMessage = messagesData[messagesData.length -1]
+					
+				// }, 1000)
 
-			refreshData();
+                setTimeout(() => {
+                    dispatch(setTypingState(true));
+                }, 1000);
 
-			setTimeout(() => {
-				dispatch(setTypingState(true));
-			}, 1000);
+                setTimeout(() => {
+                    const date = new Date();
+                    const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
 
-			setTimeout(() => {
-				const date = new Date();
-				const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+                    newMessage.forEach((elem: any) => {
+                        elem.messages.forEach((id: any) => {
+                            messageId = id.id;
+                        });
 
-				newMessage.forEach((elem: any) => {
-					elem.messages.forEach((id: any) => {
-						messageId = id.id;
-					});
-
-					elem.messages.push({
-						id: messageId + 1,
-						text: `companion answer ${+messageId - 1}`,
-						time: timeSend,
-						daySend: ['Tuesday'],
-						unRead: false,
-						owner: false,
-						reaction: ''
-					});
-
-				});
-				messageId = 0;
-				refreshData();
-				dispatch(setTypingState(false));
-			}, 3000);
-		}
-	};
-
+                        elem.messages.push({
+                            id: messageId + 1,
+                            text: `companion answer ${+messageId - 1}`,
+                            time: timeSend,
+                            daySend: ['Tuesday'],
+                            unRead: false,
+                            owner: false,
+                            reaction: ''
+                        });
+                    });
+                    messageId = 0;
+                    refreshData();
+                    dispatch(setTypingState(false));
+                }, 3000);
+            }
+        }}
 	const handleSmile = (smile: string) => {
 		setAreaValue(areaValue + smile);
 	};
@@ -122,10 +191,6 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 			return elem.id === +chatId;
 		});
 		newMessage.forEach((elem: any) => {
-			// elem.messages.forEach((id: any) => {
-
-			//     messageId = id.id
-			// })
 
 			elem.messages.forEach((message: any) => {
 				if (!messageId || message.id > messageId) {

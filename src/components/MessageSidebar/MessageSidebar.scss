@@ -1,6 +1,6 @@
 .messageSidebar {
 	// margin: 40px 1vw;
-	margin: 40px 0 40px 1vw;
+	margin: 40px 2px 40px 0;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -8,12 +8,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		padding-left: 10px;
 
 		.backBtn {
 			cursor: pointer;
 		}
 		.textBtn {
-			margin: 0 1vw;
+			margin: 0 15px;
 			color: var(--white);
 			cursor: pointer;
 			font-family: var(--font-family-urbanist);
@@ -37,8 +38,9 @@
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		margin: 1vw 0 0 1vh;
+		// padding: 1vw 0 0 1vh;
 		width: -webkit-fill-available;
+		margin-top: 10px;
 		height: 80vh;
 		overflow: auto;
 		position: relative;
@@ -48,7 +50,7 @@
 			width: -webkit-fill-available;
 			position: absolute;
 			margin: 0;
-			top: 0;
+			top: 10px;
 			left: 0;
 
 			li {
@@ -56,7 +58,8 @@
 				align-items: center;
 				justify-content: flex-start;
 				// padding: 10px 0;
-				padding: 10px 1.2vw 10px 0;
+				padding: 10px 15px 10px 10px;
+				border-right: 5px solid transparent;
 				cursor: pointer;
 				position: relative;
 				.userAvatar {
@@ -79,7 +82,7 @@
 					}
 				}
 				.userMessage {
-					padding: 5px 15px;
+					padding: 5px 15px 5px 15px;
 					display: flex;
 					flex-direction: column;
 					width: -webkit-fill-available;
@@ -90,7 +93,16 @@
 						align-items: center;
 						gap: 10px;
 						.name {
+							max-width: 45%;
 							span {
+								color: #A2A2A2;
+								text-align: center;
+								font-family: var(--font-family-urbanist);
+								font-size: 14px;
+								font-style: normal;
+								font-weight: 600;
+								line-height: normal;
+								letter-spacing: 0.28px;
 							}
 						}
 						.likeLabel {
@@ -101,6 +113,7 @@
 								color: var(--black);
 								font-family: var(--font-family-urbanist);
 								font-size: 12px;
+								white-space: nowrap;
 								font-weight: 500;
 								line-height: 14px;
 								letter-spacing: 0%;
@@ -114,7 +127,13 @@
 					height: 8px;
 					border-radius: 50%;
 					background: var(--main-red);
+					flex-shrink: 0;
+					transform: translateX(5px);
 				}
+			}
+			.activeChat{
+				border-right: 5px solid #F22271;
+				background: #3F1927;
 			}
 		}
 	}

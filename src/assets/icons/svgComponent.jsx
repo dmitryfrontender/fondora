@@ -2098,7 +2098,16 @@ const icons = {
 				</clipPath>
 			</defs>
 		</svg>
-	)
+	),
+	readOwnerMessage: (
+		<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M2.03125 8.99473L4.52611 11.5L9.52611 6.5"  strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			<path d="M9.52734 10.1842L10.9696 11.5L15.9696 6.5"  strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+			{/* stroke="#43A1FC" */}
+		</svg>
+
+
+	),
 };
 
 const SVGIcon = ({ name, size = 24, width = size, ...rest }) => {

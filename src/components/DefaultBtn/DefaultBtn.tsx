@@ -54,6 +54,8 @@ const DefaultBtn = ({ background, arrow, arrowLeft, text }: buttonProps) => {
 			  return 'roseAquaGradientBtnBg';
 			case 'transparent':
 			  return 'transparentBtnBg';
+			case 'grey':
+				return 'greyBtnBg';
 			default:
 			  return '';
 		  }

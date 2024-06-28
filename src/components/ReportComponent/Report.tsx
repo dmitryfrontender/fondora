@@ -80,7 +80,7 @@ const Report = () => {
 					<img src={userAvatar} alt='avatar' />
 					<span>{userName} не узнает о твоей балобе</span>
 				</div>
-				<DefaultBtn text='Далее' background='red' arrow={true} />
+				<DefaultBtn text='Далее' background='grey' arrow={true} />
 			</div>
 		</div>
 	);

@@ -1,14 +1,13 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import chatBg from '../../assets/images/chatBg.png';
 import SVGIcon from '../../assets/icons/svgComponent';
 import { IMessages } from '../../model/MessagesModel';
-import { Link } from 'react-router-dom';
 import 'keen-slider/keen-slider.min.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setChatId } from '../../store/rootSlice';
 import './Chat.scss';
 import { messagesData } from '../../Data/MessagesData';
-import { useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import userAvatar from '../../assets/avatar/user-avatar.png';
 import EnterMessage from '../../components/EnterMessage/EnterMessage';
 import { mobileScreenEnable } from '../../store/selectors';
@@ -16,7 +15,6 @@ import { protectModalState, reportUserAvatar, reportUserName } from '../../store
 import ProfileComponent from '../../components/ProfileComponent/ProfileComponent';
 import { setVideoChatModal, setUserName, setUserAvatar } from '../../store/VideoChatSlice';
 import Report from '../../components/ReportComponent/Report';
-import { useLocation } from 'react-router-dom';
 import { setReportPage } from '../../store/ProtectSlice';
 import Typing from '../../components/TypingElement/Typing';
 import { setRerender } from '../../store/rootSlice';
@@ -36,14 +34,21 @@ const Chat = () => {
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
 	const [chatLength, setChatLength] = useState<boolean | undefined>(false);
 
+	const [scrollPosition, setScrollPosition] = useState(0);
+
 	const location = useLocation();
 
 	const dispatch = useDispatch();
 
 	let { id }: any = useParams();
 
+	const windowRef = useRef<HTMLDivElement>(null);
+
+	const chatRef = useRef<HTMLDivElement>(null);
+
 	const forceRerender = useCallback(() => {
 		setForceUpdate((prevForceUpdate) => !prevForceUpdate);
+		
 		dispatch(setRerender());
 	}, [dispatch]);
 
@@ -52,6 +57,7 @@ const Chat = () => {
 	}, [mobileDimension]);
 
 	const handleSmileReaction = (messageId: number) => {
+		
 		setSelectedMessage(messageId);
 
 		chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
@@ -66,7 +72,46 @@ const Chat = () => {
 		});
 	};
 
+
+	const handleScroll = (e: any) => {
+		const { scrollTop, scrollHeight, clientHeight } = e.target;
+		const position = Math.ceil((scrollTop / (scrollHeight - clientHeight)) * 100);
+		setScrollPosition(position);
+		
+	
+	};
+
+
+	const scrollToBottom = () => {
+
+		
+		const lastChild = chatRef.current?.lastChild as Element | null;
+		if (lastChild && lastChild.classList.contains('owner')) {
+			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+		} else if (lastChild && scrollPosition > -15) {
+			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+
+			
+		}
+	};
+
+
+
+
+	
+	
+
 	useEffect(() => {
+
+		
+			
+		const currentWindowRef = windowRef.current;
+		currentWindowRef?.addEventListener('scroll', handleScroll);
+
+		if(chatData.messages) {
+			scrollToBottom()
+		}
+		// 
 		
 		if (pathLocation === '') {
 			setPathLocation(location.pathname);
@@ -82,27 +127,24 @@ const Chat = () => {
 			}
 		});
 
-		// if(chatData.messages.length !== undefined) {
-		// 	// setChatLength(!chatData.messages.length ? true : false);
-		// 	console.log('1');
-			
-			
-
-		// }
 		if (chatData.messages) {
 			setChatLength(chatData.messages.length ? true : false);
 		}
-		// console.log(chatData.messages);
 		
-		
-
-
 		checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
 
 		return () => {
+			// windowRef.current?.removeEventListener('scroll', handleScroll);
+			currentWindowRef?.removeEventListener('scroll', handleScroll as EventListener);
 			dispatch(setReportPage(false));
 		};
-	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate, chatData.messages]);
+	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate, chatData.messages, typingState]);
+
+	useEffect(() => {
+		if (chatRef.current) {
+			chatRef.current.scrollTop = chatRef.current.scrollHeight;
+		}
+	}, [chatData.messages]);
 
 	return (
 		<>
@@ -223,46 +265,60 @@ const Chat = () => {
 										</div>
 									</div> */}
 									<div className='chat'>
-										<div className='wrapper' >
-											{typingState && <Typing key={chatData.id} userId={chatData.id} userName={chatData.userName} userAvatar={chatData.image} />}
+										<div className='wrapper' ref={windowRef} >
 											{chatLength ? 
-												<div className='messages'>
+												<div className='messages'  ref={chatRef}>
 												{
-													// chatLength
 												Object.keys(chatData).length > 0
-												// chatData.messages.length > 0
-												// chatData.messages.length
-													? chatData.messages.map((item, index) => (
-														// console.log(chatData.messages.length),
+
+													? 
+													
+													chatData.messages.map((item, index) => (
 														
-															<>
-																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={(event) => handleSmileReaction(item.id)}>
-																	{selectedMessage === item.id && chatSmile && (
-																		<div className='smileBlock'>
-																			<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
-																		</div>
-																	)}
-																	{item.reaction && (
-																		<div className='reaction'>
-																			<span>{item.reaction}</span>
-																		</div>
-																	)}
+														<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={item.id} onClick={() => handleSmileReaction(item.id)} >
 
-																	<span key={index}>{item.text}</span>
+																
 
-																	{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
-																	{item.storagePhotoArr ? item.storagePhotoArr.map((elem: string) => <img src={elem} alt='message' />) : null}
-
-																	<div className='timeSend' style={{ left: item.owner ? '' : '15px' }}>
-																		<span>{item.time}</span>
+															<div className="messageWrapper">
+																{selectedMessage === item.id && chatSmile && (
+																	<div className='smileBlock'>
+																		<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
 																	</div>
+																)}
+																{item.reaction && (
+																	<div className='reaction'>
+																		<span>{item.reaction}</span>
+																	</div>
+																)}
+
+
+																{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
+																{item.storagePhotoArr ? item.storagePhotoArr.map((elem: string, index) => <img src={elem} alt='message' key={index} />) : null}
+																
+																
+																<span key={index}>{item.text}</span>
+
+																
+															</div>
+															<div className='timeSend'key={item.id} style={{ left: item.owner ? '' : '15px' }}>
+																	<span>{item.time}</span>
+															</div>
+															{
+																item.owner &&
+																<div className="readOwnerMsg">
+																	<SVGIcon name='readOwnerMessage' size={20} stroke='#43A1FC'/>
 																</div>
-															</>
+															}
+															
+
+														</div>
 													  ))
 													: 
-													<>
+													
 														null
-													</>}
+													}
+													{typingState && <Typing key={Date.now()} userId={chatData.id} userName={chatData.userName} userAvatar={chatData.image} />}
+
 												</div>
 												: 
 												<EmptyChat />

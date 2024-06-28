@@ -8,7 +8,7 @@ export interface IMessages {
 	location?: string;
 	tall?: number;
 	gender?: string;
-	dateMet?: string;
+	dateMet: string;
 	userOnLine: boolean;
 	isLike: boolean;
 	newMessages?: boolean;
@@ -20,6 +20,7 @@ export interface IMessages {
 			daySend: string[];
 			unRead: boolean;
 			owner: boolean;
+			readOwnerMsg: boolean;
 			imageUrl?: string;
 			storagePhotoArr?: string[];
 			reaction: string;

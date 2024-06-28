@@ -1,10 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { IMessages } from '../../model/MessagesModel';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { mobileChatState } from '../../store/rootSlice';
 import { setChatId } from '../../store/rootSlice';
 import { mobileScreenEnable } from '../../store/selectors';
+import { useLocation } from 'react-router-dom';
 interface IProps {
 	item: IMessages;
 	typingState?: boolean;
@@ -17,10 +18,15 @@ const MessageComponent = ({ item, typingState, typingChatId }: IProps) => {
 
 
 
-	// console.log(item);
 	
 	const [mobileScreen, setMobileScreen] = useState(false);
 	const mobileDimension = useSelector(mobileScreenEnable);
+	const chatId = useSelector((state: any) => state.mainState.chatId);
+	const chatRef = useRef<HTMLLIElement>(null)
+	const location = useLocation();
+	const path = location.pathname
+
+
 
 	const dispatch = useDispatch();
 
@@ -49,8 +55,16 @@ const MessageComponent = ({ item, typingState, typingChatId }: IProps) => {
 	}, [mobileDimension]);
 
 	useEffect(() => {
+		
+		if (chatRef.current) {
+			const activeChat = chatRef.current
+			if (activeChat.id === chatId && path !== '/messages') {
+				activeChat.classList.add('activeChat')
+			}
+		}
+		
 		checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
-	}, [checkMobileScreen, item]);
+	}, [chatId, checkMobileScreen, item, path]);
 
 	return (
 		<>
@@ -59,6 +73,7 @@ const MessageComponent = ({ item, typingState, typingChatId }: IProps) => {
 					key={item.id}
 					className='chat'
 					id={item.id.toString()}
+					ref={chatRef}
 					onClick={(event: any) => {
 						handleActiveChat(event.currentTarget.id);
 					}}

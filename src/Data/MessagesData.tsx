@@ -55,6 +55,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -76,6 +77,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: false,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -83,7 +85,7 @@ export const messagesData: IMessages[] = [
 	{
 		id: 4,
 		image: user4,
-		userName: 'Волшебный',
+		userName: 'Волшебный Стручок Джина',
 		dateMet: '10.10.2020',
 		userOnLine: false,
 		isLike: true,
@@ -96,6 +98,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -117,6 +120,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -138,6 +142,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -159,6 +164,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -180,6 +186,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -200,6 +207,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: true,
 				owner: false,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -220,6 +228,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -240,6 +249,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: true,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -260,6 +270,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: false,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -280,6 +291,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -300,6 +312,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: true,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
@@ -320,6 +333,7 @@ export const messagesData: IMessages[] = [
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
 				owner: false,
+				readOwnerMsg: false,
 				reaction: ''
 			}
 		]
