@@ -128,7 +128,7 @@ const GamePad = () => {
 
 				setTimeout(() => {
 					setSuperLike(false);
-				}, 1000);
+				}, 2000);
 			}
 		},
 		[handleDecline, handleApprove, handleProfileVisibility, setSuperLike]
@@ -190,7 +190,7 @@ const GamePad = () => {
 
 											{i > 0 && <img src={sliderProfile.images[0].src} alt={sliderProfile.images[0].alt} />}
 
-											{i === 0 && <div className='GamePadMatchBlock'>{superLike && <SVGIcon name='bigMatchIcon' />}</div>}
+											{i === 0 && <div className='GamePadSuperLike'>{superLike && <SVGIcon name='bigMatchIcon' />}</div>}
 
 											{i === 0 && (
 												<div className='GamePadPanel'>
