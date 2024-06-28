@@ -10,6 +10,14 @@ import { useNavigate } from 'react-router-dom';
 const MobileSettings = () => {
 	const navigate = useNavigate();
 
+
+	const acceptSettings = () => {
+		// HERE WILL BE CODE FOR ACCEPTING SETTINGS
+
+		
+		navigate(-1);
+	}
+
 	return (
 		<>
 			<div className='MobileSettings'>
@@ -17,7 +25,9 @@ const MobileSettings = () => {
 					<div className='topMobileSettings'>
 						<SVGIcon name='arrowLeft' size={20} onClick={() => navigate(-1)} />
 						<h3>Настройки Находок</h3>
-						<span>Готово</span>
+						<span
+						onClick={() => acceptSettings()}
+						>Готово</span>
 					</div>
 
 					<div className='listWrapper'>

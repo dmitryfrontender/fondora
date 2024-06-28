@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import './MobileChat.scss';
 import { mobileChatState } from '../../store/rootSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -28,6 +28,12 @@ const MobileChat = () => {
 	const [forceUpdate, setForceUpdate] = useState(false);
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
+	const [scrollPosition, setScrollPosition] = useState(0);
+
+
+	const windowRef = useRef<HTMLDivElement>(null);
+
+	const chatRef = useRef<HTMLDivElement>(null);
 
 
 	const dispatch = useDispatch();
@@ -57,14 +63,46 @@ const MobileChat = () => {
 		});
 	};
 
-	const insertText = (messages: IMessages["messages"]) => {
-		return messages.length ? chatData.messages[chatData.messages.length - 1].text : '';
-	}
+	// const insertText = (messages: IMessages["messages"]) => {
+	// 	return messages.length ? chatData.messages[chatData.messages.length - 1].text : '';
+	// }
+
+	const handleScroll = (e: any) => {
+		const { scrollTop, scrollHeight, clientHeight } = e.target;
+		const position = Math.ceil((scrollTop / (scrollHeight - clientHeight)) * 100);
+		setScrollPosition(position);
+	
+	};
+
+
+	const scrollToBottom = () => {
+		
+		
+		const lastChild = chatRef.current?.lastChild as Element | null;
+		if (lastChild && lastChild.classList.contains('owner')) {
+			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+		} else if (lastChild && scrollPosition > -15) {
+			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+
+			
+		}
+	};
 	
 	useEffect(() => {
+		
+		const currentWindowRef = windowRef.current;
+		currentWindowRef?.addEventListener('scroll', handleScroll);
+
 		const filteredMessage = messagesData.filter((msg: IMessages) => msg.id.toString() === chatId);
 		setChatData(filteredMessage[0]);
-	}, [chatId, forceUpdate, chatData]);
+
+		if(chatData.messages) {
+			scrollToBottom()
+		}
+		return () => {
+			currentWindowRef?.removeEventListener('scroll', handleScroll);
+		}
+	}, [chatId, forceUpdate, chatData, typingState]);
 
 	return (
 		<>
@@ -131,39 +169,43 @@ const MobileChat = () => {
 											</div>
 										</div>
 									</div>
-									<div className='chatWrapper'>
-										{typingState && <Typing userName={chatData.userName} userAvatar={chatData.image} />}
-
-										<div className='messages'>
-											{Object.keys(chatData).length > 0
-												? chatData.messages.map((item, index) => (
-														<>
-															<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={(event) => handleSmileReaction(item.id)}>
-																<span key={index}>{item.text}</span>
-																{selectedMessage === item.id && chatSmile && (
-																	<div className='smileBlock'>
-																		<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
+									<div className='chatWrapper'ref={windowRef}>
+										<div className="wrapper" ref={chatRef}>
+											<div className='messages' >
+												{Object.keys(chatData).length > 0
+													? chatData.messages.forEach((item, index) => (
+															<>
+																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={(event) => handleSmileReaction(item.id)}>
+																	<div className="messageWrapper">
+																		<span key={index}>{item.text}</span>
+																		{selectedMessage === item.id && chatSmile && (
+																			<div className='smileBlock'>
+																				<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
+																			</div>
+																		)}
+																		{item.reaction && (
+																			<div className='reaction'>
+																				<span>{item.reaction}</span>
+																			</div>
+																		)}
+																		{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
+																		{item.storagePhotoArr ? item.storagePhotoArr.forEach((elem: string) => <img src={elem} alt='message' />) : null}
+																		
 																	</div>
-																)}
-																{item.reaction && (
-																	<div className='reaction'>
-																		<span>{item.reaction}</span>
-																	</div>
-																)}
-																{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
-																{item.storagePhotoArr ? item.storagePhotoArr.map((elem: string) => <img src={elem} alt='message' />) : null}
-																<div className='timeSend' style={{ left: item.owner ? '' : '15px' }}>
-																	<span>{item.time}</span>
+																	<div className='timeSend' style={{ left: item.owner ? '' : '15px' }}>
+																			<span>{item.time}</span>
+																		</div>
+																	
 																</div>
-															</div>
-														</>
-												  ))
-												: null}
-									{/* <div ref={messagesEndRef}/> */}
+															</>
+													))
+													: null}
+													{typingState && <Typing userName={chatData.userName} userAvatar={chatData.image} />}
 
+										{/* <div ref={messagesEndRef}/> */}
+
+											</div>
 										</div>
-
-
 									</div>
 
 								</div>

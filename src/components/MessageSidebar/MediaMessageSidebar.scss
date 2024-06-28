@@ -80,6 +80,8 @@
 									align-items: center;
 									gap: 10px;
 									.name {
+										max-width: clamp(90px, 30vw, 250px);
+    									text-align: left;
 										span {
 											color: var(--white);
 											text-align: center;
