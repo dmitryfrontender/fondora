@@ -190,11 +190,17 @@ const GamePad = () => {
 
 											{i > 0 && <img src={sliderProfile.images[0].src} alt={sliderProfile.images[0].alt} />}
 
-											{i === 0 && <div className='GamePadSuperLike'>{superLike && <SVGIcon name='bigMatchIcon' />}</div>}
+											{i === 0 && superLike &&
+												<>
+													<div className='GamePadSuperLike'>
+														<SVGIcon name='bigMatchIcon' />
+													</div>
+												</>
+											}
 
 											{i === 0 && (
 												<div className='GamePadPanel'>
-													<div className='GamePadPanelBackground'>
+													<div className='GamePadPanelBackground' onClick={() => handleProfileVisibility(true)}>
 														<div className='GamePadPanelInfo'>
 															{(sliderProfile.userName || sliderProfile.userAge) && (
 																<div className='GamePadPanelMainInfo'>
@@ -270,7 +276,7 @@ const GamePad = () => {
 															<SVGIcon name='gamepadHeartIcon' size={24} />
 														</div>
 													</div>
-													<div className='GamePadProfileToggler' onClick={() => handleProfileVisibility(true)}>
+													<div className='GamePadProfileToggler'>
 														<SVGIcon name='arrowUp' size={6} width={11} />
 													</div>
 												</div>
