@@ -19,9 +19,12 @@
 	}
 
 	.photoWrapper {
-		display: flex;
-		flex-wrap: nowrap;
-		justify-content: flex-start;
+		// display: flex;
+		// flex-wrap: nowrap;
+		// justify-content: flex-start;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-rows: 1fr 1fr;
 		overflow-x: scroll;
 		width: 50vw;
 		gap: 10px;
@@ -46,7 +49,12 @@
 		}
 		.activeItem {
 			.addPhoto {
-				border: 4px solid var(--main-red);
+				// border: 4px solid var(--main-red);
+				border: 4px solid transparent;
+				background: rgba(0, 0, 0, 0.75);
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 		}
 	}
