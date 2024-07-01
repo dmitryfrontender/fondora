@@ -113,7 +113,10 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 
     const handleKeyPress = (event: any) => {
         if (event.code === 'Enter' && !event.shiftKey) {
-            event.preventDefault();
+			if (sendBtn) {
+				event.preventDefault();
+			}
+            // event.preventDefault();
             const trimmedText = areaValue.trim(); 
             if (trimmedText) {
                 const date = new Date();

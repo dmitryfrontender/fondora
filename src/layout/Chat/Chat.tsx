@@ -82,18 +82,23 @@ const Chat = () => {
 	};
 
 
-	const scrollToBottom = () => {
+
+	const scrollToBottom = useCallback(() => {
 
 		
 		const lastChild = chatRef.current?.lastChild as Element | null;
 		if (lastChild && lastChild.classList.contains('owner')) {
-			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+
+			//  lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+			lastChild.scroll({ top: lastChild.scrollHeight, behavior: 'smooth' });
 		} else if (lastChild && scrollPosition > -15) {
-			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+			lastChild.scroll({ top: lastChild.scrollHeight, behavior: 'smooth' });
+
+			//  lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
 
 			
 		}
-	};
+	}, [scrollPosition]);
 
 
 
@@ -138,7 +143,7 @@ const Chat = () => {
 			currentWindowRef?.removeEventListener('scroll', handleScroll as EventListener);
 			dispatch(setReportPage(false));
 		};
-	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate, chatData.messages, typingState]);
+	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate, chatData.messages, typingState, scrollToBottom]);
 
 	useEffect(() => {
 		if (chatRef.current) {

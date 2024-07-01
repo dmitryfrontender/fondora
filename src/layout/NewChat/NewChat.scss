@@ -1,8 +1,15 @@
 .NewChat {
+	background: linear-gradient(168deg, #24161B 0%, rgba(26, 23, 23, 0.00) 100%), #0B0B0B;
 	.chatWrapper {
 		.chatArea {
+			background-image: url('../../assets/images/pageBg.png');
+			background-position-x: 50px;
+			background-repeat: no-repeat;
+			background-blend-mode: luminosity;
+			background-color: rgba(0, 0, 0, 0.4);
 			.chatItems {
 				margin: 0 2vw;
+				position: relative;
 
 				.imageContainer {
 					position: relative;
@@ -71,6 +78,13 @@
 					}
 				}
 				.emptyChat {
+					height: 100vh;
+					width: 100%;
+					position: absolute;
+					left: 0;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
 					.tittle {
 						h2 {
 							font-size: clamp(13px, 1vw, 20px);
@@ -86,7 +100,7 @@
 						line-height: 150%; /* 19.5px */
 					}
 					.userAvatar {
-						margin: 15px 0 25px;
+						margin: 1vh 0 2vh;
 						.imageContainer {
 							width: clamp(80px, 10vw, 130px);
 							height: clamp(80px, 10vw, 130px);

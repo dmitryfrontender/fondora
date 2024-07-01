@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {  useEffect, useRef, useState } from 'react';
 import { storagePhotos } from '../../../Data/StoragePhoto';
 // import DefaultBtn from "../../DefaultBtn/DefaultBtn";
 import './AddPhotos.scss';
@@ -15,14 +15,14 @@ interface IProps {
 
 const AddPhoto = ({ addPhoto }: IProps) => {
 	const [selectedPhotos, setSelectedPhotos] = useState<IPhoto[]>([]);
-	const [photoCounter, setPhotoCounter] = useState<number>(0)
-
-	const counterRef = useRef<HTMLDivElement>(null)
+	const [photoCounter, setPhotoCounter] = useState<number>(0);
+	const [clickedPhotos, setClickedPhotos] = useState(0);
+	const counterRef = useRef<(HTMLDivElement | null)[]>([]);
 
 	const handlePhotoClick = (photo: IPhoto, element: any) => {
 
-		console.log(element);
-		
+		setClickedPhotos(element)
+
 		setSelectedPhotos((prevSelectedPhotos) => {
 			if (prevSelectedPhotos.includes(photo)) {
 				if (photoCounter !== 0) {
@@ -31,34 +31,57 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 				return prevSelectedPhotos.filter((selectedPhoto) => selectedPhoto !== photo);
 			} else {
 				setPhotoCounter(photoCounter + 1)
-				// if (counterRef.current) {
-				// 	counterRef.current.textContent = `${photoCounter}`;
-				// }
-				// console.log(counterRef.current);
-				
 				return [...prevSelectedPhotos, photo];
 			}
 		});
+
 	};
+
+	useEffect(() => {
+
+		const recalculateCounter = () => {
+
+			let localCounter = 1;
+
+			counterRef.current.forEach((el) => {
+
+				if (el?.classList.contains('activeItem')) {
+					el.childNodes[1].textContent = `${localCounter}`;
+					localCounter++;
+
+				}
+
+			})
+
+		}
+
+		counterRef.current.forEach((ref, index) => {
+			if (ref?.dataset.id === clickedPhotos.toString()) {
+				const element = ref?.childNodes[1];
+				if (element && element.textContent === '') {
+					element.textContent = `${photoCounter}`
+					
+				} else if (element && element.textContent !== '') {
+					element.textContent = ''
+					recalculateCounter()
+			
+				}
+			}
+			
+		});
+
+	}, [clickedPhotos, photoCounter, selectedPhotos])
+
 
 	const defaultStyle = {
 		border: '4px solid transparent',
 		borderRadius: '15px'
 
-		// borderRadius: '50%'
 	};
 	const activeStyle = {
 		border: `4px solid #DF3C5E`,
 		borderRadius: '15px'
 	};
-
-	console.log(photoCounter)
-
-	useEffect(() => {
-		if (counterRef.current) {
-			counterRef.current.textContent = `${photoCounter}`;
-		}
-	}, [photoCounter]);
 
 	const activeBtn = 'linear-gradient(135.00deg, rgb(132, 9, 56) -0.075%,rgb(242, 34, 113) 99.925%)';
 
@@ -71,7 +94,6 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 					setSelectedPhotos([]);
 				}}
 			>
-				{/* <DefaultBtn text="Отправить" background="red" arrow={false}/> */}
 				<button style={{ background: selectedPhotos.length > 0 ? activeBtn : '' }}>
 					<SVGIcon name='sendTgBtn' width={20} />
 				</button>
@@ -79,10 +101,12 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 			<div className='photoWrapper'>
 				{storagePhotos.map((item, index) => {
 					const isSelected = selectedPhotos.includes(item);
+					
 					return (
-						<div className={`item ${isSelected ? 'activeItem' : ''}`} key={index} onClick={(event) => handlePhotoClick(item, event)} style={isSelected ? activeStyle : defaultStyle} ref={counterRef}>
+						
+						<div className={`item ${isSelected ? 'activeItem' : ''}`} data-id={item.id}  key={index} onClick={() => handlePhotoClick(item, item.id)} style={isSelected ? activeStyle : defaultStyle} ref={(el) => (counterRef.current[index] = el)}>
 							<img src={item.src} alt={item.alt} />
-							<div className='addPhoto' ></div>
+							<div className='addPhoto'></div>
 						</div>
 					);
 				})}
