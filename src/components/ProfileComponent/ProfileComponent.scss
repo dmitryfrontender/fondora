@@ -199,6 +199,7 @@
 		align-items: flex-start;
 		gap: 15px;
 	}
+
 	&MessageIcon {
 		position: relative;
 		width: 30%;
@@ -239,9 +240,11 @@
 			background: rgba(0, 0, 0, 0.7);
 		}
 	}
+
 	&MessageText {
 		text-align: start;
 	}
+
 	&MessageTitle {
 		display: block;
 		color: #ffbe18;
@@ -252,6 +255,7 @@
 		line-height: 150%; /* 21px */
 		letter-spacing: 0.28px;
 	}
+
 	&MessageSubTitle {
 		display: block;
 		color: #a2a2a2;
@@ -306,6 +310,17 @@
 			font-size: 13px;
 			font-weight: 500;
 			line-height: 150%;
+		}
+	}
+
+	&LabelsList {
+		li {
+			&.hidden {
+				display: none;
+			}
+			.tag {
+				height: 20px;
+			}
 		}
 	}
 }
