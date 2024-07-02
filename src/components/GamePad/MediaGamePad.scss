@@ -1,7 +1,5 @@
 @media screen and (max-width: 1023px) {
 	.GamePad {
-		width: 100vw;
-		min-width: initial;
 		height: calc(100vh - clamp(102px, 13vw, 110px));
 		padding: clamp(102px, 13vw, 110px) 0 0;
 		margin: 0 auto;
@@ -65,5 +63,12 @@
 			max-width: initial;
 			max-height: initial;
 		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.GamePad {
+		width: 100vw;
+		min-width: initial;
 	}
 }
