@@ -29,6 +29,8 @@
 		overflow: auto;
 		.pairElement {
 			position: relative;
+			overflow: hidden;
+
 			.userPhoto::before{
 				display: block;
 				content: "";
@@ -48,14 +50,16 @@
 					min-height: 100%;
 				}
 			}
-			
-			
+
+
 			.pairName {
 				text-align: center;
 				padding: 15px 0 5px;
 				display: flex;
 				gap: 5px;
 				justify-content: center;
+				align-items: center;
+
 				span {
 					color: var(--main-text-color);
 					font-family: var(--font-family-urbanist);
@@ -63,6 +67,10 @@
 					font-weight: 500;
 					line-height: 150%;
 					letter-spacing: 2%;
+					width: 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 			}
 		}
