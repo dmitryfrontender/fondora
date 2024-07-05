@@ -94,10 +94,13 @@
 					font-weight: 500;
 					line-height: 150%; /* 21px */
 				}
-			}
-			.item:hover {
-				border: 1px solid var(--main-red);
-				transition: all ease 0.3s;
+
+				@media screen and (min-width: 1024px) {
+					&:hover {
+						border: 1px solid var(--main-red);
+						transition: all ease 0.3s;
+					}
+				}
 			}
 		}
 		.hrElement {

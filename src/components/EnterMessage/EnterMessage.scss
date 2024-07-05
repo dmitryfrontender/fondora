@@ -50,16 +50,16 @@
 					justify-content: center;
 				}
 			}
-			@media screen and (min-width: 1024px) {
-				.activeSendBtn:hover{
-					padding: 6px;
-					border: 1px solid rgb(105, 101, 101);
-					transition: all ease 0.3s;
-				}
-
-			}
 			.activeSendBtn {
 				background: linear-gradient(135deg, rgb(132, 9, 56) -0.075%, rgb(242, 34, 113) 99.925%);
+
+				@media screen and (min-width: 1024px) {
+					&:hover{
+						padding: 6px;
+						border: 1px solid rgb(105, 101, 101);
+						transition: all ease 0.3s;
+					}
+				}
 			}
 		}
 	}
@@ -80,13 +80,14 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-		}
-		@media screen and (min-width: 1024px) {
-			button:hover{
-				background: rgb(54, 52, 52);
-				transition: all ease 0.3s;
-				border: 1px solid rgb(105, 101, 101);
 
+			@media screen and (min-width: 1024px) {
+				&:hover{
+					background: rgb(54, 52, 52);
+					transition: all ease 0.3s;
+					border: 1px solid rgb(105, 101, 101);
+
+				}
 			}
 		}
 

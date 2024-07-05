@@ -48,11 +48,14 @@
 					background: var(--main-red);
 				}
 			}
-		}
-		li:hover {
-			.menu-icon {
-				stroke: var(--main-red);
-				transition: all ease 0.3s;
+
+			@media screen and (min-width: 1024px) {
+				&:hover {
+					.menu-icon {
+						stroke: var(--main-red);
+						transition: all ease 0.3s;
+					}
+				}
 			}
 		}
 	}
