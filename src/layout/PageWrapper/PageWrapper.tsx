@@ -26,6 +26,8 @@ import PairsLayout from '../Outlet/PairsLayout/PairsLayout';
 import MobileLikesTop from '../../components/MobileLikesTop/MobileLikesTop';
 import GoalPage from '../../pages/GoalPage/GoalPage';
 
+import FondoraGold from '../../pages/FondoraGold/FondoraGold';
+
 import './PageWrapper.scss';
 import MobileSettings from '../../pages/MobileSettings/MobileSettings';
 
@@ -42,6 +44,8 @@ const PageWrapper = () => {
 					{/* <Route path="/" element={<Navigate to="/" />} /> */}
 					<Route path='/' element={<Matching />} />
 
+					<Route path='/fondora-gold' element={<FondoraGold />} />
+					
 					<Route path='/likes' element={<Likes />} />
 					<Route path='/top-profiles' element={<TopProfile />} />
 					<Route path='/likes-top-profile' element={<MobileLikesTop />} />

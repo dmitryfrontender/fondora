@@ -40,5 +40,37 @@ export const gifs: IGifs[] = [
 	{
 		id: 8,
 		url: gif8
+	},
+	{
+		id: 9,
+		url: gif1
+	},
+	{
+		id: 10,
+		url: gif2
+	},
+	{
+		id: 11,
+		url: gif3
+	},
+	{
+		id: 12,
+		url: gif4
+	},
+	{
+		id: 13,
+		url: gif5
+	},
+	{
+		id: 14,
+		url: gif6
+	},
+	{
+		id: 15,
+		url: gif7
+	},
+	{
+		id: 16,
+		url: gif8
 	}
 ];

@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import ChatSmiles from '../ChatExtra/ChatSmiles/ChatSmiles';
 import ChatGifs from '../ChatExtra/ChatGifs/ChatGifs';
 import AddPhoto from '../ChatExtra/AddPhotos/AddPhotos';
+import AudioRecorder from '../AudioRecorder/AudioRecorder';
 
 interface IProps {
 	chatId: string;
@@ -22,6 +23,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 	const [smileBlock, setSmileBlock] = useState<boolean>(false);
 	const [mediaBlock, setMediaBlock] = useState<boolean>(false);
 	const [imagesBlock, setImagesBlock] = useState<boolean>(false);
+	const [voiceRecorder, setVoiceRecorder] = useState<boolean>(false);
 
 	const dispatch = useDispatch();
 
@@ -253,10 +255,12 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 				if (smileBlock) {
 					setSmileBlock(false);
 				} else {
-					setSmileBlock(true);
-
 					setMediaBlock(false);
 					setImagesBlock(false);
+					setVoiceRecorder(false);
+					setSmileBlock(true);
+
+
 				}
 				break;
 			case 'media':
@@ -264,8 +268,11 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 					setMediaBlock(false);
 				} else {
 					setSmileBlock(false);
-					setMediaBlock(true);
 					setImagesBlock(false);
+					setVoiceRecorder(false);
+					setMediaBlock(true);
+
+
 				}
 				break;
 			case 'images':
@@ -274,9 +281,23 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 				} else {
 					setSmileBlock(false);
 					setMediaBlock(false);
+					setVoiceRecorder(false);
 					setImagesBlock(true);
+
+
 				}
 				break;
+				case 'voiceRecorder':
+					console.log(voiceRecorder);
+					
+					if (voiceRecorder) {
+						setVoiceRecorder(false);
+					} else {
+						setSmileBlock(false);
+						setMediaBlock(false);
+						setImagesBlock(false);
+						setVoiceRecorder(true);
+					}
 			default:
 				break;
 		}
@@ -292,7 +313,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 	return (
 		<>
 			<div className='inputBlock'>
-				{!mediaBlock && !imagesBlock && (
+				{!mediaBlock && !imagesBlock && !voiceRecorder &&(
 					<div className='inputWrapper'>
 						<div className='input'>
 							<TextareaAutosize placeholder='Напишите сообщение...' value={areaValue} minRows={2} maxRows={4} onChange={resizeArea} />
@@ -305,9 +326,13 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 					</div>
 				)}
 
+
+				{/* <AudioRecorder/> */}
+
 				{smileBlock && <ChatSmiles addSmile={handleSmile} />}
 				{imagesBlock && <ChatGifs addGif={handleGif} />}
 				{mediaBlock && <AddPhoto addPhoto={handlePhoto} />}
+				{voiceRecorder && <AudioRecorder />}
 
 				<div className='buttonWrapper'>
 					<div className='leftPanel'>
@@ -323,8 +348,8 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 						</button>
 					</div>
 					<div className='rightPanel'>
-						<button>
-							<SVGIcon size={20} name='voiceMessageBtn' />
+						<button onClick={() => selectExtra('voiceRecorder')}>
+							<SVGIcon size={20} name='voiceMessageBtn' style={voiceRecorder ? { fill: '#F22271 ' } : { fill: '#ACACAC' }} />
 						</button>
 					</div>
 				</div>

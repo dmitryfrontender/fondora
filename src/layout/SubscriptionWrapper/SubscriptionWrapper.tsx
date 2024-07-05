@@ -62,7 +62,7 @@ const SubscriptionWrapper = ({ page }: IShow) => {
 											<span>PLUS</span>
 										</div>
 									</div>
-									<div className='buyBtn'>
+									<div className='buyBtn' onClick={() => navigate('/fondora-gold')}>
 										<span>Купить Подписку</span>
 									</div>
 								</div>
@@ -75,7 +75,7 @@ const SubscriptionWrapper = ({ page }: IShow) => {
 											<span>GOLD</span>
 										</div>
 									</div>
-									<div className='buyBtn'>
+									<div className='buyBtn' onClick={() => navigate('/fondora-gold')}>
 										<span>Купить Подписку</span>
 									</div>
 								</div>
@@ -88,7 +88,7 @@ const SubscriptionWrapper = ({ page }: IShow) => {
 											<span>VIP</span>
 										</div>
 									</div>
-									<div className='buyBtn'>
+									<div className='buyBtn' onClick={() => navigate('/fondora-gold')}>
 										<span>Купить Подписку</span>
 									</div>
 								</div>

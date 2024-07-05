@@ -26,23 +26,6 @@ const Settings = () => {
 		window.history.scrollRestoration = 'manual';
 	}, []);
 
-	//     const checkMobileScreen = useMemo(() => {
-
-	//         return    mobileDimension
-
-	// }, [mobileDimension]);
-
-	// useEffect(() => {
-	//     // checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
-
-	//     // return () => {
-	//     //     const pageWrapper = document.querySelector('.pageWrapper');
-	//     //     if(mobileScreen) {
-	//     //         (pageWrapper as HTMLElement).style.top = '0'
-	//     //     }
-	//     // }
-	// }, [checkMobileScreen]);
-
 	return (
 		<div className='page Settings'>
 			<div className='tittle'>
