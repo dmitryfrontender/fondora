@@ -73,7 +73,7 @@ const ProfileComponent = (props: any) => {
 
 	return (
 		<div className='ProfileComponent'>
-			<PhotoSlider images={activeUser.images} />
+			<PhotoSlider images={activeUser.images} drag={true} />
 
 			<div className='ProfileComponentInfo'>
 				{props.profileVisibility && (

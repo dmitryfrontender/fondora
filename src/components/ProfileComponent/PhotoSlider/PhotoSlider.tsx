@@ -16,7 +16,8 @@ const PhotoSlider = (props: any) => {
 	const [sliderRef, instanceRef] = useKeenSlider(
 		{
 			initial: 0,
-			drag: false,
+			drag: props.drag ? true : false,
+			// drag: true,
 			slideChanged(slider) {
 				setCurrentSlide(slider.track.details.rel);
 			},
@@ -47,51 +48,49 @@ const PhotoSlider = (props: any) => {
 	}, [instanceRef]);
 
 	return (
-		<>
-			<div className={`PhotoSlider ${props.cssClass ? props.cssClass : ''}`} style={props.cssStyle ? props.cssStyle : {}}>
-				<div className='PhotoSliderAvatar'>
-					{loaded && instanceRef.current && (
-						<div className='dots'>
-							{[...Array(instanceRef.current.track.details.slides.length).keys()].map((idx) => {
-								return (
-									<button
-										key={idx}
-										onClick={() => {
-											instanceRef.current?.moveToIdx(idx);
-										}}
-										className={'dot' + (currentSlide === idx ? ' active' : '')}
-									></button>
-								);
-							})}
-						</div>
-					)}
-					<div ref={sliderRef} className='keen-slider'>
-						{props.images.map((item: any) => {
+		<div className={`PhotoSlider ${props.cssClass ? props.cssClass : ''}`} style={props.cssStyle ? props.cssStyle : {}}>
+			<div className='PhotoSliderAvatar'>
+				{loaded && instanceRef.current && (
+					<div className='dots'>
+						{[...Array(instanceRef.current.track.details.slides.length).keys()].map((idx) => {
 							return (
-								<div className='keen-slider__slide' aria-hidden='false' key={item.id}>
-									<img src={item.src} alt={item.alt} />
-								</div>
+								<button
+									key={idx}
+									onClick={() => {
+										instanceRef.current?.moveToIdx(idx);
+									}}
+									className={'dot' + (currentSlide === idx ? ' active' : '')}
+								></button>
 							);
 						})}
 					</div>
+				)}
+				<div ref={sliderRef} className='keen-slider'>
+					{loaded && instanceRef.current && (
+						<Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
+					)}
+
+					{props.images.map((item: any) => {
+						return (
+							<div className='keen-slider__slide' aria-hidden='false' key={item.id}>
+								<img src={item.src} alt={item.alt} />
+							</div>
+						);
+					})}
 
 					{loaded && instanceRef.current && (
-						<>
-							<Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
-
-							<Arrow onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()} disabled={currentSlide === instanceRef.current.track.details.slides.length - 1} />
-						</>
+						<Arrow onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()} disabled={currentSlide === instanceRef.current.track.details.slides.length - 1} />
 					)}
 				</div>
-
-				{props.sliderIndex === 0 && (
-					<div className='GamePadApproveBlock'>
-						{props.cssClass === 'approved' && <SVGIcon className='GamePadApproveIcon' name='approvedIcon' size={74} width={149} />}
-						{props.cssClass === 'declined' && <SVGIcon className='GamePadDeclineIcon' name='declinedIcon' size={74} width={109} />}
-					</div>
-				)}
 			</div>
-		</>
+
+			{props.sliderIndex === 0 && (
+				<div className='GamePadApproveBlock'>
+					{props.cssClass === 'approved' && <SVGIcon className='GamePadApproveIcon' name='approvedIcon' size={74} width={149} />}
+					{props.cssClass === 'declined' && <SVGIcon className='GamePadDeclineIcon' name='declinedIcon' size={74} width={109} />}
+				</div>
+			)}
+		</div>
 	);
 };
 
