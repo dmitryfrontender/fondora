@@ -13,10 +13,18 @@
 		.chatArea {
 			position: relative;
 			width: -webkit-fill-available;
+			height: -webkit-fill-available;
 			.chatBg {
 				position: absolute;
+				width: -webkit-fill-available;
+				height: -webkit-fill-available;
 				top: 0;
 				left: 1vw;
+				img{
+					width: inherit;
+					height: inherit;
+					object-fit: cover;
+				}
 			}
 			.chatItems {
 				height: 100%;

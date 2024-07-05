@@ -1,0 +1,223 @@
+.FondoraGold{
+    .pagesWrapper {
+        margin-top: 20px;
+      width: 600px;
+    }
+    .topItems{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            svg {
+                width: 110px;
+                height: 30px;
+            }
+            .status {
+                background-color: var(--black);
+                border-radius: 5px;
+                align-items: center;
+                min-height: 10px;
+                min-width: 29px;
+                margin: 0 10px;
+
+                span {
+                    padding: 5px;
+                    color: #E1A200;
+                }
+            }
+        }
+    }
+    .mainImg {
+      margin-top: 20px;
+    }
+    .title{
+        text-align: start;
+        span{
+            color: #FFF;
+            font-family: var(--font-family-urbanist);
+            font-size: clamp(20px, 3vw, 30px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+        .colorText {
+          color: #FFBC0F;
+        }
+    }
+    .extraWrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        gap: 10px;
+        .extraItem{
+            border-radius: 20px;
+            border: 1px solid #54484D;
+            width: -webkit-fill-available;
+            padding: 20px;
+            transition: all ease 0.5s;
+            cursor: pointer;
+            background: linear-gradient(146deg, #131417 0%, #131417 100%);
+     
+            .topItems{
+                .title{
+                    color: #FFBE18;
+                    font-family: var(--font-family-urbanist);
+                    font-size: clamp(12px, 1.5vw, 14px);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%; /* 21px */
+                    letter-spacing: 0.28px;
+                }
+                svg{
+                    fill: transparent;
+                    transition: all ease 0.5s;
+
+                }
+            }
+            .timeAvailable {
+             width: 100%;
+             text-align: start;
+             margin-top: 10px;
+                span{
+                    color: #FFF;
+                    text-align: center;
+                    font-family: var(--font-family-urbanist);
+                    font-size: clamp(16px, 3vw, 20px);
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+
+                }
+            }
+            .bottomItems {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-top: 20px;
+              .coast{
+                color: #FFF;
+                text-align: center;
+                font-family: var(--font-family-urbanist);
+                font-size: clamp(14px, 2vw, 16px);
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: 0.32px;
+                white-space: nowrap;
+              }
+              .defaultBtn{
+                padding: 10px;
+                max-width: 90px;
+                span{
+                    color: #FFF;
+                    text-align: center;
+                    font-family: var(--font-family-urbanist);
+                    font-size: 10px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    white-space: nowrap;
+                }
+          
+              }
+            }
+        }
+        .activeExtra{
+            border: 1px solid #FFBE18;
+            transition: all ease 0.5s;
+            .topItems{
+                svg{
+                    fill: #FFBE18;
+                    transition: all ease 0.5s;
+
+                }
+            }
+
+        }
+
+    }
+    .optionWrapper {
+		box-sizing: border-box;
+		border: 1px solid rgb(84, 72, 77);
+		border-radius: 20px;
+		margin: 20px 0;
+		padding: 0 20px 20px 20px;
+
+		background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
+		.optionTitle {
+			display: flex;
+			justify-content: center;
+			position: relative;
+			padding-bottom: 20px;
+			h5 {
+				position: absolute;
+				transform: translateY(-50%);
+				box-sizing: border-box;
+				padding: 0 8px;
+				border: 1px solid rgb(84, 72, 77);
+				border-radius: 20px;
+				color: rgb(255, 188, 14);
+				font-family: var(--font-family-urbanist);
+				font-size: 12px;
+				font-weight: 500;
+				line-height: 150%;
+				letter-spacing: 2%;
+				text-align: left;
+				background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
+				top: 0;
+				margin: 0;
+			}
+		}
+		.itemWrapper {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			position: relative;
+            padding: 8px 0;
+			.option {
+				text-align: start;
+				h4 {
+					color: var(--white);
+					font-family: var(--font-family-urbanist);
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 150%;
+					letter-spacing: 0%;
+					text-align: left;
+					margin: 10px 0 8px;
+				}
+				.optionDescription {
+					width: 250px;
+					p {
+						margin: 0;
+						color: var(--main-text-color);
+						font-family: var(--font-family-urbanist);
+						font-size: 13px;
+						font-weight: 500;
+						line-height: 150%;
+						letter-spacing: 0%;
+						text-align: left;
+					}
+				}
+			}
+			.includeOption {
+				.checkBoxIcon {
+					background: rgba(255, 190, 22, 0.4);
+					fill: white;
+					// opacity: 0.4;
+					border-radius: 20%;
+					padding: 8px 6px;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+@import './MediaFondoraGold.scss';

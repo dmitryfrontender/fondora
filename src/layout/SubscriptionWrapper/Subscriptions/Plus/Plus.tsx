@@ -52,7 +52,7 @@ const Plus = () => {
 							<h4>Просмотр лайков</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -63,7 +63,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 				</div>
@@ -84,7 +84,7 @@ const Plus = () => {
 							<h4>1 бесплатный буст в месяц</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -92,7 +92,7 @@ const Plus = () => {
 							<h4>5 бесплатных суперлайков в неделю</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -103,7 +103,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 				</div>
@@ -130,7 +130,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 				</div>

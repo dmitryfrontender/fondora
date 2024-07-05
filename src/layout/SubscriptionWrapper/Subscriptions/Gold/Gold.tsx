@@ -7,34 +7,8 @@ import './Gold.scss';
 const Gold = () => {
 	return (
 		<>
-			{/* <div className="page Subscription gold"> */}
 			<div className='subscriptionWrapper gold'>
-				{/* <div className="topItem">
-                        <div className="title">
-                            <h3>
-                                Моя Подписка
-                            </h3>
-                        </div>
-                        <div className="cancelBtn" onClick={() => navigate(-1)}>
-                            <SVGIcon name="cancelBtn" size={20}/>
-
-                        </div>
-                    </div>
-                    <div className="banner">
-                        <div className="bannerImg">
-                            <SVGIcon name="logoGold" size={20}/>
-                            <div className="marker">
-                                <span>
-                                    GOLD
-                                </span>
-                            </div>
-                        </div>
-                        <div className="buyBtn">
-                            <span>
-                                Купить Подписку
-                            </span>
-                        </div>
-                    </div> */}
+				
 				<div className='optionWrapper'>
 					<div className='optionTitle'>
 						<h5>Лайкай</h5>
@@ -63,7 +37,7 @@ const Gold = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 				</div>
@@ -103,7 +77,7 @@ const Gold = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 5px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
 						</div>
 					</div>
 				</div>

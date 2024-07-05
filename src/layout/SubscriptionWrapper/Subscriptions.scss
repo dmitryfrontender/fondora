@@ -2,25 +2,7 @@
 .subscriptionWrapper {
 	padding: 20px 0 40px;
 	width: 600px;
-	// .topItem{
-	//     display: flex;
-	//     justify-content: space-between;
-	//     align-items: center;
-	//     .title{
-	//         h3{
-	//             color: var(--white);
-	//             font-family: var(--white);
-	//             font-size: 16px;
-	//             font-weight: 600;
-	//             line-height: 19px;
-	//             letter-spacing: 0%;
-	//             text-align: center;
-	//         }
-	//     }
-	//     .cancelBtn{
-	//         cursor: pointer;
-	//     }
-	// }
+
 	.banner {
 		display: flex;
 		justify-content: space-between;
@@ -138,8 +120,9 @@
 			}
 			.includeOption {
 				.checkBoxIcon {
-					background: rgb(255, 190, 22);
-					opacity: 0.4;
+					background: rgba(255, 190, 22, 0.4);
+					fill: white;
+					// opacity: 0.4;
 					border-radius: 20%;
 					padding: 8px 6px;
 				}
@@ -176,7 +159,8 @@
 		.itemWrapper {
 			.includeOption {
 				.checkBoxIcon {
-					background: rgb(159, 23, 255);
+					fill: white;
+					background: rgba(159, 23, 255, 0.4);
 				}
 			}
 		}
@@ -205,7 +189,8 @@
 		.itemWrapper {
 			.includeOption {
 				.checkBoxIcon {
-					background: rgb(226, 31, 105);
+					fill: white;
+					background: rgba(226, 31, 105, 0.4);
 				}
 			}
 		}

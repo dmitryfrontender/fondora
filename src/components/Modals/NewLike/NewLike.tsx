@@ -5,6 +5,7 @@ import { ILikes } from '../../../model/LikesModel';
 import DefaultBtn from '../../DefaultBtn/DefaultBtn';
 import { newLikeModalState } from '../../../store/NewLikeSlice';
 import './NewLike.scss';
+import SVGIcon from '../../../assets/icons/svgComponent';
 
 const NewLike = () => {
 	const [mainAvatar, setMainAvatar] = useState<string>('');
@@ -49,13 +50,24 @@ const NewLike = () => {
 				<div className='modalWrapper'>
 					<div className='likesPreview'>
 						<div className='item first'>
-							<img src={mainAvatar} alt='like' />
+							<div className="imageWrapper">
+								<img src={mainAvatar} alt='like' />
+								
+							</div>
 						</div>
 						<div className='item second'>
-							<img src={itemAvatar1} alt='like' />
+							<div className="imageWrapper">
+								<img src={itemAvatar1} alt='like' />
+							</div>
 						</div>
 						<div className='item third'>
-							<img src={itemAvatar2} alt='like' />
+							<div className="imageWrapper">
+								<img src={itemAvatar2} alt='like' />
+								
+							</div>
+						</div>
+						<div className="heartLabe">
+							<SVGIcon name='newLikeHeart' size={20} />
 						</div>
 					</div>
 					<div className='tittle'>

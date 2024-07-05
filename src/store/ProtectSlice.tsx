@@ -4,7 +4,7 @@ export const protectSlice = createSlice({
 	name: 'protectSlice',
 	initialState: {
 		protectModal: false,
-		reportComponent: true,
+		reportComponent: false,
 		reportModal: false,
 		dotsModal: false,
 		blockUserModal: false,
