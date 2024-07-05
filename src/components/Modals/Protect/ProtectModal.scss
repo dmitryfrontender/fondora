@@ -42,10 +42,14 @@
 					}
 				}
 			}
-			.item:hover {
-				border: 1px solid var(--main-red);
-				transition: all ease 0.3s;
-				background: linear-gradient(146deg, #27292f 0%, #25272d 100%);
+			.item {
+				@media screen and (min-width: 1024px) {
+					&:hover {
+						border: 1px solid var(--main-red);
+						transition: all ease 0.3s;
+						background: linear-gradient(146deg, #27292f 0%, #25272d 100%);
+					}
+				}
 			}
 		}
 	}

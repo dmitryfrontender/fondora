@@ -58,11 +58,14 @@
 						top: 1px;
 						right: 1px;
 					}
-				}
-				.editBtn:hover {
-					border: 1px solid white;
-					transition: all ease 0.3s;
-					cursor: pointer;
+
+					@media screen and (min-width: 1024px) {
+						&:hover {
+							border: 1px solid white;
+							transition: all ease 0.3s;
+							cursor: pointer;
+						}
+					}
 				}
 				.fillWrapper {
 					width: 100%;
@@ -293,6 +296,17 @@
 							position: relative;
 							width: fit-content;
 							cursor: pointer;
+
+							@media screen and (min-width: 1024px) {
+								&:hover {
+									.underline {
+										width: 100%;
+										background-color: var(--black);
+										transition: all ease 0.3s;
+									}
+								}
+							}
+
 							span {
 								color: rgb(119, 85, 22);
 								font-family: var(--font-family-urbanist);
@@ -312,14 +326,6 @@
 								left: 0;
 							}
 						}
-
-						.innerBlock:hover {
-							.underline {
-								width: 100%;
-								background-color: var(--black);
-								transition: all ease 0.3s;
-							}
-						}
 					}
 				}
 			}
@@ -336,9 +342,13 @@
 						}
 					}
 					.watchMore {
-						.innerBlock:hover {
-							.underline {
-								background-color: var(--main-red);
+						.innerBlock {
+							@media screen and (min-width: 1024px) {
+								&:hover {
+									.underline {
+										background-color: var(--main-red);
+									}
+								}
 							}
 						}
 					}
@@ -375,9 +385,13 @@
 								color: rgb(255, 255, 255);
 							}
 						}
-						.innerBlock:hover {
-							.underline {
-								background-color: rgb(255, 255, 255);
+						.innerBlock {
+							@media screen and (min-width: 1024px) {
+								&:hover {
+									.underline {
+										background-color: rgb(255, 255, 255);
+									}
+								}
 							}
 						}
 					}

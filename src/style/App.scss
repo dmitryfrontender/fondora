@@ -1,412 +1,399 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Reenie+Beanie&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
-    font-family: 'SFProText-Light';
-    src: local('SFProText-Light'), url(../assets/fonts/SFProText-Light.ttf) format('truetype');
-  }
-
-@font-face {
-    font-family: 'SFProText-Regular';
-    src: local('SFProText-Regular'), url(../assets/fonts/SFProText-Regular.ttf) format('truetype');
+	font-family: 'SFProText-Light';
+	src: local('SFProText-Light'), url(../assets/fonts/SFProText-Light.ttf) format('truetype');
 }
 
 @font-face {
-    font-family: 'Proxima-Nova-Regular';
-    src: local('Proxima-Nova-Regular'), url(../assets/fonts/Proxima-Nova-Regular.ttf) format('truetype');
+	font-family: 'SFProText-Regular';
+	src: local('SFProText-Regular'), url(../assets/fonts/SFProText-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Proxima-Nova-Regular';
+	src: local('Proxima-Nova-Regular'), url(../assets/fonts/Proxima-Nova-Regular.ttf) format('truetype');
 }
 
 /* FONTS START */
 :root {
-    --font-public-sans: 'Public Sans';
-    --font-inter: 'Inter';
-    --font-reenie-beanie: 'Reenie Beanie';
-    --font-urbanist: 'Urbanist';
-    --font-sf-light: 'SFProText-Light';
-    --font-sf-regular: 'SFProText-Regular';
-    --font-proxima-nova: 'Proxima-Nova-Regular';
-    --font-family-public-sans: var(--font-public-sans), sans-serif;
-    --font-family-inter: var(--font-inter), sans-serif;
-    --font-family-reenie-beanie: var(--font-reenie-beanie), cursive;
-    --font-family-urbanist: var(--font-urbanist), sans-serif;
-    --font-family-sf-light: var(--font-sf-light), sans-serif;
-    --font-family-sf-regular: var(--font-sf-regular), sans-serif;
-    --font-family-proxima-nova: var(--font-proxima-nova), sans-serif;
+	--font-public-sans: 'Public Sans';
+	--font-inter: 'Inter';
+	--font-reenie-beanie: 'Reenie Beanie';
+	--font-urbanist: 'Urbanist';
+	--font-sf-light: 'SFProText-Light';
+	--font-sf-regular: 'SFProText-Regular';
+	--font-proxima-nova: 'Proxima-Nova-Regular';
+	--font-family-public-sans: var(--font-public-sans), sans-serif;
+	--font-family-inter: var(--font-inter), sans-serif;
+	--font-family-reenie-beanie: var(--font-reenie-beanie), cursive;
+	--font-family-urbanist: var(--font-urbanist), sans-serif;
+	--font-family-sf-light: var(--font-sf-light), sans-serif;
+	--font-family-sf-regular: var(--font-sf-regular), sans-serif;
+	--font-family-proxima-nova: var(--font-proxima-nova), sans-serif;
 
-    // COLORS
+	// COLORS
 
-    --main-red: #F22271;
-    --stroke-color: #BDBDBD;
-    --white: #FFFFFF;
-    --black: #000000;
-    --main-text-color: rgb(162, 162, 162);
+	--main-red: #f22271;
+	--stroke-color: #bdbdbd;
+	--white: #ffffff;
+	--black: #000000;
+	--main-text-color: rgb(162, 162, 162);
 
+	// VARIABLES FROM DESIGN
 
-    // VARIABLES FROM DESIGN
+	/* FONTS END */
 
-    /* FONTS END */
+	// SCROLLBAR FOR MOZILLA
+	scrollbar-color: rgb(210, 210, 210) rgb(46, 54, 69) !important;
+	scrollbar-width: thin !important;
 
-    // SCROLLBAR FOR MOZILLA
-    scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
-    scrollbar-width: thin !important;
+	// SCROLLBAR FOR OTHER
+	::-webkit-scrollbar {
+		width: 7px;
+		height: 7px;
+	}
 
-    // SCROLLBAR FOR OTHER
-    ::-webkit-scrollbar {
-        width: 7px;
-        height: 7px;
-    }
+	::-webkit-scrollbar-track-piece {
+		background-color: rgb(210, 210, 210);
+	}
 
-    ::-webkit-scrollbar-track-piece {
-        background-color: rgb(210,210,210);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: rgb(46,54,69);
-    }
+	::-webkit-scrollbar-thumb {
+		background-color: rgb(46, 54, 69);
+	}
 }
 
 html {
-    height: 100%;
-    min-width: 150px;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+	height: 100%;
+	min-width: 150px;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
-    font: 14px/1.2 var(--font-family-inter);
-    height: 100%;
-    min-width: 150px;
-    position: relative;
+	font: 14px/1.2 var(--font-family-inter);
+	height: 100%;
+	min-width: 150px;
+	position: relative;
 }
-button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 .App {
-    text-align: center;
-    min-height: 100vh;
+	text-align: center;
+	min-height: 100vh;
 }
 a:-webkit-any-link {
-    cursor: pointer;
-    text-decoration: none;
+	cursor: pointer;
+	text-decoration: none;
 }
-.tittle{
-    .backBtn{
-        display: none;
+.tittle {
+	.backBtn {
+		display: none;
+	}
+	font-family: var(--font-family-urbanist);
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: var(--white);
+	margin: 30px 0 10px;
 
-    }
-    font-family: var(--font-family-urbanist);
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: var(--white);
-    margin: 30px 0 10px;
-
-    h3{
-        margin: 0;
-    }
+	h3 {
+		margin: 0;
+	}
 }
 
-
-
-.page{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    position: relative;
-    // padding-left: 20vw;
-    padding-left: 25vw;
-    flex-direction: column;
+.page {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	position: relative;
+	// padding-left: 20vw;
+	padding-left: 25vw;
+	flex-direction: column;
 }
 .pageItems {
-    width: clamp(300px, 50vw, 600px);
+	width: clamp(300px, 50vw, 600px);
 }
 
+.titleWrapper {
+	text-align: start;
+	margin: 30px 0 20px;
 
-.titleWrapper{
-    text-align: start;
-    margin: 30px 0 20px;
-
-    .listTitle{
-        font-family: var(--font-family-urbanist);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 19px;
-        letter-spacing: 0;
-        h3{
-            margin: 0;
-        }
-    }
-
+	.listTitle {
+		font-family: var(--font-family-urbanist);
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 19px;
+		letter-spacing: 0;
+		h3 {
+			margin: 0;
+		}
+	}
 }
 
-.topItem{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .title{
-        h3{
-            color: var(--white);
-            font-family: var(--white);
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 19px;
-            letter-spacing: 0%;
-            text-align: center;
-        }
-    }
-    .cancelBtn{
-        cursor: pointer;
-    }
+.topItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.title {
+		h3 {
+			color: var(--white);
+			font-family: var(--white);
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 19px;
+			letter-spacing: 0%;
+			text-align: center;
+		}
+	}
+	.cancelBtn {
+		cursor: pointer;
+	}
 }
-
 
 // SETTING LIST
 .listWrapper {
-    ul{
-        list-style-type: none;
-        padding: 0;
-        .quantityPhotos{
-            align-items: start;
-            // height: 145px;
-            .text{
-                color: var(--main-text-color);
-                font-family: var(--font-family-urbanist);
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 150%;
-                letter-spacing: 0%;
-                text-align: left;
+	ul {
+		list-style-type: none;
+		padding: 0;
+		.quantityPhotos {
+			align-items: start;
+			// height: 145px;
+			.text {
+				color: var(--main-text-color);
+				font-family: var(--font-family-urbanist);
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 150%;
+				letter-spacing: 0%;
+				text-align: left;
+			}
+		}
+		li {
+			box-sizing: border-box;
+			border: 1px solid rgb(84, 72, 77);
+			border-radius: 20px;
+			padding: 20px;
+			margin: 10px 0;
+			transition: all ease 0.3s;
+			background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
+
+            @media screen and (max-width: 1024px) {
+                &:hover {
+                    border: 1px solid var(--main-red);
+                    transition: all ease 0.3s;
+                }
             }
-        }
-        li{
-            box-sizing: border-box;
-            border: 1px solid rgb(84, 72, 77);
-            border-radius: 20px;
-            padding: 20px;
-            margin: 10px 0;
-            transition: all ease 0.3s;
-            background: linear-gradient(135.00deg, rgb(19, 20, 23) 0%,rgb(19, 20, 23) 100%);
-            .itemWrapper{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: relative;
-                gap: 5px;
-                .description{
-                    display: flex;
-                    align-items: center;
-                    color: var(--main-text-color);
-                    font-family: var(--font-family-urbanist);
-                    position: relative;
-                    font-size: 14px;
-                    font-weight: 500;
-                    padding: 0;
-                    text-align: left;
-                    .text{
-                        padding-left: 10px;
-                    }
 
+			.itemWrapper {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+				gap: 5px;
+				.description {
+					display: flex;
+					align-items: center;
+					color: var(--main-text-color);
+					font-family: var(--font-family-urbanist);
+					position: relative;
+					font-size: 14px;
+					font-weight: 500;
+					padding: 0;
+					text-align: left;
+					.text {
+						padding-left: 10px;
+					}
+				}
+				.optionWrapper {
+					// display: grid;
+					// grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+					// gap: 10px;
+					// padding-right: 25px;
+					// width: -webkit-fill-available;
+					display: flex;
+					justify-content: flex-start;
+					flex-direction: row;
+					flex-wrap: wrap;
+					gap: 10px;
+					width: 100%;
+					.option {
+						padding: 10px 15px;
+						box-sizing: border-box;
+						border: 1px solid rgb(101, 101, 101);
+						border-radius: 30px;
+						background: rgb(2, 2, 2);
+						span {
+							color: var(--main-text-color);
+							font-family: var(--font-family-urbanist);
+							font-size: 13px;
+							font-weight: 500;
+							line-height: 150%;
+							letter-spacing: 2%;
+							text-align: center;
+						}
+					}
+				}
+				.value {
+					display: flex;
+					position: relative;
+					align-items: center;
+					cursor: pointer;
 
-                }
-                .optionWrapper{
-                    // display: grid;
-                    // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-                    // gap: 10px;
-                    // padding-right: 25px;
-                    // width: -webkit-fill-available;
-                    display: flex;
-                    justify-content: flex-start;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    gap: 10px;
-                    width: 100%;
-                    .option{
-                        padding: 10px 15px;
-                        box-sizing: border-box;
-                        border: 1px solid rgb(101, 101, 101);
-                        border-radius: 30px;
-                        background: rgb(2, 2, 2);
-                        span{
-                            color: var(--main-text-color);
-                            font-family: var(--font-family-urbanist);
-                            font-size: 13px;
-                            font-weight: 500;
-                            line-height: 150%;
-                            letter-spacing: 2%;
-                            text-align: center;
-                        }
-                    }
-                }
-                .value{
-                    display: flex;
-                    position: relative;
-                    align-items: center;
-                    cursor: pointer;
-                    .item{
-                        padding-right: 10px;
-                        p{
-                            color: var(--main-text-color);
-                            font-family: var(--font-family-urbanist);
-                            font-size: 14px;
-                            font-weight: 500;
-                            line-height: 150%;
-                            letter-spacing: 0%;
-                            text-align: left;
-                            margin: 0;
-                        }
-                        h4{
-                            color: rgb(255, 255, 255);
-                            font-family: var(--font-family-urbanist);
-                            font-size: 14px;
-                            font-weight: 500;
-                            line-height: 150%;
-                            letter-spacing: 0%;
-                            text-align: left;
-                            margin: 0;
-                        }
-                    }
-                    .text{
-                        color: var(--main-text-color);
-                        font-family: var(--font-family-urbanist);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 150%;
-                        letter-spacing: 0%;
-                        padding-right: 10px;
-                    }
-                    .underline{
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        height: 1px;
-                        width: 0;
-                        background-color: var(--main-red);
-                        bottom: -5px;
-                        transition: all ease 0.3s;
-                    }
-                }
-                .value:hover{
-                    .underline{
-                        width: 100%;
-                        transition: all ease 0.3s;
+					@media screen and (min-width: 1024px) {
+						&:hover {
+							.underline {
+								width: 100%;
+								transition: all ease 0.3s;
+							}
+						}
+					}
 
-                    }
-
-                }
-
-            }
-            .optionDescription{
-                display: flex;
-                justify-content: start;
-                align-items: center;
-                color: var(--main-text-color);
-                font-family: var(--font-family-urbanist);
-                font-size: 12px;
-                font-weight: 500;
-                line-height: 150%;
-                letter-spacing: 0%;
-                text-align: left;
-            }
-            .smileWrapper{
-                border-radius: 30px;
-                background: rgb(33, 32, 32);
-                display: flex;
-                align-items: center;
-                padding: 10px 20px;
-                text-align: start;
-                margin-top: 10px;
-                .smile{
-                    font-size: 34px;
-
-                }
-                .text{
-                    color: var(--main-text-color);
-                    font-family: var(--font-family-urbanist);
-                    font-size: 14px;
-                    font-weight: 600;
-                    line-height: 17px;
-                    letter-spacing: 2%;
-                    text-align: center;
-                    padding-left: 10px;
-
-                }
-
-            }
-        }
-        li:hover{
-            border: 1px solid var(--main-red);
-            transition: all ease 0.3s;
-        }
-        .listValue{
-            height: 142px;
-        }
-
-    }
+					.item {
+						padding-right: 10px;
+						p {
+							color: var(--main-text-color);
+							font-family: var(--font-family-urbanist);
+							font-size: 14px;
+							font-weight: 500;
+							line-height: 150%;
+							letter-spacing: 0%;
+							text-align: left;
+							margin: 0;
+						}
+						h4 {
+							color: rgb(255, 255, 255);
+							font-family: var(--font-family-urbanist);
+							font-size: 14px;
+							font-weight: 500;
+							line-height: 150%;
+							letter-spacing: 0%;
+							text-align: left;
+							margin: 0;
+						}
+					}
+					.text {
+						color: var(--main-text-color);
+						font-family: var(--font-family-urbanist);
+						font-size: 14px;
+						font-weight: 500;
+						line-height: 150%;
+						letter-spacing: 0%;
+						padding-right: 10px;
+					}
+					.underline {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						height: 1px;
+						width: 0;
+						background-color: var(--main-red);
+						bottom: -5px;
+						transition: all ease 0.3s;
+					}
+				}
+			}
+			.optionDescription {
+				display: flex;
+				justify-content: start;
+				align-items: center;
+				color: var(--main-text-color);
+				font-family: var(--font-family-urbanist);
+				font-size: 12px;
+				font-weight: 500;
+				line-height: 150%;
+				letter-spacing: 0%;
+				text-align: left;
+			}
+			.smileWrapper {
+				border-radius: 30px;
+				background: rgb(33, 32, 32);
+				display: flex;
+				align-items: center;
+				padding: 10px 20px;
+				text-align: start;
+				margin-top: 10px;
+				.smile {
+					font-size: 34px;
+				}
+				.text {
+					color: var(--main-text-color);
+					font-family: var(--font-family-urbanist);
+					font-size: 14px;
+					font-weight: 600;
+					line-height: 17px;
+					letter-spacing: 2%;
+					text-align: center;
+					padding-left: 10px;
+				}
+			}
+		}
+		.listValue {
+			height: 142px;
+		}
+	}
 }
 
 .plusBtn {
-    svg{
-        cursor: pointer;
-        border: 1px solid transparent;
-        transition: all ease 0.3s;
-        border-radius: 50%;
-    }
-    svg:hover{
-        border: 1px solid var(--stroke-color);
-        transition: all ease 0.3s;
-    }
+	svg {
+		cursor: pointer;
+		border: 1px solid transparent;
+		transition: all ease 0.3s;
+		border-radius: 50%;
 
+        @media screen and (min-width: 1024px) {
+            &:hover {
+                border: 1px solid var(--stroke-color);
+                transition: all ease 0.3s;
+            }
+        }
+	}
 }
 
-.goldMarker{
-    width: 55px;
-    height: 28px;
-    background: rgb(255, 190, 24);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    span{
-        background: var(--black);
-        font-family: var(--font-family-urbanist);
-        color: rgb(255, 190, 24);
-        border-radius: 7px;
-        font-size: 12px;
-        padding: 1px 7px;
-    }
+.goldMarker {
+	width: 55px;
+	height: 28px;
+	background: rgb(255, 190, 24);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	span {
+		background: var(--black);
+		font-family: var(--font-family-urbanist);
+		color: rgb(255, 190, 24);
+		border-radius: 7px;
+		font-size: 12px;
+		padding: 1px 7px;
+	}
 }
 
 .rightPageWrapper {
-    width: clamp(200px, 35vw, 600px);
-    .image{
-        img{
-            max-width: -webkit-fill-available;
-        }
-
-    }
-    .description {
-        p{
-            color: var(--main-text-color);
-            font-family: var(--font-family-urbanist);
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 150%;
-            letter-spacing: 2%;
-            text-align: center;
-        }
-
-    }
+	width: clamp(200px, 35vw, 600px);
+	.image {
+		img {
+			max-width: -webkit-fill-available;
+		}
+	}
+	.description {
+		p {
+			color: var(--main-text-color);
+			font-family: var(--font-family-urbanist);
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 150%;
+			letter-spacing: 2%;
+			text-align: center;
+		}
+	}
 }
-
-
-
-
 
 @import url('./MediaApp.scss');
