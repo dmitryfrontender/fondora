@@ -1,0 +1,32 @@
+.AudioPlayer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 22vw;
+    gap: 10px;
+    box-sizing: border-box;
+    // max-width: 80%;
+    .pauseBtn {
+      svg{
+        border-radius: 10px;
+        background: #212020;
+        padding: 10px;
+      }
+    }
+    .waveform{
+        flex-grow: 1;
+        overflow: hidden;
+        min-width: 0; // This ensures the waveform takes available space
+    }
+    .playBtn {
+      svg{
+        border-radius: 10px;
+        background: #E70463;
+        padding: 10px;
+      }
+    }
+    .timePlay{
+        min-width: 50px;
+    }
+}

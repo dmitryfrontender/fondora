@@ -224,6 +224,9 @@ const AudioRecorder: React.FC = () => {
   );
 };
 
+export default AudioRecorder;
+
+
 // interface AudioPlayerProps {
 //   audioUrl: string;
 // }
@@ -272,4 +275,3 @@ const AudioRecorder: React.FC = () => {
 //   );
 // };
 
-export default AudioRecorder;

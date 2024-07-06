@@ -21,6 +21,8 @@ import { setRerender } from '../../store/rootSlice';
 import MessageSmile from '../../components/MessageSmile/MessageSmile';
 import { setMessageSmile } from '../../store/rootSlice'; // {setMessageSmile}
 import EmptyChat from '../../components/EmptyChat/EmptyChat';
+import AudioPlayer from '../../components/AudioPlayer/AudioPlayer';
+import VoiceMessage from '../../assets/voiceMessage/serial.mp3';
 
 const Chat = () => {
 	const [chatData, setChatData] = useState({} as IMessages);
@@ -99,6 +101,12 @@ const Chat = () => {
 			
 		}
 	}, [scrollPosition]);
+
+
+	const removeReaction = () => {
+		console.log('reaction removed');
+	
+	};
 
 
 
@@ -280,43 +288,58 @@ const Chat = () => {
 													
 													chatData.messages.map((item, index) => (
 														
+
+
 														<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={item.id} onClick={() => handleSmileReaction(item.id)} >
 
-																
+																														
 
-															<div className="messageWrapper">
-																{selectedMessage === item.id && chatSmile && (
-																	<div className='smileBlock'>
-																		<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
-																	</div>
-																)}
-																{item.reaction && (
-																	<div className='reaction'>
-																		<span>{item.reaction}</span>
-																	</div>
-																)}
+														<div className="messageWrapper">
+															{selectedMessage === item.id && chatSmile && (
+																<div className='smileBlock'>
+																	<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
+																</div>
+															)}
+															{item.reaction && (
+																<div className='reaction'>
+																	<span>{item.reaction}</span>
+																</div>
+															)}
 
 
-																{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
-																{item.storagePhotoArr ? item.storagePhotoArr.map((elem: string, index) => <img src={elem} alt='message' key={index} />) : null}
+															{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
+															{item.storagePhotoArr ? item.storagePhotoArr.map((elem: string, index) => <img src={elem} alt='message' key={index} />) : null}
+															
+															{
+
+																item.text.slice(-3) === 'mp3' ?
+																<AudioPlayer audioUrl={VoiceMessage} onButtonClick={removeReaction}/>
 																
-																
+																:
 																<span key={index}>{item.text}</span>
 
 																
-															</div>
-															<div className='timeSend'key={item.id} style={{ left: item.owner ? '' : '15px' }}>
-																	<span>{item.time}</span>
-															</div>
-															{
-																item.owner &&
-																<div className="readOwnerMsg">
-																	<SVGIcon name='readOwnerMessage' size={20} stroke='#43A1FC'/>
-																</div>
 															}
+
 															
+														</div>
+														<div className='timeSend'key={item.id} style={{ left: item.owner ? '' : '15px' }}>
+																<span>{item.time}</span>
+														</div>
+														{
+															item.owner &&
+															<div className="readOwnerMsg">
+																<SVGIcon name='readOwnerMessage' size={20} stroke='#43A1FC'/>
+															</div>
+														}
+
 
 														</div>
+														
+														
+														
+														
+								
 													  ))
 													: 
 													
@@ -328,6 +351,7 @@ const Chat = () => {
 												: 
 												<EmptyChat />
 											}
+
 										
 										</div>
 									</div>

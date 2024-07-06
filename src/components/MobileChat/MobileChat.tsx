@@ -15,6 +15,8 @@ import Report from '../ReportComponent/Report';
 import Typing from '../TypingElement/Typing';
 import MessageSmile from '../MessageSmile/MessageSmile';
 import { setMessageSmile } from '../../store/rootSlice';
+import AudioPlayer from '../AudioPlayer/AudioPlayer';
+import VoiceMessage from '../../assets/voiceMessage/serial.mp3';
 
 const MobileChat = () => {
 	const reportComponent = useSelector((state: any) => state.ProtectState.reportComponent);
@@ -29,6 +31,9 @@ const MobileChat = () => {
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
 	const [scrollPosition, setScrollPosition] = useState(0);
+	// const [voiceBtn, setVoiceBtn] = useState(false);
+	const [reactionRemoved, setReactionRemoved] = useState<boolean>(false);
+	const [isButtonClick, setIsButtonClick] = useState<boolean>(false); 
 
 
 	const windowRef = useRef<HTMLDivElement>(null);
@@ -49,9 +54,39 @@ const MobileChat = () => {
 	}, []);
 
 	const handleSmileReaction = (messageId: number) => {
-		setSelectedMessage(messageId);
 
-		chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
+		// console.log(1);
+		// if (voiceBtn) {
+		// 	dispatch(setMessageSmile(false))
+		// 	// setVoiceBtn(false)
+		// 	return
+		// } else {
+
+
+
+
+			// setSelectedMessage(messageId);
+
+			// chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
+
+		// }
+		// console.log(reactionRemoved, '2');
+		
+		// if (!reactionRemoved) {
+		// 	setSelectedMessage(messageId);
+		// 	chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
+		// }
+		// setReactionRemoved(false); // Reset the state after checking it
+		
+
+		if (isButtonClick) return; // Prevent execution if button click is in progress
+
+		if (!reactionRemoved) {
+			setSelectedMessage(messageId);
+			chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
+		}
+		setReactionRemoved(false); // Reset the state after checking it
+	
 	};
 
 	const handleAddReaction = (messageId: number, reaction: string) => {
@@ -88,6 +123,17 @@ const MobileChat = () => {
 		}
 	};
 	
+	const removeReaction = () => {
+		setReactionRemoved(true);
+		setIsButtonClick(true); // Set isButtonClick to true when button is clicked
+		setTimeout(() => setIsButtonClick(false), 1000);
+
+		// setVoiceBtn(true);
+
+		
+
+	}
+
 	useEffect(() => {
 		
 		const currentWindowRef = windowRef.current;
@@ -103,6 +149,12 @@ const MobileChat = () => {
 			currentWindowRef?.removeEventListener('scroll', handleScroll);
 		}
 	}, [chatId, forceUpdate, chatData, typingState]);
+
+	// useEffect(() => {
+	// 	if (reactionRemoved) {
+	// 		setSelectedMessage(null); // Reset selected message when reaction is removed
+	// 	}
+	// }, [reactionRemoved]);
 
 	return (
 		<>
@@ -173,11 +225,12 @@ const MobileChat = () => {
 										<div className="wrapper" ref={chatRef}>
 											<div className='messages' >
 												{Object.keys(chatData).length > 0
-													? chatData.messages.forEach((item, index) => (
-															<>
-																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={(event) => handleSmileReaction(item.id)}>
+													? chatData.messages.map((item, index) => (
+														// console.log(item)
+														
+																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={() => handleSmileReaction(item.id)}>
 																	<div className="messageWrapper">
-																		<span key={index}>{item.text}</span>
+																		{/* <span key={index}>{item.text}</span> */}
 																		{selectedMessage === item.id && chatSmile && (
 																			<div className='smileBlock'>
 																				<MessageSmile onSelect={(reaction) => handleAddReaction(item.id, reaction)} />
@@ -191,17 +244,30 @@ const MobileChat = () => {
 																		{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
 																		{item.storagePhotoArr ? item.storagePhotoArr.forEach((elem: string) => <img src={elem} alt='message' />) : null}
 																		
+																		{
+
+																		item.text.slice(-3) === 'mp3' ?
+
+																		
+																		<AudioPlayer audioUrl={VoiceMessage} onButtonClick={removeReaction}/>
+
+																		:
+																		<span key={index}>{item.text}</span>
+
+
+																		}
+
+
 																	</div>
 																	<div className='timeSend' style={{ left: item.owner ? '' : '15px' }}>
 																			<span>{item.time}</span>
 																		</div>
 																	
 																</div>
-															</>
 													))
 													: null}
 													{typingState && <Typing userName={chatData.userName} userAvatar={chatData.image} />}
-
+													{/* <div className='message'>ololo</div> */}
 										{/* <div ref={messagesEndRef}/> */}
 
 											</div>

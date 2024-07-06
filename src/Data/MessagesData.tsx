@@ -50,7 +50,7 @@ export const messagesData: IMessages[] = [
 		messages: [
 			{
 				id: 1,
-				text: 'Привет!',
+				text: '../../assets/voiceMessage/serial.mp3',
 				time: '10:00',
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
@@ -65,14 +65,14 @@ export const messagesData: IMessages[] = [
 		image: user3,
 		userName: 'Строитель',
 		dateMet: '10.10.2020',
-		userOnLine: true,
+		userOnLine: false,
 		isLike: false,
 		newMessages: false,
 
 		messages: [
 			{
 				id: 1,
-				text: 'Привет!',
+				text: '../../assets/voiceMessage/serial.mp3',
 				time: '10:00',
 				daySend: ['today', 'yesterday', 'last week', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
 				unRead: false,
