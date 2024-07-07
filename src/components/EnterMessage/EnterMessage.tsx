@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './EnterMessage.scss';
 import SVGIcon from '../../assets/icons/svgComponent';
 import TextareaAutosize from 'react-textarea-autosize';
@@ -10,6 +10,7 @@ import ChatSmiles from '../ChatExtra/ChatSmiles/ChatSmiles';
 import ChatGifs from '../ChatExtra/ChatGifs/ChatGifs';
 import AddPhoto from '../ChatExtra/AddPhotos/AddPhotos';
 import AudioRecorder from '../AudioRecorder/AudioRecorder';
+// import { click } from '@testing-library/user-event/dist/click';
 
 interface IProps {
 	chatId: string;
@@ -27,79 +28,9 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 
 	const dispatch = useDispatch();
 
-	const refreshData = () => {
+	const refreshData = useCallback(() => {
 		if (forceRerender) forceRerender();
-	};
-
-	// const handleKeyPress = (event: any) => {
-	// 	if (
-	// 		// event.code === 'Enter'
-	// 		event.code === 'Enter' && !event.shiftKey
-	// 		) {
-	// 			event.preventDefault();
-	// 		setAreaValue('');
-
-	// 		setSendBtn(false);
-
-	// 		const date = new Date();
-	// 		const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
-
-	// 		const newMessage = messagesData.filter((elem: IMessages) => {
-	// 			return elem.id === +chatId;
-	// 		});
-
-	// 		let messageId = 0;
-
-	// 		newMessage.forEach((elem: any) => {
-	// 			elem.messages.forEach((id: any) => {
-	// 				messageId = id.id;
-	// 			});
-
-	// 			elem.messages.push({
-	// 				id: messageId + 1,
-	// 				text: areaValue,
-	// 				time: timeSend,
-	// 				daySend: ['Tuesday'],
-	// 				unRead: false,
-	// 				owner: true,
-	// 				reaction: ''
-	// 			});
-
-	// 		});
-	// 		messageId = 0;
-
-	// 		refreshData();
-
-	// 		setTimeout(() => {
-	// 			dispatch(setTypingState(true));
-	// 		}, 1000);
-
-	// 		setTimeout(() => {
-	// 			const date = new Date();
-	// 			const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
-
-	// 			newMessage.forEach((elem: any) => {
-	// 				elem.messages.forEach((id: any) => {
-	// 					messageId = id.id;
-	// 				});
-
-	// 				elem.messages.push({
-	// 					id: messageId + 1,
-	// 					text: `companion answer ${+messageId - 1}`,
-	// 					time: timeSend,
-	// 					daySend: ['Tuesday'],
-	// 					unRead: false,
-	// 					owner: false,
-	// 					reaction: ''
-	// 				});
-
-	// 			});
-	// 			messageId = 0;
-	// 			refreshData();
-	// 			dispatch(setTypingState(false));
-	// 		}, 3000);
-	// 	}
-	// };
+	}, [forceRerender]);
 
     const resizeArea = (e: any) => {
 
@@ -113,79 +44,90 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
         setSendBtn(value.trim().length > 0);
     };
 
-    const handleKeyPress = (event: any) => {
-        if (event.code === 'Enter' && !event.shiftKey) {
-			if (sendBtn) {
-				event.preventDefault();
-			}
-            // event.preventDefault();
-            const trimmedText = areaValue.trim(); 
-            if (trimmedText) {
-                const date = new Date();
-                const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+    const handleKeyPress = useCallback((event: any) => {
 
-                const newMessage = messagesData.filter((elem: IMessages) => {
-                    return elem.id === +chatId;
-                });
-
-                let messageId = 0;
-
-                newMessage.forEach((elem: any) => {
-                    elem.messages.forEach((id: any) => {
-                        messageId = id.id;
-                    });
-
-                    elem.messages.push({
-                        id: messageId + 1,
-                        text: trimmedText, // Use trimmed text
-                        time: timeSend,
-                        daySend: ['Tuesday'],
-                        unRead: false,
-                        owner: true,
-                        reaction: ''
-                    });
-                });
-
-                messageId = 0;
-                refreshData();
-
-                setAreaValue('');
-                setSendBtn(false);
-
-				// setTimeout(() => {
-				// 	const ownerMessage = messagesData[messagesData.length -1]
+		if(event.code === 'Enter' || event.code === 'Code'){
+			if (!event.shiftKey) {
+			
+				
+		
+					if (sendBtn && event.code !== 'Code') {
+						
+						event.preventDefault();
+					}
+			
 					
-				// }, 1000)
+					const trimmedText = areaValue.trim(); 
+					if (trimmedText) {
+						const date = new Date();
+						const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+		
+						const newMessage = messagesData.filter((elem: IMessages) => {
+							return elem.id === +chatId;
+						});
+		
+						let messageId = 0;
+		
+						newMessage.forEach((elem: any) => {
+							elem.messages.forEach((id: any) => {
+								messageId = id.id;
+							});
+		
+							elem.messages.push({
+								id: messageId + 1,
+								text: trimmedText, // Use trimmed text
+								time: timeSend,
+								daySend: ['Tuesday'],
+								unRead: false,
+								owner: true,
+								reaction: ''
+							});
+						});
+		
+						messageId = 0;
+						refreshData();
+		
+						setAreaValue('');
+						setSendBtn(false);
+		
+						// setTimeout(() => {
+						// 	const ownerMessage = messagesData[messagesData.length -1]
+							
+						// }, 1000)
+		
+						setTimeout(() => {
+							dispatch(setTypingState(true));
+						}, 1000);
+		
+						setTimeout(() => {
+							const date = new Date();
+							const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+		
+							newMessage.forEach((elem: any) => {
+								elem.messages.forEach((id: any) => {
+									messageId = id.id;
+								});
+		
+								elem.messages.push({
+									id: messageId + 1,
+									text: `companion answer ${+messageId - 1}`,
+									time: timeSend,
+									daySend: ['Tuesday'],
+									unRead: false,
+									owner: false,
+									reaction: ''
+								});
+							});
+							messageId = 0;
+							refreshData();
+							dispatch(setTypingState(false));
+						}, 3000);
+					}
+				}
 
-                setTimeout(() => {
-                    dispatch(setTypingState(true));
-                }, 1000);
-
-                setTimeout(() => {
-                    const date = new Date();
-                    const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
-
-                    newMessage.forEach((elem: any) => {
-                        elem.messages.forEach((id: any) => {
-                            messageId = id.id;
-                        });
-
-                        elem.messages.push({
-                            id: messageId + 1,
-                            text: `companion answer ${+messageId - 1}`,
-                            time: timeSend,
-                            daySend: ['Tuesday'],
-                            unRead: false,
-                            owner: false,
-                            reaction: ''
-                        });
-                    });
-                    messageId = 0;
-                    refreshData();
-                    dispatch(setTypingState(false));
-                }, 3000);
-            }
-        }}
+		}
+       
+	}, [sendBtn, areaValue, refreshData, chatId, dispatch])
 	const handleSmile = (smile: string) => {
 		setAreaValue(areaValue + smile);
 		
@@ -289,7 +231,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 				}
 				break;
 				case 'voiceRecorder':
-					console.log(voiceRecorder);
+					// console.log(voiceRecorder);
 					
 					if (voiceRecorder) {
 						setVoiceRecorder(false);
@@ -311,7 +253,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 			document.removeEventListener('keydown', handleKeyPress, false);
 		};
 
-	}, [areaValue]);
+	}, [areaValue, handleKeyPress]);
 
 	return (
 		<>
@@ -321,7 +263,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 						<div className='input'>
 							<TextareaAutosize placeholder='Напишите сообщение...' value={areaValue} minRows={2} maxRows={4} onChange={resizeArea} />
 							<div className={`sendBtn ${sendBtn ? 'activeSendBtn' : ''}`}>
-								<button onClick={() => handleKeyPress({ code: 'Enter' })}>
+								<button onClick={() => handleKeyPress({ code: 'Code' })}>
 									<SVGIcon name='sendTgBtn' size={20} />
 								</button>
 							</div>
