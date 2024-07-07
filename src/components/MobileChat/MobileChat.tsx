@@ -31,9 +31,6 @@ const MobileChat = () => {
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
 	const [scrollPosition, setScrollPosition] = useState(0);
-	// const [voiceBtn, setVoiceBtn] = useState(false);
-	const [reactionRemoved, setReactionRemoved] = useState<boolean>(false);
-	const [isButtonClick, setIsButtonClick] = useState<boolean>(false); 
 
 
 	const windowRef = useRef<HTMLDivElement>(null);
@@ -79,13 +76,11 @@ const MobileChat = () => {
 		// setReactionRemoved(false); // Reset the state after checking it
 		
 
-		if (isButtonClick) return; // Prevent execution if button click is in progress
+		// if (isButtonClick) return; // Prevent execution if button click is in progress
 
-		if (!reactionRemoved) {
 			setSelectedMessage(messageId);
 			chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
-		}
-		setReactionRemoved(false); // Reset the state after checking it
+
 	
 	};
 
@@ -123,16 +118,6 @@ const MobileChat = () => {
 		}
 	};
 	
-	const removeReaction = () => {
-		setReactionRemoved(true);
-		setIsButtonClick(true); // Set isButtonClick to true when button is clicked
-		setTimeout(() => setIsButtonClick(false), 1000);
-
-		// setVoiceBtn(true);
-
-		
-
-	}
 
 	useEffect(() => {
 		
@@ -249,7 +234,7 @@ const MobileChat = () => {
 																		item.text.slice(-3) === 'mp3' ?
 
 																		
-																		<AudioPlayer audioUrl={VoiceMessage} onButtonClick={removeReaction}/>
+																		<AudioPlayer audioUrl={VoiceMessage}/>
 
 																		:
 																		<span key={index}>{item.text}</span>

@@ -34,7 +34,8 @@ const Chat = () => {
 	const [forceUpdate, setForceUpdate] = useState(false);
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
-	const [chatLength, setChatLength] = useState<boolean | undefined>(false);
+	// const [chatLength, setChatLength] = useState<boolean | undefined>(false);
+		const [chatLength, setChatLength] = useState<boolean | undefined>(true);
 
 	const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -103,10 +104,10 @@ const Chat = () => {
 	}, [scrollPosition]);
 
 
-	const removeReaction = () => {
-		console.log('reaction removed');
+	// const removeReaction = () => {
+	// 	console.log('reaction removed');
 	
-	};
+	// };
 
 
 
@@ -282,6 +283,7 @@ const Chat = () => {
 											{chatLength ? 
 												<div className='messages'  ref={chatRef}>
 												{
+												
 												Object.keys(chatData).length > 0
 
 													? 
@@ -313,7 +315,7 @@ const Chat = () => {
 															{
 
 																item.text.slice(-3) === 'mp3' ?
-																<AudioPlayer audioUrl={VoiceMessage} onButtonClick={removeReaction}/>
+																<AudioPlayer audioUrl={VoiceMessage}/>
 																
 																:
 																<span key={index}>{item.text}</span>

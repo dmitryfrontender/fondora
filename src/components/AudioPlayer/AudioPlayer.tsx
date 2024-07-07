@@ -5,10 +5,9 @@ import './AudioPlayer.scss';
 
 interface AudioPlayerProps {
   audioUrl: string;
-  onButtonClick: () => void;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl, onButtonClick }) => {
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl }) => {
   const waveformRef = useRef<HTMLDivElement | null>(null);
   const wavesurfer = useRef<WaveSurfer | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
@@ -94,7 +93,6 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl, onButtonClick }) =>
   const togglePlayPause = () => {
     setIsPlaying((prevIsPlaying) => !prevIsPlaying);
     wavesurfer.current && wavesurfer.current.playPause();
-    onButtonClick();
     
   };
 
@@ -106,7 +104,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl, onButtonClick }) =>
 
   return (
     <div className='AudioPlayer'>
-      <button onClick={togglePlayPause}>
+      <button onClick={(e) => {togglePlayPause(); e.stopPropagation()}}>
         {isPlaying ? 
           <div className="pauseBtn">
             <SVGIcon name={"pauseRecordBtn"} size={20}/>
@@ -120,11 +118,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl, onButtonClick }) =>
       <div
         className='waveform'
         ref={waveformRef}
-        // style={{
-        //   borderRadius: '10px',
-        //   overflow: 'hidden',
-        //   width: '22vw', // Ensure full width for responsiveness
-        // }}
+      
       />
       <div className='timePlay'>
         {isPlaying ?
