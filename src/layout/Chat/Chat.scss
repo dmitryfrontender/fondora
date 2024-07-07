@@ -2,15 +2,16 @@
 	background: rgb(18, 18, 18);
 	overflow: hidden;
 	position: relative;
-	// padding-left: clamp(200px, 30vw, 356px);
 	padding-left: clamp(317px, 30vw, 320px);
+	width: calc(100% - clamp(317px, 30vw, 320px));
 
 	.chatWrapper {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
+		display: flex;
 		width: 100%;
-		height: 100px;
+		height: 100vh;
 		.chatArea {
+			flex-grow: 1;
+			flex-shrink: 1;
 			position: relative;
 			width: -webkit-fill-available;
 			height: -webkit-fill-available;
@@ -143,8 +144,6 @@
 							width: 100%;
 							.message {
 								// width: 30vw;
-								max-width: 80%;
-								
 								.messageWrapper{
 									position: relative;
 									display: flex;
@@ -154,7 +153,7 @@
 									// max-width: 80%;
 									flex-wrap: wrap;
 									min-width: 50px;
-								
+
 									.smileBlock {
 										display: flex;
 										justify-content: space-between;
@@ -209,13 +208,13 @@
 									}
 								}
 
-								
+
 							}
 
 							.owner {
 								text-align: end;
 								align-self: flex-end;
-								
+
 								.messageWrapper{
 									border-radius: 20px 0px 20px 20px;
 									background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), linear-gradient(92deg, #373fff 0.03%, #22caff 100.03%),
@@ -242,7 +241,7 @@
 							.notOwner {
 								text-align: start;
 								align-self: flex-start;
-								
+
 								.messageWrapper{
 									border-radius: 0px 20px 20px 20px;
 									background: linear-gradient(90deg, #272626 0.1%, #1e1e26 102.02%);
@@ -269,10 +268,16 @@
 			}
 		}
 		.ProfileComponent {
-			// width: -webkit-fill-available;
-			height: 100vh;
+			max-width: 400px;
+			min-width: initial;
+			width: 100%;
+			height: 100%;
+			flex-shrink: 0;
+			flex-grow: 0;
 			max-height: initial;
 			border-radius: 0;
+			margin: 0;
+
 			.ProfileComponentInfo {
 				position: relative;
 			}

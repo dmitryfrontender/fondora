@@ -7,22 +7,10 @@
 	margin-top: 10px;
 
 	.pairsWrapper {
-		// display: flex;
-		// flex-wrap: wrap;
-		// justify-content: flex-start;
-		// flex-direction: row;
-		// align-items: center;
-		// margin-top: 30px;
-		// // gap: 1vw;
-		// gap: 0.8vw;
-		// width: 100%;
-		// height: 100%;
-		// overflow: auto;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		justify-content: flex-start;
 		padding-bottom: 50px;
-		// margin-top: 30px;
 		gap: 0.8vw;
 		width: 100%;
 		height: 100%;
@@ -31,16 +19,18 @@
 			position: relative;
 			overflow: hidden;
 
-			.userPhoto::before{
-				display: block;
-				content: "";
-				width: 100%;
-				padding-top: 145%;
-			}
 			.userPhoto{
 				position: relative;
 				overflow: hidden;
 				border-radius: 10px;
+
+				&:before{
+					display: block;
+					content: "";
+					width: 100%;
+					padding-top: 145%;
+				}
+
 				img{
 					position: absolute;
 					top: 50%;
@@ -82,7 +72,20 @@
 				border: 2px solid rgb(255, 187, 12);
 				position: relative;
 
-				img {
+				&:before{
+					display: block;
+					content: "";
+					width: 100%;
+					padding-top: 145%;
+				}
+
+				img{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					min-width: 100%;
+					min-height: 100%;
 					filter: blur(10px);
 				}
 				.countSlides {

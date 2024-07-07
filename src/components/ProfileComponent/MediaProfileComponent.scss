@@ -1,0 +1,27 @@
+@media screen and (max-width: 1023px) {
+    .ProfileComponent {
+        height: calc(100vh - clamp(102px, 13vw, 110px));
+        margin: clamp(102px, 13vw, 110px) auto 0;
+        --m: 45px;
+    }
+
+    .profileOpened {
+        .MobileButtons {
+            display: none;
+        }
+
+        .ProfileComponent {
+            // min-width: initial;
+            // width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .profileOpened {
+        .ProfileComponent {
+            width: 100vw;
+		    min-width: initial;
+        }
+    }
+}

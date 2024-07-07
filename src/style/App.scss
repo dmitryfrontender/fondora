@@ -45,17 +45,17 @@
 	/* FONTS END */
 
 	// SCROLLBAR FOR MOZILLA
-	scrollbar-color: rgb(210, 210, 210) rgb(46, 54, 69) !important;
+	scrollbar-color: #212020 rgb(46, 54, 69) !important;
 	scrollbar-width: thin !important;
 
 	// SCROLLBAR FOR OTHER
 	::-webkit-scrollbar {
-		width: 7px;
-		height: 7px;
+		width: 5px;
+		height: 5px;
 	}
 
-	::-webkit-scrollbar-track-piece {
-		background-color: rgb(210, 210, 210);
+	::-webkit-scrollbar-track {
+		background-color: #212020;
 	}
 
 	::-webkit-scrollbar-thumb {

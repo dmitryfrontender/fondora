@@ -1,6 +1,27 @@
 .ProfileComponent {
-	overflow: auto;
+	--side-padding: 0;
+	--top-padding: 0;
+	--top-margin: 50px;
+	--right-margin: 29vw;
+	--left-margin: 39vw;
+	--bottom-padding: 93px;
+
+	overflow: hidden;
 	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: calc(100% - var(--left-margin) - var(--right-margin));
+	height: calc(100vh - var(--top-margin) - var(--top-margin));
+	position: relative;
+	margin: var(--top-margin) var(--right-margin) 0 var(--left-margin);
+
+	&Wrapper {
+		width: 100%;
+		overflow: auto;
+		height: 100%;
+	}
 
 	&Title {
 		color: #fff;
@@ -322,5 +343,12 @@
 				height: 20px;
 			}
 		}
+	}
+}
+
+.profileOpened .ProfileComponent {
+	min-width: 600px;
+	&Info {
+		padding-bottom: var(--bottom-padding);
 	}
 }
