@@ -188,6 +188,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
         }}
 	const handleSmile = (smile: string) => {
 		setAreaValue(areaValue + smile);
+		
 	};
 
 	const handleGif = (gif: string) => {
@@ -298,17 +299,19 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 						setImagesBlock(false);
 						setVoiceRecorder(true);
 					}
-			default:
-				break;
 		}
 	};
 
 	useEffect(() => {
+		areaValue ? setSendBtn(true) : setSendBtn(false);
+		
+
 		document.addEventListener('keydown', handleKeyPress, false);
 		return () => {
 			document.removeEventListener('keydown', handleKeyPress, false);
 		};
-	});
+
+	}, [areaValue]);
 
 	return (
 		<>

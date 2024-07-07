@@ -18,6 +18,7 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 	const [photoCounter, setPhotoCounter] = useState<number>(0);
 	const [clickedPhotos, setClickedPhotos] = useState(0);
 	const counterRef = useRef<(HTMLDivElement | null)[]>([]);
+	const [clearCounter, setClearCounter] = useState(false);
 
 	const handlePhotoClick = (photo: IPhoto, element: any) => {
 
@@ -37,7 +38,23 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 
 	};
 
+
+	const sendPhotos = () => {
+		selectedPhotos.length > 0 && addPhoto([...selectedPhotos]);
+		setSelectedPhotos([]);
+		setPhotoCounter(0);
+		setClearCounter(true);
+	}
+
 	useEffect(() => {
+
+		if (clearCounter){
+			counterRef.current.forEach((el: any) => {
+				const node = el.childNodes[1];
+				node.textContent = '';
+			})
+			setClearCounter(false)
+		} 
 
 		const recalculateCounter = () => {
 
@@ -70,7 +87,7 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 			
 		});
 
-	}, [clickedPhotos, photoCounter, selectedPhotos])
+	}, [clickedPhotos, photoCounter, selectedPhotos, clearCounter])
 
 
 	const defaultStyle = {
@@ -89,10 +106,7 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 		<div className='AddPhoto'>
 			<div
 				className='btn'
-				onClick={() => {
-					selectedPhotos.length > 0 && addPhoto([...selectedPhotos]);
-					setSelectedPhotos([]);
-				}}
+				onClick={() => {sendPhotos()}}
 			>
 				<button style={{ background: selectedPhotos.length > 0 ? activeBtn : '' }}>
 					<SVGIcon name='sendTgBtn' width={20} />
