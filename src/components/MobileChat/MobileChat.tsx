@@ -31,6 +31,9 @@ const MobileChat = () => {
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
 	const [scrollPosition, setScrollPosition] = useState(0);
+	const [newMessagesLength, setNewMessagesLength] = useState<number>(0);
+	const [isTyping, setIsTyping] = useState(false);
+
 
 
 	const windowRef = useRef<HTMLDivElement>(null);
@@ -39,44 +42,13 @@ const MobileChat = () => {
 
 
 	const dispatch = useDispatch();
-	// const messagesEndRef = useRef<null | HTMLDivElement>(null)
-
-	// const scrollToBottom = () => {
-	// 	messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-	// }
 
 	const forceRerender = useCallback(() => {
 		setForceUpdate((prevForceUpdate) => !prevForceUpdate);
-		// window.scrollY = 0;
+
 	}, []);
 
 	const handleSmileReaction = (messageId: number) => {
-
-		// console.log(1);
-		// if (voiceBtn) {
-		// 	dispatch(setMessageSmile(false))
-		// 	// setVoiceBtn(false)
-		// 	return
-		// } else {
-
-
-
-
-			// setSelectedMessage(messageId);
-
-			// chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
-
-		// }
-		// console.log(reactionRemoved, '2');
-		
-		// if (!reactionRemoved) {
-		// 	setSelectedMessage(messageId);
-		// 	chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
-		// }
-		// setReactionRemoved(false); // Reset the state after checking it
-		
-
-		// if (isButtonClick) return; // Prevent execution if button click is in progress
 
 			setSelectedMessage(messageId);
 			chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
@@ -93,9 +65,6 @@ const MobileChat = () => {
 		});
 	};
 
-	// const insertText = (messages: IMessages["messages"]) => {
-	// 	return messages.length ? chatData.messages[chatData.messages.length - 1].text : '';
-	// }
 
 	const handleScroll = (e: any) => {
 		const { scrollTop, scrollHeight, clientHeight } = e.target;
@@ -105,18 +74,22 @@ const MobileChat = () => {
 	};
 
 
-	const scrollToBottom = () => {
+	const scrollToBottom = useCallback((scrollValue: number) => {
 		
 		
 		const lastChild = chatRef.current?.lastChild as Element | null;
+		
 		if (lastChild && lastChild.classList.contains('owner')) {
-			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
-		} else if (lastChild && scrollPosition > -15) {
-			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+			
+			return lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+		} else if (lastChild && scrollValue > -15) {
+
+			return lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+		}
 
 			
-		}
-	};
+		// }
+	}, []);
 	
 
 	useEffect(() => {
@@ -124,22 +97,29 @@ const MobileChat = () => {
 		const currentWindowRef = windowRef.current;
 		currentWindowRef?.addEventListener('scroll', handleScroll);
 
+		if(chatData.messages){
+
+			if (chatData.messages.length !== newMessagesLength) {
+				setNewMessagesLength(chatData.messages.length);
+				scrollToBottom(scrollPosition);
+			}
+		}
+
+		if (typingState && !isTyping) {
+			scrollToBottom(scrollPosition);
+			setIsTyping(true);
+		} else if (!typingState && isTyping) {
+			setIsTyping(false);
+		}
+
 		const filteredMessage = messagesData.filter((msg: IMessages) => msg.id.toString() === chatId);
 		setChatData(filteredMessage[0]);
 
-		if(chatData.messages) {
-			scrollToBottom()
-		}
 		return () => {
 			currentWindowRef?.removeEventListener('scroll', handleScroll);
 		}
-	}, [chatId, forceUpdate, chatData, typingState]);
+	}, [chatId, forceUpdate, chatData, typingState, scrollToBottom, isTyping, newMessagesLength, scrollPosition]);
 
-	// useEffect(() => {
-	// 	if (reactionRemoved) {
-	// 		setSelectedMessage(null); // Reset selected message when reaction is removed
-	// 	}
-	// }, [reactionRemoved]);
 
 	return (
 		<>
@@ -252,8 +232,7 @@ const MobileChat = () => {
 													))
 													: null}
 													{typingState && <Typing userName={chatData.userName} userAvatar={chatData.image} />}
-													{/* <div className='message'>ololo</div> */}
-										{/* <div ref={messagesEndRef}/> */}
+											
 
 											</div>
 										</div>
