@@ -86,9 +86,11 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 		
 						messageId = 0;
 						refreshData();
+						// if (scrollBottom) scrollBottom();
 		
 						setAreaValue('');
 						setSendBtn(false);
+
 		
 						// setTimeout(() => {
 						// 	const ownerMessage = messagesData[messagesData.length -1]
@@ -98,7 +100,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 						setTimeout(() => {
 							dispatch(setTypingState(true));
 						}, 1000);
-		
+
 						setTimeout(() => {
 							const date = new Date();
 							const timeSend = `${date.getHours() <= 9 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() <= 9 ? `0${date.getMinutes()}` : date.getMinutes()}`;
@@ -120,6 +122,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 							});
 							messageId = 0;
 							refreshData();
+
 							dispatch(setTypingState(false));
 						}, 3000);
 					}

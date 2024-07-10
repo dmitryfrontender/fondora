@@ -19,7 +19,7 @@ import { setReportPage } from '../../store/ProtectSlice';
 import Typing from '../../components/TypingElement/Typing';
 import { setRerender } from '../../store/rootSlice';
 import MessageSmile from '../../components/MessageSmile/MessageSmile';
-import { setMessageSmile } from '../../store/rootSlice'; // {setMessageSmile}
+import { setMessageSmile } from '../../store/rootSlice'; 
 import EmptyChat from '../../components/EmptyChat/EmptyChat';
 import AudioPlayer from '../../components/AudioPlayer/AudioPlayer';
 import VoiceMessage from '../../assets/voiceMessage/serial.mp3';
@@ -34,8 +34,10 @@ const Chat = () => {
 	const [forceUpdate, setForceUpdate] = useState(false);
 	const [selectedMessage, setSelectedMessage] = useState<number | null>(null);
 	const chatSmile = useSelector((state: any) => state.mainState.messageSmile);
-	// const [chatLength, setChatLength] = useState<boolean | undefined>(false);
-		const [chatLength, setChatLength] = useState<boolean | undefined>(true);
+	const [chatLength, setChatLength] = useState<boolean | undefined>(true);
+	const [newMessagesLength, setNewMessagesLength] = useState<number>(0);
+
+	const [isTyping, setIsTyping] = useState(false);
 
 	const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -81,51 +83,48 @@ const Chat = () => {
 		const position = Math.ceil((scrollTop / (scrollHeight - clientHeight)) * 100);
 		setScrollPosition(position);
 		
-	
 	};
 
 
-
-	const scrollToBottom = useCallback(() => {
-
+	const scrollToBottom = useCallback((scrollValue: number) => {
+		
 		
 		const lastChild = chatRef.current?.lastChild as Element | null;
+		
 		if (lastChild && lastChild.classList.contains('owner')) {
-
-			//  lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
-			lastChild.scroll({ top: lastChild.scrollHeight, behavior: 'smooth' });
-		} else if (lastChild && scrollPosition > -15) {
-			lastChild.scroll({ top: lastChild.scrollHeight, behavior: 'smooth' });
-
-			//  lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
-
 			
+			return lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
+		} else if (lastChild && scrollValue > -15) {
+
+			return lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
 		}
-	}, [scrollPosition]);
 
+	}, []);
 
-	// const removeReaction = () => {
-	// 	console.log('reaction removed');
-	
-	// };
-
-
-
-
-	
-	
 
 	useEffect(() => {
 
-		
-			
 		const currentWindowRef = windowRef.current;
 		currentWindowRef?.addEventListener('scroll', handleScroll);
 
-		if(chatData.messages) {
-			scrollToBottom()
+
+		if(chatData.messages){
+
+			if (chatData.messages.length !== newMessagesLength) {
+				setNewMessagesLength(chatData.messages.length);
+				scrollToBottom(scrollPosition);
+			}
 		}
-		// 
+
+
+		if (typingState && !isTyping) {
+			scrollToBottom(scrollPosition);
+			setIsTyping(true);
+		} else if (!typingState && isTyping) {
+			setIsTyping(false);
+		}
+		
+		
 		
 		if (pathLocation === '') {
 			setPathLocation(location.pathname);
@@ -148,17 +147,17 @@ const Chat = () => {
 		checkMobileScreen ? setMobileScreen(true) : setMobileScreen(false);
 
 		return () => {
-			// windowRef.current?.removeEventListener('scroll', handleScroll);
 			currentWindowRef?.removeEventListener('scroll', handleScroll as EventListener);
 			dispatch(setReportPage(false));
 		};
-	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate, chatData.messages, typingState, scrollToBottom]);
+	}, [id, dispatch, checkMobileScreen, mobileDimension, pathLocation, location.pathname, forceUpdate, chatData.messages, typingState, scrollToBottom, scrollPosition, newMessagesLength, isTyping]);
 
 	useEffect(() => {
 		if (chatRef.current) {
 			chatRef.current.scrollTop = chatRef.current.scrollHeight;
 		}
 	}, [chatData.messages]);
+
 
 	return (
 		<>
@@ -230,54 +229,7 @@ const Chat = () => {
 										null
 
 									}
-									{/* <div className='topBlock'>
-										<div className='companionAvatar'>
-											<img src={chatData.image} alt='avatar' />
-											{chatData.userOnLine ? <div className='onLinePin'></div> : null}
-										</div>
-										<div className='companionDescription'>
-											<div className='avatars'>
-												<div className='avatar'>
-													<img src={userAvatar} alt='avatar' />
-												</div>
-												<div className='avatar rightAvatar'>
-													<img src={chatData.image} alt='avatar' />
-												</div>
-											</div>
-											<div className='info'>
-												<span>Вы и {chatData.userName} образовали пару</span>
-											</div>
-											<div className='date'>
-												<SVGIcon name='calendarIcon' size={14} />
-												<span>13.11.2023</span>
-											</div>
-										</div>
-										<div className='buttonsBlock'>
-											<button
-												onClick={() => {
-													dispatch(setVideoChatModal(true));
-													dispatch(setUserName(chatData.userName));
-													dispatch(setUserAvatar(chatData.image));
-												}}
-											>
-												<SVGIcon name='videoCallIcon' size={20} />
-											</button>
-											<button
-												onClick={() => {
-													dispatch(protectModalState(true));
-													dispatch(reportUserAvatar(chatData.image));
-													dispatch(reportUserName(chatData.userName));
-												}}
-											>
-												<SVGIcon name='protectIcon' size={20} stroke={'#fff'} />
-											</button>
-											<Link to={'/messages'}>
-												<button>
-													<SVGIcon name='roundCloseBtn' size={20} />
-												</button>
-											</Link>
-										</div>
-									</div> */}
+									
 									<div className='chat'>
 										<div className='wrapper' ref={windowRef} >
 											{chatLength ? 
