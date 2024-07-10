@@ -12,7 +12,7 @@
 //     width: 100%;
 //     max-width: 400px;
 //   }
-  
+
 //   .play-pause-button {
 //     background-color: #007bff;
 //     color: white;
@@ -27,11 +27,11 @@
 //     margin-right: 10px;
 //     transition: background-color 0.3s;
 //   }
-  
+
 //   .play-pause-button:hover {
 //     background-color: #0056b3;
 //   }
-  
+
 //   .progress-bar {
 //     flex-grow: 1;
 //     height: 5px;
@@ -40,7 +40,7 @@
 //     overflow: hidden;
 //     position: relative;
 //   }
-  
+
 //   .progress {
 //     height: 100%;
 //     background-color: #007bff;
@@ -65,7 +65,7 @@
     background: #212020;
     margin: 15px 10px;
   }
-  
+
 
   .innerCanvas {
     display: flex;
@@ -73,7 +73,7 @@
     justify-content: start;
     gap: 10px;
 
-   
+
 
     .waveform-canvas {
         width: 30%;
@@ -101,11 +101,11 @@
             padding-left: 10px;
             line-height: 150%; /* 21px */
     }
-    
-  }
-  
 
-  
+  }
+
+
+
   .record-button {
     border-radius: 50%;
     width: 40px;
@@ -129,8 +129,8 @@
     border-radius: 50%;
     background: linear-gradient(135deg, rgb(132, 9, 56) -0.075%, rgb(242, 34, 113) 99.925%);
     }
-  
-  
+
+
   .audio-player {
     display: flex;
     align-items: center;
@@ -140,7 +140,7 @@
     width: 100%;
     margin-top: 10px;
   }
-  
+
   .play-pause-button {
     background-color: #007bff;
     color: white;
@@ -155,11 +155,15 @@
     margin-right: 10px;
     transition: background-color 0.3s;
   }
-  
-  .play-pause-button:hover {
-    background-color: #0056b3;
+
+  .play-pause-button {
+    @media screen and (min-width: 1024px) {
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
   }
-  
+
   .progress-bar {
     flex-grow: 1;
     height: 5px;
@@ -168,13 +172,13 @@
     overflow: hidden;
     position: relative;
   }
-  
+
   .progress {
     height: 100%;
     background-color: #007bff;
     transition: width 0.1s;
   }
-  
+
 
   @keyframes activeRecordBtn {
     0%{
@@ -186,5 +190,5 @@
     100%{
         opacity: 1;
     }
-    
+
   }
