@@ -186,7 +186,7 @@ a:-webkit-any-link {
 			transition: all ease 0.3s;
 			background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
 
-            @media screen and (max-width: 1024px) {
+            @media screen and (min-width: 1024px) {
                 &:hover {
                     border: 1px solid var(--main-red);
                     transition: all ease 0.3s;

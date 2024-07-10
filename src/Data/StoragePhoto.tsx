@@ -18,7 +18,7 @@ import { IStoragePhoto } from '../model/StoragePhotoModel';
 export const storagePhotos: IStoragePhoto[] = [
 	{
 		id: 1,
-		src: photo1,
+		src: photo7,
 		alt: 'photo'
 	},
 	{
@@ -48,7 +48,7 @@ export const storagePhotos: IStoragePhoto[] = [
 	},
 	{
 		id: 7,
-		src: photo7,
+		src: photo1,
 		alt: 'photo'
 	},
 	{

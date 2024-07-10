@@ -1,23 +1,25 @@
 .Pairs {
-	max-height: 70vh;
-	padding-bottom: 2vh;
-	overflow: auto;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-top: 10px;
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+    height: 100%;
+    overflow: auto;
+    position: relative;
 
 	.pairsWrapper {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		justify-content: flex-start;
-		padding-bottom: 50px;
-		gap: 0.8vw;
+		display: flex;
+		flex-wrap: wrap;
 		width: 100%;
 		height: 100%;
 		overflow: auto;
+		padding: 0 10px;
 		.pairElement {
 			position: relative;
 			overflow: hidden;
+			min-height: 170px;
+			width: calc(33.3% - 10px);
+    		padding: 5px;
 
 			.userPhoto{
 				position: relative;
@@ -38,6 +40,7 @@
 					transform: translate(-50%, -50%);
 					min-width: 100%;
 					min-height: 100%;
+					height: 100%;
 				}
 			}
 
@@ -66,9 +69,8 @@
 		}
 		.likes {
 			.blurWrapper {
-				// position: relative;
 				overflow: hidden;
-				border-radius: 20px;
+				border-radius: 10px;
 				border: 2px solid rgb(255, 187, 12);
 				position: relative;
 

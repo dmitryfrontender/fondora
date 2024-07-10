@@ -68,20 +68,20 @@ const MobileChat = () => {
 
 		// }
 		// console.log(reactionRemoved, '2');
-		
+
 		// if (!reactionRemoved) {
 		// 	setSelectedMessage(messageId);
 		// 	chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
 		// }
 		// setReactionRemoved(false); // Reset the state after checking it
-		
+
 
 		// if (isButtonClick) return; // Prevent execution if button click is in progress
 
 			setSelectedMessage(messageId);
 			chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
 
-	
+
 	};
 
 	const handleAddReaction = (messageId: number, reaction: string) => {
@@ -101,26 +101,26 @@ const MobileChat = () => {
 		const { scrollTop, scrollHeight, clientHeight } = e.target;
 		const position = Math.ceil((scrollTop / (scrollHeight - clientHeight)) * 100);
 		setScrollPosition(position);
-	
+
 	};
 
 
 	const scrollToBottom = () => {
-		
-		
+
+
 		const lastChild = chatRef.current?.lastChild as Element | null;
 		if (lastChild && lastChild.classList.contains('owner')) {
 			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
 		} else if (lastChild && scrollPosition > -15) {
 			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
 
-			
+
 		}
 	};
-	
+
 
 	useEffect(() => {
-		
+
 		const currentWindowRef = windowRef.current;
 		currentWindowRef?.addEventListener('scroll', handleScroll);
 
@@ -212,7 +212,7 @@ const MobileChat = () => {
 												{Object.keys(chatData).length > 0
 													? chatData.messages.map((item, index) => (
 														// console.log(item)
-														
+
 																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={() => handleSmileReaction(item.id)}>
 																	<div className="messageWrapper">
 																		{/* <span key={index}>{item.text}</span> */}
@@ -228,12 +228,12 @@ const MobileChat = () => {
 																		)}
 																		{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
 																		{item.storagePhotoArr ? item.storagePhotoArr.forEach((elem: string) => <img src={elem} alt='message' />) : null}
-																		
+
 																		{
 
 																		item.text.slice(-3) === 'mp3' ?
 
-																		
+
 																		<AudioPlayer audioUrl={VoiceMessage}/>
 
 																		:
@@ -247,7 +247,7 @@ const MobileChat = () => {
 																	<div className='timeSend' style={{ left: item.owner ? '' : '15px' }}>
 																			<span>{item.time}</span>
 																		</div>
-																	
+
 																</div>
 													))
 													: null}
