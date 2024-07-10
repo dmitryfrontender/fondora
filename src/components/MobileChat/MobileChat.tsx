@@ -99,10 +99,6 @@ const MobileChat = () => {
 
 	};
 
-
-	const scrollToBottom = () => {
-
-
 	const scrollToBottom = useCallback((scrollValue: number) => {
 
 
@@ -112,8 +108,6 @@ const MobileChat = () => {
 			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
 		} else if (lastChild && scrollPosition > -15) {
 			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
-
-
 		}
 	}, []);
 

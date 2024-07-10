@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://dmitryfrontender.github.io/fondora/build/static/css/main.7e61bf08.css",
-    "main.js": "https://dmitryfrontender.github.io/fondora/build/static/js/main.fb838b7a.js",
+    "main.js": "https://dmitryfrontender.github.io/fondora/build/static/js/main.03fc5d74.js",
     "static/media/profile-1.jpg": "https://dmitryfrontender.github.io/fondora/build/static/media/profile-1.e0b81e28de42cb1a751d.jpg",
     "static/media/profile-2.jpg": "https://dmitryfrontender.github.io/fondora/build/static/media/profile-2.e0b81e28de42cb1a751d.jpg",
     "static/media/profile-3.jpg": "https://dmitryfrontender.github.io/fondora/build/static/media/profile-3.e0b81e28de42cb1a751d.jpg",
@@ -72,10 +72,10 @@
     "static/media/photo3.png": "https://dmitryfrontender.github.io/fondora/build/static/media/photo3.bae38f67c8fca4885384.png",
     "index.html": "https://dmitryfrontender.github.io/fondora/build/index.html",
     "main.7e61bf08.css.map": "https://dmitryfrontender.github.io/fondora/build/static/css/main.7e61bf08.css.map",
-    "main.fb838b7a.js.map": "https://dmitryfrontender.github.io/fondora/build/static/js/main.fb838b7a.js.map"
+    "main.03fc5d74.js.map": "https://dmitryfrontender.github.io/fondora/build/static/js/main.03fc5d74.js.map"
   },
   "entrypoints": [
     "static/css/main.7e61bf08.css",
-    "static/js/main.fb838b7a.js"
+    "static/js/main.03fc5d74.js"
   ]
 }
