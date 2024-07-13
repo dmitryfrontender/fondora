@@ -7,7 +7,7 @@
 			border-radius: 10px;
 			margin: 10px 0;
 
-			@media screen and (max-width: 1024px) {
+			@media screen and (min-width: 1024px) {
 				&:hover {
 					border: 1px solid var(--main-red);
 					transition: all ease 0.3s;
@@ -96,7 +96,7 @@
 			transition: all ease 0.3s;
 			background: linear-gradient(180deg, rgb(80, 55, 78), rgb(63, 29, 60) 100%);
 
-			@media screen and (max-width: 1024px) {
+			@media screen and (min-width: 1024px) {
 				&:hover {
 					border: 1px solid var(--main-red);
 					transition: all ease 0.3s;
@@ -124,7 +124,7 @@
 			transition: all ease 0.3s;
 			background: linear-gradient(135deg, rgb(19, 20, 23) 0%, rgb(19, 20, 23) 100%);
 
-			@media screen and (max-width: 1024px) {
+			@media screen and (min-width: 1024px) {
 				&:hover {
 					border: 1px solid var(--main-red);
 					transition: all ease 0.3s;
@@ -171,7 +171,7 @@
 					padding: 20px;
 					margin: 10px 0;
 
-					@media screen and (max-width: 1024px) {
+					@media screen and (min-width: 1024px) {
 						&:hover {
 							border: 1px solid var(--main-red);
 							transition: all ease 0.3s;

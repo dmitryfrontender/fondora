@@ -2,6 +2,8 @@ import React, {  useEffect, useRef, useState } from 'react';
 import { storagePhotos } from '../../../Data/StoragePhoto';
 // import DefaultBtn from "../../DefaultBtn/DefaultBtn";
 import './AddPhotos.scss';
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
 import SVGIcon from '../../../assets/icons/svgComponent';
 
 interface IPhoto {
@@ -14,6 +16,8 @@ interface IProps {
 }
 
 const AddPhoto = ({ addPhoto }: IProps) => {
+	const [currentSlide, setCurrentSlide] = useState(0);
+	const [loaded, setLoaded] = useState(false);
 	const [selectedPhotos, setSelectedPhotos] = useState<IPhoto[]>([]);
 	const [photoCounter, setPhotoCounter] = useState<number>(0);
 	const [clickedPhotos, setClickedPhotos] = useState(0);
@@ -36,7 +40,34 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 			}
 		});
 
-	};
+	};function Arrow(props: { disabled: boolean; left?: boolean; onClick: (e: any) => void }) {
+		const disabled = props.disabled ? ' arrow--disabled' : '';
+		return (
+			<div onClick={props.onClick} className={`arrow ${props.left ? 'arrow--left' : 'arrow--right'} ${disabled}`}>
+				{props.left && (
+					// <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+					<SVGIcon name='arrowLeft' size={20} />
+				)}
+				{!props.left && (
+					// <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+					<SVGIcon name='arrowRight' size={25} />
+				)}
+			</div>
+		);
+	}
+
+	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+		initial: 0,
+		drag: true,
+		mode: "snap",
+		slides: { perView: 'auto' },
+		slideChanged(slider) {
+			setCurrentSlide(slider.track.details.rel);
+		},
+		created() {
+			setLoaded(true);
+		},
+	});
 
 
 	const sendPhotos = () => {
@@ -54,7 +85,7 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 				node.textContent = '';
 			})
 			setClearCounter(false)
-		} 
+		}
 
 		const recalculateCounter = () => {
 
@@ -77,14 +108,14 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 				const element = ref?.childNodes[1];
 				if (element && element.textContent === '') {
 					element.textContent = `${photoCounter}`
-					
+
 				} else if (element && element.textContent !== '') {
 					element.textContent = ''
 					recalculateCounter()
-			
+
 				}
 			}
-			
+
 		});
 
 	}, [clickedPhotos, photoCounter, selectedPhotos, clearCounter])
@@ -112,18 +143,34 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 					<SVGIcon name='sendTgBtn' width={20} />
 				</button>
 			</div>
-			<div className='photoWrapper'>
+			<div className='photoWrapper keen-slider' ref={sliderRef}>
 				{storagePhotos.map((item, index) => {
 					const isSelected = selectedPhotos.includes(item);
-					
+
 					return (
-						
-						<div className={`item ${isSelected ? 'activeItem' : ''}`} data-id={item.id}  key={index} onClick={() => handlePhotoClick(item, item.id)} style={isSelected ? activeStyle : defaultStyle} ref={(el) => (counterRef.current[index] = el)}>
+						<div
+							className={`keen-slider__slide number-slide${item.id} item ${isSelected ? 'activeItem' : ''}`}
+							data-id={item.id}
+							key={item.id}
+							onClick={() => handlePhotoClick(item, item.id)}
+							style={isSelected ? activeStyle : defaultStyle}
+							ref={(el) => (counterRef.current[index] = el)}
+						>
 							<img src={item.src} alt={item.alt} />
 							<div className='addPhoto'></div>
 						</div>
 					);
 				})}
+
+				<div className='sliderBtnWrapper'>
+					{loaded && instanceRef.current && (
+						<>
+							<Arrow left onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()} disabled={currentSlide === 0} />
+
+							<Arrow onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()} disabled={currentSlide === instanceRef.current.track.details.slides.length - 1} />
+						</>
+					)}
+				</div>
 			</div>
 		</div>
 	);

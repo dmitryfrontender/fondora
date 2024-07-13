@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import SVGIcon from '../../assets/icons/svgComponent';
 import { Link } from 'react-router-dom';
 import { messagesData } from '../../Data/MessagesData';
@@ -49,11 +49,11 @@ const MessageSidebar = () => {
 
 	// useEffect(() => {
 	// 	if (chatId !== '') {
-			
+
 	// 	} else {
-			
+
 	// 	}
-		
+
 	// },[chatId])
 
 	return (
