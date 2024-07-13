@@ -153,6 +153,7 @@
 									// max-width: 80%;
 									flex-wrap: wrap;
 									min-width: 50px;
+									max-width: 30vw;
 
 									.smileBlock {
 										display: flex;
@@ -176,6 +177,7 @@
 												font-style: normal;
 												font-weight: 500;
 												line-height: normal;
+												word-break: break-word;
 											}
 										}
 									}
@@ -214,6 +216,7 @@
 							.owner {
 								text-align: end;
 								align-self: flex-end;
+								word-break: break-word;
 
 								.messageWrapper{
 									border-radius: 20px 0px 20px 20px;
@@ -241,6 +244,7 @@
 							.notOwner {
 								text-align: start;
 								align-self: flex-start;
+								word-break: break-word;
 
 								.messageWrapper{
 									border-radius: 0px 20px 20px 20px;

@@ -1,13 +1,12 @@
 
-// рабочий код 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import SVGIcon from '../../assets/icons/svgComponent';
 import './AudioRecorder.scss';
 
 const AudioRecorder: React.FC = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  // const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const [isTrackAvailable, setIsTrackAvailable] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
@@ -16,12 +15,12 @@ const AudioRecorder: React.FC = () => {
   const audioContextRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const dataArrayRef = useRef<Uint8Array | null>(null);
-  const animationFrameIdRef = useRef<number | null>(null);
+  // const animationFrameIdRef = useRef<number | null>(null);
   const xPositionRef = useRef<number>(0);
   const recordingIntervalRef = useRef<number | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const animationTimeoutRef = useRef<number | null>(null);
-  const [recordingsArr, setRecordingsArr] = useState<string[]>([]);
+  // const [recordingsArr, setRecordingsArr] = useState<string[]>([]);
 
 
     const drawWaveform = useCallback(() => {
@@ -120,7 +119,9 @@ const AudioRecorder: React.FC = () => {
     setRecordingTime(0);
     setIsRecording(false);
     setIsTrackAvailable(false);
-    setAudioUrl(null);
+    ///////////////////////
+    // setAudioUrl(null);
+
     audioChunksRef.current = [];
     xPositionRef.current = 0;
 
@@ -151,15 +152,18 @@ const AudioRecorder: React.FC = () => {
 
   const handleSaveRecording = () => {
     handlePauseRecording();
-    const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/mp3' });
-    const audio = URL.createObjectURL(audioBlob);
-    setAudioUrl(audio);
-    setRecordingsArr(prevRecordings => [...prevRecordings, audio]);
+    // const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/mp3' });
+    // const audio = URL.createObjectURL(audioBlob);
+    //////////////////////////
+    // setAudioUrl(audio);
+
+    // setRecordingsArr(prevRecordings => [...prevRecordings, audio]);
 
     setRecordingTime(0);
     setIsRecording(false);
     setIsTrackAvailable(false);
-    setAudioUrl(null);
+    //////////////
+    // setAudioUrl(null);
     audioChunksRef.current = [];
     xPositionRef.current = 0;
 

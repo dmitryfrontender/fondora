@@ -106,7 +106,7 @@ const MobileChat = () => {
 
 		if (lastChild && lastChild.classList.contains('owner')) {
 			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
-		} else if (lastChild && scrollPosition > -15) {
+		} else if (lastChild && scrollValue > -15) {
 			lastChild.scrollIntoView({ block: 'end', behavior: 'smooth' });
 		}
 	}, []);

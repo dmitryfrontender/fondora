@@ -264,7 +264,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 				{!mediaBlock && !imagesBlock && !voiceRecorder &&(
 					<div className='inputWrapper'>
 						<div className='input'>
-							<TextareaAutosize placeholder='Напишите сообщение...' value={areaValue} minRows={2} maxRows={4} onChange={resizeArea} />
+							<TextareaAutosize placeholder='Напишите сообщение...' value={areaValue} minRows={1} maxRows={4} onChange={resizeArea} />
 							<div className={`sendBtn ${sendBtn ? 'activeSendBtn' : ''}`}>
 								<button onClick={() => handleKeyPress({ code: 'Code' })}>
 									<SVGIcon name='sendTgBtn' size={20} />

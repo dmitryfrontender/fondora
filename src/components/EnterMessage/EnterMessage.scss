@@ -11,6 +11,8 @@
 		padding: 10px 10px;
 		.input {
 			position: relative;
+			display: flex; /* Flexbox for vertical alignment */
+			align-items: center; /* Center align items vertically */
 			textarea {
 				border: none;
 				border-radius: 30px;
@@ -20,16 +22,111 @@
 				color: var(--white);
 				font-family: var(--font-proxima-nova);
 				font-size: 14px;
-				// line-height: 7px;
 				font-weight: 400;
 				letter-spacing: 0%;
 				align-content: center;
-				// padding: 5px 20px;
-				padding: 5px 50px 5px 20px;
+				padding: 15px 70px 15px 20px;
+				height: unset !important;
+
+				// position: relative;
+			
+				
+				box-sizing: border-box; /* Include padding and border in the element's total width and height */
+				line-height: auto; /* Set a base line-height */
+
+
+				// padding: 12px 20px; /* Adjust padding to match placeholder */
+				// height: 40px; /* Set an explicit height */
+				// box-sizing: border-box; /* Include padding and border in the element's total width and height */
+				// line-height: 25px; 
+				// box-sizing: border-box; /* Include padding and border in the element's total width and height */
+				// line-height: 30px; /* Set a base line-height */
+
+
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+
 			}
 			textarea:focus {
 				outline: none;
+			
 			}
+			
+		// 	textarea::-webkit-input-placeholder {
+		// 		display: flex;
+		// 		align-items: center;
+		// 		line-height: 1.5!important;
+		// 		outline: none;
+		// 		padding-bottom: 0;
+
+		//    }
+			textarea::placeholder {
+				// line-height: 25px; /* Match this to your font size for consistency */
+				// line-height: 30px; /* Ensure placeholder has the same line-height */
+				// line-height: 16px; /* Match this to your font size for consistency */
+				line-height: auto; /* Ensure placeholder has the same line-height */
+			  }
+
+
+			// @media not all and (min-resolution: 0.001dpcm) {
+			// 	@supports (-webkit-text-size-adjust: none) {
+			// 		textarea::placeholder {
+			// 			line-height: 1.5;
+			// 			padding-top: 12px;
+			// 			padding-bottom: 12px;
+			// 		}
+			// 	}
+			// }
+
+			// @supports (-webkit-appearance: none) and (not (-ms-ime-align: auto)) {
+			// 	textarea::placeholder {
+			// 		line-height: 1.5;
+			// 	}
+			// }
+			//   @media not all and (min-resolution: 0.001dpcm) {
+			// 	@supports (-webkit-text-size-adjust: none) {
+			// 	  textarea::placeholder {
+			// 		line-height: 1.5; /* Safari specific line-height */
+			// 		padding-top: 12px; /* Adjust as needed */
+			// 		padding-bottom: 12px; /* Adjust as needed */
+			// 	  }
+			// 	}
+			//   }
+			  
+			//   /* Chrome-specific styles */
+			//   @supports (-webkit-appearance: none) and (not (-ms-ime-align: auto)) {
+			// 	textarea::placeholder {
+			// 	  line-height: 1.5; /* Chrome specific line-height */
+			// 	//   padding-top: 12px; /* Adjust as needed */
+			// 	//   padding-bottom: 12px; /* Adjust as needed */
+			// 	}
+			//   }
+
+			//   @media not all and (min-resolution: 0.001dpcm) {
+			// 	@supports (-webkit-text-size-adjust: none) {
+			// 		// textarea{
+			// 		// 	line-height: 120px;
+			// 		// // 	padding-top: 12px; /* Adjust as needed */
+			// 		// // 	padding-bottom: 12px; /* Adjust as needed */
+			// 		// }
+			// 	  textarea::placeholder {
+			// 		line-height: normal !important; /* Safari specific line-height */
+			// 		// padding-top: 30px; /* Adjust as needed */
+			// 		// padding-bottom: 12px; /* Adjust as needed */
+			// 	  }
+			// 	}
+			//   }
+			  
+			//   /* Chrome-specific styles */
+			//   @supports (-webkit-appearance: none) and (not (-ms-ime-align: auto)) {
+			// 	textarea::placeholder {
+			// 	  line-height: 1.5; /* Chrome specific line-height */
+			// 	//   padding-top: 12px; /* Adjust as needed */
+			// 	//   padding-bottom: 12px; /* Adjust as needed */
+			// 	}
+			//   }
+	
 
 			.sendBtn {
 				position: absolute;
