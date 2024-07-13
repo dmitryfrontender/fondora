@@ -63,6 +63,16 @@
 			border-radius: 50px;
 			background: rgba(3, 3, 3, 0.70);
 			margin: 0 20px;
+
+			@media screen and (min-width: 1024px) {
+				&:hover {
+					svg {
+						path {
+							fill: #DF3C5E !important;
+						}
+					}
+				}
+			}
 		}
 		.arrow--disabled{
 			z-index: -10;
