@@ -37,7 +37,7 @@ const MyProfile = () => {
 			<div className='page myProfile'>
 				<div className='pageItems'>
 					<div className='protect'>
-						<SVGIcon name='protectIcon' size={24} />
+						<SVGIcon name='protectIcon' size={24} stroke={'#fff'} />
 					</div>
 					<div className='userInfo'>
 						<div className='userAvatar'>
