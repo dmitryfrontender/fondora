@@ -5,8 +5,12 @@
 
 			.Settings {
 				top: 0;
+				margin-top: 40px;
 				.pageItems {
 					width: clamp(250px, 85vw, 800px);
+				}
+				.deleteAccount{
+					margin-bottom: 120px;
 				}
 			}
 		}

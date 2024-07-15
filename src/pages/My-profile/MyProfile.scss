@@ -114,6 +114,8 @@
 						}
 						svg {
 							padding-left: 5px;
+							cursor: pointer;
+							border: 1px solid transparent;
 						}
 						.customTooltip {
 							border-radius: 10px;
@@ -121,12 +123,17 @@
 							box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.25);
 							color: white;
 							text-align: center;
-							font-family: var(--font-public-sans);
+							font-family: var(--font-inter);
 							font-size: 12px;
 							font-style: normal;
 							font-weight: 400;
 							letter-spacing: 0.24px;
+							transform: translateX(3px);
+							
 						}
+						.example-arrow {
+							background: #22caff;
+						  }
 					}
 					.userEmail {
 						padding-top: 5px;
@@ -231,7 +238,7 @@
 							border-radius: 30px;
 							padding: 10px;
 							background: linear-gradient(135deg, rgb(132, 9, 56) -0.14%, rgb(242, 34, 113) 99.86%), linear-gradient(135deg, rgb(24, 25, 32) 0%, rgb(15, 15, 19) 100%);
-
+							cursor: pointer;
 							@media screen and (min-width: 1024px) {
 								&:hover {
 									background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(92deg, #840938 -0.15%, #F22271 99.85%), linear-gradient(158deg, #181920 0%, #0F0F13 100%);
@@ -285,10 +292,15 @@
 						}
 						.gold {
 							svg {
+								// padding: 3px;
+								// background-color: var(--black);
+								// opacity: 0.5;
+								// border-radius: 20%;
+								// fill: white;
 								padding: 3px;
-								background-color: var(--black);
-								opacity: 0.5;
 								border-radius: 20%;
+								fill: white;
+								background-color: rgba(0, 0, 0, 0.5);
 							}
 						}
 					}

@@ -1,8 +1,20 @@
 .Report {
 	overflow: auto;
 	height: 100%;
+	position: relative;
+	background-image: url('../../assets/images/mobileBg.png');
+	background-color: rgb(36, 22, 27) ;
+	// background-color: rgb(26, 23, 23);
+	// background-color: linear-gradient(135deg, rgb(36, 22, 27) 0%, rgba(26, 23, 23, 0) 100%), rgb(0, 0, 0);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 90px;
+    background-blend-mode: luminosity;
+	flex: 1;
 	.wrapper {
-		margin: 0 2vw;
+		// margin: 0 2vw;
+		margin: 0 auto;
+		max-width: 70%;
 		.topBlock {
 			display: flex;
 			align-items: center;

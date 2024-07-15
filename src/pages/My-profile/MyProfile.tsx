@@ -10,7 +10,7 @@ import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 const MyProfile = () => {
 	const dispatch = useDispatch();
-	const [showTooltip, setShowTooltip] = useState(false);
+	const [showTooltip, setShowTooltip] = useState(true);
 
 	const verifyProfileState = useSelector((state: any) => state.VerifyProfileState.isUserVerify);
 
@@ -71,16 +71,11 @@ const MyProfile = () => {
 									/>
 									<ReactTooltip
 										id='verifyTooltip'
-										// place="top"
-										// variant="info"
-
 										place='top'
-										// type="dark"
-										// effect="solid"
-										// globalEventOff="click"
 										content='Подтверди свой профиль'
 										isOpen={showTooltip}
 										className='customTooltip'
+										classNameArrow="example-arrow"
 									/>
 								</div>
 								<div className='userEmail'>

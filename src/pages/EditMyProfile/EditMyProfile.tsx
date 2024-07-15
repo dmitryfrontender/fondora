@@ -7,6 +7,7 @@ import { useState } from 'react';
 import userPhoto1 from '../../assets/avatar/userPhoto1.png';
 import userPhoto2 from '../../assets/avatar/userPhoto2.png';
 import ToggleBtn from '../../components/ToggleBtn/ToggleBtn';
+import Loader from '../../components/Preloader/Preloader';
 
 const EditMyProfile = () => {
 	const [pageOption, setPageOption] = useState(true);
@@ -53,21 +54,28 @@ const EditMyProfile = () => {
 							<div className='mediaBlock'>
 								<div className='mediaItem'>
 									<img src={userPhoto1} alt='img' />
+									<div className="deletePhoto">
+										<SVGIcon name='deleteItem' size={10}/>
+									</div>
 								</div>
 								<div className='mediaItem'>
 									<img src={userPhoto2} alt='img' />
+									<div className="deletePhoto">
+										<SVGIcon name='deleteItem' size={10}/>
+									</div>
 								</div>
 								<div className='mediaItem'>
-									<SVGIcon name='plusBtn' size={30} />
+									{/* <SVGIcon name='plusBtnNoBg' size={20} /> */}
+									<Loader/>
 								</div>
 								<div className='mediaItem'>
-									<SVGIcon name='plusBtn' size={30} />
+									<SVGIcon name='plusBtnNoBg' size={20} />
 								</div>
 								<div className='mediaItem'>
-									<SVGIcon name='plusBtn' size={30} />
+									<SVGIcon name='plusBtnNoBg' size={20} />
 								</div>
 								<div className='mediaItem'>
-									<SVGIcon name='plusBtn' size={30} />
+									<SVGIcon name='plusBtnNoBg' size={20} />
 								</div>
 							</div>
 							<div className='titleWrapper'>

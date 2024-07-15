@@ -7,34 +7,8 @@ import './Plus.scss';
 const Plus = () => {
 	return (
 		<>
-			{/* <div className="page Subscription plus"> */}
-			<div className='subscriptionWrapper plus'>
-				{/* <div className="topItem">
-                            <div className="title">
-                                <h3>
-                                    Моя Подписка
-                                </h3>
-                            </div>
-                            <div className="cancelBtn" onClick={() => navigate(-1)}>
-                                <SVGIcon name="cancelBtn" size={20}/>
 
-                            </div>
-                        </div>
-                        <div className="banner">
-                            <div className="bannerImg">
-                                <SVGIcon name="logoPlus" size={20}/>
-                                <div className="marker">
-                                    <span>
-                                        PLUS
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="buyBtn">
-                                <span>
-                                    Купить Подписку
-                                </span>
-                            </div>
-                        </div> */}
+			<div className='subscriptionWrapper plus'>
 				<div className='optionWrapper'>
 					<div className='optionTitle'>
 						<h5>Лайкай</h5>
@@ -52,7 +26,7 @@ const Plus = () => {
 							<h4>Просмотр лайков</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -63,7 +37,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
 						</div>
 					</div>
 				</div>
@@ -84,7 +58,7 @@ const Plus = () => {
 							<h4>1 бесплатный буст в месяц</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -92,7 +66,7 @@ const Plus = () => {
 							<h4>5 бесплатных суперлайков в неделю</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -103,7 +77,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
 						</div>
 					</div>
 				</div>
@@ -130,7 +104,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
 						</div>
 					</div>
 				</div>

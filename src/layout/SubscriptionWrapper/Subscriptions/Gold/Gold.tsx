@@ -37,7 +37,7 @@ const Gold = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px' }}/>
 						</div>
 					</div>
 				</div>
@@ -77,7 +77,7 @@ const Gold = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 0' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
 						</div>
 					</div>
 				</div>

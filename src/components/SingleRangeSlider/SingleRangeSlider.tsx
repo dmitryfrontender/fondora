@@ -45,7 +45,11 @@ const SingleRangeSlider = ({ min, max, defaultValue, topValue, textSlider }: Sin
 					<div className='range__background'></div>
 					<div className='range__progress' id='range-progress' style={{ width: `${progress}%` }}></div>
 				</label>
-				{!topValue && <div className='value'>{value}</div>}
+				{!topValue && <div className='value'>
+					{value} 
+				    <span>&nbsp;км</span>
+
+				</div>}
 			</div>
 		</>
 	);

@@ -17,10 +17,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audioUrl }) => {
 
   useEffect(() => {
     if (waveformRef.current) {
-      // Инициализация WaveSurfer
 
-      // const containerWidth = waveformRef.current.clientWidth;
-      // const containerHeight = waveformRef.current.clientHeight;
 
 
       wavesurfer.current = WaveSurfer.create({
