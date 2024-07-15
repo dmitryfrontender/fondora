@@ -387,13 +387,17 @@ const Settings = () => {
 							<div className='itemWrapper'>
 								<div className='description'>
 									<span>Чат с подтвержденными фото</span>
-									<br />
-									<span className='smallText'>Требует подтверждение личности</span>
+									{/* <br /> */}
 								</div>
 								<div className='value'>
 									<ToggleBtn />
 								</div>
 							</div>
+							<div className="labeMessage">
+								<span className='smallText'>Требует подтверждение личности</span>
+
+							</div>
+
 							<div className='optionDescription' style={{ marginTop: '10px' }}>
 								<p>
 									Если выключено, твой профиль будет скрыт из фотоподборки, а Находки будут отключены. Люди, которые уже получили от тебя лайк, по-прежнему смогут видеть твой профиль
@@ -833,7 +837,7 @@ const Settings = () => {
 						<span>Версия 14.20.56</span>
 					</div>
 				</div>
-				<div className='deleteAccount' style={{ marginBottom: '50px' }}>
+				<div className='deleteAccount'>
 					<SVGIcon name='deleteAccount' size={20} stroke={'#969696'} />
 					<span>Удалить аккаунт</span>
 				</div>

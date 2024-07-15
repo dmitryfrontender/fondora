@@ -5,10 +5,8 @@
 
 	width: 100%;
 	.buttonsWrapper {
-		// width: clamp(120px, 90vw, 60%);
-		// height: clamp(40px, 8vw, 65px);
+	
 		width: clamp(120px, 45vw, 900px);
-		// height: clamp(40px, 5vw, 65px);
 		height: 70px;
 		margin: 0 auto;
 		border-radius: 35px;
@@ -53,6 +51,8 @@
 @media screen and (max-width: 750px) {
 	.MobileButtons {
 		.buttonsWrapper {
+			width: clamp(120px, 70vw, 900px);
+
 			a {
 				.pinnedItem {
 					top: 0.3vw;

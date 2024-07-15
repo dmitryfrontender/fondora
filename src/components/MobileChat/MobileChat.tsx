@@ -50,31 +50,6 @@ const MobileChat = () => {
 
 	const handleSmileReaction = (messageId: number) => {
 
-		// console.log(1);
-		// if (voiceBtn) {
-		// 	dispatch(setMessageSmile(false))
-		// 	// setVoiceBtn(false)
-		// 	return
-		// } else {
-
-
-
-
-			// setSelectedMessage(messageId);
-
-			// chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
-
-		// }
-		// console.log(reactionRemoved, '2');
-
-		// if (!reactionRemoved) {
-		// 	setSelectedMessage(messageId);
-		// 	chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));
-		// }
-		// setReactionRemoved(false); // Reset the state after checking it
-
-
-		// if (isButtonClick) return; // Prevent execution if button click is in progress
 
 			setSelectedMessage(messageId);
 			chatSmile ? dispatch(setMessageSmile(false)) : dispatch(setMessageSmile(true));

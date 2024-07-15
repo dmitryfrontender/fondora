@@ -206,6 +206,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 10px;
 		svg {
 			padding: 15px;
 			border-radius: 30px;
@@ -220,6 +222,9 @@
 		display: flex;
 		align-items: start;
 		margin-top: 20px;
+		border: 1px solid transparent;
+		transition: all ease 0.3s;
+		cursor: pointer;
 		p {
 			margin: 0;
 			color: var(--main-text-color);
@@ -231,6 +236,11 @@
 			text-align: left;
 		}
 	}
+	.repairPurchase:hover{
+		border: 1px solid var(--main-red);
+		transition: all ease 0.3s;
+
+	}
 	.fondora {
 		display: flex;
 		justify-content: space-between;
@@ -239,6 +249,7 @@
 	}
 	.exit,
 	.deleteAccount {
+		margin-bottom: 50px;
 		padding: 20px;
 		border-radius: 30px;
 		background: rgb(33, 32, 32);
@@ -265,8 +276,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 50px;
-	height: 28px;
+	// width: 50px;
+	// height: 28px;
 	border-radius: 10px;
 	background: linear-gradient(180deg, rgb(154, 24, 255), rgb(255, 10, 157) 100%);
 	color: rgb(0, 0, 0);
@@ -274,8 +285,8 @@
 	font-size: 12px;
 	font-weight: 600;
 	line-height: 14px;
-	letter-spacing: 2%;
 	text-align: center;
+	padding: 5px;
 	span {
 		background-color: rgb(255, 187, 11);
 		padding: 3px;
