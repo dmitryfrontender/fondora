@@ -183,6 +183,12 @@
 
 	.previewBlock {
 		padding: 20px 0;
+
+		.GamePad,
+		.ProfileComponent {
+			margin: 0;
+			width: 100%;
+		}
 	}
 }
 @import url('./MediaEditProfile.scss');

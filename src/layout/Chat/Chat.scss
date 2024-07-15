@@ -282,8 +282,24 @@
 			border-radius: 0;
 			margin: 0;
 
+			.ProfileComponentBlock {
+				height: 100%;
+				border-radius: 0;
+			}
+
+			.ProfileComponentWrapper {
+				height: 100%;
+				border-radius: 0;
+			}
+
 			.ProfileComponentInfo {
 				position: relative;
+				border-radius: 0;
+				padding: 32px 20px;
+			}
+
+			.ProfileButtons {
+				display: none;
 			}
 		}
 	}
