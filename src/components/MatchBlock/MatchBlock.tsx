@@ -14,7 +14,11 @@ const MatchBlock = (props: any) => {
 	const [inputValue, setInputValue] = useState('');
 
 	const updateTextAreaValue = (e: any) => {
-		setInputValue(e.target.getAttribute('data-value'));
+		if (!inputValue.length) {
+			setInputValue(e.target.getAttribute('data-value'));
+		} else {
+			setInputValue(inputValue + e.target.getAttribute('data-value'))
+		}
 	};
 
 	return (
