@@ -8,6 +8,7 @@ import SVGIcon from '../../assets/icons/svgComponent';
 import { useNavigate } from 'react-router-dom';
 
 import { useKeenSlider } from 'keen-slider/react';
+import { motion, AnimatePresence } from "framer-motion";
 import 'keen-slider/keen-slider.min.css';
 
 interface IShow {
@@ -18,6 +19,7 @@ const SubscriptionWrapper = ({ page }: IShow) => {
 	const navigate = useNavigate();
 	const [currentSlide, setCurrentSlide] = React.useState(page || 0);
 	const [loaded, setLoaded] = useState(false);
+	const subscriptionArr = [<Plus/>, <Gold/>,  <Vip/>];
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
 		{
 			initial: page || 0,
@@ -128,9 +130,83 @@ const SubscriptionWrapper = ({ page }: IShow) => {
 						)}
 					</div>
 				</div>
-				{currentSlide === 0 && <Plus />}
-				{currentSlide === 1 && <Gold />}
-				{currentSlide === 2 && <Vip />}
+				{
+					subscriptionArr.map((item, index) => {
+						return (
+							<>
+								{currentSlide === index &&
+									<AnimatePresence mode="wait">
+										<motion.div
+										//   key={selectedTab ? selectedTab.label : "empty"}
+										key={currentSlide}
+										initial={{ y: 20, opacity: 0 }}
+										animate={{ y: 0, opacity: 1 }}
+										exit={{ y: -10, opacity: 0 }}
+										transition={{ duration: 0.3 }}
+										>
+									
+											{item}
+										</motion.div>
+									</AnimatePresence>
+								}
+							</>
+						)
+					})
+				}
+
+
+
+				{/* {currentSlide === 0 &&
+					<AnimatePresence mode="wait">
+						<motion.div
+						//   key={selectedTab ? selectedTab.label : "empty"}
+						key={currentSlide}
+						initial={{ y: 20, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						exit={{ y: -10, opacity: 0 }}
+						transition={{ duration: 0.3 }}
+						>
+					
+							<Plus />
+						</motion.div>
+					</AnimatePresence>
+				}
+				{currentSlide === 1 &&
+					<AnimatePresence mode="wait">
+						<motion.div
+						//   key={selectedTab ? selectedTab.label : "empty"}
+						key={currentSlide}
+						initial={{ y: 20, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						exit={{ y: -10, opacity: 0 }}
+						transition={{ duration: 0.3 }}
+						>
+					
+							<Gold />
+						</motion.div>
+					</AnimatePresence>
+				}
+				{currentSlide === 2 &&
+					<AnimatePresence mode="wait">
+						<motion.div
+						//   key={selectedTab ? selectedTab.label : "empty"}
+						key={currentSlide}
+						initial={{ y: 20, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						exit={{ y: -10, opacity: 0 }}
+						transition={{ duration: 0.3 }}
+						>
+					
+							<Vip />
+						</motion.div>
+					</AnimatePresence>
+				} */}
+
+
+{/* 
+				{currentSlide === 1 && 
+					<Gold />}
+				{currentSlide === 2 && <Vip />} */}
 			</div>
 		</>
 	);
