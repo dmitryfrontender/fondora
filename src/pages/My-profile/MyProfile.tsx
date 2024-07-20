@@ -140,7 +140,7 @@ const MyProfile = () => {
 								<div className='wrapper'>
 									<div className='planTitle'>
 										<div className='logo'>
-											<SVGIcon name='logoVip' className='logo-effect' />
+											<SVGIcon name='logoGold' className='logo-effect' />
 											<div className='status'>
 												<span>GOLD</span>
 											</div>
