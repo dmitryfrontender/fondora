@@ -30,25 +30,23 @@ const PhotoSlider = (props: any) => {
 		]
 	);
 
-	useEffect(() => {
-		const handleSpacePress = (event: any) => {
-			if (event.code === 'Space') {
-				instanceRef.current?.next();
-			}
+	const handleSpacePress = (event: any) => {
+		if (event.code === 'Space') {
+			instanceRef.current?.next();
+		}
 
-			if (event.shiftKey && event.code === 'Space') {
-				instanceRef.current?.prev();
-			}
-		};
-
-		document.addEventListener('keydown', handleSpacePress, false);
-		return () => {
-			document.removeEventListener('keydown', handleSpacePress, false);
-		};
-	}, [instanceRef]);
+		if (event.shiftKey && event.code === 'Space') {
+			instanceRef.current?.prev();
+		}
+	};
 
 	return (
-		<div className={`PhotoSlider ${props.cssClass ? props.cssClass : ''}`} style={props.cssStyle ? props.cssStyle : {}}>
+		<div
+			className={`PhotoSlider ${props.cssClass ? props.cssClass : ''}`}
+			style={props.cssStyle ? props.cssStyle : {}}
+			tabIndex={0}
+			onKeyDown={handleSpacePress}
+		>
 			<div className='PhotoSliderAvatar'>
 				{loaded && instanceRef.current && (
 					<div className='dots'>
