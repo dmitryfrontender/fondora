@@ -3,7 +3,8 @@
 	height: 100%;
 	position: relative;
 	background-image: url('../../assets/images/mobileBg.png');
-	background-color: rgb(36, 22, 27) ;
+	// background-color: rgb(36, 22, 27) ;
+	background-color: rgb(12 7 9);
 	// background-color: rgb(26, 23, 23);
 	// background-color: linear-gradient(135deg, rgb(36, 22, 27) 0%, rgba(26, 23, 23, 0) 100%), rgb(0, 0, 0);
 	background-repeat: no-repeat;
@@ -14,7 +15,8 @@
 	.wrapper {
 		// margin: 0 2vw;
 		margin: 0 auto;
-		max-width: 70%;
+		// max-width: 70%;
+		max-width: clamp(450px, 70%, 1000px);
 		.topBlock {
 			display: flex;
 			align-items: center;

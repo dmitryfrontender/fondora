@@ -2,7 +2,8 @@
 .Boosts {
 	.superLikeWrapper {
 		padding: 20px 0 40px;
-		width: 600px;
+		// width: 600px;
+		width: clamp(575px, 55vw, 600px);
 		.superLikeBanner {
 			display: flex;
 			justify-content: space-between;
@@ -28,6 +29,7 @@
 			}
 		}
 		.cardWrapper {
+			position: relative;
 			.title {
 				h3 {
 					color: rgb(255, 255, 255);
@@ -132,6 +134,50 @@
 					}
 				}
 				
+			}
+			.keen-slider {
+				display: flex;
+				gap: 0;
+			}
+			.arrow {
+				background-color: rgba(255,255,255, 0.1);
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				border-radius: 50%;
+				fill: #fff;
+				cursor: pointer;
+			  }
+			  
+			  .arrow--left {
+				left: -50px;
+			  }
+			  
+			  .arrow--right {
+				left: auto;
+				right: -50px;
+			  }
+			  
+			  .arrow--disabled {
+				fill: rgba(255, 255, 255, 0.5);
+			  }
+			.dots{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				margin-top: 20px;
+				.dot{
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: #5A5A5A;
+					padding: 0;
+				}
+				.active{
+					background: var(--main-red);
+				}
 			}
 		}
 		.breakLine {

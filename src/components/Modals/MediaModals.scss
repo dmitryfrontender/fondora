@@ -1,6 +1,8 @@
 @media screen and (max-width: 1023px) {
 	.Modal {
 		z-index: 15 !important;
+		width: 100vw !important;
+		padding-left: 0 !important;
 
 		.modalWrapper {
 			width: clamp(200px, 80vw, 600px) !important;

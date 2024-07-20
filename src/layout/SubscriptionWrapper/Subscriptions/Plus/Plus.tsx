@@ -18,7 +18,7 @@ const Plus = () => {
 							<h4>Безлимит лайков</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -26,7 +26,7 @@ const Plus = () => {
 							<h4>Просмотр лайков</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px'  }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -37,7 +37,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px'  }} />
 						</div>
 					</div>
 				</div>
@@ -50,7 +50,7 @@ const Plus = () => {
 							<h4>“Перемотка” без играничений</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -58,7 +58,7 @@ const Plus = () => {
 							<h4>1 бесплатный буст в месяц</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px'  }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -66,7 +66,7 @@ const Plus = () => {
 							<h4>5 бесплатных суперлайков в неделю</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px'  }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -77,7 +77,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px'  }} />
 						</div>
 					</div>
 				</div>
@@ -93,7 +93,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -104,7 +104,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px'  }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px'  }} />
 						</div>
 					</div>
 				</div>
@@ -120,7 +120,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -131,7 +131,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -142,7 +142,7 @@ const Plus = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -150,7 +150,7 @@ const Plus = () => {
 							<h4>Никакой рекламы</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 				</div>

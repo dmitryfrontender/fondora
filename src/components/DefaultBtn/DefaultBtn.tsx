@@ -7,10 +7,11 @@ interface buttonProps {
 	arrow: boolean;
 	arrowLeft?: boolean;
 	text: string;
+	onClick?: () => void;
 	// children?: React.ReactNode
 }
 
-const DefaultBtn = ({ background, arrow, arrowLeft, text }: buttonProps) => {
+const DefaultBtn = ({ background, arrow, arrowLeft, text, onClick }: buttonProps) => {
 	// const buttonBg = (background: string) => {
 	// 	switch (background) {
 	// 		case 'red':
@@ -65,7 +66,7 @@ const DefaultBtn = ({ background, arrow, arrowLeft, text }: buttonProps) => {
 
 	return (
 		// <button className='defaultBtn' style={buttonBg(background)}>
-		<button className={`defaultBtn ${buttonBgClass(background)}`}>
+		<button className={`defaultBtn ${buttonBgClass(background)}`} onClick={onClick}>
 			{arrowLeft ? <SVGIcon name='pointerIcon' size={20} /> : null}
 			<span>{text}</span>
 			{arrow ? <SVGIcon name='cursorRight' size={20} /> : null}

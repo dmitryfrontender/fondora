@@ -30,7 +30,7 @@ const Settings = () => {
 		<div className='page Settings'>
 			<div className='tittle'>
 				<div className='backBtn' onClick={() => navigate(-1)}>
-					<SVGIcon name='arrowLeft' size={25} />
+					<SVGIcon name='arrowLeft' size={25} fill={"white"}/>
 				</div>
 				<span>Настройки</span>
 			</div>
