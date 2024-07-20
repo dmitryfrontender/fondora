@@ -9,7 +9,7 @@
 	}
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
 	.Subscription {
 		.subscriptionWrapper {
 			width: clamp(200px, 90vw, 600px);
@@ -23,7 +23,7 @@
 					.banner {
 						justify-content: space-between;
 						position: relative;
-						width: clamp(259px, 80vw, 720px);
+						// width: clamp(259px, 75vw, 720px);
 					}
 				}
 			}
@@ -55,7 +55,7 @@
 			.keen-slider {
 				.keen-slider__slide {
 					.banner {
-						width: clamp(259px, 77vw, 400px);
+						width: clamp(259px, 81vw, 400px);
 					}
 				}
 			}
@@ -69,7 +69,7 @@
 			.keen-slider {
 				.keen-slider__slide {
 					.banner {
-						width: clamp(259px, 75vw, 375px);
+						width: clamp(259px, 80vw, 375px);
 						.bannerImg {
 							svg {
 								width: clamp(50px, 20vw, 150px);
