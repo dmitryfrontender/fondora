@@ -21,13 +21,30 @@ const SubscriptionWrapper = ({ page }: IShow) => {
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
 		{
 			initial: page || 0,
+			slides: {
+				perView: 1.04,
+				spacing: 10,
+			  },
+			  breakpoints: {
+				  '(max-width: 768px)': {
+					  slides: {
+						  perView: 1,
+						  spacing: 0,
+					  }
+				  }
+			  },
 
 			slideChanged(slider) {
 				setCurrentSlide(slider.track.details.rel);
 			},
 			created() {
 				setLoaded(true);
-			}
+			},
+			updated(slider) {
+				// setCurrentSlide(slider.track.details.rel);
+				console.log(slider);
+				
+			},
 
 			// resize(600)
 		},
