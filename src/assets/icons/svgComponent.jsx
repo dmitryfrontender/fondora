@@ -1173,7 +1173,7 @@ const icons = {
 		</svg>
 	),
 	arrowRight: (
-		<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 13'>
+    <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 13'>
 			{/* <path fillOpacity='0' d='M0 0H14V14H0z' transform='rotate(-180 7 6.75)'></path> */}
 			<path
 				fillOpacity='1'
@@ -1183,7 +1183,7 @@ const icons = {
 		</svg>
 	),
 	arrowLeft: (
-		<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'>
 			<path
 				
 				fillOpacity='1'

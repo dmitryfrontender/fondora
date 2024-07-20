@@ -1,10 +1,9 @@
-import React, {  useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { storagePhotos } from '../../../Data/StoragePhoto';
-// import DefaultBtn from "../../DefaultBtn/DefaultBtn";
-import './AddPhotos.scss';
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
 import SVGIcon from '../../../assets/icons/svgComponent';
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
+import './AddPhotos.scss';
 
 interface IPhoto {
 	src: string;
@@ -15,7 +14,7 @@ interface IProps {
 	addPhoto: (photo: IPhoto[]) => void;
 }
 
-const AddPhoto = ({ addPhoto }: IProps) => {
+const AddPhotos = ({ addPhoto }: IProps) => {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const [loaded, setLoaded] = useState(false);
 	const [selectedPhotos, setSelectedPhotos] = useState<IPhoto[]>([]);
@@ -40,35 +39,21 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 			}
 		});
 
-	};function Arrow(props: { disabled: boolean; left?: boolean; onClick: (e: any) => void }) {
+	};
+
+	function Arrow(props: { disabled: boolean; left?: boolean; onClick: (e: any) => void }) {
 		const disabled = props.disabled ? ' arrow--disabled' : '';
 		return (
 			<div onClick={props.onClick} className={`arrow ${props.left ? 'arrow--left' : 'arrow--right'} ${disabled}`}>
 				{props.left && (
-					// <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
 					<SVGIcon name='arrowLeft' size={20} />
 				)}
 				{!props.left && (
-					// <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-					<SVGIcon name='arrowRight' size={25} />
+					<SVGIcon name='arrowRight' size={20} />
 				)}
 			</div>
 		);
 	}
-
-	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-		initial: 0,
-		drag: true,
-		mode: "snap",
-		slides: { perView: 'auto' },
-		slideChanged(slider) {
-			setCurrentSlide(slider.track.details.rel);
-		},
-		created() {
-			setLoaded(true);
-		},
-	});
-
 
 	const sendPhotos = () => {
 		selectedPhotos.length > 0 && addPhoto([...selectedPhotos]);
@@ -133,6 +118,25 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 
 	const activeBtn = 'linear-gradient(135.00deg, rgb(132, 9, 56) -0.075%,rgb(242, 34, 113) 99.925%)';
 
+	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+		created(slider) {
+			setTimeout(() => {
+				setLoaded(true);
+				slider.update({
+					initial: 0,
+					drag: true,
+					slideChanged(slider) {
+						setCurrentSlide(slider.track.details.rel);
+					},
+					selector: '.keen-slider__slide',
+					slides: {
+						perView: 'auto'
+					}
+				});
+			}, 100);
+		},
+	});
+
 	return (
 		<div className='AddPhoto'>
 			<div
@@ -143,24 +147,26 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 					<SVGIcon name='sendTgBtn' width={20} />
 				</button>
 			</div>
-			<div className='photoWrapper keen-slider' ref={sliderRef}>
-				{storagePhotos.map((item, index) => {
-					const isSelected = selectedPhotos.includes(item);
 
-					return (
-						<div
-							className={`keen-slider__slide number-slide${item.id} item ${isSelected ? 'activeItem' : ''}`}
-							data-id={item.id}
-							key={item.id}
-							onClick={() => handlePhotoClick(item, item.id)}
-							style={isSelected ? activeStyle : defaultStyle}
-							ref={(el) => (counterRef.current[index] = el)}
-						>
-							<img src={item.src} alt={item.alt} />
-							<div className='addPhoto'></div>
-						</div>
-					);
-				})}
+			<div className="AddPhotoBlock">
+				<div className='photoWrapper keen-slider' ref={sliderRef} style={{ visibility: loaded ? 'visible' : 'hidden' }}>
+					{storagePhotos.map((elem, index) => {
+						const isSelected = selectedPhotos.includes(elem);
+						return (
+							<div
+								className={`keen-slider__slide item ${isSelected ? 'activeItem' : ''}`}
+								key={elem.id}
+								data-id={elem.id}
+								onClick={() => handlePhotoClick(elem, elem.id)}
+								style={isSelected ? activeStyle : defaultStyle}
+								ref={(el) => (counterRef.current[index] = el)}
+							>
+								<img src={elem.src} alt={elem.alt} />
+								<div className='addPhoto'></div>
+							</div>
+						);
+					})}
+				</div>
 
 				<div className='sliderBtnWrapper'>
 					{loaded && instanceRef.current && (
@@ -176,4 +182,4 @@ const AddPhoto = ({ addPhoto }: IProps) => {
 	);
 };
 
-export default AddPhoto;
+export default AddPhotos;

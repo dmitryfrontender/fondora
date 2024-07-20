@@ -31,7 +31,7 @@ const ProtectModal = () => {
 				<div className='itemWrapper'>
 					<div className='item'>
 						<div className='img'>
-							<SVGIcon name='deleteBtn' size={25} />
+							<SVGIcon name='deleteBtn' size={20} />
 						</div>
 						<div className='description'>
 							<div className='main'>
@@ -49,7 +49,7 @@ const ProtectModal = () => {
 						}}
 					>
 						<div className='img'>
-							<SVGIcon name='unAvailableBtn' size={25} />
+							<SVGIcon name='unAvailableBtn' size={20} />
 						</div>
 						<div className='description'>
 							<div className='main'>
@@ -67,7 +67,7 @@ const ProtectModal = () => {
 						}}
 					>
 						<div className='img'>
-							<SVGIcon name='flagBtn' size={25} />
+							<SVGIcon name='flagBtn' size={20} />
 						</div>
 						<div className='description'>
 							<div className='main'>
@@ -80,7 +80,7 @@ const ProtectModal = () => {
 					</div>
 					<div className='item'>
 						<div className='img'>
-							<SVGIcon name='shieldDone' size={25} />
+							<SVGIcon name='shieldDone' size={20} />
 						</div>
 						<div className='description'>
 							<div className='main'>

@@ -20,18 +20,21 @@
 		}
 	}
 
-	.photoWrapper {
+	&Block {
 		width: calc(100% - 20px);
 		padding: 10px 10px 15px;
 		margin-bottom: 10px;
-		flex-direction: column;
-		flex-wrap: wrap;
-		max-height: 210px;
+		position: relative;
+	}
+
+	.photoWrapper {
 
 		.item {
 			position: relative;
 			width: fit-content;
 			overflow: initial;
+			min-width: auto;
+			font-size: 0;
 
 			img {
 				height: 90px;
@@ -45,6 +48,7 @@
 				top: 5px;
 				right: 5px;
 				border-radius: 50%;
+				font-size: 14px;
 			}
 		}
 		.activeItem {
@@ -62,10 +66,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		position: absolute;
 		width: 100%;
-		top: 50%;
-		transform: translateY(-50%);
+
 		.arrow{
 			width: 50px;
 			height: 50px;
@@ -75,26 +77,60 @@
 			border-radius: 50px;
 			background: rgba(3, 3, 3, 0.70);
 			margin: 0 20px;
-		}
-		.arrow--disabled{
-			z-index: -10;
-		}
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
 
+			&--left{
+				left: 20px;
+			}
+
+			&--right{
+				right: 20px;
+			}
+			.arrow--disabled{
+				z-index: -10;
+			}
+
+			@media screen and (min-width: 1024px) {
+				&:hover {
+					svg {
+						path {
+							fill: #DF3C5E !important;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
 @media screen and (max-width: 1023px) {
 	.AddPhoto {
-		.photoWrapper {
-			width: -webkit-fill-available;
-			padding-right: 20px;
-			flex-wrap: wrap;
-		}
 		.btn {
 			margin: 10px 20px;
 			.defaultBtn {
 				span {
 					font-size: clamp(10px, 3vw, 14px);
+				}
+			}
+		}
+		.sliderBtnWrapper {
+			.arrow{
+				width: 30px;
+				height: 30px;
+
+				&--left{
+					left: 5px;
+				}
+
+				&--right{
+					right: 5px;
+				}
+
+				svg {
+					width: 15px;
+					height: 15px;
 				}
 			}
 		}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './EditMyProfile.scss';
 import SVGIcon from '../../assets/icons/svgComponent';
-import ProfileComponent from '../../components/ProfileComponent/ProfileComponent';
+import GamePad from '../../components/GamePad/GamePad';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import userPhoto1 from '../../assets/avatar/userPhoto1.png';
@@ -703,7 +703,7 @@ const EditMyProfile = () => {
 						</>
 					) : (
 						<div className='previewBlock'>
-							<ProfileComponent />
+							<GamePad />
 						</div>
 					)}
 				</div>

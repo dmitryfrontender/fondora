@@ -109,6 +109,7 @@
 							border-radius: 30px;
 							padding: 10px;
 							background: linear-gradient(135deg, rgb(132, 9, 56) -0.133%, rgb(242, 34, 113) 99.867%), linear-gradient(135deg, rgb(24, 25, 32) 0%, rgb(15, 15, 19) 100%);
+							pointer-events: none;
 
 							// @media screen and (min-width: 1024px) {
 							// 	&:hover {

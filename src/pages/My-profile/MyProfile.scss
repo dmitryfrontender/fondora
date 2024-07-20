@@ -7,7 +7,7 @@
 			height: min-content;
 			position: absolute;
 			top: 20px;
-			right: 20px;
+			right: 0;
 		}
 		.userInfo {
 			display: block;
@@ -302,6 +302,10 @@
 								line-height: 150%;
 								letter-spacing: 0%;
 								text-align: left;
+							}
+
+							&:last-child {
+								text-align: right;
 							}
 						}
 						.gold {
