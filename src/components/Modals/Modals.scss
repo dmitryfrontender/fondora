@@ -1,5 +1,7 @@
 .Modal {
-	width: 100vw;
+	// width: 100vw;
+	width: calc(100vw - clamp(200px, 32vw, 320px));
+	padding-left: clamp(200px, 32vw, 320px);
 	height: 100vh;
 	position: absolute;
 	display: flex;

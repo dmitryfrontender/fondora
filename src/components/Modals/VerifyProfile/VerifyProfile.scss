@@ -1,6 +1,7 @@
 .VerifyProfile {
 	.modalWrapper {
 		.title {
+			margin-bottom: 40px;
 			h2 {
 				color: #fff;
 				text-align: center;
@@ -12,6 +13,7 @@
 			}
 		}
 		.modalItem {
+			max-width: 100%;
 			.textTop {
 				span {
 					color: #fff;
@@ -26,8 +28,6 @@
 			}
 			.selfieIcon {
 				padding: 30px 0;
-				svg {
-				}
 			}
 			.note {
 				max-width: 60%;
@@ -45,6 +45,69 @@
 					letter-spacing: 0.28px;
 				}
 			}
+			.dots{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 40px;
+				gap: 10px;
+				.dot{
+					width: 6px;
+					height: 6px;
+					background: #5A5A5A;
+					padding: 0;
+					border-radius: 50%;
+				}
+				.active{
+					background: var(--main-red);
+				}
+			}
+			
+		}
+		.buttonWrapper{
+			// margin-block: 10px;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			gap: 20px;
+		}
+		.sliderBtnWrapper {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  z-index: -1;
+		  .sliderBtn{
+			background-color: rgba(255,255,255, 0.1);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+
+			svg{
+				padding: 10px;
+				fill: white;
+			}
+			
+		  }
+		  .rightBtn {
+			transform: translateX(120%);
+		  }
+		  .leftBtn {
+			  transform: translateX(-120%);
+			
+		  }
+		  .disabledBtn{
+			  svg{
+				  fill: rgba(255, 255, 255, 0.5);
+			  }
+		  }
+		 
 		}
 	}
 }

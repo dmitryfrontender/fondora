@@ -1,9 +1,14 @@
+
 @media screen and (max-width: 1023px) {
-	.SuperLikes {
 		.superLikeWrapper {
 			padding: 50px 0 40px 0 !important;
+			padding-top: clamp(50px, 10vw, 75px) !important;
+			.breakLine{
+				span{
+					background-color: rgb(34 27 29) !important;
+				}
+			}
 		}
-	}
 }
 @media screen and (max-width: 700px) {
 	.superLikeWrapper {
@@ -24,6 +29,9 @@
 				.item {
 					min-width: 70vw;
 				}
+			}
+			.arrow{
+				display: none;
 			}
 		}
 		.goldPlanBanner {

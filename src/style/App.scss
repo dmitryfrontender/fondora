@@ -116,7 +116,8 @@ a:-webkit-any-link {
 	align-items: center;
 	position: relative;
 	// padding-left: 20vw;
-	padding-left: 25vw;
+	// padding-left: 25vw;
+	padding-left: clamp(200px, 32vw, 320px);;
 	flex-direction: column;
 }
 .pageItems {

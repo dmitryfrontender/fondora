@@ -2,12 +2,15 @@
 	.App {
 		.pageWrapper {
 			.ToggleLikeTop {
+				display: flex !important;
 				position: relative;
-				top: 60px;
+				// top: clamp(50px, 10vw, 75px);
+				top: clamp(60px, 11vw, 80px);
 			}
 			.LikesTopProfile {
 				position: relative;
-				top: 60px;
+				// top: 60px;
+				top: clamp(60px, 11vw, 85px);
 				.PagesWrapper {
 					width: -webkit-fill-available !important;
 					margin: 0 20px;

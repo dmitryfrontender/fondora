@@ -10,7 +10,7 @@ import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 const MyProfile = () => {
 	const dispatch = useDispatch();
-	const [showTooltip, setShowTooltip] = useState(true);
+	const [showTooltip, setShowTooltip] = useState(false);
 
 	const verifyProfileState = useSelector((state: any) => state.VerifyProfileState.isUserVerify);
 

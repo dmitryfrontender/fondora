@@ -7,34 +7,7 @@ import './Vip.scss';
 const Vip = () => {
 	return (
 		<>
-			{/* <div className="page Subscription vip"> */}
 			<div className='subscriptionWrapper vip'>
-				{/* <div className="topItem">
-                            <div className="title">
-                                <h3>
-                                    Моя Подписка
-                                </h3>
-                            </div>
-                            <div className="cancelBtn" onClick={() => navigate(-1)}>
-                                <SVGIcon name="cancelBtn" size={20}/>
-
-                            </div>
-                        </div>
-                        <div className="banner">
-                            <div className="bannerImg">
-                                <SVGIcon name="logoVip" size={20}/>
-                                <div className="marker">
-                                    <span>
-                                        VIP
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="buyBtn">
-                                <span>
-                                    Купить Подписку
-                                </span>
-                            </div>
-                        </div> */}
 				<div className='optionWrapper'>
 					<div className='optionTitle'>
 						<h5>Лайкай</h5>
@@ -44,7 +17,7 @@ const Vip = () => {
 							<h4>Безлимит лайков</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -52,7 +25,7 @@ const Vip = () => {
 							<h4>Просмотр лайков</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px' }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -63,7 +36,7 @@ const Vip = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px' }} />
 						</div>
 					</div>
 				</div>
@@ -76,7 +49,7 @@ const Vip = () => {
 							<h4>“Перемотка” без играничений</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -84,7 +57,7 @@ const Vip = () => {
 							<h4>1 бесплатный буст в месяц</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px' }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -92,7 +65,7 @@ const Vip = () => {
 							<h4>5 бесплатных суперлайков в неделю</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px' }} />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -103,7 +76,7 @@ const Vip = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px' }} />
 						</div>
 					</div>
 				</div>
@@ -119,7 +92,7 @@ const Vip = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -130,7 +103,7 @@ const Vip = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 2px' }} />
+							<SVGIcon name='lockBtn' size={30} style={{ padding: '8px 1px' }} />
 						</div>
 					</div>
 				</div>
@@ -146,7 +119,7 @@ const Vip = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -157,7 +130,7 @@ const Vip = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -168,7 +141,7 @@ const Vip = () => {
 							</div>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 					<div className='itemWrapper'>
@@ -176,7 +149,7 @@ const Vip = () => {
 							<h4>Никакой рекламы</h4>
 						</div>
 						<div className='includeOption'>
-							<SVGIcon name='checkboxIcon' size={20} className='checkBoxIcon' />
+							<SVGIcon name='checkboxIcon' size={15} className='checkBoxIcon' />
 						</div>
 					</div>
 				</div>
