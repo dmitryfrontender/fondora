@@ -153,60 +153,6 @@ const SubscriptionWrapper = ({ page }: IShow) => {
 						)
 					})
 				}
-
-
-
-				{/* {currentSlide === 0 &&
-					<AnimatePresence mode="wait">
-						<motion.div
-						//   key={selectedTab ? selectedTab.label : "empty"}
-						key={currentSlide}
-						initial={{ y: 20, opacity: 0 }}
-						animate={{ y: 0, opacity: 1 }}
-						exit={{ y: -10, opacity: 0 }}
-						transition={{ duration: 0.3 }}
-						>
-					
-							<Plus />
-						</motion.div>
-					</AnimatePresence>
-				}
-				{currentSlide === 1 &&
-					<AnimatePresence mode="wait">
-						<motion.div
-						//   key={selectedTab ? selectedTab.label : "empty"}
-						key={currentSlide}
-						initial={{ y: 20, opacity: 0 }}
-						animate={{ y: 0, opacity: 1 }}
-						exit={{ y: -10, opacity: 0 }}
-						transition={{ duration: 0.3 }}
-						>
-					
-							<Gold />
-						</motion.div>
-					</AnimatePresence>
-				}
-				{currentSlide === 2 &&
-					<AnimatePresence mode="wait">
-						<motion.div
-						//   key={selectedTab ? selectedTab.label : "empty"}
-						key={currentSlide}
-						initial={{ y: 20, opacity: 0 }}
-						animate={{ y: 0, opacity: 1 }}
-						exit={{ y: -10, opacity: 0 }}
-						transition={{ duration: 0.3 }}
-						>
-					
-							<Vip />
-						</motion.div>
-					</AnimatePresence>
-				} */}
-
-
-{/* 
-				{currentSlide === 1 && 
-					<Gold />}
-				{currentSlide === 2 && <Vip />} */}
 			</div>
 		</>
 	);
