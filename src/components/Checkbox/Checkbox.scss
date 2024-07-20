@@ -11,10 +11,10 @@
 	}
 }
 .activeCheckbox {
-	background-color: rgb(226, 31, 105);
+	background-color: rgba(226, 31, 105, .4);
+	opacity: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid rgb(226, 31, 105);
-	opacity: 0.4;
+	border: 1px solid rgba(226, 31, 105, .4);
 }
