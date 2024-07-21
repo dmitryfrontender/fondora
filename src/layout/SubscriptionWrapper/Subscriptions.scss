@@ -122,6 +122,11 @@
 				}
 			}
 			.includeOption {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 30px;
+				flex-shrink: 0;
 				.checkBoxIcon {
 					background: rgba(255, 190, 22, 0.4);
 					fill: white;
@@ -130,7 +135,7 @@
 					// padding: 8px 6px;
 					padding: 8px 6px 7px 9px;
 				}
-				
+
 			}
 		}
 	}
