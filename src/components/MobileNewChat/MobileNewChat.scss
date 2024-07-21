@@ -25,12 +25,12 @@
 				height: clamp(17px, 5vw, 27px);
 			}
 			.backBtn {
-				fill: white;
-
 				a {
 					svg {
 						width: clamp(15px, 5vw, 25px);
 						height: clamp(15px, 5vw, 25px);
+						fill: white;
+
 					}
 				}
 			}
