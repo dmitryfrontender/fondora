@@ -32,11 +32,27 @@ const PremiumSearch = () => {
 								<div className='itemWrapper'>
 									<div className='description'>
 										<div className='text'>
-											<span>Интересы</span>
+											<span>Есть информация о себе</span>
 										</div>
 									</div>
 									<div className='value'>
 										<ToggleBtn />
+									</div>
+								</div>
+							</li>
+							<li>
+								<div className='itemWrapper'>
+									<div className='description'>
+										<div className='text'>
+											<span>Интересы</span>
+										</div>
+									</div>
+									<div className='value'>
+										<div className='text'>
+											<span>Выбрать</span>
+										</div>
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
+										<div className='underline'></div>
 									</div>
 								</div>
 							</li>
@@ -52,7 +68,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -69,7 +85,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -86,7 +102,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -103,7 +119,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -120,7 +136,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -137,7 +153,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -154,7 +170,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -171,7 +187,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -188,7 +204,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -206,7 +222,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -223,7 +239,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -240,7 +256,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -257,7 +273,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -274,7 +290,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -291,7 +307,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -308,7 +324,7 @@ const PremiumSearch = () => {
 										<div className='text'>
 											<span>Выбрать</span>
 										</div>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'} />
 										<div className='underline'></div>
 									</div>
 								</div>

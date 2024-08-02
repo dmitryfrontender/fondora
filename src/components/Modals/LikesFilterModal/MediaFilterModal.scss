@@ -34,10 +34,11 @@
 		}
 	}
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
 	.FilterModal {
 		.modalWrapper {
 			.buttonsWrapper {
+				padding-bottom: 8vh;
 				button {
 					padding: 10px 0;
 					span {

@@ -40,6 +40,9 @@ const Pairs = () => {
 	return (
 		<>
 			<div className='Pairs'>
+				<div className="tittleBlock">
+					<h2>Новые пары</h2>
+				</div>
 				<div className='pairsWrapper'>
 					<div className='pairElement likes'>
 						<div className='blurWrapper'>

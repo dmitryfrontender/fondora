@@ -11,7 +11,7 @@
 	backdrop-filter: blur(10px);
 	z-index: 15;
 	.container {
-		margin: 0 1vw;
+		// margin: 0 1vw;
 		.chatHeader {
 			display: flex;
 			justify-content: space-between;
@@ -65,15 +65,24 @@
 				gap: 10px;
 			}
 		}
+		.chatArea{
+			margin: 10px 0;
+			height: -webkit-fill-available;
+			position: relative;
+			overflow-y: scroll;
+		}
 		.addNotification {
-			border-radius: 10px;
 			background: linear-gradient(180deg, #903c5c 0%, #621533 100%);
 			padding: 10px 20px;
 			display: flex;
 			align-items: flex-start;
 			justify-content: space-between;
 			margin: 0 auto;
-			width: clamp(250px, 70vw, 600px);
+			// width: clamp(250px, 70vw, 600px);
+			position: absolute;
+			left: 0;
+			width: -webkit-fill-available;
+
 			.tittleNote {
 				display: flex;
 				justify-content: flex-start;
@@ -100,8 +109,11 @@
 			}
 		}
 		.emptyChat {
+			position: relative;
+			top: 15vh;
+			padding-bottom: 15vh;
 			.tittle {
-				margin: 20px auto;
+				margin: 0 auto;
 				h2 {
 					font-size: clamp(13px, 1vw, 20px);
 				}

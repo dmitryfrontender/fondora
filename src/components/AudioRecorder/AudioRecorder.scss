@@ -82,6 +82,13 @@
     }
     .timeRecord{
         min-width: 45px;
+        color: var(--white);
+        font-family: var(--font-family-urbanist);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 18px */
+        opacity: 0.5;
     }
     .pauseBtn{
         border-radius: 10px;

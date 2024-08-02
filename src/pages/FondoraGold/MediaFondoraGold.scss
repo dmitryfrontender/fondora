@@ -1,8 +1,25 @@
 @media screen and (max-width: 1023px) {
     .FondoraGold{
-        margin-top: 7vw;
+        margin-top: clamp(30px, 10vw, 65px);
         .pagesWrapper{
             width: clamp(700px, 90vw, 800px);
+        }
+        .mobileWrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin: 35px 0 120px;
+          padding: 0 22px;
+          p{
+            color: var(--white);
+            text-align: center;
+            font-family: var(--font-family-urbanist);
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+
         }
     }
     
@@ -37,9 +54,6 @@
             width: 100%;
             min-width: 60vw;
           }
-        }
-        .optionWrapper {
-            margin-bottom: 100px;
         }
     }
     

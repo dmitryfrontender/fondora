@@ -92,6 +92,8 @@ const SuperLike = () => {
 								<span>Перейти</span>
 							</div>
 						</div>
+						<p className="mobileDescription">Включает 5 бесплатных суперлайков в неделю</p>
+
 					</div>
 				</div>
 			</div>

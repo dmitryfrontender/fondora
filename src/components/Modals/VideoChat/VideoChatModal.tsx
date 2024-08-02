@@ -44,7 +44,7 @@ const VideoChatModal = () => {
 					<div className='toggleToTalk'>
 						<div className='main'>
 							<div className='question'>
-								<span>Мне было бы интересно пообщаться с пользователем {userName} в видеочате.</span>
+								<span>Мне было бы интересно пообщаться с пользователем <span style={{ color: 'var(--white)' }}>{userName}</span> в видеочате.</span>
 							</div>
 							<ToggleBtn />
 						</div>

@@ -23,7 +23,7 @@ const MobileSettings = () => {
 			<div className='MobileSettings'>
 				<div className='wrapper'>
 					<div className='topMobileSettings'>
-						<SVGIcon name='arrowLeft' size={20} onClick={() => navigate(-1)} />
+						<SVGIcon name='arrowLeft' size={20} fill="#fff" onClick={() => navigate(-1)} />
 						<h3>Настройки Находок</h3>
 						<span
 						onClick={() => acceptSettings()}
