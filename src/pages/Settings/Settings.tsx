@@ -30,7 +30,7 @@ const Settings = () => {
 		<div className='page Settings'>
 			<div className='tittle'>
 				<div className='backBtn' onClick={() => navigate(-1)}>
-					<SVGIcon name='arrowLeft' size={25} fill={"white"}/>
+					<SVGIcon name='arrowLeft' size={15} fill={"white"}/>
 				</div>
 				<span>Настройки</span>
 			</div>
@@ -163,7 +163,7 @@ const Settings = () => {
 												<span>+1 063 374 99 99</span>
 											</div>
 											<div className='arrow'>
-												<SVGIcon name='arrowRight' size={20} />
+												<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 												<div className='underline'></div>
 											</div>
 										</div>
@@ -176,7 +176,7 @@ const Settings = () => {
 										</div>
 										<div className='value'>
 											<div className='arrow'>
-												<SVGIcon name='arrowRight' size={20} />
+												<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 												<div className='underline'></div>
 											</div>
 										</div>
@@ -192,7 +192,7 @@ const Settings = () => {
 												<span>silvervenny@gmail.com</span>
 											</div>
 											<div className='arrow'>
-												<SVGIcon name='arrowRight' size={20} />
+												<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 												<div className='underline'></div>
 											</div>
 										</div>
@@ -224,7 +224,7 @@ const Settings = () => {
 										<h4>New Jersey. New York, NY</h4>
 									</div>
 									<div className='arrow'>
-										<SVGIcon name='arrowRight' size={20} />
+										<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 										<div className='underline'></div>
 									</div>
 								</div>
@@ -234,7 +234,7 @@ const Settings = () => {
 							<div className='description'>
 								<span>Расстояние</span>
 							</div>
-							<SingleRangeSlider min={0} max={100} defaultValue={50} />
+							<SingleRangeSlider min={0} max={100} defaultValue={50} distance={true}/>
 						</li>
 						<li>
 							<div className='itemWrapper'>
@@ -246,6 +246,22 @@ const Settings = () => {
 								</div>
 							</div>
 						</li>
+						<li >
+									<div className='itemWrapper'>
+										<div className='description'>
+											<span>Показывать меня</span>
+										</div>
+										<div className='value'>
+											<div className='item'>
+												<span>Женщины</span>
+											</div>
+											<div className='arrow'>
+												<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
+												<div className='underline'></div>
+											</div>
+										</div>
+									</div>
+								</li>
 						<li className='listValue' style={{ alignItems: 'start' }}>
 							<div className='description'>
 								<span>Возраст</span>
@@ -441,7 +457,7 @@ const Settings = () => {
 									<div className='text'>
 										<span>Выбрать</span>
 									</div>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -465,7 +481,7 @@ const Settings = () => {
 									<div className='text'>
 										<span>Настройки</span>
 									</div>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -486,7 +502,7 @@ const Settings = () => {
 									<div className='text'>
 										<span>Настройки</span>
 									</div>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -507,7 +523,7 @@ const Settings = () => {
 									<div className='text'>
 										<span>Настройки</span>
 									</div>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -528,7 +544,7 @@ const Settings = () => {
 									<div className='text'>
 										<span>Настройки</span>
 									</div>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -551,30 +567,7 @@ const Settings = () => {
                                                 Настройки
                                             </span>
                                         </div> */}
-									<SVGIcon name='arrowRight' size={20} />
-									<div className='underline'></div>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div className='title '>
-					<h3>Статус активности</h3>
-				</div>
-				<div className='listWrapper'>
-					<ul>
-						<li>
-							<div className='itemWrapper'>
-								<div className='description'>
-									<span>Статус активности</span>
-								</div>
-								<div className='value'>
-									{/* <div className="text">
-                                            <span>
-                                                Настройки
-                                            </span>
-                                        </div> */}
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -598,7 +591,7 @@ const Settings = () => {
                                                 Настройки
                                             </span>
                                         </div> */}
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -620,7 +613,7 @@ const Settings = () => {
 									<div className='text'>
 										<span>Придумайте имя</span>
 									</div>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -641,7 +634,7 @@ const Settings = () => {
 									<span>Адрес электронной почты</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -652,7 +645,7 @@ const Settings = () => {
 									<span>Push - уведомления</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -663,12 +656,7 @@ const Settings = () => {
 									<span>Team Fondora</span>
 								</div>
 								<div className='value'>
-									{/* <div className="text">
-                                            <span>
-                                                Придумайте имя
-                                            </span>
-                                        </div> */}
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -709,7 +697,7 @@ const Settings = () => {
 									<span>Помощь и поддержка</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -727,7 +715,7 @@ const Settings = () => {
 									<span>Правила сообщества</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -738,7 +726,7 @@ const Settings = () => {
 									<span>Советы по безопасности</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -749,7 +737,7 @@ const Settings = () => {
 									<span>Центр безопасности</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -767,7 +755,7 @@ const Settings = () => {
 									<span>Политика в отношении файлов cookie</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -778,7 +766,7 @@ const Settings = () => {
 									<span>Политика конфиденциальности</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -789,7 +777,7 @@ const Settings = () => {
 									<span>Настройки конфиденциальности</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -807,7 +795,7 @@ const Settings = () => {
 									<span>Лицензии</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>
@@ -818,7 +806,7 @@ const Settings = () => {
 									<span>Условия обслуживания</span>
 								</div>
 								<div className='value'>
-									<SVGIcon name='arrowRight' size={20} />
+									<SVGIcon name='arrowRight' size={20} fill={'rgb(162, 162, 162)'}/>
 									<div className='underline'></div>
 								</div>
 							</div>

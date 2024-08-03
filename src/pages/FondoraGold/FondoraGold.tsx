@@ -229,6 +229,12 @@ const FondoraGold = () => {
 					</div>
 					
 				</div>
+                <div className="mobileWrapper">
+                    <p>
+                        Нажимая «Продолжить», ты соглашаешься с нашими <span style={{color: 'var(--main-red)'}}>Условиями</span>.  Сумма будет списана, а подписка будет автоматически продлеваться на выбранный период времени и по той же цене до тех пор, пока ты не отменишь ее в настройках App Store.
+                    </p>
+                    <DefaultBtn text="Продолжить - 7,99 $" background="blue" arrow={true}/>
+                </div>
 
 
 

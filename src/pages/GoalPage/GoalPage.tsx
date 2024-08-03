@@ -23,6 +23,7 @@ const GoalPage = () => {
 	return (
 		<>
 			<div className='GoalPage'>
+				<div className="container">
 				<div className='logo'>
 					<SVGIcon name='mainLogo' size={100} />
 				</div>
@@ -70,6 +71,7 @@ const GoalPage = () => {
 
 						<span>Планы на сегодня</span>
 					</div>
+				</div>
 				</div>
 			</div>
 		</>

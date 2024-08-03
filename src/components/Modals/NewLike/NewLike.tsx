@@ -78,7 +78,7 @@ const NewLike = () => {
 					</div>
 					<div className='modalButtons'>
 						<div className='btn'>
-							<DefaultBtn text='Узнай, кто тебя лайкнул' background='red' arrow={false} />
+							<DefaultBtn text='Узнай, кто тебя лайкнул' background='red' arrow={true} />
 						</div>
 						<div
 							className='btn'

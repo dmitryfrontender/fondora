@@ -200,7 +200,7 @@ a:-webkit-any-link {
 				align-items: flex-start;
 				// align-items: center;
 				position: relative;
-				gap: 5px;
+				gap: 15px;
 				.description {
 					display: flex;
 					align-items: center;
@@ -245,6 +245,26 @@ a:-webkit-any-link {
 					position: relative;
 					align-items: center;
 					cursor: pointer;
+					span{
+						color: #A2A2A2;
+						font-family: var(--font-family-urbanist);
+						font-size: 14px;
+						font-style: normal;
+						font-weight: 500;
+						line-height: 150%; /* 21px */
+					}
+					.plusSign{
+						span{
+							color: var(--color-black);
+							text-align: center;
+							font-family: var(--font-family-urbanist);
+							font-size: 12px;
+							font-style: normal;
+							font-weight: 600;
+							line-height: normal;
+							letter-spacing: 0.24px;
+						}
+					}
 
 					@media screen and (min-width: 1024px) {
 						&:hover {
@@ -264,7 +284,7 @@ a:-webkit-any-link {
 							font-weight: 500;
 							line-height: 150%;
 							letter-spacing: 0%;
-							text-align: left;
+							// text-align: left;
 							margin: 0;
 						}
 						h4 {
@@ -274,7 +294,7 @@ a:-webkit-any-link {
 							font-weight: 500;
 							line-height: 150%;
 							letter-spacing: 0%;
-							text-align: left;
+							// text-align: left;
 							margin: 0;
 						}
 					}
@@ -299,6 +319,11 @@ a:-webkit-any-link {
 					}
 				}
 			}
+			// @media screen and (max-width: 450px) {
+			// 	// .itemWrapper{
+			// 	// 	gap: 1;
+			// 	// }
+			// }
 			.labeMessage{
 				height: 100%;
 				width: 100%;
@@ -390,7 +415,7 @@ a:-webkit-any-link {
 		color: rgb(255, 190, 24);
 		border-radius: 7px;
 		font-size: 12px;
-		padding: 1px 7px;
+		padding: 2px 7px;
 	}
 }
 

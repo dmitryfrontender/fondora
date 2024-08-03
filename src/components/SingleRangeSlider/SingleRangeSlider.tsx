@@ -7,10 +7,11 @@ interface SingleRangeSliderProps {
 	defaultValue: number;
 	topValue?: boolean;
 	textSlider?: string;
+	distance?: boolean;
 	// onChange: (value: number) => void;
 }
 
-const SingleRangeSlider = ({ min, max, defaultValue, topValue, textSlider }: SingleRangeSliderProps) => {
+const SingleRangeSlider = ({ min, max, defaultValue, topValue, textSlider, distance }: SingleRangeSliderProps) => {
 	const [value, setValue] = useState(defaultValue);
 	const progress = ((value - min) / (max - min)) * 100;
 
@@ -47,7 +48,7 @@ const SingleRangeSlider = ({ min, max, defaultValue, topValue, textSlider }: Sin
 				</label>
 				{!topValue && <div className='value'>
 					{value} 
-				    <span>&nbsp;км</span>
+				    <span>&nbsp;{distance ? 'км' : ''}</span>
 
 				</div>}
 			</div>

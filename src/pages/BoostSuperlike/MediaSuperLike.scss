@@ -45,3 +45,21 @@
 		}
 	}
 }
+@media screen and (max-width: 450px) {
+	.SuperLikes{
+		.superLikeWrapper {
+			.goldPlanBanner{
+				flex-wrap: wrap;
+				.description{
+					p{
+						display: none;
+					}
+				}
+				.mobileDescription{
+					display: block !important;
+					flex: 1 1 100%;
+				}
+			}
+		}
+	}
+}

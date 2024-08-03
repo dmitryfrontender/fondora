@@ -5,3 +5,13 @@
 		}
 	}
 }
+@media screen and (max-width: 450px) {
+	.BoostModal {
+		.boostWrapper {
+			.boostInfo{
+				justify-content: flex-start !important;
+				gap: 15px !important;
+			}
+		}
+	}
+}

@@ -28,7 +28,7 @@ const MobileTop = () => {
 
 	return (
 		<>
-			{location.pathname === '/mobile-settings' || location.pathname === '/goal-page' ? null : (
+			{location.pathname === '/mobile-settings' || location.pathname === '/goal-page' || location.pathname === '/settings' ? null : (
 				<div className='MobileTop'>
 					<div className='topWrapper'>
 						<div className='logo'>
@@ -36,14 +36,29 @@ const MobileTop = () => {
 						</div>
 
 						<div className='topBtn'>
-							<Link to='/notifications'>
-								<SVGIcon name='notification' stroke='#BDBDBD' />
-							</Link>
+							{
+								path === '/my-profile' ? (
+									<Link to='/settings'>
+										<SVGIcon name='settings' stroke='#BDBDBD' />
+									</Link>
+								) : (
+									
+									<Link to='/notifications'>
+										<SVGIcon name='notification' 
+										stroke={location.pathname === '/notifications' ? '#F22271' : '#BDBDBD'} 
+										/>
+									</Link>
+								)
+								
+							}
+							
 							{path === '/my-profile' ? (
-								<Link to='/settings'>
-									<SVGIcon name='protectIcon' stroke='#BDBDBD' />
-								</Link>
+								<Link to='/my-profile'>
+								<SVGIcon name='protectIcon' stroke='#BDBDBD' />
+							</Link>
+								
 							) : (
+								
 								<Link to='/mobile-settings'>
 									<SVGIcon name='settings' stroke='#BDBDBD' />
 								</Link>
