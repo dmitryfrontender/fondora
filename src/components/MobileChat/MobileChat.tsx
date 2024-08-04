@@ -186,7 +186,7 @@ const MobileChat = () => {
 											<div className='messages' >
 												{Object.keys(chatData).length > 0
 													? chatData.messages.map((item, index) => (
-														// console.log(item)
+														// console.log(item),
 
 																<div className={`message ${item.owner ? 'owner' : 'notOwner'}`} key={index} onClick={() => handleSmileReaction(item.id)}>
 																	<div className="messageWrapper">
@@ -202,7 +202,11 @@ const MobileChat = () => {
 																			</div>
 																		)}
 																		{item.imageUrl ? <img src={item.imageUrl} alt='message' /> : null}
-																		{item.storagePhotoArr ? item.storagePhotoArr.forEach((elem: string) => <img src={elem} alt='message' />) : null}
+																		{/* {item.storagePhotoArr ? item.storagePhotoArr.forEach((elem: string) => <img src={elem} alt='message' />) : null} */}
+															{item.storagePhotoArr ? item.storagePhotoArr.map((elem: string, index) => <img src={elem} alt='message' key={index} />) : null}
+
+																		{/* {item.storagePhotoArr ? console.log(item.storagePhotoArr) : null}; */}
+
 
 																		{
 

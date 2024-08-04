@@ -175,6 +175,11 @@
 								width: auto;
 								text-align: left;
 								min-width: 50px;
+								display: flex;
+								flex-wrap: wrap;
+								align-items: center;
+								justify-content: flex-end;
+								gap: 5px;
 								span {
 									color: white;
 									font-family: var(--font-family-urbanist);
@@ -189,11 +194,11 @@
 									justify-content: space-between;
 									align-items: center;
 									position: absolute;
-									background: rgb(163 117 117 / 60%);
+									background: rgb(163 117 117 / 70%);
 									border-radius: 15px;
 									padding: 10px;
 									top: 0;
-									z-index: 10;
+									z-index: 15;
 									.messageSmiles {
 										display: flex;
 										justify-content: space-between;
@@ -245,15 +250,17 @@
 						.owner {
 							word-break: break-word;
 							align-self: flex-end;
+							position: relative;
 							.messageWrapper{
 								border-radius: 20px 0px 20px 20px;
 								background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), linear-gradient(92deg, #373fff 0.03%, #22caff 100.03%),
 									linear-gradient(90deg, #f02270 0.1%, #8a0b3b 102.02%);
 								box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+								position: relative;
 							}
 							.smileBlock {
-								transform: translate(-100%, -110%);
-								left: 30vw;
+								transform: translate(-10%, -110%);
+								right: 0;
 							}
 							.reaction {
 								right: 0;
@@ -269,8 +276,8 @@
 								box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
 							}
 							.smileBlock {
-								right: -1vw;
-								transform: translate(100%, -110%);
+								left:  0vw;
+								transform: translate(10%, -110%);
 							}
 							.reaction {
 								right: 0;

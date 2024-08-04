@@ -30,6 +30,9 @@ const DotsModal = () => {
 		<>
 			<div className='DotsModal Modal' ref={ref}>
 				<div className='modalWrapper'>
+					<div className="modalCloseBtn">
+						<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(setDotsModal(false))} />
+					</div>
 
 					<div className="topBlock">
 						<div className='userAvatar'>

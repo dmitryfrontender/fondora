@@ -52,6 +52,9 @@ const VerifyProfile = () => {
 						slideModal === 'Slide1' ? 
 							<>
 							{/* <div className="keen-slider__slide number-slide1'"> */}
+								<div className="modalCloseBtn">
+									<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(setVerifyProfileModal(false))} />
+								</div>
 								<div className='scanIcon'>
 									<SVGIcon name='scanVerify' size={40} />
 								</div>
@@ -78,6 +81,9 @@ const VerifyProfile = () => {
 						: 
 							<>
 							{/* <div className="keen-slider__slide number-slide2'"> */}
+								<div className="modalCloseBtn">
+									<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(setVerifyProfileModal(false))} />
+								</div>
 								<div className='title'>
 										<h2>Пройти верификацию</h2>
 									</div>

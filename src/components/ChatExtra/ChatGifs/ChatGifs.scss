@@ -14,7 +14,7 @@
 			gap: 10px;
 			border-radius: 30px;
 			background: #212020;
-			border: none;
+			border: 1px solid transparent;
 			margin: 10px;
 			resize: none;
 			color: var(--white);
@@ -24,9 +24,14 @@
 			letter-spacing: 0%;
 			align-content: center;
 			padding: 5px 20px 5px 40px;
+			transition: all ease 0.3s;
 		}
 		textarea:focus {
 			outline: none;
+			border: 1px solid #54484D;
+			transition: all ease 0.3s;
+
+
 		}
 
 		svg {
@@ -40,6 +45,7 @@
 		width: calc(100% - 20px);
 		gap: 1vw;
 		margin: 0 10px;
+		padding-bottom: 10px;
 
 		.keen-slider__slide{
 			max-width: fit-content !important;
@@ -87,5 +93,20 @@
 			// padding-right: 20px;
 			flex-wrap: nowrap;
 		}
+		.gifWrapper{
+			display: grid;
+			grid-template-rows: repeat(2, auto);
+			grid-auto-flow: column;
+			grid-auto-columns: max-content;
+			overflow: hidden;
+		}
+		.keen-slider__slide{
+			margin: 0 auto;
+		}
+		.sliderBtnWrapper{
+			display: none;
+		}
+		
+
 	}
 }

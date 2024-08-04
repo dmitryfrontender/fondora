@@ -5,6 +5,7 @@ import { setVideoChatModal, setUserAvatar, setUserName } from '../../../store/Vi
 import ownerAvatar from '../../../assets/avatar/user-avatar.png';
 import ToggleBtn from '../../ToggleBtn/ToggleBtn';
 import DefaultBtn from '../../DefaultBtn/DefaultBtn';
+import SVGIcon from '../../../assets/icons/svgComponent';
 
 const VideoChatModal = () => {
 	const userName = useSelector((state: any) => state.VideoChatState.userName);
@@ -31,6 +32,9 @@ const VideoChatModal = () => {
 		<>
 			<div className='videoChatModal Modal' ref={ref}>
 				<div className='modalWrapper'>
+					<div className="modalCloseBtn">
+						<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(setVideoChatModal(false))} />
+					</div>
 					<div className='avatarsBlock'>
 						<img src={ownerAvatar} alt='avatar' />
 						<img className='owner' src={userAvatar} alt='avatar' />
