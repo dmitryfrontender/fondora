@@ -25,6 +25,9 @@ const ProtectModal = () => {
 	return (
 		<div className='ProtectModal Modal' ref={ref}>
 			<div className='modalWrapper'>
+				<div className="modalCloseBtn">
+						<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(protectModalState(false))} />
+					</div>
 				<div className='tittle'>
 					<h2>Инструменты безопасности</h2>
 				</div>

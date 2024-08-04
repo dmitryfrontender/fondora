@@ -132,11 +132,38 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
        
 	}, [sendBtn, areaValue, refreshData, chatId, dispatch])
 	const handleSmile = (smile: string) => {
-		setAreaValue(areaValue + smile);
+		// setAreaValue(areaValue + smile);
+
+		let messageId = 0;
+		const newMessage = messagesData.filter((elem: IMessages) => {
+			return elem.id === +chatId;
+		});
+		newMessage.forEach((elem: any) => {
+
+			elem.messages.forEach((message: any) => {
+				if (!messageId || message.id > messageId) {
+					messageId = message.id;
+				}
+			});
+
+			elem.messages.push({
+				id: messageId + 1,
+				text: smile,
+				imageUrl: '',
+				time: '21:21',
+				daySend: ['Tuesday'],
+				unRead: false,
+				owner: true
+			});
+
+		});
+		messageId = 0;
+		refreshData();
 		
 	};
 
 	const handleGif = (gif: string) => {
+		
 		let messageId = 0;
 		const newMessage = messagesData.filter((elem: IMessages) => {
 			return elem.id === +chatId;
@@ -165,6 +192,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 	};
 
 	const handlePhoto = (photos: any) => {
+		
 		const photosArr = photos.map((elem: any) => {
 			return elem.src;
 		});
@@ -173,6 +201,8 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 		const newMessage = messagesData.filter((elem: IMessages) => {
 			return elem.id === +chatId;
 		});
+		console.log(photosArr);
+		
 		newMessage.forEach((elem: any) => {
 			elem.messages.forEach((message: any) => {
 				if (!messageId || message.id > messageId) {
@@ -261,7 +291,7 @@ const EnterMessage = ({ chatId, forceRerender }: IProps) => {
 	return (
 		<>
 			<div className='inputBlock'>
-				{!mediaBlock && !imagesBlock && !voiceRecorder &&(
+				{!mediaBlock && !imagesBlock && !voiceRecorder && !smileBlock &&(
 					<div className='inputWrapper'>
 						<div className='input'>
 							<TextareaAutosize placeholder='Напишите сообщение...' value={areaValue} minRows={1} maxRows={4} onChange={resizeArea} />

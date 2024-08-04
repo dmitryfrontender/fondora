@@ -197,8 +197,8 @@ a:-webkit-any-link {
 			.itemWrapper {
 				display: flex;
 				justify-content: space-between;
-				align-items: flex-start;
-				// align-items: center;
+				// align-items: flex-start;
+				align-items: center;
 				position: relative;
 				gap: 15px;
 				.description {
@@ -213,6 +213,7 @@ a:-webkit-any-link {
 					text-align: left;
 					.text {
 						padding-left: 10px;
+						line-height: normal;
 					}
 				}
 				.optionWrapper {

@@ -6,6 +6,13 @@
 
 		.modalWrapper {
 			width: clamp(200px, 80vw, 600px) !important;
+			.modalCloseBtn{
+				display: block !important;
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				z-index: 1;
+			}
 		}
 	}
 }

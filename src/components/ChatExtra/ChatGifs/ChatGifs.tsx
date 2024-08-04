@@ -15,6 +15,8 @@ const ChatGifs = ({ addGif }: IGifs) => {
 	const [areaValue, setAreaValue] = useState('');
 	const [loaded, setLoaded] = useState(false);
 
+
+
 	const handleInput = (e: any) => {
 		setAreaValue(e.target.value);
 	};
@@ -47,6 +49,7 @@ const ChatGifs = ({ addGif }: IGifs) => {
 			//   spacing: 2,
 		}
 	});
+
 
 	return (
 		<div className='ChatGifs'>

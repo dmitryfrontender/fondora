@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import './BlockUser.scss';
 
 import { useDispatch } from 'react-redux';
+import SVGIcon from '../../../assets/icons/svgComponent';
 
 const BlockUser = () => {
 	const dispatch = useDispatch();
@@ -28,6 +29,9 @@ const BlockUser = () => {
 		<>
 			<div className='BlockUserModal Modal' ref={ref}>
 				<div className='modalWrapper'>
+					<div className="modalCloseBtn">
+						<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(blockUserModalState(false))} />
+					</div>
 					<div className='userAvatar'>
 						<img src={userAvatar} alt='avatar' />
 					</div>

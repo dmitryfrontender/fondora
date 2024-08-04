@@ -23,6 +23,9 @@ const ShareProfile = () => {
 		<>
 			<div className='ShareProfile Modal' ref={ref}>
 				<div className='modalWrapper'>
+					<div className="modalCloseBtn">
+						<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(shareProfileState(false))} />
+					</div>
 					<div className='icon'>
 						<SVGIcon name='shareProfileIcon' size={30} />
 					</div>

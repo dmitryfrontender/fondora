@@ -25,6 +25,9 @@ const BoostModal = () => {
 		<>
 			<div className='BoostModal' ref={ref}>
 				<div className='boostWrapper'>
+					<div className="modalCloseBtn">
+						<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(boostModalState('close-boostModal'))} />
+					</div>
 					<SVGIcon name='lightningIcon' size={35} />
 					<div className='tittle'>
 						<h3>Мои Бусты</h3>

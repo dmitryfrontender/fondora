@@ -45,15 +45,9 @@ function App() {
 	const goalModal = useSelector((state: any) => state.goalPageState.goalPageModal);
 	const reportModal = useSelector((state: any) => state.ProtectState.reportModal);
 	const dotsModal = useSelector((state: any) => state.ProtectState.dotsModal);
-	// const mobileScreen = useSelector((state: any) => state.mainState.mobileScreen)
 
-	// const pageWrapper = document.querySelector('.pageWrapper')
 	const dispatch = useDispatch();
 
-	// if (mobileScreen) {
-	//   (pageWrapper as HTMLElement).style.top = '0'
-
-	// }
 
 
 	const checkScreen = useMemo(() => {

@@ -42,12 +42,15 @@ const NewLike = () => {
 		getData();
 		document.addEventListener('mousedown', handleClickOutside);
 		return () => document.removeEventListener('mousedown', handleClickOutside);
-	}, [handleClickOutside]);
+	});
 
 	return (
 		<>
 			<div className='NewLikeModal Modal' ref={ref}>
 				<div className='modalWrapper'>
+					<div className="modalCloseBtn">
+						<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(newLikeModalState(false))} />
+					</div>
 					<div className='likesPreview'>
 						<div className='item first'>
 							<div className="imageWrapper">

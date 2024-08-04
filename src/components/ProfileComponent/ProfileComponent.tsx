@@ -184,17 +184,20 @@ const ProfileComponent = (props: any) => {
 										</div>
 									</li>
 								))}
-								{!showFullTags && (
-									<li
-										className='moreTag'
-										aria-hidden="true"
-										onClick={() => setShowFullTags(true)}
-									>
-										<div className='tag'>
+								<li
+									className='moreTag'
+									aria-hidden="true"
+									onClick={() => setShowFullTags(!showFullTags)}
+								>
+									<div className='tag'>
+										{
+											showFullTags ? 
+											<SVGIcon name='arrowUp' size={12} />
+											:
 											<SVGIcon name='arrowDown' size={12} />
-										</div>
-									</li>
-								)}
+										}
+									</div>
+								</li>
 							</ul>
 						</div>
 						<div className='ProfileComponentMessageBlock'>

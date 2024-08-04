@@ -45,7 +45,7 @@
 @media screen and (max-width: 475px) {
 	.Settings {
 		.pageItems {
-			width: clamp(250px, 90vw, 800px);
+			width: clamp(250px, 90vw, 800px) !important;
 			.planSettings {
 				.planOption {
 					position: relative;

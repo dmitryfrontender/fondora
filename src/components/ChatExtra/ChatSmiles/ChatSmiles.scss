@@ -3,6 +3,43 @@
 	position: relative;
 	max-width: 50vw;
 	margin-bottom: 15px;
+	.input {
+		position: relative;
+		textarea {
+			// display: flex;
+			width: -webkit-fill-available;
+			height: 46px;
+			align-items: center;
+			gap: 10px;
+			border-radius: 30px;
+			background: #212020;
+			border: 1px solid transparent;
+			margin: 10px;
+			resize: none;
+			color: var(--white);
+			font-family: var(--font-proxima-nova);
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: 0%;
+			align-content: center;
+			padding: 5px 20px 5px 40px;
+			transition: all ease 0.3s;
+		}
+		textarea:focus {
+			outline: none;
+			border: 1px solid #54484D;
+			transition: all ease 0.3s;
+
+
+		}
+
+		svg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: translate(100%, 115%);
+		}
+	}
 
 	.smilesWrapper {
 		display: grid;

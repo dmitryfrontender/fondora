@@ -36,7 +36,7 @@ const MobileSettings = () => {
 								<div className='description'>
 									<span>Расстояние</span>
 								</div>
-								<SingleRangeSlider min={0} max={100} defaultValue={30} />
+								<SingleRangeSlider min={0} max={100} defaultValue={30} distance={true}/>
 							</li>
 							<li>
 								<div className='itemWrapper'>
