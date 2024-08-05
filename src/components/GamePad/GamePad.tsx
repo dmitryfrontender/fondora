@@ -23,13 +23,18 @@ const GamePad = () => {
 
 	const [matchBlockVisibility, setMatchBlockVisibility] = useState(true);
 
+
 	const handleProfileVisibility = useCallback((data: boolean) => {
 		setProfileVisibility(data);
+		const mobileButtons = document.querySelector('.MobileButtons') as HTMLDivElement;
+
 
 		if (data) {
 			document.body.classList.add('profileOpened');
+			mobileButtons.style.display = 'none';
 		} else {
 			document.body.classList.remove('profileOpened');
+			mobileButtons.style.display = 'block';
 		}
 	}, []);
 

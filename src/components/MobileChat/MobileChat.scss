@@ -170,7 +170,8 @@
 							max-width: 70vw;
 							.messageWrapper {
 								position: relative;
-								padding: 15px 20px;
+								// padding: 15px 20px;
+								padding: clamp(7px, 2.5vw, 15px) clamp(10px, 2.5vw, 20px);
 								// width: 75vw;
 								width: auto;
 								text-align: left;

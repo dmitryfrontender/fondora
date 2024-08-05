@@ -207,7 +207,8 @@
 			width: -webkit-fill-available;
 			border-radius: 30px;
 			background: #212020;
-			padding: 10px 20px;
+			// padding: 10px 20px;
+			padding: 10px 45px 10px 20px;
 			font-family: var(--font-family-urbanist);
 			resize: none;
 			color: white;
@@ -229,6 +230,43 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		gap: 15px;
+	}
+	&TextAreaBlock {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+
+		
+		
+	}
+	&SendBtn{
+		position: absolute;
+		right: 0;
+		transform: translateX(-30%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg{
+			border: 1px solid var(--main-text-color);
+			border-radius: 50%;
+			padding: 3px;
+			path{
+				fill: var(--main-text-color);
+			}
+		}
+	}
+
+	&ActiveSendBtn {
+		svg{
+			border: 1px solid #ffbe18;
+			
+			path{
+				fill: #ffbe18;
+			}
+		}
 	}
 
 	&MessageIcon {

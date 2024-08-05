@@ -8,6 +8,8 @@
 				.pageItems {
 					width: 80vw;
 					padding-bottom: 120px;
+					position: relative;
+					height: 100%;
 					.topTittle {
 						display: flex;
 						align-items: center;
@@ -18,6 +20,31 @@
 						.titleWrapper {
 							.listTitle {
 								font-size: clamp(10px, 2vw, 16px);
+							}
+						}
+					}
+					.previewBlock{
+						position: relative;
+						height: 100%;
+						.GamePad{
+							height: 100%;
+							position: relative;
+							padding: clamp(40px, 3vw, 110px) 0 0;
+							// .keen-slider{
+							// 	img{
+							// 		width: 80%;
+							// 		height: 80%;
+							// 		object-fit: contain;
+							// 	}
+							// }
+							// &BlockItem{
+							// 	img{
+							// 		height: 80%;
+							// 		width: 80%;
+							// 	}
+							// }
+							&PanelBackground{
+								padding-bottom: 0;
 							}
 						}
 					}

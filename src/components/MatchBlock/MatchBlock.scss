@@ -26,6 +26,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		svg{
+			width: clamp(253px, 90vw, 453px);
+		}
 	}
 
 	&MessageBlock {
@@ -48,11 +51,16 @@
 			bottom: 110px;
 		}
 
+		@media screen and (max-width: 375px) {
+			bottom: 80px;
+		}
+
 		textarea {
 			width: -webkit-fill-available;
 			border-radius: 30px;
 			background: #212020;
-			padding: 19px 20px;
+			// padding: 19px 20px;
+			padding: clamp(8px, 2vw, 19px) 20px;
 			font-family: var(--font-family-urbanist);
 			resize: none;
 			color: white;
@@ -150,8 +158,10 @@
 	&Btns {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 		justify-content: space-between;
-		gap: 10px;
+		// gap: 10px;
+		gap: clamp(2px, 2vw, 10px);
 		width: 100%;
 
 		&Item {
@@ -161,11 +171,18 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			font-size: 30px;
+			// font-size: 30px;
+			// font-size: clamp(14px, 3vw, 30px);
+			font-size: clamp(13px, 4vw, 30px);
+			margin: 0 auto;
+
+
+    
 			gap: 5px;
 			flex: 1 0 0;
 			border-radius: 30px;
 			background: rgba(33, 32, 32, 0.5);
+			flex-grow: 0;
 		}
 	}
 }
