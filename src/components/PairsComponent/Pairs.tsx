@@ -71,6 +71,13 @@ const Pairs = () => {
 							</Link>
 						);
 					})}
+					<div className='pairElement'>
+						<div className="userPhoto">
+						</div>
+						<div className='pairName'>
+							<span></span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</>

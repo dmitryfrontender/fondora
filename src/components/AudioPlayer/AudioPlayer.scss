@@ -30,5 +30,12 @@
     .timePlay{
         min-width: 50px;
         text-align: center;
+        color: var(--white);
+        font-family: var(--font-family-urbanist);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        opacity: 0.5;
     }
 }

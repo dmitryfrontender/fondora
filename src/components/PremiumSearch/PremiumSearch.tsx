@@ -8,7 +8,7 @@ const PremiumSearch = () => {
 	return (
 		<>
 			<div className='PremiumSearch'>
-				<div className='wrapper'>
+				<div className='wrapper-block'>
 					<div className='tittle'>
 						<div className='titleItem'>
 							<h3>Премиум - находки</h3>
