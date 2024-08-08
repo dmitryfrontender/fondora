@@ -35,9 +35,6 @@ const ReportModal = ( ) => {
         <>
             <div className="ReportModal Modal" ref={ref}>
                 <div className="modalWrapper">
-				<div className="modalCloseBtn">
-					<SVGIcon name='cancelBtn' size={20} onClick={() => dispatch(setReportModal(false))} />
-				</div>
                 <div className='topBlock'>
 					<div className='backBtn' onClick={() => dispatch(setReportModal(false))}>
 						<button>
