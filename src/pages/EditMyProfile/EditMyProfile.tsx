@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './EditMyProfile.scss';
 import SVGIcon from '../../assets/icons/svgComponent';
 import GamePad from '../../components/GamePad/GamePad';
@@ -11,7 +11,24 @@ import Loader from '../../components/Preloader/Preloader';
 
 const EditMyProfile = () => {
 	const [pageOption, setPageOption] = useState(true);
+	const mobileButtons = document.querySelector('.MobileButtons') as HTMLDivElement;
 	const navigate = useNavigate();
+
+	console.log(mobileButtons);
+	
+
+	useEffect(() => {
+		if (!pageOption && mobileButtons) {
+			mobileButtons.style.display = 'none';
+		} else {
+			mobileButtons.style.display = 'block';
+		}
+		return () => {
+			if (mobileButtons) {
+				mobileButtons.style.display = 'block';
+			}
+		}
+	}, [mobileButtons, pageOption]);
 
 	return (
 		<>

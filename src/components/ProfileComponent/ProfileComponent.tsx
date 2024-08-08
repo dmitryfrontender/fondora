@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProfileComponent.scss';
 import './MediaProfileComponent.scss';
 import PhotoSlider from './PhotoSlider/PhotoSlider';
@@ -72,6 +72,11 @@ const ProfileComponent = (props: any) => {
 
 	const activeUser = sliderProfiles[0];
 	const [inputValue, setInputValue] = useState('');
+	const [sendBtn, setSendBtn] = useState(false);
+
+	useEffect(() => {
+		inputValue.length > 0 ? setSendBtn(true) : setSendBtn(false);
+	}, [inputValue, sendBtn])
 
 	return (
 		<div className='ProfileComponent'>
@@ -214,8 +219,13 @@ const ProfileComponent = (props: any) => {
 									<span className='ProfileComponentMessageSubTitle'>Добавь его к суперлайку и увеличь шансы создать пару на 25%.</span>
 								</span>
 							</div>
+							<div className="ProfileComponentTextAreaBlock">
+								<TextAreaAutosize placeholder='Напишите сообщение...' value={inputValue} minRows={1} maxRows={4} onChange={(e) => setInputValue(e.target.value)} />
+									<div className={`ProfileComponentSendBtn ${sendBtn ? 'ProfileComponentActiveSendBtn' : ''}`}>
+										<SVGIcon name='sendTgBtn' size={15} onClick={() => {setInputValue('')}}/>
 
-							<TextAreaAutosize placeholder='Напишите сообщение...' value={inputValue} minRows={1} maxRows={4} onChange={(e) => setInputValue(e.target.value)} />
+									</div>
+							</div>
 						</div>
 						<div className='ProfileComponentButtons'>
 							<span
