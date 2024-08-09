@@ -93,7 +93,7 @@ const PremiumSearch = () => {
 							<li>
 								<div className='itemWrapper'>
 									<div className='description'>
-										<SVGIcon name='zodiac' size={20} />
+										<SVGIcon name='zodiac' size={20} fill={'rgb(162, 162, 162)'}/>
 										<div className='text'>
 											<span>Знак зодиака</span>
 										</div>

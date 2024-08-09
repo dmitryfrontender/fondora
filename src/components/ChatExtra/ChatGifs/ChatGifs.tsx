@@ -55,7 +55,7 @@ const ChatGifs = ({ addGif }: IGifs) => {
 		<div className='ChatGifs'>
 			<div className='input'>
 				{/* <input type="text" placeholder="Поиск GIF" /> */}
-				<TextareaAutosize placeholder='Поиск GIF' value={areaValue} minRows={2} maxRows={4} onChange={handleInput} />
+				<TextareaAutosize placeholder='Поиск GIF' value={areaValue} minRows={1} maxRows={4} onChange={handleInput} />
 				<SVGIcon name='searchBtn' size={20} />
 			</div>
 			<div className='gifWrapper keen-slider' ref={sliderRef}>
