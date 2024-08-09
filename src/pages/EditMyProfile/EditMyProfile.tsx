@@ -14,13 +14,12 @@ const EditMyProfile = () => {
 	const mobileButtons = document.querySelector('.MobileButtons') as HTMLDivElement;
 	const navigate = useNavigate();
 
-	console.log(mobileButtons);
 	
 
 	useEffect(() => {
 		if (!pageOption && mobileButtons) {
 			mobileButtons.style.display = 'none';
-		} else {
+		} else if (mobileButtons) {
 			mobileButtons.style.display = 'block';
 		}
 		return () => {

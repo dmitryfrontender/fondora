@@ -5,10 +5,12 @@
 	margin-bottom: 15px;
 	.input {
 		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
 		textarea {
 			// display: flex;
 			width: -webkit-fill-available;
-			height: 46px;
 			align-items: center;
 			gap: 10px;
 			border-radius: 30px;
@@ -22,7 +24,7 @@
 			font-weight: 400;
 			letter-spacing: 0%;
 			align-content: center;
-			padding: 5px 20px 5px 40px;
+			padding: 10px 20px 10px 40px;
 			transition: all ease 0.3s;
 		}
 		textarea:focus {
@@ -35,9 +37,7 @@
 
 		svg {
 			position: absolute;
-			left: 0;
-			top: 0;
-			transform: translate(100%, 115%);
+			transform: translate(100%);
 		}
 	}
 
