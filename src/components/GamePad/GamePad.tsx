@@ -16,7 +16,11 @@ import PhotoSlider from '../ProfileComponent/PhotoSlider/PhotoSlider';
 import { reportUserAge, reportUserAvatar, reportUserName, reportUserVerified, setDotsModal } from '../../store/ProtectSlice';
 import { useDispatch } from 'react-redux';
 
-const GamePad = () => {
+interface IProps {
+	editProfile?: boolean;
+}
+
+const GamePad = ({ editProfile }: IProps) => {
 	const dispatch = useDispatch();
 
 	const [profileVisibility, setProfileVisibility] = useState(false); // logic for setProfileVisibility
@@ -36,11 +40,11 @@ const GamePad = () => {
 			}
 		} else {
 			document.body.classList.remove('profileOpened');
-			if (mobileButtons) {
+			if (mobileButtons && !editProfile) {
 				mobileButtons.style.display = 'block';	
 			}
 		}
-	}, []);
+	}, [editProfile]);
 
 	function handleMatchBlockVisibility(data: boolean) {
 		setMatchBlockVisibility(data);
