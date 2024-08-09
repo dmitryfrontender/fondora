@@ -64,7 +64,7 @@ const GamePad = ({ editProfile }: IProps) => {
 		const maxAngle = 15;
 		let newAngle = 0;
 
-		if (down) {
+		if (down && !editProfile) {
 			if (mx > 0) {
 				newAngle = (mx / 360) * maxAngle < maxAngle ? (mx / 360) * maxAngle : maxAngle;
 				setApproved('approved');
@@ -142,6 +142,11 @@ const GamePad = ({ editProfile }: IProps) => {
 	);
 
 	useEffect(() => {
+		if (editProfile) {
+			setMatchBlockVisibility(false);
+		} else {
+			setMatchBlockVisibility(true);
+		}
 		document.addEventListener('keydown', handleKeyPress, false);
 		document.addEventListener('mouseup', resetPosition, false);
 
@@ -149,13 +154,19 @@ const GamePad = ({ editProfile }: IProps) => {
 			document.removeEventListener('keydown', handleKeyPress, false);
 			document.removeEventListener('mouseup', resetPosition, false);
 		};
-	}, [handleKeyPress, resetPosition]);
+	}, [handleKeyPress, resetPosition, editProfile, setMatchBlockVisibility]);
 
 	return (
 		<>
 			{profileVisibility ? (
 				<ProfileComponent profileVisibility={profileVisibility} sendDataToGamepad={handleProfileVisibility} />
 			) : (
+				<>
+				{
+					editProfile && (
+						<div className="scrollGamePad"></div>
+					)
+				}
 				<div className='GamePad'>
 					<div className='GamePadBlock'>
 						{!matchBlockVisibility && timeOut && (
@@ -295,7 +306,7 @@ const GamePad = ({ editProfile }: IProps) => {
 								})}
 						</div>
 
-						{!profileVisibility && matchBlockVisibility && <MatchBlock sendDataToGamepad={handleMatchBlockVisibility} />}
+						{!profileVisibility && matchBlockVisibility && !editProfile && <MatchBlock sendDataToGamepad={handleMatchBlockVisibility} />}
 					</div>
 
 					<div className='GamePadTutorial'>
@@ -339,6 +350,7 @@ const GamePad = ({ editProfile }: IProps) => {
 						</ul>
 					</div>
 				</div>
+				</>
 			)}
 		</>
 	);

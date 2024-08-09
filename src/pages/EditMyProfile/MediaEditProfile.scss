@@ -26,10 +26,20 @@
 					.previewBlock{
 						position: relative;
 						height: 100%;
+						.scrollGamePad{
+							width: 100%;
+							height: 90%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							overflow: scroll;
+							z-index: 50;
+						}
 						.GamePad{
 							height: 100%;
 							position: relative;
 							padding: clamp(40px, 3vw, 110px) 0 0;
+							overflow: scroll;
 							// .keen-slider{
 							// 	img{
 							// 		width: 80%;

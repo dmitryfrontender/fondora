@@ -718,6 +718,7 @@ const EditMyProfile = () => {
 					) : (
 						<div className='previewBlock'>
 							<GamePad editProfile={true}/>
+
 						</div>
 					)}
 				</div>
