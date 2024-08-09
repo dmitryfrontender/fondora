@@ -31,10 +31,14 @@ const GamePad = () => {
 
 		if (data) {
 			document.body.classList.add('profileOpened');
-			mobileButtons.style.display = 'none';
+			if (mobileButtons) {
+				mobileButtons.style.display = 'none';
+			}
 		} else {
 			document.body.classList.remove('profileOpened');
-			mobileButtons.style.display = 'block';
+			if (mobileButtons) {
+				mobileButtons.style.display = 'block';	
+			}
 		}
 	}, []);
 
