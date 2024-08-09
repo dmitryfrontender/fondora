@@ -17,17 +17,15 @@ const EditMyProfile = () => {
 	
 
 	useEffect(() => {
-		if (!pageOption && mobileButtons) {
+		if (mobileButtons) {
 			mobileButtons.style.display = 'none';
-		} else if (mobileButtons) {
-			mobileButtons.style.display = 'block';
 		}
 		return () => {
 			if (mobileButtons) {
 				mobileButtons.style.display = 'block';
 			}
 		}
-	}, [mobileButtons, pageOption]);
+	}, [mobileButtons]);
 
 	return (
 		<>
@@ -719,7 +717,7 @@ const EditMyProfile = () => {
 						</>
 					) : (
 						<div className='previewBlock'>
-							<GamePad />
+							<GamePad editProfile={true}/>
 						</div>
 					)}
 				</div>
